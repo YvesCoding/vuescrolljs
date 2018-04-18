@@ -1,0 +1,20 @@
+{
+  "name": "vuesrolljs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx vuepress dev docs",
+    "build": "npx vuepress build docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vuepress": "^0.6.0",
+    "vuescroll": "^4.2.2"
+  },
+  "devDependencies": {
+    "eslint-plugin-vue": "^4.4.0"
+  }
+}
