@@ -1,19 +1,19 @@
 ---
 home: true
 heroImage: /logo.png
-actionText: Get Started →
-actionLink: /guide/
+actionText: 开始上手 →
+actionLink: /zh/guide/
 features:
-- title: Muilty Modes
-  details: There are two modes you can choose, native mode and slide mode, you can even switch them in the runtime.
-- title: Vue-Powered
-  details: Enjoy the dev experience of Vue. When you change a option of Vuescroll, you can see the effect immediately.
-- title: Powerful Configuration
-  details: Vuescroll has a lot of configurations so that you can customize your own scrollbar!
+- title: 多种模式
+  details: 有nativ模式和slide模式可供你选择, 你甚至可以在运行期间切换这两种模式.
+- title: Vue-驱动
+  details: 享受Vue开发的体验.当你改变Vuescroll的一个选项时, 你能够立马看到变化.
+- title: 强大的配置
+  details: Vuescroll有很多配置， 以至于你可以定制属于你自己的滚动条!
 footer: MIT Licensed | Copyright © 2018-present wangyi7099 | Made by vuepress
 ---
 
-## Simple scroll
+## 简单的滚动
 
 ```vue
 <template>
@@ -43,7 +43,7 @@ export default {
     background: linear-gradient(red, blue);
 </style>
 ```
-## Preview
+## 预览
 
 <ClientOnly>
 <IndexDemo />

@@ -11,10 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vuepress": "^0.6.0",
-    "vuescroll": "^4.2.2"
+    "vuepress": "^0.8.3",
+    "vuescroll": "^4.5.1"
   },
   "devDependencies": {
+    "eslint": "^4.19.1",
     "eslint-plugin-vue": "^4.4.0"
   }
 }
