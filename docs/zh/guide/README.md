@@ -1,12 +1,12 @@
 # 介绍
 
-Vuescroll是一个基于[vue.js](https://github.com/vuejs/vue) 2.X的虚拟滚动条插件. 除了拥有原生的滚动条的特点, 比起原生的，vuescroll还有更多的特点, 比如在多种模式下切换, 平滑地滚动, 自动检测内容尺寸发生变化, 分页模式, 快照模式等等.
+Vuescroll是一个基于[Vue.js](https://github.com/vuejs/vue) 2.X的虚拟滚动条插件. 除了拥有原生的滚动条的特点, 比起原生的，vuescroll还有更多的特点, 比如在多种模式下切换, 平滑地滚动, 自动检测内容尺寸发生变化, 分页模式, 快照模式等等.
 
 ## 为啥用vuescroll?
 
-很多人问我  **为啥不用原生的** , **保持原生的多好** 等等诸如此类的. 好吧， 现在让我给你介绍vuescroll和原生的相同与不同之处. 然后用不用全看你自己的选择喽。
+很多人问我  **为啥不用原生的** , **保持原生的多好** 等等诸如此类的. 好吧， 现在让我给你介绍vuescroll和原生的不同之处.
 ### 1.基础滚动
-#### Vuescroll 和 native 都支持基础的滚动行为。
+#### Vuescroll 和 native 都支持基础的滚动行为。 但是vuescroll滚动的更加平滑，并且外观更漂亮。
 
 <ClientOnly>
 <Guide-Inroduction-OrdinaryScroll />
@@ -21,7 +21,7 @@ Vuescroll是一个基于[vue.js](https://github.com/vuejs/vue) 2.X的虚拟滚�
 </ClientOnly>
 
 ### 3.检测内容发生变动
-#### Vuescroll 支持检测内容的尺寸是否发生了变动
+#### Vuescroll 支持检测内容的尺寸是否发生了变动, 它受了 [element-resize-detector](https://github.com/wnr/element-resize-detector)的启发。
 ::: tip 提示
     你可以自己打开dev-tool然后调节元素的样式再查看效果。
 :::
@@ -30,14 +30,14 @@ Vuescroll是一个基于[vue.js](https://github.com/vuejs/vue) 2.X的虚拟滚�
 </ClientOnly>
 
 ### 4.滑动和下拉舒心或上推加载
-#### Vuescroll 支持下来刷新和上推加载.
+#### Vuescroll 支持下来刷新和上推加载. 在你想展示一个列表的数据的时候很有用。
 
 <ClientOnly>
 <Guide-Inroduction-PullRefreshOrPushLoad />
 </ClientOnly>
 
 ### 5.Paging.
-#### Vuescroll 支持分页模式
+#### Vuescroll 支持分页模式， 当你想要展示一个像[这样](http://element-cn.eleme.io/#/zh-CN/component/carousel)一个轮播图的时候游泳。
 
 <ClientOnly>
 <Guide-Inroduction-Paging />
@@ -52,6 +52,16 @@ Vuescroll是一个基于[vue.js](https://github.com/vuejs/vue) 2.X的虚拟滚�
     }
   }
 ```
+:::
+
+### 6.在不同模式之间切换
+#### 你甚至能在运行期间改变模式， 并且滚动的位置不会变。
+<ClientOnly>
+<Guide-Inroduction-SwitchMode />
+</ClientOnly>
+
+::: warning 警告
+  可能在移动端效果不太好， 因为移动端原生的滑动模式的滚动条是一样的
 :::
 
 > 这是vuescroll的核心特点, 更多的细节可以查看 [配置项](Configuration.html)一节。

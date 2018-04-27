@@ -27,7 +27,7 @@ module.exports = {
         docsRepo: 'wangyi7099/vuescrolljs',
         editLinks: true,
         docsDir: 'docs',
-        docsBranch: 'dev',
+        docsBranch: 'master',
         sidebarDepth: 3,
         locales: {
         '/': {
@@ -61,15 +61,14 @@ module.exports = {
     }
     },
     configureWebpack: (config, isServer) => {
-        return {
+        let base =  {
             resolve: {
                 alias: {
-                    comp: resolve('./components'),
                     assets: resolve('./assets')
                 }
-            },
-            devtool: "#source-map"
+            }
         }
+        return base;
     }
 }
 

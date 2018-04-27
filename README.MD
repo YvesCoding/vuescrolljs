@@ -14,3 +14,5 @@
 ```
 
 ## PR Welcome!
+
+## git push -f git@github.com:wangyi7099/vuescroll.git master:gh-pages

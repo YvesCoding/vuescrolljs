@@ -1,20 +1,22 @@
 <template>
     <div class="wrap">
-        <span class="demo-title">Pull-refresh and pull-load</span>
+        <span class="demo-title">Pull-refresh and push-load</span>
         <div class="parent" ref="parentElm">
           <vue-scroll 
           :ops="ops"
+          @refresh-start="handleRS"
           @load-before-deactivate="handleLBD"
           >
           <template
-          v-for="item in itemAmount"
+          v-for="(item, index) in amount"
           >
           <BaseChild 
-          :key="item"
+          :key="index"
           :width="width"
-          :index="item"
+          :index="index"
+          :backgroundColor="item"
           />
-          <br v-if="item % 1 == 0" />
+          <br v-if="index % 1 == 0" />
           </template>
           </vue-scroll>
         </div>
@@ -37,11 +39,35 @@ export default {
               }
             },
             width: '',
-            itemAmount: 8
+            itemAmount: 8,
+            refresh: 1
         }
     },
+    computed: {
+      amount() {
+          function getRandom() {
+              let str = "#";
+              for(let i = 0; i < 6; i++) {
+                  str += Math.floor(Math.random() * 16).toString(16);
+              }
+              return str;
+          }
+          return this.refresh && Array.apply(null, {
+              length: this.itemAmount
+          }).map(item => {
+              return getRandom();
+          })
+      }
+    },
     methods: {
-      handleLBD(vm, refreshDom, done) {
+      handleRS(vsInstance, refreshDom, done) {
+        const vm = this;
+        setTimeout(() => {
+          this.refresh++;
+          done();
+        }, 1500);
+      },
+      handleLBD(vm, loadDom, done) {
         setTimeout(() => {
           this.itemAmount += 8;
           done();
@@ -49,6 +75,7 @@ export default {
       }
     },
     mounted() {
+        console.log(123);
         this.width = this.$refs['parentElm'].clientWidth + "px";
     }
 }

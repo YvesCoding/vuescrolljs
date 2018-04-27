@@ -1,37 +1,16 @@
-<template>
-  <div class="child" :style="style">
-    {{index}}. {{style.backgroundColor}}
+<template functional>
+  <div class="child" :style="{width: props.width || '400px', background: props.backgroundColor || (_bg = parent.getRandomColor()) }">
+    {{props.index}}. {{props.backgroundColor ||  _bg}}
   </div>
 </template>
 
 <script>
-
-function getRandom() {
-    let str = "#";
-    for(let i = 0; i < 6; i++) {
-        str += Math.floor(Math.random() * 16).toString(16);
-    }
-    return str;
-}
 
 export default {
    props: {
        backgroundColor: String,
        width: String,
        index: Number
-   },
-   data() {
-       return {
-           style: {}
-       }
-   },
-   created() {
-    this.style.width = this.width || '400px';
-    this.style.backgroundColor = this.backgroundColor || getRandom();
    }
 }
 </script>
-
-<style>
-
-</style>
