@@ -1,15 +1,17 @@
 <template>
     <div class="wrap">
-      <span class="demo-title">Vuescroll Paging</span>
+      <span class="demo-title">Paging</span>
         <div class="parent" ref="parentElm">
             <vue-scroll :ops="ops">
             <template
             v-for="item in 64"
             >
-            <BaseChild 
+            <BaseChild
+            style="border: 1px solid #000" 
             :key="item"
             :width="width"
             :index="item"
+            backgroundColor="rgb(222, 240, 204)"
             />
             <br v-if="item % 8 == 0" />
             </template>
@@ -35,7 +37,7 @@ export default {
         }
     },
     mounted() {
-        this.width = this.$refs['parentElm'].clientWidth + "px";
+        this.width = this.$refs['parentElm'].clientWidth / 16  + "rem";
     }
 }
 </script>

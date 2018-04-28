@@ -58,7 +58,7 @@ export default {
         }
     },
     mounted() {
-        this.width = this.$refs['parentElm'].clientWidth + "px";
+        this.width = this.$refs['parentElm'].clientWidth / 16 + "rem";
     }
 }
 </script>

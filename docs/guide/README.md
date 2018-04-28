@@ -52,9 +52,18 @@ To disable X or Y paging, just set scrollingY or X to false.
     }
   }
 ```
+
+You had better to set your size of your each page to be equal to the size of the its parent dom, so that you won't see the content of another page in current view, that is to say , pnly show one page each time.
 :::
 
-### 6.Toggle between modes
+### 6. Snapping
+Vuescroll supports snapping while native doesn't. Snapping is similar to `Paging`, but there are alao a few difference: **Paging slides a full page each time, but snapping slides a user-defined distance each time**. 
+
+<ClientOnly>
+<Guide-Inroduction-Snapping />
+</ClientOnly>
+
+### 7.Toggle between modes
 #### You can even changes modes in runtime, and the postions won't be changed.
 <ClientOnly>
 <Guide-Inroduction-SwitchMode />
@@ -64,5 +73,5 @@ To disable X or Y paging, just set scrollingY or X to false.
   Perhaps not works well in mobile, becase slide and native are the same in mobile. 
 :::
 
-> This is the core futures of vuescroll, more detailed configurations you can checkout the [Configuration](Configuration.html) section.
+> This is the core futures of vuescroll, for detailed configurations you can checkout the [Configuration](Configuration.html) section.
 

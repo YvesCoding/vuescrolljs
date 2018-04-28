@@ -52,9 +52,17 @@ Vuescroll是一个基于[Vue.js](https://github.com/vuejs/vue) 2.X的虚拟滚�
     }
   }
 ```
+你最好设置每个分页的尺寸等同于你的父dom的大小， 这样你才不会在一个页面中看到另一个页面的内容在当前视图下， 也就是说，确保每次只显示一个页面。
 :::
 
-### 6.在不同模式之间切换
+### 6. Snapping
+Vuescroll 支持snapping但是原生的不支持. Snapping有点像`Paging`, 但是也有一些不同指出: **Paging 每次滑动一整页, 但是snapping每次滑动一个用户指定的距离**. 
+
+<ClientOnly>
+<Guide-Inroduction-Snapping />
+</ClientOnly>
+
+### 7.在不同模式之间切换
 #### 你甚至能在运行期间改变模式， 并且滚动的位置不会变。
 <ClientOnly>
 <Guide-Inroduction-SwitchMode />

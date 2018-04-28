@@ -9,7 +9,7 @@
                 >
                 <BaseChild 
                 :key="item"
-                :style="{width: contentWidth + 'px', height: contentHeight + 'px'}"
+                :style="{width: contentWidth + 'rem', height: contentHeight + 'rem'}"
                 :index="item"
                 />
                 <br v-if="item % 8 == 0" />
@@ -22,13 +22,13 @@
             <div class="parent">
                 <vue-scroll>
                     <div class="operation-area">
-                        <label>contentWidth: {{contentWidth}}</label>
+                        <label>contentWidth: {{contentWidth}}rem</label>
                         <br />
-                        <input type="range" min="300" max="1000" v-model="contentWidth">
+                        <input type="range" min="18" max="62.5" v-model="contentWidth">
                         <br />
-                        <label>contentHeight: {{contentHeight}}</label>
+                        <label>contentHeight: {{contentHeight}}rem</label>
                         <br />
-                        <input type="range" min="400" max="1000" v-model="contentHeight">
+                        <input type="range" min="18" max="62.5" v-model="contentHeight">
                     </div>
                     <div class="log">
                         logs:
@@ -36,7 +36,7 @@
                         class="item"
                         v-for="log in logs"
                         >
-                            size changes! width:{{log.width}} height:{{log.height}}
+                            size changes! width:{{log.width / 16 }}rem, height:{{log.height / 16}} rem
                         </div>
                     </div>
                 </vue-scroll>
@@ -63,7 +63,7 @@ export default {
                     keepShow: false
                 }
             },
-            contentHeight: 400,
+            contentHeight: 25,
             contentWidth: '',
             logs: []
         }
@@ -77,7 +77,7 @@ export default {
         }
     },
     mounted() {
-        this.contentWidth = this.$refs['parentElm'].clientWidth;
+        this.contentWidth = this.$refs['parentElm'].clientWidth / 16;
     }
 }
 </script>

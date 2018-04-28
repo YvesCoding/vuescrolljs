@@ -1,6 +1,6 @@
-<template functional>
-  <div class="child" :style="{width: props.width || '400px', background: props.backgroundColor || (_bg = parent.getRandomColor()) }">
-    {{props.index}}. {{props.backgroundColor ||  _bg}}
+<template>
+  <div class="child" :style="{width: width, height: height,  background: backgroundColor || (_bg = getRandomColor()) }">
+    <span class="content-text">{{index}}</span>
   </div>
 </template>
 
@@ -9,7 +9,14 @@
 export default {
    props: {
        backgroundColor: String,
-       width: String,
+       width: { 
+         default: '25rem',
+         type: String
+       },
+       height: {
+         default: '25rem',
+         type: String
+       },
        index: Number
    }
 }
