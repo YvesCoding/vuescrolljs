@@ -5,7 +5,7 @@ Vuescroll is a virtual scrollbar based on [Vue.js](https://github.com/vuejs/vue)
 ## Why Vuescroll
 Many people have asked me  **Why not use native?** ， here I list some comparisons between vuescroll and other scrollbar libraries.
 ### native scrollbar
-, I think native is too ugly，and its scrollbar is too width， it has a ugliy UX.But vuescroll, besides basic scroll behavior of native，has more features like: be able to detect size change of content， supports pull-refresh and push-load, paging, snapping. 
+I think native is too ugly，and its scrollbar is too width， it has a ugliy UX.But vuescroll, besides basic scroll behavior of native，has more features like: be able to detect size change of content， supports pull-refresh and push-load, paging, snapping. 
 ### iscroll, better-scroll, scroller
 iscroll , scroller and better-scroll all do well,  they all have a good UX，but vuescroll has some diffrerence bellow：
 * Focus on Vue，pecially design for Vue, 

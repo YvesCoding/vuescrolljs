@@ -19,7 +19,9 @@ footer: MIT Licensed | Copyright © 2018-present wangyi7099 | Made by vuepress
 <template>
   <div class="demo-container">
       <vue-scroll :ops="ops">
-        <div class="demo-content"></div>
+        <div class="demo-content">
+          <span class="demo-content-text">Hello World</span>
+        </div>
       </vue-scroll>
   </div>
 </template>
@@ -35,12 +37,21 @@ export default {
 
 <style lang="stylus">
   .demo-container
-    width 100px
+    width 100%
     height 100px
   .demo-content
-    width 500px
+    position relative
+    width 100%
     height 500px
-    background: linear-gradient(red, blue);
+    background: linear-gradient(0deg,#fff,#d5ffc1);
+  .demo-content-text
+    display block
+    position absolute
+    width 100%
+    bottom 0
+    text-align center
+    color #2c3e50;
+    font-weight 300
 </style>
 ```
 ## 预览
