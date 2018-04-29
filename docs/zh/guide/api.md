@@ -31,7 +31,7 @@ sidebarDepth: 2
 ```
 [在Codepen上尝试scrollTo](https://codepen.io/wangyi7099/pen/MVEdWb)
 
-## scrollTo
+## scrollBy
 ### Introduction
 每次滚动一段距离, 类似于原生的 `scrollBy`
 ### 详细参数
