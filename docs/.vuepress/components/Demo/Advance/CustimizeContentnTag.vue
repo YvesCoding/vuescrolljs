@@ -8,6 +8,7 @@
                 v-for= "item in itemArray"
                 >
                 <BaseChild 
+                style="display: block"
                 :key="item"
                 :width="width"
                 :index="item"
@@ -89,6 +90,5 @@ export default {
 .group-animate-leave-to 
     transform: translateX(400px)
 .child
-    display block
     transition: all 2s;
 </style>
