@@ -3,7 +3,7 @@ sidebarDepth: 2
 ---
 # Configuration
 
-Vuescroll options is composed of five parts, they are `vuescroll`, `scrollPanel`, `scrollContent`, `bar`, `rail` in turn, each of parts has its own options. 
+Vuescroll's options are composed of five parts, they are `vuescroll`, `scrollPanel`, `scrollContent`, `bar`, `rail` in turn, each of parts has its own options. 
 
 ## vuescroll
 ::: tip Introduction
@@ -192,7 +192,6 @@ opacity|0|Set the rail's  opacity
     // 
     vBar: {
       background: "#4caf50",
-      deltaY: 100,
       keepShow: false,
       opacity: 1,
       hover: false
@@ -310,11 +309,9 @@ export default {
       width: "5px",
       pos: "right",
       background: "#4caf50",
-      deltaY: 100,
       keepShow: false,
       opacity: 1,
-      hover: false,
-      disabled: false
+      hover: false
     },
     // 
     hBar: {
@@ -323,8 +320,7 @@ export default {
       background: "#4caf50",
       keepShow: false,
       opacity: 1,
-      hover: false,
-      disabled: false
+      hover: false
     } 
   }
 };

@@ -11,12 +11,12 @@ module.exports = {
         '/': {
           lang: 'en-US',
           title: 'Vuescroll.js', 
-          description: 'A reactive virtual scrollbar based on vue.js 2.X'
+          description: 'A reactive, multi-modes, virtual scrollbar based on vue.js 2.X'
         },
         '/zh/': {
           lang: 'zh-CN',
           title: 'Vuescroll.js',
-          description: '一个基于vue.js 2.X的响应式虚拟滚动条'
+          description: '一个基于vue.js2.X的响应式, 多模式的虚拟滚动条'
         }
     },
     head: [
@@ -38,10 +38,15 @@ module.exports = {
                     {
                     text: 'Guide',
                     link: '/guide/',
+                    },
+                    {
+                    text: 'Demo',
+                    link: '/Demo/',
                     }
             ],
             sidebar: {
-                '/guide/': genSidebarConfig('Guide')
+                '/guide/': genSidebarConfig('Guide'),
+                '/Demo/': genDemo('Demo')
             }
         },
         '/zh/': {
@@ -52,10 +57,15 @@ module.exports = {
                 {
                 text: '指南',
                 link: '/zh/guide/',
+                },
+                {
+                text: 'Demo',
+                link: '/zh/Demo/',
                 }
             ],
             sidebar: {
-                '/zh/guide/': genSidebarConfig('指南')
+                '/zh/guide/': genSidebarConfig('指南'),
+                '/zh/Demo/': genDemo('Demo')
             }
         }
     }
@@ -86,4 +96,17 @@ function genSidebarConfig (title) {
         ]
       }
     ]
+  }
+
+  function genDemo(title) {
+    return [
+        {
+          title,
+          collapsable: false,
+          children: [
+           '',
+           'Advance'
+          ]
+        }
+      ]
   }

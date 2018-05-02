@@ -3,7 +3,7 @@ sidebarDepth: 2
 ---
 # 配置项
 
-Vuescroll是由5部分组成的, 它们是 `vuescroll`, `scrollPanel`, `scrollContent`, `bar`, `rail` 每个部分都有相应的配置项。
+Vuescroll的配置项是由5部分组成的, 它们是 `vuescroll`, `scrollPanel`, `scrollContent`, `bar`, `rail` 每个部分都有相应的配置项。
 
 ## vuescroll
 ::: tip 介绍
@@ -33,9 +33,9 @@ Vuescroll是由5部分组成的, 它们是 `vuescroll`, `scrollPanel`, `scrollCo
         beforeDeactive: "Load Successfully!"
       }
     },
-    // 启用paging? 只在slide mode下有效。
+    // 是否启用paging? 只在slide mode下有效。
     paging: false,
-    // 启动snapping? 只在slide模式下有效。
+    // 是否启动snapping? 只在slide模式下有效。
     snapping: {
       enable: false,
       width: 100,
@@ -191,7 +191,6 @@ opacity|0|s设置轨道的透明度。
     // 
     vBar: {
       background: "#4caf50",
-      deltaY: 100,
       keepShow: false,
       opacity: 1,
       hover: false
@@ -218,7 +217,7 @@ hover|false|只在PC上有效，当鼠标指针移上去的时候显示的颜色
 
 ## 全局配置
 
-> 想要设置统一的样式在vuescroll里面, 你可以修改`Vue.prototype.$vuescrollConfig`. 例如：
+> 全局属性也是完整的配置项属性，想要设置统一的样式在vuescroll里面, 你可以修改`Vue.prototype.$vuescrollConfig`. 例如：
 ```javascript
   import Vue from 'vue'
   import vuescroll from 'vuescroll'
@@ -235,7 +234,7 @@ hover|false|只在PC上有效，当鼠标指针移上去的时候显示的颜色
 
 并且完整的全局配置在这：
 ```javascript
-export 默认 {
+export default {
   // vuescroll
   vuescroll: {
     mode: "native",
@@ -309,11 +308,9 @@ export 默认 {
       width: "5px",
       pos: "right",
       background: "#4caf50",
-      deltaY: 100,
       keepShow: false,
       opacity: 1,
-      hover: false,
-      disabled: false
+      hover: false
     },
     // 
     hBar: {
@@ -322,8 +319,7 @@ export 默认 {
       background: "#4caf50",
       keepShow: false,
       opacity: 1,
-      hover: false,
-      disabled: false
+      hover: false
     } 
   }
 };

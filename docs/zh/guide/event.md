@@ -118,3 +118,33 @@ Vuescroll 有一些事件可以在特定场合下触发。
 **Load是一样的，换汤不换药，请在demo你查看详情**
 
 [在Codepen上尝试](https://codepen.io/wangyi7099/pen/pLXyOQ)
+
+## handle-scroll-complete
+
+### 介绍
+当滚动结束的时候触发
+### 事件详情
+参数|描述
+------------|----
+`vertical, horizontal`|给你传递2个参数, `vertical` 和 `horizontal` 告诉你管你垂直和水平滚动条的信息。
+### 用法
+```html
+    <vue-scroll
+    @handle-scroll-complete="handleComplete"
+    >
+    </vue-scroll>
+```
+```javascript
+    // ...
+    {
+        methods: {
+            handleComplete() {
+                console.log('scroll complete！')
+            }
+        }
+    }
+```
+::: tip 提示
+   需要打开dev-tool查看结果。
+:::
+[在Codepen上尝试handle-scroll-complete](https://codepen.io/wangyi7099/pen/YLVBNe)

@@ -118,3 +118,33 @@ params|description
 **Load is the same as reresh, please view it in demo**
 
 [Try refresh and load event on Codepen](https://codepen.io/wangyi7099/pen/pLXyOQ)
+
+## handle-scroll-complete
+
+### Introduction
+Trigger when scroll complete
+### Event Detail
+params|description
+------------|----
+`vertical, horizontal`|Pass 2 params to you, `vertical` and `horizontal` tell you the information about vertical bar and horizontal bar.
+### Usage
+```html
+    <vue-scroll
+    @handle-scroll-complete="handleComplete"
+    >
+    </vue-scroll>
+```
+```javascript
+    // ...
+    {
+        methods: {
+            handleComplete() {
+                console.log('scroll complete！')
+            }
+        }
+    }
+```
+::: tip
+   Need to open dev-tool to see the result
+:::
+[Try handle-scroll-complete on codepen](https://codepen.io/wangyi7099/pen/YLVBNe)
