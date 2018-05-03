@@ -4,7 +4,7 @@ heroImage: /logo.png
 actionText: Get Started →
 actionLink: /guide/
 features:
-- title: Muilty Modes
+- title: Multi-Modes
   details: There are two modes you can choose, native mode and slide mode, you can even switch them in the runtime.
 - title: Vue-Powered
   details: Enjoy the dev experience of Vue. When you change a option of Vuescroll, you can see the effect immediately.
