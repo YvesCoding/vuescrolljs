@@ -105,7 +105,7 @@ function genSidebarConfig (title) {
           collapsable: false,
           children: [
            '',
-           'Advance'
+           'Advanced'
           ]
         }
       ]

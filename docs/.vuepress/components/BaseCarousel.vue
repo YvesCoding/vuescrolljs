@@ -18,6 +18,7 @@
         v-for="(item, index) in items"
         :key="index"
         :class="{active: currentIndex == index}"
+        @click="goToPage(index)"
         >
           <i class="dot-item"></i>
         </a>
@@ -60,31 +61,39 @@ export default {
       this.setItems();
     },
     mounted() {
-        this.width = this.$refs['parentElm'].clientWidth + 'px';
-        if(this.result.length > 1) {
-          this.result.push(this.result[0]);
-          this.result.unshift(this.result[this.result.length - 2]);
-        }
+        this.width = this.$refs['parentElm'].clientWidth + 'px'; 
     },
     methods: {
-      handleResize() {
-        if(!this.hasAdjust) {
-           this.$refs['vs'].scrollTo({
-            x: this.$el.clientWidth
-          }, false)
-          this.hasAdjust = true;
+      goToPage(index) {
+        this.$refs['vs'].goToPage({
+          /* *
+            why add index + 2?
+            1. page is from 1 to ... and
+            end is from 0 to ...
+            2. first or end page are
+            used to make carousel end to end.
+          */
+          x: index + 2
+        }, true)
+      },
+      handleResize({process}) {
+        if(process == 0) {
+           this.$refs['vs'].goToPage({
+            x: 2
+          }, false) 
         }
       },
       scrollComplete(v, h) {
+        const { x } = this.$refs['vs'].getCurrentPage();
         if(this.result.length > 1) {
-          if(Math.abs(h.process) < 0.001) {
-            this.$refs['vs'].scrollBy({
-              dx: (1 / this.result.length) * 100 * (this.result.length - 2)  + '%'
+          if(x == 1) {
+            this.$refs['vs'].goToPage({
+              x: this.result.length - 1
             }, false)
           }
-          if(Math.abs(h.process - 1) < 0.001) {
-            this.$refs['vs'].scrollTo({
-              x: (1 / this.result.length) * 100  + '%'
+          else if(x == this.result.length) {
+            this.$refs['vs'].goToPage({
+              x: 2
             }, false)
           }
         }
@@ -97,6 +106,10 @@ export default {
            item.index = index;
            vm.result.push(item);
         });
+        if(vm.result.length > 1) {
+          vm.result.push(this.result[0]);
+          vm.result.unshift(this.result[this.result.length - 2]);
+        }
       }
     }
 }
