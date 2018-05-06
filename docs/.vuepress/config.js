@@ -11,7 +11,7 @@ module.exports = {
         '/': {
           lang: 'en-US',
           title: 'Vuescroll.js', 
-          description: 'Beautifying and enhancing your scrollbar'
+          description: 'Beautify and enhance your scrollbar on the web'
         },
         '/zh/': {
           lang: 'zh-CN',
