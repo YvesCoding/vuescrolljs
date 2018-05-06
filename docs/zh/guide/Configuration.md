@@ -110,7 +110,7 @@ deactive|`Push to Load`| 在 `deactive` 阶段的提示.
 initialScrollY|`false`|垂直方向上的滚动距离在组件加载完以后.比如.**100** 或 **10%**
 initialScrollX|`false`|水平方向上的滚动距离在组件加载完以后.比如.**100** 或 **10%**
 speed|`300`|滚动的事件。
-easing|`null`|滚动的动画，[详细的在这里](https://github.com/wangyi7099/vuescroll/blob/5f81713b5a741684cdaded0e647390d61a14fa46/src/util/index.js#L182).
+easing|`null`|滚动的动画，[详细的在这里](https://github.com/wangyi7099/vuescroll/blob/55599a607793549109f098125e225b0f51d7d745/src/easingPattern/index.js#L19).
 
 [在codePen上尝试scrollPanel](https://codepen.io/wangyi7099/pen/mxBdER)
 
@@ -237,6 +237,7 @@ hover|false|只在PC上有效，当鼠标指针移上去的时候显示的颜色
 export default {
   // vuescroll
   vuescroll: {
+    preventDefault: true,
     mode: "native",
     // pullRefresh or pushLoad is only for the slide mode...
     pullRefresh: {
@@ -258,10 +259,28 @@ export default {
       }
     },
     paging: false,
+    zooming: true,
     snapping: {
       enable: false,
       width: 100,
       height: 100
+    },
+    // some scroller options
+    scroller: {
+      /** Enable bouncing (content can be slowly moved outside and jumps back after releasing) */
+      bouncing: true,
+      /** Enable locking to the main axis if user moves only slightly on one of them at start */
+      locking: true,
+      /** Minimum zoom level */
+      minZoom: 0.5,
+      /** Maximum zoom level */
+      maxZoom: 3,
+      /** Multiply or decrease scrolling speed **/
+      speedMultiplier: 1,
+      /** This configures the amount of change applied to deceleration when reaching boundaries  **/
+      penetrationDeceleration : 0.03,
+      /** This configures the amount of change applied to acceleration when reaching boundaries  **/
+      penetrationAcceleration : 0.08
     }
   },
   scrollPanel: {
@@ -278,45 +297,38 @@ export default {
   scrollContent: {
     // customize tag of scrollContent
     tag: "div",
-    padding: true,
-    props: {
-    },
-    attrs: {
-    }
+    padding: false,
+    props: { },
+    attrs: { }
   },
   //
   rail: {
     vRail: {
       width: "5px",
       pos: "right",
-      background: "#a5d6a7",
-      opacity: 0, //'0.5'
-      disabled: false
+      background: "#01a99a",
+      opacity: 0
     },
     // 
     hRail: {
       height: "5px",
       pos: "bottom",
-      background: "#a5d6a7",
-      opacity: 0, //'0.5'
-      disabled: false
+      background: "#01a99a",
+      opacity: 0
     }
   }, 
   bar: {
     // 
     vBar: {
-      width: "5px",
-      pos: "right",
-      background: "#4caf50",
+      background: "#00a650",
+      deltaY: 100,
       keepShow: false,
       opacity: 1,
       hover: false
     },
     // 
     hBar: {
-      height: "5px",
-      pos: "bottom",
-      background: "#4caf50",
+      background: "#00a650",
       keepShow: false,
       opacity: 1,
       hover: false

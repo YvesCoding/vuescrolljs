@@ -11,12 +11,12 @@ module.exports = {
         '/': {
           lang: 'en-US',
           title: 'Vuescroll.js', 
-          description: 'A reactive, multi-modes, virtual scrollbar based on vue.js 2.X'
+          description: 'Beautifying and enhancing your scrollbar'
         },
         '/zh/': {
           lang: 'zh-CN',
           title: 'Vuescroll.js',
-          description: '一个基于vue.js2.X的响应式, 多模式的虚拟滚动条'
+          description: '加强和美化你的滚动条'
         }
     },
     head: [

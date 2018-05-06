@@ -5,9 +5,9 @@ actionText: 开始上手 →
 actionLink: /zh/guide/
 features:
 - title: 多种模式
-  details: 有nativ模式和slide模式可供你选择, 你甚至可以在运行期间切换这两种模式.
+  details: 有nativ模式、slide模式和pure-native模式可供你选择, 你甚至可以在运行期间切换它们。
 - title: Vue-驱动
-  details: 享受Vue开发的体验.当你改变Vuescroll的一个选项时, 你能够立马看到变化.
+  details: Vuescroll是响应式的。 在Vue的帮助下，当你改变Vuescroll的一个选项时, 你能够立刻看到变化。
 - title: 强大的配置
   details: Vuescroll有很多配置， 以至于你可以定制属于你自己的滚动条!
 footer: MIT Licensed | Copyright © 2018-present wangyi7099 | Made by vuepress

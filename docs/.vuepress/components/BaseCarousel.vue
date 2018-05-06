@@ -18,7 +18,7 @@
         v-for="(item, index) in items"
         :key="index"
         :class="{active: currentIndex == index}"
-        @click="goToPage(index)"
+        @click="goToPage(index + 2, true)"
         >
           <i class="dot-item"></i>
         </a>
@@ -32,6 +32,14 @@ export default {
       items: {
         type: Array,
         default: () => []
+      },
+      autoPlay: {
+        type: Boolean,
+        default: true
+      },
+      autoPlayTime: {
+        type: Number,
+        default: 2000
       }
     },
     data() {
@@ -61,20 +69,18 @@ export default {
       this.setItems();
     },
     mounted() {
-        this.width = this.$refs['parentElm'].clientWidth + 'px'; 
+        this.width = this.$refs['parentElm'].clientWidth + 'px';
+        if(this.autoPlay) {
+           setInterval(() => {
+            this.goToPage(this.currentIndex + 3, true)
+            }, this.autoPlayTime) 
+        }
     },
     methods: {
-      goToPage(index) {
+      goToPage(index, animate = false) {
         this.$refs['vs'].goToPage({
-          /* *
-            why add index + 2?
-            1. page is from 1 to ... and
-            end is from 0 to ...
-            2. first or end page are
-            used to make carousel end to end.
-          */
-          x: index + 2
-        }, true)
+          x: index
+        }, animate)
       },
       handleResize({process}) {
         if(process == 0) {
@@ -87,14 +93,10 @@ export default {
         const { x } = this.$refs['vs'].getCurrentPage();
         if(this.result.length > 1) {
           if(x == 1) {
-            this.$refs['vs'].goToPage({
-              x: this.result.length - 1
-            }, false)
+            this.goToPage(this.result.length - 1)
           }
           else if(x == this.result.length) {
-            this.$refs['vs'].goToPage({
-              x: 2
-            }, false)
+            this.goToPage(2)
           }
         }
         const dom = this.$refs['vs'].getCurrentviewDom();

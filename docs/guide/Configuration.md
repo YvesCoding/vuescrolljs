@@ -110,7 +110,7 @@ option|default|description
 initialScrollY|`false`|The vertical distance  that will scroll while component has mounted.e.g.**100** or **10%**
 initialScrollX|`false`|The horizontal distance  that will scroll while component has mounted.e.g.**100** or **10%**
 speed|`300`|The time that scrollPanel scrolls completely.
-easing|`null`|The scrolling animation,[see detail](https://github.com/wangyi7099/vuescroll/blob/5f81713b5a741684cdaded0e647390d61a14fa46/src/util/index.js#L182).
+easing|`null`|The scrolling animation,[see detail](https://github.com/wangyi7099/vuescroll/blob/55599a607793549109f098125e225b0f51d7d745/src/easingPattern/index.js#L19).
 
 [Try scrollPanel options on Codepen](https://codepen.io/wangyi7099/pen/mxBdER)
 
