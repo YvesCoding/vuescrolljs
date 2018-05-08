@@ -1,6 +1,6 @@
 <template>
   <div class="parent time-pick-wrap" ref="parentElm">
-      <vue-scroll :ops="ops" ref="vs" @handle-resize="hr"  @handle-scroll="handleScroll">
+      <vue-scroll :ops="ops" ref="vs" @handle-scroll="handleScroll">
       <ul class="picker-ui" ref="picker">
         <template
         v-for="(item, index) in items"
@@ -10,7 +10,7 @@
         :index="index"
         :class="{active: currentIndex == index}"
         :data-index="index"
-        @click="goToTarget($event)"
+        @click="goToTarget($event.target)"
         class="picker-li"
         >
         {{ item }}
@@ -39,7 +39,8 @@ export default {
             vuescroll: {
               mode: 'slide',
               scroller: {
-                bouncing: false
+                bouncing: false,
+                preventDefault: false
               },
               snapping: {
                 enable: true,
@@ -73,8 +74,8 @@ export default {
         }, true)
         }, 0);
       },
-      goToTarget(e) {
-        const index = e.target.dataset.index;
+      goToTarget(target) {
+        const index = target.dataset.index;
         this.$refs['vs'].scrollBy({
           dy: 50 * (index - this.currentIndex)
         }, true)
@@ -83,7 +84,7 @@ export default {
         const children = this.$refs['picker'].children;
         const length = children.length;
         const currentIndex = Math.floor(length * process); 
-        for (let index = Math.max(currentIndex - 1, 0); index <= currentIndex + 1; index++) {
+        for (let index = Math.max(currentIndex - 1, 0); index <= Math.min(currentIndex + 1, length - 1); index++) {
           const element = children.item(index);
           const { top } = element.getBoundingClientRect();
           const { top: vsTop } = this.$refs['vs'].$el.getBoundingClientRect();

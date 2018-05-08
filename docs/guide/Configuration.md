@@ -259,10 +259,30 @@ export default {
       }
     },
     paging: false,
+    zooming: true,
     snapping: {
       enable: false,
       width: 100,
       height: 100
+    },
+    // some scroller options
+    scroller: {
+      /** Enable bouncing (content can be slowly moved outside and jumps back after releasing) */
+      bouncing: true,
+      /** Enable locking to the main axis if user moves only slightly on one of them at start */
+      locking: true,
+      /** Minimum zoom level */
+      minZoom: 0.5,
+      /** Maximum zoom level */
+      maxZoom: 3,
+      /** Multiply or decrease scrolling speed **/
+      speedMultiplier: 1,
+      /** This configures the amount of change applied to deceleration when reaching boundaries  **/
+      penetrationDeceleration : 0.03,
+      /** This configures the amount of change applied to acceleration when reaching boundaries  **/
+      penetrationAcceleration : 0.08,
+      /** Whether call e.preventDefault when sliding the content or not */
+      preventDefault: true
     }
   },
   scrollPanel: {
@@ -279,45 +299,38 @@ export default {
   scrollContent: {
     // customize tag of scrollContent
     tag: "div",
-    padding: true,
-    props: {
-    },
-    attrs: {
-    }
+    padding: false,
+    props: { },
+    attrs: { }
   },
   //
   rail: {
     vRail: {
       width: "5px",
       pos: "right",
-      background: "#a5d6a7",
-      opacity: 0, //'0.5'
-      disabled: false
+      background: "#01a99a",
+      opacity: 0
     },
     // 
     hRail: {
       height: "5px",
       pos: "bottom",
-      background: "#a5d6a7",
-      opacity: 0, //'0.5'
-      disabled: false
+      background: "#01a99a",
+      opacity: 0
     }
   }, 
   bar: {
     // 
     vBar: {
-      width: "5px",
-      pos: "right",
-      background: "#4caf50",
+      background: "#00a650",
+      deltaY: 100,
       keepShow: false,
       opacity: 1,
       hover: false
     },
     // 
     hBar: {
-      height: "5px",
-      pos: "bottom",
-      background: "#4caf50",
+      background: "#00a650",
       keepShow: false,
       opacity: 1,
       hover: false

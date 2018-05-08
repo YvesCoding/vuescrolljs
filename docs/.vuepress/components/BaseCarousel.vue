@@ -68,12 +68,16 @@ export default {
     created() {
       this.setItems();
     },
+    beforeDestroy() {
+      clearInterval(this.timeId);
+    },
     mounted() {
-        this.width = this.$refs['parentElm'].clientWidth + 'px';
-        if(this.autoPlay) {
-           setInterval(() => {
-            this.goToPage(this.currentIndex + 3, true)
-            }, this.autoPlayTime) 
+        const vm = this;
+        vm.width = vm.$refs['parentElm'].clientWidth + 'px';
+        if(vm.autoPlay) {
+           vm.timeId = setInterval(() => {
+            vm.goToPage(vm.currentIndex + 3, true)
+            }, vm.autoPlayTime) 
         }
         window.addEventListener("resize", () => {
           this.width = this.$refs['parentElm'].clientWidth + 'px';
