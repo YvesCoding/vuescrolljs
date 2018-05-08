@@ -49,6 +49,10 @@ export default {
             this.timeRange.minute.push(index < 10 ? "0" + index : index);
             this.timeRange.second.push(index < 10 ? "0" + index : index);           
         }
+        const date = new Date();
+        this.hour = date.getHours();
+        this.minute = date.getMinutes();
+        this.second = date.getSeconds();
     }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="parent time-pick-wrap" ref="parentElm">
-      <vue-scroll :ops="ops" ref="vs"  @handle-scroll="handleScroll">
+      <vue-scroll :ops="ops" ref="vs" @handle-resize="hr"  @handle-scroll="handleScroll">
       <ul class="picker-ui" ref="picker">
         <template
         v-for="(item, index) in items"
@@ -27,6 +27,9 @@ export default {
       items: {
         type: Array,
         default: () => []
+      },
+      currentValue: {
+         
       }
     },
     data() {
@@ -54,11 +57,22 @@ export default {
           currentIndex: 0
         }
     },
+    created() {
+      this.inintalVal = this.currentValue;
+    },
     mounted() {
         this.width = this.$refs['parentElm'].clientWidth + 'px';
-        this.ops.vuescroll
+        this.setTime();
     },
     methods: {
+      setTime() {
+        const vm = this;
+        setTimeout(() => {
+           vm.$refs['vs'].scrollBy({
+          dy: 50 * vm.inintalVal
+        }, true)
+        }, 0);
+      },
       goToTarget(e) {
         const index = e.target.dataset.index;
         this.$refs['vs'].scrollBy({
