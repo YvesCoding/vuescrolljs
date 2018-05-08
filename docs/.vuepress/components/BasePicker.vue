@@ -15,7 +15,7 @@
         :class="{active: currentIndex == index}"
         :data-index="index"
         @touchstart="goToTarget($event.target)"
-        @click="goToTarget($event.target)"
+        @click="goToTarget($event.target, true)"
         class="picker-li"
         >
         {{ item }}
@@ -72,14 +72,17 @@ export default {
     methods: {
       scrollCompete() {
         this.$nextTick(() => {
-          if(this.target) {
+          this.scrollToElm();
+        })
+      },
+      scrollToElm() {
+        if(this.target) {
             const index = this.target.dataset.index;
             this.target = null;
             this.$refs['vs'].scrollBy({
             dy: 50 * (index - this.currentIndex)
             }, true)
           }
-        })
       },
       clearTarget() {
         this.target = null;
@@ -92,8 +95,11 @@ export default {
         }, true)
         }, 0);
       },
-      goToTarget(target) {
+      goToTarget(target, directly) {
         this.target = target;
+        if(directly) {
+          this.scrollToElm();
+        }
       },
       handleScroll({process}) {
         const children = this.$refs['picker'].children;
