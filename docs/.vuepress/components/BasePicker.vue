@@ -1,6 +1,10 @@
 <template>
   <div class="parent time-pick-wrap" ref="parentElm">
-      <vue-scroll :ops="ops" ref="vs" @handle-scroll="handleScroll">
+      <vue-scroll :ops="ops" ref="vs" 
+      @handle-scroll="handleScroll" 
+      @handle-scroll-complete="scrollCompete" 
+      @touchmove.native="clearTarget"
+      >
       <ul class="picker-ui" ref="picker">
         <template
         v-for="(item, index) in items"
@@ -10,6 +14,7 @@
         :index="index"
         :class="{active: currentIndex == index}"
         :data-index="index"
+        @touchstart="goToTarget($event.target)"
         @click="goToTarget($event.target)"
         class="picker-li"
         >
@@ -39,8 +44,7 @@ export default {
             vuescroll: {
               mode: 'slide',
               scroller: {
-                bouncing: false,
-                preventDefault: false
+                bouncing: false
               },
               snapping: {
                 enable: true,
@@ -66,6 +70,20 @@ export default {
         this.setTime();
     },
     methods: {
+      scrollCompete() {
+        this.$nextTick(() => {
+          if(this.target) {
+            const index = this.target.dataset.index;
+            this.target = null;
+            this.$refs['vs'].scrollBy({
+            dy: 50 * (index - this.currentIndex)
+            }, true)
+          }
+        })
+      },
+      clearTarget() {
+        this.target = null;
+      },
       setTime() {
         const vm = this;
         setTimeout(() => {
@@ -75,10 +93,7 @@ export default {
         }, 0);
       },
       goToTarget(target) {
-        const index = target.dataset.index;
-        this.$refs['vs'].scrollBy({
-          dy: 50 * (index - this.currentIndex)
-        }, true)
+        this.target = target;
       },
       handleScroll({process}) {
         const children = this.$refs['picker'].children;
