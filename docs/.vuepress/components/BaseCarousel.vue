@@ -75,6 +75,9 @@ export default {
             this.goToPage(this.currentIndex + 3, true)
             }, this.autoPlayTime) 
         }
+        window.addEventListener("resize", () => {
+          this.width = this.$refs['parentElm'].clientWidth + 'px';
+        })
     },
     methods: {
       goToPage(index, animate = false) {
@@ -83,6 +86,7 @@ export default {
         }, animate)
       },
       handleResize({process}) {
+        this.width = this.$refs['parentElm'].clientWidth + 'px';
         if(process == 0) {
            this.$refs['vs'].goToPage({
             x: 2

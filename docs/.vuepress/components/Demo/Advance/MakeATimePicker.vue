@@ -1,22 +1,22 @@
 <template>
     <div class="wrap">
-      <span class="demo-title">Paging</span>
-        <div class="parent" ref="parentElm">
-            <vue-scroll :ops="ops">
-            <template
-            v-for="item in 64"
-            >
-            <BaseChild
-            style="border: 1px solid #000" 
-            :key="item"
-            :width="width"
-            :index="item"
-            backgroundColor="rgb(222, 240, 204)"
-            />
-            <br v-if="item % 8 == 0" />
-            </template>
-            </vue-scroll>
-        </div>  
+        <div class="one-third-wrap">
+            <span class="demo-title">Hour:</span>
+            <BasePicker :items="timeRange.hour" :currentValue.sync="hour"/> 
+        </div>
+        <div class="one-third-wrap">
+            <span class="demo-title">Minute:</span>
+            <BasePicker :items="timeRange.minute" :currentValue.sync="minute"/> 
+        </div>
+        <div class="one-third-wrap">
+            <span class="demo-title">Second:</span>
+            <BasePicker :items="timeRange.second" :currentValue.sync="second"/> 
+        </div>
+        <div class="mask-top"></div>
+        <div class="mask-bottom"></div>
+        <div class="result">
+            Time: {{ nowTime }}
+        </div>
     </div>
 </template>
 
@@ -24,28 +24,57 @@
 export default {
     data() {
         return {
-          width: '',
-          ops: {
-            scrollContent: {
-              tag: 'transition-group',
-              props:{
-                  tag: 'div',
-                  name: 'group-animate'
-              }
-            }
-          }
+            timeRange: {
+                hour: [],
+                minute: [],
+                second: []
+            },
+            hour:"",
+            minute: "",
+            second: ""
         }
     },
-    mounted() {
-        this.width = this.$refs['parentElm'].clientWidth / 16  + "rem";
+    computed: {
+        nowTime() {
+            let { hour, minute, second} = this;
+            return hour + ": " + minute + ": " + second;
+        }
+    },
+    created() {
+        // init time 
+        for (let index = 0; index < 60; index++) {
+            if(index < 24) {
+                 this.timeRange.hour.push(index < 10 ? "0" + index : index); 
+            }
+            this.timeRange.minute.push(index < 10 ? "0" + index : index);
+            this.timeRange.second.push(index < 10 ? "0" + index : index);           
+        }
     }
 }
 </script>
 
 <style lang="stylus">
 @import '~assets/common.styl'
-.group-animate-enter
-  transform: translateX(-100px)
-.group-animate-leave-to 
-  transform: translateX(100px)
+.one-third-wrap
+    width 33%
+    float left
+.result
+    clear both
+    height 50px
+    line-height 50px
+    color #828282
+    font-weight bold
+    font-size 1.2em
+    text-align center
+.mask-top, .mask-bottom 
+    position absolute
+    width 100%
+    height 100px
+    z-index -1
+.mask-top
+    top 27px
+    border-bottom 1px solid #e3e3e3
+.mask-bottom
+    bottom 50px
+    border-top 1px solid #e3e3e3
 </style>

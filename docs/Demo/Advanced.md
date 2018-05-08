@@ -1,6 +1,6 @@
 # Advanced Demo
 
-## Customize ContentnTag
+## Customize Content Tag
 
 #### Intrudoction
 
@@ -64,7 +64,7 @@ ops: {
   That is just a demo, you can integrate **this** with `push-load` and `tansition-group` in `slide` mode.
 :::
 
-For a full source code, please visit [demo address](https://github.com/wangyi7099/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/CustimizeContentnTag.vue).
+[source code](https://github.com/wangyi7099/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/CustimizeContentnTag.vue).
 
 ## Make A Carousel
 
@@ -73,76 +73,64 @@ For a full source code, please visit [demo address](https://github.com/wangyi709
 You can make a carousel by using `paging` option. Each page size should be equal to parent dom's height or width.
 
 #### Coding
-1. Write `base carousel`, to make  `carousel item` end to end, we should clone the first and the last one.
-```vue
-<template>
-<!-- something else... -->
-<vue-scroll :ops="ops" ref="vs" @handle-resize="handleResize" @handle-scroll-complete="scrollComplete">
-      <template
-      v-for="(item, index) in result"
-      >
-      <BaseChild
-      :key="index"
-      :width="width"
-      :index="item.index"
-      :useBgImage="true"
-      :backgroundColor="item.url"
-      />
-      </template>
-      </vue-scroll>
-      <div class="dot-group">
-        <a href="javascript:void(0)"
-        v-for="(item, index) in items"
-        :key="index"
-        :class="{active: currentIndex == index}"
-        >
-          <i class="dot-item"></i>
-        </a>
-      </div> 
-</template>
-<script>
-export default {
-// ... something else
-  scrollComplete(v, h) {
-    const { x } = this.$refs['vs'].getCurrentPage();
-    if(this.result.length > 1) {
-      if(x == 1) {
-        this.$refs['vs'].goToPage({
-          x: this.result.length - 1
-        }, false)
-      }
-      else if(x == this.result.length) {
-        this.$refs['vs'].goToPage({
-          x: 2
-        }, false)
-      }
-    }
-    const dom = this.$refs['vs'].getCurrentviewDom();
-    this.currentIndex = dom[0].__vue__.index;
-  },
-  setItems() {
-    const vm = this;
-    this.items.forEach((item, index) => {
-        item.index = index;
-        vm.result.push(item);
-    });
-    if(vm.result.length > 1) { // meke items end to end
-      vm.result.push(this.result[0]);
-      vm.result.unshift(this.result[this.result.length - 2]);
-    }
-  }
-}
+1. Write `base carousel` component. To make  `carousel item` end to end, we should clone the first and the last one. We use `goToPage` api to go to the corresponding page, and `getCurrentviewDom` to get the current view page.
 
-</script>
-```
 2. Preview
 
 <ClientOnly>
 <Demo-Advance-MakeACarousel />
 </ClientOnly>
 
-For a full source code, please visit [demo address](https://github.com/wangyi7099/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue).
+[source code](https://github.com/wangyi7099/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue).
 
 ## Make A TimePicker
+1. You can set `snapping` to true and `bouncing` to `false`, `scrollingX` to false.
+```javascript
+  ops: {
+    vuescroll: {
+      mode: 'slide',
+      scroller: {
+        bouncing: false
+      },
+      snapping: {
+        enable: true,
+        height: 50 // snap height
+      }
+    },
+    scrollPanel: {
+      scrollingX: false
+    },
+    bar: { // hide bar
+        vBar: { opacity: 0},
+        hBar: { opacity: 0}
+    }
+  }
+```
+2. Calculate `currentIndex` in `handleScroll` event.
+```javascript
+handleScroll({process}) {
+  const children = this.$refs['picker'].children;
+  const length = children.length;
+  const currentIndex = Math.floor(length * process); 
+  for (let index = Math.max(currentIndex - 1, 0); index <= currentIndex + 1; index++) {
+    const element = children.item(index);
+    const { top } = element.getBoundingClientRect();
+    const { top: vsTop } = this.$refs['vs'].$el.getBoundingClientRect();
+    if(
+      (top - vsTop < 125 && top - vsTop >= 100) 
+      ||
+      (top - vsTop > 75 && top - vsTop <= 100)
+    ) {
+      this.currentIndex = element.dataset.index;
+      const formatValue = this.currentIndex < 10 ? "0" + this.currentIndex : this.currentIndex;
+      this.$emit("update:currentValue", formatValue);
+    }
+  }
+}
+```
+3. Preview
+<ClientOnly>
+<Demo-Advance-MakeATimePicker />
+</ClientOnly>
 
-WIP...
+[source code](https://github.com/wangyi7099/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeATimePicker.vue).
