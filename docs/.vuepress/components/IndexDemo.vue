@@ -11,7 +11,11 @@
 export default { 
   data() {
     return {
-      ops: {} // Your options
+      ops: {
+        scrollPanel: {
+          scrollingX: false
+        }
+      } // Your options
     }
   }
 }

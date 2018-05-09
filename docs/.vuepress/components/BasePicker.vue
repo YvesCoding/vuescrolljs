@@ -2,8 +2,6 @@
   <div class="parent time-pick-wrap" ref="parentElm">
       <vue-scroll :ops="ops" ref="vs" 
       @handle-scroll="handleScroll" 
-      @handle-scroll-complete="scrollCompete" 
-      @touchmove.native="clearTarget"
       >
       <ul class="picker-ui" ref="picker">
         <template
@@ -45,7 +43,7 @@ export default {
               mode: 'slide',
               scroller: {
                 bouncing: false,
-                preventDefault: true
+                preventDefault: false
               },
               snapping: {
                 enable: true,

@@ -16,7 +16,7 @@ module.exports = {
         '/zh/': {
           lang: 'zh-CN',
           title: 'Vuescroll.js',
-          description: '加强和美化你的滚动条'
+          description: '美化和增强你的滚动条'
         }
     },
     head: [
