@@ -11,35 +11,56 @@ Vuescroll的配置项是由5部分组成的, 它们是 `vuescroll`, `scrollPanel
 :::
 ### 详细配置
 ```javascript
-  // vuescroll
   vuescroll: {
-    mode: "native",
-    // pullRefresh 和 pushLoad 只在slide 模式下有效...
+    mode: 'native',
+    // vuescroll's size(height/width) should be a percent(100%)
+    // or be a number that is equal to its parentNode's width or
+    // height ?
+    sizeStrategy: 'percent',
+    // pullRefresh or pushLoad is only for the slide mode...
     pullRefresh: {
       enable: false,
       tips: {
-        deactive: "Pull to Refresh",
-        active: "Release to Refresh",
-        start: "Refreshing...",
-        beforeDeactive: "Refresh Successfully!"
+        deactive: 'Pull to Refresh',
+        active: 'Release to Refresh',
+        start: 'Refreshing...',
+        beforeDeactive: 'Refresh Successfully!'
       }
     },
     pushLoad: {
       enable: false,
       tips: {
-        deactive: "Push to Load",
-        active: "Release to Load",
-        start: "Loading...",
-        beforeDeactive: "Load Successfully!"
+        deactive: 'Push to Load',
+        active: 'Release to Load',
+        start: 'Loading...',
+        beforeDeactive: 'Load Successfully!'
       }
     },
-    // 是否启用paging? 只在slide mode下有效。
     paging: false,
-    // 是否启动snapping? 只在slide模式下有效。
+    zooming: true,
     snapping: {
       enable: false,
       width: 100,
       height: 100
+    },
+    // some scroller options
+    scroller: {
+      /** Enable bouncing (content can be slowly moved outside and jumps back after releasing) */
+      bouncing: true,
+      /** Enable locking to the main axis if user moves only slightly on one of them at start */
+      locking: true,
+      /** Minimum zoom level */
+      minZoom: 0.5,
+      /** Maximum zoom level */
+      maxZoom: 3,
+      /** Multiply or decrease scrolling speed **/
+      speedMultiplier: 1,
+      /** This configures the amount of change applied to deceleration when reaching boundaries  **/
+      penetrationDeceleration: 0.03,
+      /** This configures the amount of change applied to acceleration when reaching boundaries  **/
+      penetrationAcceleration: 0.08,
+      /** Whether call e.preventDefault event when sliding the content or not */
+      preventDefault: true
     }
   }
 ```
@@ -47,6 +68,8 @@ Vuescroll的配置项是由5部分组成的, 它们是 `vuescroll`, `scrollPanel
 配置项|默认|描述
 -----|------------|----
 mode|`native`| 选择vuescroll一个模式, **native** 或者 **slide** 或者 **pure-native**(在4.5.0里面新增的！).
+sizeStrategy|`percent`|设置 `vuescroll`的大小类型， 可选的有`percent`, `number`. 设置为`percent`会把vuescroll的height和width设置成`100%`,设置成`number`的话vuescroll会自动计算父元素的大小，并将`height`和`width`设置成对应的数值。提示， 如果父元素的尺寸为百分比大小时建议设置成`number`， 如果父元素大小为一个固定的`px`的值， 那么设置为百分比比较合适一些。
+scroller|`{}`|一些只属于scroller的配置。
 pullRefresh|`{}`| 设置刷新相关的配置项.
 pushLoad|`{}`| 设置加载相关的配置项.
 paging|`false`| 是否启用paging.

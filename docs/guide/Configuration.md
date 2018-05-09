@@ -11,35 +11,56 @@ Vuescroll here is just an **option** here, not vuescroll component itself. Set t
 :::
 ### Detailed Options
 ```javascript
-  // vuescroll
   vuescroll: {
-    mode: "native",
-    // pullRefresh and pushLoad are only for the slide mode...
+    mode: 'native',
+    // vuescroll's size(height/width) should be a percent(100%)
+    // or be a number that is equal to its parentNode's width or
+    // height ?
+    sizeStrategy: 'percent',
+    // pullRefresh or pushLoad is only for the slide mode...
     pullRefresh: {
       enable: false,
       tips: {
-        deactive: "Pull to Refresh",
-        active: "Release to Refresh",
-        start: "Refreshing...",
-        beforeDeactive: "Refresh Successfully!"
+        deactive: 'Pull to Refresh',
+        active: 'Release to Refresh',
+        start: 'Refreshing...',
+        beforeDeactive: 'Refresh Successfully!'
       }
     },
     pushLoad: {
       enable: false,
       tips: {
-        deactive: "Push to Load",
-        active: "Release to Load",
-        start: "Loading...",
-        beforeDeactive: "Load Successfully!"
+        deactive: 'Push to Load',
+        active: 'Release to Load',
+        start: 'Loading...',
+        beforeDeactive: 'Load Successfully!'
       }
     },
-    // enable paging? Only for slide mode
     paging: false,
-    // enable snapping? Only for slide mode
+    zooming: true,
     snapping: {
       enable: false,
       width: 100,
       height: 100
+    },
+    // some scroller options
+    scroller: {
+      /** Enable bouncing (content can be slowly moved outside and jumps back after releasing) */
+      bouncing: true,
+      /** Enable locking to the main axis if user moves only slightly on one of them at start */
+      locking: true,
+      /** Minimum zoom level */
+      minZoom: 0.5,
+      /** Maximum zoom level */
+      maxZoom: 3,
+      /** Multiply or decrease scrolling speed **/
+      speedMultiplier: 1,
+      /** This configures the amount of change applied to deceleration when reaching boundaries  **/
+      penetrationDeceleration: 0.03,
+      /** This configures the amount of change applied to acceleration when reaching boundaries  **/
+      penetrationAcceleration: 0.08,
+      /** Whether call e.preventDefault event when sliding the content or not */
+      preventDefault: true
     }
   }
 ```
@@ -47,6 +68,8 @@ Vuescroll here is just an **option** here, not vuescroll component itself. Set t
 option|default|description
 -----|------------|----
 mode|`native`| Choose a mode of vuescroll, **native** or **slide** or **pure-native**(new in 4.5.0).
+sizeStrategy|`percent`|Set the type of the size of `vuescroll`. The optional configs are `percent`, `number`.When set to `percent`, vuescroll's height will be `100%` and width will be `100%`, and set to `number`, vuescroll will calculate its parent dom's size automatically, and set `height` and `width` to the corresponding values. A small tip: If parent dom's size is a percent value,  I suggest you to set to `number`， and if parent dom's size is a fixed `px` value， I suggest you to set to `percent`.
+scroller|`{}`| Some options that only belong to scroller.
 pullRefresh|`{}`| Set the options about the refresh.
 pushLoad|`{}`| Set the options about the load.
 paging|`false`| Enable Paging or not.

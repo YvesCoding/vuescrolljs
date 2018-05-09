@@ -44,7 +44,8 @@ export default {
             vuescroll: {
               mode: 'slide',
               scroller: {
-                bouncing: false
+                bouncing: false,
+                preventDefault: true
               },
               snapping: {
                 enable: true,
