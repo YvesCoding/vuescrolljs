@@ -63,4 +63,6 @@ export default {
 
 ## 微信交流群
 
-![](https://github.com/wangyi7099/pictureCdn/blob/master/allPic/vuescroll/wx.png?raw=true)
+<p align="center">
+  <img src="https://github.com/wangyi7099/pictureCdn/blob/master/allPic/vuescroll/wx.png?raw=true" width="400">
+</p>
