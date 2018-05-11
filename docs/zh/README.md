@@ -26,13 +26,13 @@ footer: MIT Licensed | Copyright © 2018-present wangyi7099 | Made by vuepress
   </div>
 </template>
 <script>
-export default { 
+export default {
   data() {
     return {
       ops: {} // Your options
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="stylus">
@@ -54,8 +54,13 @@ export default {
     font-weight 300
 </style>
 ```
+
 ## 预览
 
 <ClientOnly>
 <IndexDemo />
 </ClientOnly>
+
+## 微信交流群
+
+![](https://github.com/wangyi7099/pictureCdn/blob/master/allPic/vuescroll/wx.png?raw=true)
