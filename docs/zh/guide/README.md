@@ -12,8 +12,8 @@ Vuescroll 是一个基于 Vue.js 的虚拟滚动条，设计它的目的是用�
 
 ### iscroll, better-scroll, scroller
 
-`iscroll` `scroller` and `better-scroll` are good scrolling libraries, but vuescroll has the following differences:
+`iscroll` `scroller` 和 `better-scroll` 都是很好的滚动库，但是 vuescroll 有以下几点不同：
 
-1.  focus on Vue, a virtual scroll bar tailored for Vue.
+1.  专注于 Vue，为 Vue 量身打造的一个虚拟滚动条。
 
-2.  has a variety of modes, suitable for different platforms.
+2.  拥有多种模式，适合不同平台。

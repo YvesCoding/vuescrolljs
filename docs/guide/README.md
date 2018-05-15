@@ -12,7 +12,8 @@ The native scrollbar is a scrollbar of the browser's own. It has a lot of functi
 
 ### iscroll, better-scroll, scroller
 
-iscroll , scroller and better-scroll all do well, they all have a good UX，but vuescroll has some diffrerence bellow：
+`iscroll` `scroller` and `better-scroll` are good scrolling libraries, but vuescroll has the following differences:
 
-* Focus on Vue，pecially design for Vue,
-* Many modes coexist，that is, has native mode and slide mode, toggle flexiable.
+1.  focus on Vue, a virtual scroll bar tailored for Vue.
+
+2.  has a variety of modes, suitable for different platforms.
