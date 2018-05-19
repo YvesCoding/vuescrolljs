@@ -161,3 +161,35 @@ None | Return an array that contains the currentview doms.
     }
 ```
 [Try getCurrentviewDom api on Codepen](https://codepen.io/wangyi7099/pen/LmzJrv)
+
+## scrollIntoView(4.5.17)
+### Introduction
+Scroll the child elements in the Vuescroll to the current view.
+### Detailed params
+params|description
+------------|----
+`String|HTMLElement`|A string or a dom element.
+### Usage
+```html
+    <vue-scroll
+    ref="vs"
+    >
+    <div
+    v-for="i in 3"
+    :key="i"
+    :id="'d' + i"
+    >
+    </div>
+    </vue-scroll>
+```
+```javascript
+    // ...
+    {
+        methods: {
+            scrollBy() {
+                this.$refs['vs'].scrollIntoView('#d3')
+            }
+        }
+    }
+```
+[Try crollIntoView on Codepen](https://codepen.io/wangyi7099/pen/dewQbM)

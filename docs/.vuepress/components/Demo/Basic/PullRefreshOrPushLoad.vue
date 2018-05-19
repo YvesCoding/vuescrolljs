@@ -75,7 +75,6 @@ export default {
       }
     },
     mounted() {
-        console.log(123);
         this.width = this.$refs['parentElm'].clientWidth / 16 + "rem";
     }
 }

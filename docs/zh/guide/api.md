@@ -162,3 +162,35 @@ None | 返回一个数组包含当前视图下的元素。
     }
 ```
 [在Codepen上尝试getCurrentviewDom](https://codepen.io/wangyi7099/pen/LmzJrv)
+
+## scrollIntoView(4.5.17)
+### 介绍
+把Vuescroll内的子元素滚动到当前视图内。
+### 详细参数
+参数|描述
+------------|----
+`String|HTMLElement`|一个String或者是一个dom元素
+### 用法
+```html
+    <vue-scroll
+    ref="vs"
+    >
+    <div
+    v-for="i in 3"
+    :key="i"
+    :id="'d' + i"
+    >
+    </div>
+    </vue-scroll>
+```
+```javascript
+    // ...
+    {
+        methods: {
+            scrollBy() {
+                this.$refs['vs'].scrollIntoView('#d3')
+            }
+        }
+    }
+```
+[在codePen上尝试scrollIntoView](https://codepen.io/wangyi7099/pen/dewQbM)
