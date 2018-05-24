@@ -11,7 +11,7 @@ module.exports = {
     '/': {
       lang: 'en-US',
       title: 'Vuescroll.js',
-      description: 'A configuration based Vue virtual scrollbar'
+      description: 'A configuration based Vue.js virtual scrollbar'
     },
     '/zh/': {
       lang: 'zh-CN',
