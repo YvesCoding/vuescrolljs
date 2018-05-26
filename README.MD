@@ -1,17 +1,24 @@
-# Vuescroll oficial website
+  <p align="center"><a href="https://wangyi7099.github.io/vuescrolljs/"><img width="100" src="https://wangyi7099.github.io/vuescrolljs/logo.png" /></a></p>
+<h2 align="center">Vuescroll oficial website</h2>
 
-## Build
+## Introduction
+This site is built with [Vuepress](https://github.com/vuejs/vuepress). Site content is written in Markdown format located in docs. Pull requests welcome!
+
+## Install
+
 ```bash
-   yarn install
-   # or npm install
-   npx vuepress build docs
+yarn install
+# or npm install
 ```
 
 ## Dev
 
 ```bash
-   npx vuepress dev docs
+   npm run dev
 ```
 
-## PR Welcome!
+## Build
+```bash
+   npm run build
+```
 

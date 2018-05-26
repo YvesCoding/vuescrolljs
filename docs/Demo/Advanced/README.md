@@ -136,8 +136,9 @@ handleScroll({process}) {
 ```
 
 3.  Preview
-    <ClientOnly>
-    <Demo-Advance-MakeATimePicker />
-    </ClientOnly>
+
+<ClientOnly>
+<Demo-Advance-MakeATimePicker />
+</ClientOnly>
 
 [source code](https://github.com/wangyi7099/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeATimePicker.vue).
