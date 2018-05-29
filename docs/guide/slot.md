@@ -2,7 +2,7 @@
 
 ## pull-refresh/push-load
 
-In the case of mode for `slide` and when pull-refresh/push-load is enabled, a different slot can be sent to Vuescroll as a hint for different stages of pull-refresh/push-load.
+In the case of mode for `slide` and when pull-refresh/push-load is enabled, a different slot can be sent to Vuescroll as a hint for different stages of pull-refresh/push-load.**Make sure thatthe position of your slot DOM is absolute, or may cause some bugs.**
 
 ### Refresh
 
