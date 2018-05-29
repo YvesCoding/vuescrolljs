@@ -157,7 +157,7 @@ scrollContent是滚动的内容的包装。vuescroll通过scrollContent来计算
 ```
 ### 解释
 
-配置项|默认Value|描述
+配置项|默认值|描述
 -----|------------|----
 padding|`true`|设置是否启用padding。可以用来阻止内容被滚动条遮住一部分。 
 tag|`div`| 自动以标签。
@@ -211,6 +211,7 @@ opacity|0|s设置轨道的透明度。
 ### 详细配置
 ```javascript
   bar: {
+    delayTime: 500,
     // 
     vBar: {
       background: "#4caf50",
@@ -229,7 +230,12 @@ opacity|0|s设置轨道的透明度。
 ```
 ### 解释
 
-vBar/hBar|默认Value|描述
+bar|默认值|描述
+-----|------------|----
+delayTime| 500 | 控制滚动条每次显示多长时间然后自动消失
+vBar/hBar|见下面
+
+vBar/hBar|默认值|描述
 -----|------------|----
 background|`#4caf50`| 设置滚动条背景色
 keepShow|false| 设置滚动条是否保持显示
@@ -260,24 +266,28 @@ hover|false|只在PC上有效，当鼠标指针移上去的时候显示的颜色
 export default {
   // vuescroll
   vuescroll: {
-    mode: "native",
+    mode: 'native',
+    // vuescroll's size(height/width) should be a percent(100%)
+    // or be a number that is equal to its parentNode's width or
+    // height ?
+    sizeStrategy: 'percent',
     // pullRefresh or pushLoad is only for the slide mode...
     pullRefresh: {
       enable: false,
       tips: {
-        deactive: "Pull to Refresh",
-        active: "Release to Refresh",
-        start: "Refreshing...",
-        beforeDeactive: "Refresh Successfully!"
+        deactive: 'Pull to Refresh',
+        active: 'Release to Refresh',
+        start: 'Refreshing...',
+        beforeDeactive: 'Refresh Successfully!'
       }
     },
     pushLoad: {
       enable: false,
       tips: {
-        deactive: "Push to Load",
-        active: "Release to Load",
-        start: "Loading...",
-        beforeDeactive: "Load Successfully!"
+        deactive: 'Push to Load',
+        active: 'Release to Load',
+        start: 'Loading...',
+        beforeDeactive: 'Load Successfully!'
       }
     },
     paging: false,
@@ -300,9 +310,9 @@ export default {
       /** Multiply or decrease scrolling speed **/
       speedMultiplier: 1,
       /** This configures the amount of change applied to deceleration when reaching boundaries  **/
-      penetrationDeceleration : 0.03,
+      penetrationDeceleration: 0.03,
       /** This configures the amount of change applied to acceleration when reaching boundaries  **/
-      penetrationAcceleration : 0.08,
+      penetrationAcceleration: 0.08,
       /** Whether call e.preventDefault event when sliding the content or not */
       preventDefault: true
     }
@@ -317,46 +327,45 @@ export default {
     speed: 300,
     easing: undefined
   },
-  // 
+  //
   scrollContent: {
     // customize tag of scrollContent
-    tag: "div",
+    tag: 'div',
     padding: false,
-    props: { },
-    attrs: { }
+    props: {},
+    attrs: {}
   },
   //
   rail: {
     vRail: {
-      width: "5px",
-      pos: "right",
-      background: "#01a99a",
+      width: '6px',
+      pos: 'right',
+      background: '#01a99a',
       opacity: 0
     },
-    // 
+    //
     hRail: {
-      height: "5px",
-      pos: "bottom",
-      background: "#01a99a",
+      height: '6px',
+      pos: 'bottom',
+      background: '#01a99a',
       opacity: 0
     }
-  }, 
+  },
   bar: {
-    // 
+    showDelay: 500,
     vBar: {
-      background: "#00a650",
-      deltaY: 100,
+      background: '#00a650',
       keepShow: false,
       opacity: 1,
       hover: false
     },
-    // 
+    //
     hBar: {
-      background: "#00a650",
+      background: '#00a650',
       keepShow: false,
       opacity: 1,
       hover: false
-    } 
+    }
   }
 };
 ```

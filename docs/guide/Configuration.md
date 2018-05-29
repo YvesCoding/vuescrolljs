@@ -212,6 +212,7 @@ opacity|0|Set the rail's  opacity
 ### Detailed Options
 ```javascript
   bar: {
+    delayTime: 500,
     // 
     vBar: {
       background: "#4caf50",
@@ -229,6 +230,11 @@ opacity|0|Set the rail's  opacity
   }
 ```
 ### Explanation
+
+bar|defaultValue|description
+-----|------------|----
+delayTime| 500 | Control how long the scroll bar is displayed every time and then disappear automatically.
+vBar/hBar|See below
 
 vBar/hBar|defaultValue|description
 -----|------------|----
@@ -261,24 +267,28 @@ And the complete global config is
 export default {
   // vuescroll
   vuescroll: {
-    mode: "native",
+    mode: 'native',
+    // vuescroll's size(height/width) should be a percent(100%)
+    // or be a number that is equal to its parentNode's width or
+    // height ?
+    sizeStrategy: 'percent',
     // pullRefresh or pushLoad is only for the slide mode...
     pullRefresh: {
       enable: false,
       tips: {
-        deactive: "Pull to Refresh",
-        active: "Release to Refresh",
-        start: "Refreshing...",
-        beforeDeactive: "Refresh Successfully!"
+        deactive: 'Pull to Refresh',
+        active: 'Release to Refresh',
+        start: 'Refreshing...',
+        beforeDeactive: 'Refresh Successfully!'
       }
     },
     pushLoad: {
       enable: false,
       tips: {
-        deactive: "Push to Load",
-        active: "Release to Load",
-        start: "Loading...",
-        beforeDeactive: "Load Successfully!"
+        deactive: 'Push to Load',
+        active: 'Release to Load',
+        start: 'Loading...',
+        beforeDeactive: 'Load Successfully!'
       }
     },
     paging: false,
@@ -301,10 +311,10 @@ export default {
       /** Multiply or decrease scrolling speed **/
       speedMultiplier: 1,
       /** This configures the amount of change applied to deceleration when reaching boundaries  **/
-      penetrationDeceleration : 0.03,
+      penetrationDeceleration: 0.03,
       /** This configures the amount of change applied to acceleration when reaching boundaries  **/
-      penetrationAcceleration : 0.08,
-      /** Whether call e.preventDefault when sliding the content or not */
+      penetrationAcceleration: 0.08,
+      /** Whether call e.preventDefault event when sliding the content or not */
       preventDefault: true
     }
   },
@@ -318,46 +328,45 @@ export default {
     speed: 300,
     easing: undefined
   },
-  // 
+  //
   scrollContent: {
     // customize tag of scrollContent
-    tag: "div",
+    tag: 'div',
     padding: false,
-    props: { },
-    attrs: { }
+    props: {},
+    attrs: {}
   },
   //
   rail: {
     vRail: {
-      width: "5px",
-      pos: "right",
-      background: "#01a99a",
+      width: '6px',
+      pos: 'right',
+      background: '#01a99a',
       opacity: 0
     },
-    // 
+    //
     hRail: {
-      height: "5px",
-      pos: "bottom",
-      background: "#01a99a",
+      height: '6px',
+      pos: 'bottom',
+      background: '#01a99a',
       opacity: 0
     }
-  }, 
+  },
   bar: {
-    // 
+    showDelay: 500,
     vBar: {
-      background: "#00a650",
-      deltaY: 100,
+      background: '#00a650',
       keepShow: false,
       opacity: 1,
       hover: false
     },
-    // 
+    //
     hBar: {
-      background: "#00a650",
+      background: '#00a650',
       keepShow: false,
       opacity: 1,
       hover: false
-    } 
+    }
   }
 };
 ```
