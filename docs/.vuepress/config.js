@@ -94,7 +94,7 @@ function genSidebarConfig(title) {
     {
       title,
       collapsable: false,
-      children: ['', 'getting-started', 'Configuration', 'event', 'api']
+      children: ['', 'getting-started', 'Configuration', 'event', 'api', 'slot']
     }
   ];
 }
