@@ -31,9 +31,7 @@ export default {
         type: Array,
         default: () => []
       },
-      currentValue: {
-         
-      }
+      currentValue: {}
     },
     data() {
         return {
@@ -69,11 +67,6 @@ export default {
         this.setTime();
     },
     methods: {
-      scrollCompete() {
-        this.$nextTick(() => {
-          this.scrollToElm();
-        })
-      },
       scrollToElm() {
         if(this.target) {
             const index = this.target.dataset.index;
@@ -128,7 +121,8 @@ export default {
 .time-pick-wrap
   height 250px!important
 .picker-ui
-  margin 100px 0
+  padding 100px 0
+  margin 0
 .picker-li
   height: 50px
   line-height 50px

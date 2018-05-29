@@ -50,9 +50,9 @@ export default {
             this.timeRange.second.push(index < 10 ? "0" + index : index);           
         }
         const date = new Date();
-        this.hour = date.getHours();
-        this.minute = date.getMinutes();
-        this.second = date.getSeconds();
+        this.hour = date.getHours() - 0;
+        this.minute = date.getMinutes() - 0;
+        this.second = date.getSeconds() - 0;
     }
 }
 </script>
@@ -72,6 +72,7 @@ export default {
     text-align center
 .mask-top, .mask-bottom 
     position absolute
+    margin 0
     width 100%
     height 100px
     z-index -1
