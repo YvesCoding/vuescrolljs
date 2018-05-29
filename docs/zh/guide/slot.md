@@ -21,3 +21,5 @@
 | load-beforeDeactive | beforeDeactive | beforeDeactive阶段显示的提示dom
 | load-start | start | start阶段显示的提示dom
 | load-active | active | active阶段显示的提示dom
+
+[在codePen上爽一把slot dom](https://codepen.io/wangyi7099/pen/vrYmVx)
