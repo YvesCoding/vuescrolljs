@@ -11,12 +11,12 @@ module.exports = {
     '/': {
       lang: 'en-US',
       title: 'Vuescroll.js',
-      description: 'A configuration based Vue.js virtual scrollbar'
+      description: 'A configurable Vue.js virtual scrollbar'
     },
     '/zh/': {
       lang: 'zh-CN',
       title: 'Vuescroll.js',
-      description: '一个基于配置的Vue.js虚拟滚动条'
+      description: '一个可配置的Vue.js虚拟滚动条'
     }
   },
   head: [['link', { rel: 'icon', href: `/logo.png` }]],
