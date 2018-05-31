@@ -193,3 +193,44 @@ params|description
     }
 ```
 [Try crollIntoView on Codepen](https://codepen.io/wangyi7099/pen/dewQbM)
+
+## triggerRefreshOrLoad(4.5.32)
+### 介绍
+Activate pull to refresh or push to load directly,
+### 详细参数
+params|description
+------------|----
+`refresh|load`|load or refresh
+### Usage
+```html
+    <vue-scroll
+    ref="vs"
+    :ops="ops"
+    >
+    <div
+    v-for="i in 3"
+    :key="i"
+    :id="'d' + i"
+    >
+    </div>
+    </vue-scroll>
+```
+```javascript
+    // ...
+    {
+        ops: {
+            vuescroll: {
+                mode: 'slide',
+                pullRefresh: {
+                    enable: true
+                }
+            }
+        },
+        methods: {
+            triggerRefreshOrLoad() {
+                this.$refs['vs'].triggerRefreshOrLoad('load')
+            }
+        }
+    }
+```
+[Try triggerRefreshOrLoad on codePen](https://codepen.io/wangyi7099/pen/VdLPgz)

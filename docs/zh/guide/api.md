@@ -194,3 +194,44 @@ None | 返回一个数组包含当前视图下的元素。
     }
 ```
 [在codePen上尝试scrollIntoView](https://codepen.io/wangyi7099/pen/dewQbM)
+
+## triggerRefreshOrLoad(4.5.32)
+### 介绍
+直接激活刷新或者加载
+### 详细参数
+参数|描述
+------------|----
+`refresh|load`|刷新或者是加载
+### 用法
+```html
+    <vue-scroll
+    ref="vs"
+    :ops="ops"
+    >
+    <div
+    v-for="i in 3"
+    :key="i"
+    :id="'d' + i"
+    >
+    </div>
+    </vue-scroll>
+```
+```javascript
+    // ...
+    {
+        ops: {
+            vuescroll: {
+                mode: 'slide',
+                pullRefresh: {
+                    enable: true
+                }
+            }
+        },
+        methods: {
+            triggerRefreshOrLoad() {
+                this.$refs['vs'].triggerRefreshOrLoad('load')
+            }
+        }
+    }
+```
+[在codePen上尝试triggerRefreshOrLoad](https://codepen.io/wangyi7099/pen/VdLPgz)
