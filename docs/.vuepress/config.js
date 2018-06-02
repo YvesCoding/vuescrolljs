@@ -39,10 +39,10 @@ module.exports = {
             link: '/guide/'
           },
           {
-            text: 'demo',
+            text: 'Demo',
             items: [
-              { text: 'basic', link: '/demo/basic/' },
-              { text: 'advanced', link: '/demo/advanced/' }
+              { text: 'Basic', link: '/demo/basic/' },
+              { text: 'Advanced', link: '/demo/advanced/' }
             ]
           }
         ],
