@@ -13,7 +13,7 @@ features:
 footer: MIT Licensed | Copyright © 2018-present wangyi7099 | Made by vuepress
 ---
 
-## A simple example
+## A simple getting-start
 
 ```vue
 <template>
@@ -26,13 +26,13 @@ footer: MIT Licensed | Copyright © 2018-present wangyi7099 | Made by vuepress
   </div>
 </template>
 <script>
-export default { 
+export default {
   data() {
     return {
       ops: {} // Your options
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="stylus">
@@ -54,6 +54,7 @@ export default {
     font-weight 300
 </style>
 ```
+
 ## Preview
 
 <ClientOnly>

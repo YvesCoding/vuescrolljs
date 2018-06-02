@@ -13,7 +13,7 @@ features:
 footer: MIT Licensed | Copyright © 2018-present wangyi7099 | Made by vuepress
 ---
 
-## 一个简单的例子
+## 一个简单的上手
 
 ```vue
 <template>
