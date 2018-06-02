@@ -23,7 +23,7 @@ You can also change the styles of the scroll bar by changing the configuration, 
 * `Background`
 * `Keep show or not`
 
-> To learn more, please visit the official website [guide page](https://wangyi7099.github.io/vuescrolljs/guide/)
+> To learn more, please visit the official website [guide page](http://vuescrolljs.yvescoding.org/guide/)
 
 > If you do not satisfy the above characteristics and want to expand the features, consider to [contribution code](#contribution).
 
@@ -40,7 +40,7 @@ In general, Vuescroll is more than a scrollbar, you can use it to make a carouse
   * `slide` mode: Allow you slide by finger or mouse pointer, has ability to slide out of bountry, it is suitable for the users who use mobile phone.
   * `pure-native` mode: Use native scrollbar, it is suitable for PC and the users who like native scrollbar.
 * Ability to detect the size change of the content and automatically update scrollbar.
-* Ability to scroll smoothly by using [different animations](https://wangyi7099.github.io/vuescrolljs/guide/Configuration.html#scrollpanel).
+* Ability to scroll smoothly by using [different animations](http://vuescrolljs.yvescoding.org/guide/Configuration.html#scrollpanel).
 * Pull-to-Refresh (Pull top out of the boundaries to start refreshing list)
 * Push-to-Load (Push bottom out of the boundaries to start loading list)
 * Ability to zoom in or zoom out the scroll content.

@@ -22,8 +22,8 @@ module.exports = {
   },
   head: [['link', { rel: 'icon', href: `/logo.png` }]],
   themeConfig: {
-    repo: 'wangyi7099/vuescroll',
-    docsRepo: 'wangyi7099/vuescrolljs',
+    repo: 'YvesCoding/vuescroll',
+    docsRepo: 'YvesCoding/vuescrolljs',
     editLinks: true,
     docsDir: 'docs',
     docsBranch: 'master',
@@ -39,17 +39,17 @@ module.exports = {
             link: '/guide/'
           },
           {
-            text: 'Demo',
+            text: 'demo',
             items: [
-              { text: 'Basic', link: '/Demo/Basic/' },
-              { text: 'Advanced', link: '/Demo/Advanced/' }
+              { text: 'basic', link: '/demo/basic/' },
+              { text: 'advanced', link: '/demo/advanced/' }
             ]
           }
         ],
         sidebar: {
           '/guide/': genSidebarConfig('Guide'),
-          '/Demo/Basic/': genDemo('Basic Demo'),
-          '/Demo/Advanced/': genDemo('Advanced Demo')
+          '/demo/basic/': genDemo('Basic Demo'),
+          '/demo/advanced/': genDemo('Advanced Demo')
         }
       },
       '/zh/': {
@@ -64,15 +64,15 @@ module.exports = {
           {
             text: 'Demo',
             items: [
-              { text: '基础', link: '/zh/Demo/Basic/' },
-              { text: '高级', link: '/zh/Demo/Advanced/' }
+              { text: '基础', link: '/zh/demo/basic/' },
+              { text: '高级', link: '/zh/demo/advanced/' }
             ]
           }
         ],
         sidebar: {
           '/zh/guide/': genSidebarConfig('指南'),
-          '/zh/Demo/Basic/': genDemo('基础Demo'),
-          '/zh/Demo/Advanced/': genDemo('高级Demo')
+          '/zh/demo/basic/': genDemo('基础Demo'),
+          '/zh/demo/advanced/': genDemo('高级Demo')
         }
       }
     }
@@ -94,7 +94,7 @@ function genSidebarConfig(title) {
     {
       title,
       collapsable: false,
-      children: ['', 'getting-started', 'Configuration', 'event', 'api', 'slot']
+      children: ['', 'getting-started', 'configuration', 'event', 'api', 'slot']
     }
   ];
 }

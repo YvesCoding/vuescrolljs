@@ -20,7 +20,7 @@ Vuescroll 一个简单上手，有充足配置的滚动小管家。
 * `背景色`
 * `是否保持显示`
 
-> 想了解更多请访问官方网站[指南页面](https://wangyi7099.github.io/vuescrolljs/zh/)
+> 想了解更多请访问官方网站[指南页面](http://vuescrolljs.yvescoding.org/zh/)
 
 > 如果你不满足上述特性，想要扩展特性的话，请考虑[贡献代码](#贡献)。
 
@@ -38,7 +38,7 @@ Vuescroll 一个简单上手，有充足配置的滚动小管家。
   * `slide` 模式: 允许你用手指或鼠标滑动内容， 可以滑动超出边界范围，适用于移动端端用户。
   * `pure-native`模式: 滚动条使用原生的滚动条，适用于喜欢原生滚动条的用户。
 * 检测滚动内容发生尺寸变化并自动更新滚动条。
-* 通过使用 [不同的滚动动画](https://wangyi7099.github.io/vuescrolljs/zh/guide/Configuration.html#scrollpanel)来平滑滚动。
+* 通过使用 [不同的滚动动画](http://vuescrolljs.yvescoding.org/zh/guide/Configuration.html#scrollpanel)来平滑滚动。
 * 下拉-刷新 (拉倒顶部并拉出边界开始刷新列表)
 * 上推-加载 (推到底部并且退出边界开始加载列表)
 * 能够放大或者缩小滚动的内容.
