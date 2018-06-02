@@ -5,7 +5,7 @@ function resolve(dirname) {
 }
 
 module.exports = {
-  base: '/vuescrolljs/',
+  base: '/',
   host: '127.0.0.1',
   locales: {
     '/': {
