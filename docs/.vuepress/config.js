@@ -12,12 +12,12 @@ module.exports = {
       lang: 'en-US',
       title: 'Vuescroll.js',
       description:
-        'A scrolling chamberlain with a simple getting-start and full configuration'
+        'Customize your scrollbar and scroll with many animations.'
     },
     '/zh/': {
       lang: 'zh-CN',
       title: 'Vuescroll.js',
-      description: '一个简单上手，有充足配置的滚动小管家'
+      description: '可定制的并且有很多滚动动画的滚动条'
     }
   },
   head: [['link', { rel: 'icon', href: `/logo.png` }]],
