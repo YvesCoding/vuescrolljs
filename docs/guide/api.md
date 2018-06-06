@@ -248,7 +248,7 @@ Scroll the child elements in the Vuescroll to the current view.
 
 Activate pull to refresh or push to load directly,
 
-### 详细参数
+### Detailed params
 
 | params         | description     |
 | -------------- | --------------- |
