@@ -244,7 +244,7 @@ Scroll the child elements in the Vuescroll to the current view.
 
 ## triggerRefreshOrLoad(4.5.32)
 
-### Instroduction
+### Introduction
 
 Activate pull to refresh or push to load directly,
 
@@ -293,11 +293,11 @@ Activate pull to refresh or push to load directly,
 
 ## refresh/refreshAll(4.6.4)
 
-### Instroduction
+### Introduction
 
 Refresh the state of vuescroll or the state of all vuescroll instances.
 
-## Usage
+### Usage
 
 ```html
     <vue-scroll

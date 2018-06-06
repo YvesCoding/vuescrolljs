@@ -297,7 +297,7 @@ sidebarDepth: 2
 
 刷新制定 vuescroll 的状态或者所有 vuescroll 的状态。
 
-## 用法
+### 用法
 
 ```html
     <vue-scroll
