@@ -297,6 +297,10 @@ Activate pull to refresh or push to load directly,
 
 Refresh the state of vuescroll or the state of all vuescroll instances.
 
+::: tip
+You can use it when your vuescroll scrollbar does not appear.
+:::
+
 ### Usage
 
 ```html

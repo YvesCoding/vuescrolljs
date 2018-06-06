@@ -297,6 +297,10 @@ sidebarDepth: 2
 
 刷新制定 vuescroll 的状态或者所有 vuescroll 的状态。
 
+::: tip 提示
+在你的 vuescroll 的滚动条不出现的时候可以用到。
+:::
+
 ### 用法
 
 ```html
