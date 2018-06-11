@@ -28,120 +28,138 @@
 
 <script>
 export default {
-    props: {
-      items: {
-        type: Array,
-        default: () => []
+  props: {
+    items: {
+      type: Array,
+      default: () => []
+    },
+    autoPlay: {
+      type: Boolean,
+      default: true
+    },
+    autoPlayTime: {
+      type: Number,
+      default: 2000
+    }
+  },
+  data() {
+    return {
+      width: '',
+      ops: {
+        bar: {
+          vBar: { opacity: 0 },
+          hBar: { opacity: 0 }
+        },
+        vuescroll: {
+          mode: 'slide',
+          paging: true,
+          scroller: {
+            bouncing: false
+          }
+        },
+        scrollPanel: {
+          scrollingY: false
+        }
       },
-      autoPlay: {
-        type: Boolean,
-        default: true
-      },
-      autoPlayTime: {
-        type: Number,
-        default: 2000
+      result: [],
+      currentIndex: 0
+    };
+  },
+  created() {
+    console.log(12);
+    this.setItems();
+  },
+  beforeDestroy() {
+    clearInterval(this.timeId);
+  },
+  mounted() {
+    const vm = this;
+    vm.$refs['vs'].refresh();
+    setTimeout(() => {
+      vm.width = vm.$refs['parentElm'].clientWidth + 'px';
+      if (vm.autoPlay) {
+        vm.timeId = setInterval(() => {
+          vm.goToPage(vm.currentIndex + 3, true);
+        }, vm.autoPlayTime);
+      }
+      window.addEventListener('resize', () => {
+        this.width = this.$refs['parentElm'].clientWidth + 'px';
+      });
+    }, 0);
+  },
+  methods: {
+    goToPage(index, animate = false) {
+      this.$refs['vs'].goToPage(
+        {
+          x: index
+        },
+        animate
+      );
+    },
+    handleResize({ process }) {
+      this.width = this.$refs['parentElm'].clientWidth + 'px';
+      if (process == 0) {
+        this.$refs['vs'].goToPage(
+          {
+            x: 2
+          },
+          false
+        );
       }
     },
-    data() {
-        return {
-          width: '',
-          ops: {
-            bar: {
-                vBar: { opacity: 0},
-                hBar: { opacity: 0}
-            },
-            vuescroll: {
-              mode: 'slide',
-              paging: true,
-              scroller: {
-                bouncing: false
-              }
-            },
-            scrollPanel: {
-              scrollingY: false
-            }
-          },
-          result: [],
-          currentIndex: 0
+    scrollComplete(v, h) {
+      const { x } = this.$refs['vs'].getCurrentPage();
+      if (this.result.length > 1) {
+        if (x == 1) {
+          this.goToPage(this.result.length - 1);
+        } else if (x == this.result.length) {
+          this.goToPage(2);
         }
+      }
+      const dom = this.$refs['vs'].getCurrentviewDom();
+      this.currentIndex = dom[0].__vue__.index;
     },
-    created() {
-      this.setItems();
-    },
-    beforeDestroy() {
-      clearInterval(this.timeId);
-    },
-    mounted() {
-        const vm = this;
-        vm.width = vm.$refs['parentElm'].clientWidth + 'px';
-        if(vm.autoPlay) {
-           vm.timeId = setInterval(() => {
-            vm.goToPage(vm.currentIndex + 3, true)
-            }, vm.autoPlayTime) 
-        }
-        window.addEventListener("resize", () => {
-          this.width = this.$refs['parentElm'].clientWidth + 'px';
-        })
-    },
-    methods: {
-      goToPage(index, animate = false) {
-        this.$refs['vs'].goToPage({
-          x: index
-        }, animate)
-      },
-      handleResize({process}) {
-        this.width = this.$refs['parentElm'].clientWidth + 'px';
-        if(process == 0) {
-           this.$refs['vs'].goToPage({
-            x: 2
-          }, false) 
-        }
-      },
-      scrollComplete(v, h) {
-        const { x } = this.$refs['vs'].getCurrentPage();
-        if(this.result.length > 1) {
-          if(x == 1) {
-            this.goToPage(this.result.length - 1)
-          }
-          else if(x == this.result.length) {
-            this.goToPage(2)
-          }
-        }
-        const dom = this.$refs['vs'].getCurrentviewDom();
-        this.currentIndex = dom[0].__vue__.index;
-      },
-      setItems() {
-        const vm = this;
-        this.items.forEach((item, index) => {
-           item.index = index;
-           vm.result.push(item);
-        });
-        if(vm.result.length > 1) {
-          vm.result.push(this.result[0]);
-          vm.result.unshift(this.result[this.result.length - 2]);
-        }
+    setItems() {
+      const vm = this;
+      this.items.forEach((item, index) => {
+        item.index = index;
+        vm.result.push(item);
+      });
+      if (vm.result.length > 1) {
+        vm.result.push(this.result[0]);
+        vm.result.unshift(this.result[this.result.length - 2]);
       }
     }
-}
+  }
+};
 </script>
 
 <style lang="stylus">
-@import '~assets/common.styl'
-.dot-group
-  position absolute
+@import '~assets/common.styl';
+
+.dot-group {
+  position: absolute;
   right: 10px;
   bottom: 10px;
-  & > a
+
+  & > a {
     float: left;
     margin-left: 6px;
-    .dot-item
+
+    .dot-item {
       display: inline-block;
       vertical-align: middle;
       width: 6px;
       height: 6px;
       border-radius: 3px;
       background-color: #d0cdd1;
-  & > a.active
-    .dot-item
+    }
+  }
+
+  & > a.active {
+    .dot-item {
       background-color: #FF9900;
+    }
+  }
+}
 </style>
