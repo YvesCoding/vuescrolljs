@@ -32,8 +32,8 @@
                         <tr>
                             <td>vuescroll-mode</td>
                             <td>
-                                native:<input type="radio" value="native" v-model="ops.vuescroll.mode"/>
-                                slide:<input type="radio" value="slide" v-model="ops.vuescroll.mode"/>
+                                native:<input type="radio" value="native" v-model="ops.vuescroll.mode"/><br />
+                                slide:<input type="radio" value="slide" v-model="ops.vuescroll.mode"/><br />
                                 pure-native:<input type="radio" value="pure-native" v-model="ops.vuescroll.mode"/>
                             </td>
                         </tr>
@@ -47,22 +47,22 @@
 
 <script>
 export default {
-    data() {
-        return {
-            ops: {
-              vuescroll: {
-                mode: "native"
-              }
-            },
-            width: ''
+  data() {
+    return {
+      ops: {
+        vuescroll: {
+          mode: 'native'
         }
-    },
-    mounted() {
-        this.width = this.$refs['parentElm'].clientWidth / 16 + "rem";
-    }
-}
+      },
+      width: ''
+    };
+  },
+  mounted() {
+    this.width = this.$refs['parentElm'].clientWidth / 16 + 'rem';
+  }
+};
 </script>
 
 <style lang="stylus">
-@import '~assets/common.styl'
+@import '~assets/common.styl';
 </style>

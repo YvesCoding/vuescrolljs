@@ -21,36 +21,69 @@
              <span class="demo-title">Operation</span>
             <div class="parent">
                 <vue-scroll>
-                <table>
+                <table class="customize-table">
                     <thead>
                         <tr>
                             <th>Type</th>
-                            <th>Position</th>
-                            <th>keepShow</th>
+                            <th>Operation</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>hBar</td>
+                            <td>KeepShow</td>
                             <td>
-                                top:<input type="radio" value="top" v-model="ops.rail.hRail.pos"/>
-                                bottom:<input type="radio" value="bottom" v-model="ops.rail.hRail.pos"/>
-                            </td>
-                            <td>
-                                yes:<input type="radio" :value="true" v-model="ops.bar.hBar.keepShow"/>
+                                <div>
+                                 hBar: 
+                                     yes:<input type="radio" :value="true" v-model="ops.bar.hBar.keepShow"/>
                                 no:<input type="radio" :value="false" v-model="ops.bar.hBar.keepShow"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>vBar</td>
-                            <td>
-                                left:<input type="radio" value="left" v-model="ops.rail.vRail.pos"/>
-                                right:<input type="radio" value="right" v-model="ops.rail.vRail.pos"/>
-                            </td>
-                            <td>
+        
+                                </div>
+                                <div>vBar: 
                                 yes:<input type="radio" :value="true" v-model="ops.bar.vBar.keepShow"/>
                                 no:<input type="radio" :value="false" v-model="ops.bar.vBar.keepShow"/>
-                            </td>
+                                 </div>  
+                             </td>
+                        </tr>
+                         <tr>
+                            <td>Background(Bar)</td>
+                            <td>
+                               <div>
+                                   hBar:
+                                 <input type="text"   v-model="ops.bar.hBar.background"/>
+                            </div>
+                               <div>
+                                vBar:
+                                <input type="text"   v-model="ops.bar.vBar.background"/>
+                                </div>
+                         </td>
+                        </tr>
+                         <tr>
+                            <td>Background(Rail)</td>
+                            <td>
+                               <div>
+                                   hRail:
+                                 <input type="text"   v-model="ops.rail.hRail.background"/>
+                            </div>
+                               <div>
+                                vRail:
+                                <input type="text"   v-model="ops.rail.vRail.background"/>
+                                </div>
+                         </td>
+                        </tr>
+                        <tr>
+                            <td>Position</td>
+                            <td>
+                               <div>
+                                   hBar:
+                                 top:<input type="radio" value="top" v-model="ops.rail.hRail.pos"/>
+                                bottom:<input type="radio" value="bottom" v-model="ops.rail.hRail.pos"/>
+                            </div>
+                               <div>
+                                vBar :
+                                left:<input type="radio" value="left" v-model="ops.rail.vRail.pos"/>
+                                right:<input type="radio" value="right" v-model="ops.rail.vRail.pos"/>
+                                </div>
+                         </td>
                         </tr>
                     </tbody>
                 </table>
@@ -62,35 +95,47 @@
 
 <script>
 export default {
-    data() {
-        return {
-            ops: {
-                rail: {
-                    vRail: {
-                        pos: 'right'
-                    },
-                    hRail: {
-                        pos: 'bottom'
-                    },
-                },
-                bar: {
-                    vBar: {
-                        keepShow: false
-                    },
-                    hBar: {
-                        keepShow: false
-                    }
-                }
-            },
-            width: ''
+  data() {
+    return {
+      ops: {
+        rail: {
+          vRail: {
+            pos: 'right',
+            opacity: 0.5,
+            background: '#01a99a'
+          },
+          hRail: {
+            pos: 'bottom',
+            opacity: 0.5,
+            background: '#01a99a'
+          }
+        },
+        bar: {
+          vBar: {
+            keepShow: false,
+            background: '#00a650'
+          },
+          hBar: {
+            keepShow: false,
+            background: '#00a650'
+          }
         }
-    },
-    mounted() {
-        this.width = this.$refs['parentElm'].clientWidth / 16 + "rem";
-    }
-}
+      },
+      width: ''
+    };
+  },
+  mounted() {
+    this.width = this.$refs['parentElm'].clientWidth / 16 + 'rem';
+  }
+};
 </script>
 
 <style lang="stylus">
-@import '~assets/common.styl'
+@import '~assets/common.styl';
+
+.customize-table {
+    input {
+        max-width: 80px;
+    }
+}
 </style>

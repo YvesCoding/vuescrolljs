@@ -11,8 +11,7 @@ module.exports = {
     '/': {
       lang: 'en-US',
       title: 'Vuescroll.js',
-      description:
-        'Customize your scrollbar and scroll with many animations.'
+      description: 'Customize your scrollbar and scroll with many animations.'
     },
     '/zh/': {
       lang: 'zh-CN',
@@ -40,16 +39,12 @@ module.exports = {
           },
           {
             text: 'Demo',
-            items: [
-              { text: 'Basic', link: '/demo/basic/' },
-              { text: 'Advanced', link: '/demo/advanced/' }
-            ]
+            link: '/demo/'
           }
         ],
         sidebar: {
           '/guide/': genSidebarConfig('Guide'),
-          '/demo/basic/': genDemo('Basic Demo'),
-          '/demo/advanced/': genDemo('Advanced Demo')
+          '/demo/': genDemo('Demo')
         }
       },
       '/zh/': {
@@ -63,16 +58,12 @@ module.exports = {
           },
           {
             text: 'Demo',
-            items: [
-              { text: '基础', link: '/zh/demo/basic/' },
-              { text: '高级', link: '/zh/demo/advanced/' }
-            ]
+            link: '/zh/demo/'
           }
         ],
         sidebar: {
           '/zh/guide/': genSidebarConfig('指南'),
-          '/zh/demo/basic/': genDemo('基础Demo'),
-          '/zh/demo/advanced/': genDemo('高级Demo')
+          '/zh/demo/': genDemo('Demo')
         }
       }
     }

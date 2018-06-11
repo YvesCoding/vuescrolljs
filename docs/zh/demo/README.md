@@ -1,10 +1,12 @@
 ---
-  sidebarDepth: 2
+  sidebarDepth: 3
 ---
 
-# 基本 Demo
+# Demo
 
-## 1.基础滚动
+## 基础 Demo
+
+### 1.基础滚动
 
 #### Vuescroll 和 native 都支持基础的滚动行为。 但是 vuescroll 滚动的更加平滑，并且外观更漂亮。
 
@@ -12,7 +14,7 @@
 <Demo-Basic-OrdinaryScroll />
 </ClientOnly>
 
-## 2.自定义滚动条位置.
+### 2.自定义滚动条位置.
 
 #### vuescroll 可以设置滚动条的位置， 是否保持显示， 而原生的不能。
 
@@ -20,7 +22,7 @@
 <Demo-Basic-SetPositionAndKeepShow />
 </ClientOnly>
 
-## 3.检测内容发生变动
+### 3.检测内容发生变动
 
 #### Vuescroll 支持检测内容的尺寸是否发生了变动, 它受了 [element-resize-detector](https://github.com/wnr/element-resize-detector)的启发。
 
@@ -31,7 +33,7 @@
 <Demo-Basic-DetectSizeChange />
 </ClientOnly>
 
-## 4.滑动和下拉舒心或上推加载
+### 4.滑动和下拉舒心或上推加载
 
 #### Vuescroll 支持下来刷新和上推加载. 在你想展示一个列表的数据的时候很有用。
 
@@ -39,7 +41,7 @@
 <Demo-Basic-PullRefreshOrPushLoad />
 </ClientOnly>
 
-## 5.Paging.
+### 5.Paging.
 
 #### Vuescroll 支持分页模式， 当你想要展示一个像[这样](http://element-cn.eleme.io/#/zh-CN/component/carousel)一个轮播图的时候游泳。
 
@@ -61,7 +63,7 @@ ops: {
 你最好设置每个分页的尺寸等同于你的父 dom 的大小， 这样你才不会在一个页面中看到另一个页面的内容在当前视图下， 也就是说，确保每次只显示一个页面。
 :::
 
-## 6. Snapping
+### 6. Snapping
 
 Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 但是也有一些不同指出: **Paging 每次滑动一整页, 但是 snapping 每次滑动一个用户指定的距离**.
 
@@ -69,7 +71,7 @@ Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 
 <Demo-Basic-Snapping />
 </ClientOnly>
 
-## 7.在不同模式之间切换
+### 7.在不同模式之间切换
 
 #### 你甚至能在运行期间改变模式， 并且滚动的位置不会变。
 
@@ -80,3 +82,29 @@ Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 
 ::: warning 警告
 可能在移动端效果不太好， 因为移动端原生的滑动模式的滚动条是一样的
 :::
+
+## 进阶 Demo
+
+### 自定义内容标签
+
+#### 你可以通过设置`scrollContent`的`tag`属性来自定义内容标签。 这里， 我们把标签设置为`transition-group`来做一个示例。
+
+<ClientOnly>
+<Demo-Advance-CustimizeContentnTag />
+</ClientOnly>
+
+### 做一个轮播图
+
+#### 你可以通过使用 `paging` 选项来做一个轮播图。每个页面尺寸应该等于父元素的高或者宽。
+
+<ClientOnly>
+<Demo-Advance-MakeACarousel />
+</ClientOnly>
+
+### 做一个时间选择器
+
+#### 你可以通过设置 `snapping` 为 true 并且 `bouncing` 为 `false`, `scrollingX` 为 false 来做一个时间选择器。
+
+<ClientOnly>
+<Demo-Advance-MakeATimePicker />
+</ClientOnly>
