@@ -14,6 +14,8 @@
 <Demo-Basic-OrdinaryScroll />
 </ClientOnly>
 
+[源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/OrdinaryScroll.vue)
+
 ### 2.自定义滚动条位置.
 
 #### vuescroll 可以设置滚动条的位置， 是否保持显示， 而原生的不能。
@@ -21,6 +23,8 @@
 <ClientOnly>
 <Demo-Basic-SetPositionAndKeepShow />
 </ClientOnly>
+
+[源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/SetPositionAndKeepShow.vue)
 
 ### 3.检测内容发生变动
 
@@ -33,6 +37,8 @@
 <Demo-Basic-DetectSizeChange />
 </ClientOnly>
 
+[源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/DetectSizeChange.vue)
+
 ### 4.滑动和下拉舒心或上推加载
 
 #### Vuescroll 支持下来刷新和上推加载. 在你想展示一个列表的数据的时候很有用。
@@ -41,6 +47,8 @@
 <Demo-Basic-PullRefreshOrPushLoad />
 </ClientOnly>
 
+[源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/PullRefreshOrPushLoad.vue)
+
 ### 5.Paging.
 
 #### Vuescroll 支持分页模式， 当你想要展示一个像[这样](http://element-cn.eleme.io/#/zh-CN/component/carousel)一个轮播图的时候游泳。
@@ -48,6 +56,8 @@
 <ClientOnly>
 <Demo-Basic-Paging />
 </ClientOnly>
+
+[源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/Paging.vue)
 
 ::: tip
 如果要禁止 X 或 Y 方向上的滚动， 你可以设置 scrollPanel 的 scrollingY 为 false， X 是同理的。
@@ -71,6 +81,8 @@ Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 
 <Demo-Basic-Snapping />
 </ClientOnly>
 
+[源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/Snapping.vue)
+
 ### 7.在不同模式之间切换
 
 #### 你甚至能在运行期间改变模式， 并且滚动的位置不会变。
@@ -78,6 +90,8 @@ Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 
 <ClientOnly>
 <Demo-Basic-SwitchMode />
 </ClientOnly>
+
+[源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/SwitchMode.vue)
 
 ::: warning 警告
 可能在移动端效果不太好， 因为移动端原生的滑动模式的滚动条是一样的
@@ -93,6 +107,8 @@ Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 
 <Demo-Advance-CustimizeContentnTag />
 </ClientOnly>
 
+[源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/CustimizeContentnTag.vue)
+
 ### 做一个轮播图
 
 #### 你可以通过使用 `paging` 选项来做一个轮播图。每个页面尺寸应该等于父元素的高或者宽。
@@ -101,6 +117,8 @@ Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 
 <Demo-Advance-MakeACarousel />
 </ClientOnly>
 
+[源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue)
+
 ### 做一个时间选择器
 
 #### 你可以通过设置 `snapping` 为 true 并且 `bouncing` 为 `false`, `scrollingX` 为 false 来做一个时间选择器。
@@ -108,3 +126,5 @@ Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 
 <ClientOnly>
 <Demo-Advance-MakeATimePicker />
 </ClientOnly>
+
+[源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeATimePicker.vue)
