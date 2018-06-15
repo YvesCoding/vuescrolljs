@@ -4,16 +4,14 @@ heroImage: /logo.png
 actionText: Get Started →
 actionLink: /guide/
 features:
-- title: Multi-Modes
-  details: There are thress modes you can choose, native mode and slide mode and pure-native mode.Each mode is suitable for the people have diffrent hobbies, you can even toggle them in runtime.
-- title: Vue-Powered
-  details: Vuescroll is reactive, and under the help of Vue,  when you change a option of Vuescroll, you can see the effect immediately.
-- title: Powerful Configuration
-  details: Vuescroll has a lot of configurations so that you can customize your own scrollbar!
-footer: MIT Licensed | Copyright © 2018-present wangyi7099 | Made by vuepress
+- title: Simple and Easy
+  details: Very simple and easy to get started
+- title: Rich configuration
+  details: Has a rich configuration to meet your all needs
+footer: MIT Licensed | Copyright © 2018-present Yi(Yves) Wang
 ---
 
-## A simple getting-start
+## A simple example
 
 ```vue
 <template>
