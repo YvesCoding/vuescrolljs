@@ -9,10 +9,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "css-loader": "^0.28.11",
+    "style-loader": "^0.21.0",
     "vuepress": "0.8.4",
-    "vuescroll": "^4.0.0"
+    "vuescroll": "4.6.8"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

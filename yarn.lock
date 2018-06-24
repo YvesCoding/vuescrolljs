@@ -4671,6 +4671,13 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
+style-loader@^0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.21.0.tgz#68c52e5eb2afc9ca92b6274be277ee59aea3a852"
+  dependencies:
+    loader-utils "^1.1.0"
+    schema-utils "^0.4.5"
+
 stylus-loader@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/stylus-loader/-/stylus-loader-3.0.2.tgz#27a706420b05a38e038e7cacb153578d450513c6"
@@ -5243,9 +5250,9 @@ vuepress@0.8.4:
     webpackbar "^2.6.1"
     workbox-build "^3.1.0"
 
-vuescroll@4.6.5:
-  version "4.6.5"
-  resolved "https://registry.yarnpkg.com/vuescroll/-/vuescroll-4.6.5.tgz#4e7c08c768e456894d6956f954db96f7b4e12b55"
+vuescroll@4.6.8:
+  version "4.6.8"
+  resolved "https://registry.yarnpkg.com/vuescroll/-/vuescroll-4.6.8.tgz#ae558fb45efa784da470a462e28f0c39df02aff1"
   dependencies:
     vue "^2.0"
 
