@@ -13,12 +13,21 @@ footer: MIT Licensed | Copyright © 2018-present Yi(Yves) Wang
 
 ## 一个简单的例子
 
+```javascript
+import Vue from 'vue';
+import vuescroll from 'vuescroll';
+// 导入css文件
+import 'vuescroll/dist/vuescroll.css';
+
+Vue.use(vuescroll);
+```
+
 ```vue
 <template>
   <div class="demo-container">
       <vue-scroll :ops="ops">
         <div class="demo-content">
-          <span class="demo-content-text">Hello World</span>
+          <span class="demo-content-text">你好 Vuescroll！</span>
         </div>
       </vue-scroll>
   </div>
@@ -32,25 +41,6 @@ export default {
   }
 };
 </script>
-
-<style lang="stylus">
-  .demo-container
-    width 100%
-    height 100px
-  .demo-content
-    position relative
-    width 100%
-    height 500px
-    background: linear-gradient(0deg,#fff,#d5ffc1);
-  .demo-content-text
-    display block
-    position absolute
-    width 100%
-    bottom 0
-    text-align center
-    color #2c3e50;
-    font-weight 300
-</style>
 ```
 
 ## 预览

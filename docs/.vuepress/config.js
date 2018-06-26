@@ -16,7 +16,7 @@ module.exports = {
     '/zh/': {
       lang: 'zh-CN',
       title: 'Vuescroll.js',
-      description: '一个基于 Vue.js 的漂亮滚动条， 可以适用于 pc 和手机'
+      description: '一个基于 Vue.js 可以用于Pc和手机的滚动条'
     }
   },
   head: [['link', { rel: 'icon', href: `/logo.png` }]],

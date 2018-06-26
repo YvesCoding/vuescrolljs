@@ -1,6 +1,8 @@
 import vuescroll from 'vuescroll';
+// import 'vuescroll/dist/vuescroll.css'
 export default ({ Vue }) => {
   Vue.use(vuescroll);
+
   Vue.prototype.$vuescrollConfig = {
     vBar: {
       background: 'rgba(0,0,0,.3)',
