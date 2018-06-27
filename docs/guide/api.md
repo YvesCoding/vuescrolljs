@@ -12,9 +12,9 @@ Scroll to a place, like native `scrollTo`
 
 ### Detailed params
 
-| params                     | description                                                                                                                                                                                                                        |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{x: 10, y: '10%' }, true` | First param is a coordinate, can be a number or a percent number. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](scrollPanel.html) options `speed` and `easing` to have a better experience. |
+| params                     | description                                                                                                                                                                                                                                    |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{x: 10, y: '10%' }, true` | First param is a coordinate, can be a number or a percent number. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](configuration.md#scrollpanel) options `speed` and `easing` to have a better experience. |
 
 ### Usage
 
@@ -49,9 +49,9 @@ Scroll a delta each time, like native `scrollBy`
 
 ### Detailed params
 
-| params                       | description                                                                                                                                                                                                                   |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{dx: 10, dy: '10%' }, true` | First param is a delta, can be a number or a percent number. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](scrollPanel.html) options `speed` and `easing` to have a better experience. |
+| params                       | description                                                                                                                                                                                                                               |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{dx: 10, dy: '10%' }, true` | First param is a delta, can be a number or a percent number. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](configuration.md#scrollpanel) options `speed` and `easing` to have a better experience. |
 
 ### Usage
 
@@ -86,9 +86,9 @@ Go to a given page number. Only work in `slide mode` and `paging` is enabled.
 
 ### Detailed params
 
-| params                | description                                                                                                                                                                                                          |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{x: 1, y: 1 }, true` | First param is page index `x, y` you want to go to. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](scrollPanel.html) options `speed` and `easing` to have a better experience. |
+| params                | description                                                                                                                                                                                                                      |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{x: 1, y: 1 }, true` | First param is page index `x, y` you want to go to. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](configuration.md#scrollpanel) options `speed` and `easing` to have a better experience. |
 
 ### Usage
 
