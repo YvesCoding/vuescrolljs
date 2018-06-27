@@ -7,7 +7,7 @@
 ```html
 <script src="https://unpkg.com/vue"></script>
 <script src="https://unpkg.com/vuescroll"></script>
-<script src="https://unpkg.com/vuescroll/dist/vuescroll.css"></script>
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/vuescroll/dist/vuescroll.css" />
 ```
 
 #### 或者在模块系统中用 npm 或 yarn 来安装。

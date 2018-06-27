@@ -7,7 +7,7 @@
 ```html
 <script src="https://unpkg.com/vue"></script>
 <script src="https://unpkg.com/vuescroll"></script>
-<script src="https://unpkg.com/vuescroll/dist/vuescroll.css"></script>
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/vuescroll/dist/vuescroll.css" />
 ```
 
 #### Or use npm or yarn to install in the module system.
