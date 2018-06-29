@@ -11,12 +11,14 @@ module.exports = {
     '/': {
       lang: 'en-US',
       title: 'Vuescroll.js',
-      description: 'A beautiful scrollbar based on Vue.js for PC and mobile'
+      description:
+        'A powerful beautiful scrollbar based on Vue.js for PC and mobile'
     },
     '/zh/': {
       lang: 'zh-CN',
       title: 'Vuescroll.js',
-      description: '一个基于 Vue.js 可以用于Pc和手机的滚动条'
+      description:
+        '一款基于 Vue.js 的，支持 Pc 和移动端的功能强大的漂亮的滚动条'
     }
   },
   head: [['link', { rel: 'icon', href: `/logo.png` }]],
