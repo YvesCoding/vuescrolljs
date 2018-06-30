@@ -97,21 +97,7 @@ Perhaps not works well in mobile, becase slide and native are the same in mobile
 
 ## Advanced Demo
 
-### 1.Customize Content Tag
-
-#### You can customize the tag of the content by setting `tag` property of `scrollContent`. Here, we set the tag to `transition-group` to show the usage.
-
-<ClientOnly>
-<Demo-Advance-CustimizeContentnTag />
-</ClientOnly>
-
-[source code](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/CustimizeContentnTag.vue)
-
-::: tip
-That is just a demo, you can integrate **this** with `push-load` and `tansition-group` in `slide` mode.
-:::
-
-### 2.Make A Carousel
+### 1.Carousel
 
 #### You can make a carousel by using `paging` option. Each page size should be equal to parent dom's height or width.
 
@@ -121,7 +107,7 @@ That is just a demo, you can integrate **this** with `push-load` and `tansition-
 
 [source code](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue)
 
-### 3.Make A TimePicker
+### 2.TimePicker
 
 #### You can make a time-picker by setting `snapping` to true and `bouncing` to `false`, `scrollingX` to false.
 

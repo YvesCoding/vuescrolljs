@@ -1,5 +1,5 @@
 import vuescroll from 'vuescroll';
-// import 'vuescroll/dist/vuescroll.css'
+//import 'vuescroll/dist/vuescroll.css'
 export default ({ Vue }) => {
   Vue.use(vuescroll);
 

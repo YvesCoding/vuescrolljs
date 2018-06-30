@@ -159,27 +159,21 @@ scrollContent 是滚动的内容的包装。vuescroll 通过 scrollContent 来�
 ### 详细配置
 
 ```javascript
-  scrollContent: {
-    // 自定义scrollContent的标签
-    tag: "div",
-    padding: true,
-    props: {
-    },
-    attrs: {
-    }
-  }
+scrollContent: {
+  // 自定义scrollContent的标签
+  padding: true;
+}
 ```
 
 ### 解释
 
-| 配置项  | 默认值 | 描述                                                                                                                            |
-| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| padding | `true` | 设置是否启用 padding。可以用来阻止内容被滚动条遮住一部分。                                                                      |
-| tag     | `div`  | 自动以标签。                                                                                                                    |
-| props   | `{}`   | 如果标签是个组件，你可以传递`props`.                                                                                            |
-| attrs   | `{}`   | 如果标签是个组件，你可以传递`attrs`.[可以参考这里](https://cn.vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth) |
+| 配置项  | 默认值 | 描述                                                       |
+| ------- | ------ | ---------------------------------------------------------- |
+| padding | `true` | 设置是否启用 padding。可以用来阻止内容被滚动条遮住一部分。 |
 
-[在 Codepen 上尝试 scrollContent](https://codepen.io/wangyi7099/pen/GxMYpa)
+::: warning 警告
+`Tag` 和 `Props` 已经 **过期了**, 如果你想自定义 scrollContent, 请考虑 [slot](slot.md)
+:::
 
 ## rail
 
@@ -233,6 +227,7 @@ scrollContent 是滚动的内容的包装。vuescroll 通过 scrollContent 来�
 ```javascript
   bar: {
     delayTime: 500,
+    onlyShowBarOnScroll: true,
     //
     vBar: {
       background: "#4caf50",
@@ -252,10 +247,11 @@ scrollContent 是滚动的内容的包装。vuescroll 通过 scrollContent 来�
 
 ### 解释
 
-| bar       | 默认值 | 描述                                   |
-| --------- | ------ | -------------------------------------- |
-| delayTime | 500    | 控制滚动条每次显示多长时间然后自动消失 |
-| vBar/hBar | 见下面 |
+| bar                 | 默认值 | 描述                                   |
+| ------------------- | ------ | -------------------------------------- |
+| onlyShowBarOnScroll | true   | 是否只在滚动下显示滚动条               |
+| delayTime           | 500    | 控制滚动条每次显示多长时间然后自动消失 |
+| vBar/hBar           | 见下面 |
 
 | vBar/hBar  | 默认值    | 描述                                               |
 | ---------- | --------- | -------------------------------------------------- |
@@ -353,11 +349,7 @@ export default {
   },
   //
   scrollContent: {
-    // customize tag of scrollContent
-    tag: 'div',
-    padding: false,
-    props: {},
-    attrs: {}
+    padding: false
   },
   //
   rail: {
@@ -377,6 +369,7 @@ export default {
   },
   bar: {
     showDelay: 500,
+    onlyShowBarOnScroll: true,
     vBar: {
       background: '#00a650',
       keepShow: false,

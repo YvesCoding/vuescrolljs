@@ -99,17 +99,7 @@ Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 
 
 ## 进阶 Demo
 
-### 自定义内容标签
-
-#### 你可以通过设置`scrollContent`的`tag`属性来自定义内容标签。 这里， 我们把标签设置为`transition-group`来做一个示例。
-
-<ClientOnly>
-<Demo-Advance-CustimizeContentnTag />
-</ClientOnly>
-
-[源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/CustimizeContentnTag.vue)
-
-### 做一个轮播图
+### 1.轮播图
 
 #### 你可以通过使用 `paging` 选项来做一个轮播图。每个页面尺寸应该等于父元素的高或者宽。
 
@@ -119,7 +109,7 @@ Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 
 
 [源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue)
 
-### 做一个时间选择器
+### 2.时间选择器
 
 #### 你可以通过设置 `snapping` 为 true 并且 `bouncing` 为 `false`, `scrollingX` 为 false 来做一个时间选择器。
 

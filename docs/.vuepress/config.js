@@ -7,6 +7,7 @@ function resolve(dirname) {
 module.exports = {
   base: '/',
   host: '127.0.0.1',
+  port: '8088',
   locales: {
     '/': {
       lang: 'en-US',

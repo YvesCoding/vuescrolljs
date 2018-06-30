@@ -159,27 +159,20 @@ scrollContent is a warp of the content you want to scroll. vuescroll uses it to 
 ### Detailed Options
 
 ```javascript
-  scrollContent: {
-    // customize tag of scrollContent
-    tag: "div",
-    padding: true,
-    props: {
-    },
-    attrs: {
-    }
-  }
+scrollContent: {
+  padding: true;
+}
 ```
 
 ### Explanation
 
-| option  | defaultValue | description                                                                                                                                   |
-| ------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| padding | `true`       | Set a padding of scrollContent. Prevent the rail or bar from blocking a part of content.                                                      |
-| tag     | `div`        | Customize the tag.                                                                                                                            |
-| props   | `{}`         | If tag represents a component, you can pass the `props`.                                                                                      |
-| attrs   | `{}`         | If tag represents a component, you can pass the `attrs`.[Reference](https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth) |
+| option  | defaultValue | description                                                                              |
+| ------- | ------------ | ---------------------------------------------------------------------------------------- |
+| padding | `true`       | Set a padding of scrollContent. Prevent the rail or bar from blocking a part of content. |
 
-[Try scrollContent options on Codepen](https://codepen.io/wangyi7099/pen/GxMYpa)
+::: warning
+`Tag` and `Props` have been **deprecated**, if you want to custimze scrollContent, please consider use [slot](slot.md)
+:::
 
 ## rail
 
@@ -234,6 +227,7 @@ You can't set the `pos` or `width` in `bar` option. All these should be set in `
 ```javascript
   bar: {
     delayTime: 500,
+    onlyShowBarOnScroll: true,
     //
     vBar: {
       background: "#4caf50",
@@ -253,10 +247,11 @@ You can't set the `pos` or `width` in `bar` option. All these should be set in `
 
 ### Explanation
 
-| bar       | defaultValue | description                                                                               |
-| --------- | ------------ | ----------------------------------------------------------------------------------------- |
-| delayTime | 500          | Control how long the scroll bar is displayed every time and then disappear automatically. |
-| vBar/hBar | See below    |
+| bar                 | defaultValue | description                                                                               |
+| ------------------- | ------------ | ----------------------------------------------------------------------------------------- |
+| delayTime           | 500          | Control how long the scroll bar is displayed every time and then disappear automatically. |
+| onlyShowBarOnScroll | true         | Only show bar when scrolling                                                              |
+| vBar/hBar           | See below    |
 
 | vBar/hBar  | defaultValue | description                                                  |
 | ---------- | ------------ | ------------------------------------------------------------ |
@@ -354,11 +349,7 @@ export default {
   },
   //
   scrollContent: {
-    // customize tag of scrollContent
-    tag: 'div',
-    padding: false,
-    props: {},
-    attrs: {}
+    padding: false
   },
   //
   rail: {
