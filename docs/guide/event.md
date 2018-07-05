@@ -81,7 +81,7 @@ Trigger when content is scrolling.
 
 ### Introduction
 
-corresponding to each stage of pull-refresh. From start to end are `refresh-activate`, `refresh-start`, `refresh-before-deactive`, `refresh-deactivate` .
+corresponding to each stage of pull-refresh. From start to end are `refresh-activate`, `refresh-start`, `refresh-before-deactivate`, `refresh-deactivate` .
 
 ### Events Detail
 
@@ -109,8 +109,8 @@ corresponding to each stage of pull-refresh. From start to end are `refresh-acti
     <vue-scroll
     @refresh-activate="handleActivate"
     @refresh-start="handleStart"
-    @refresh-before-deactivate="handleBeforeDeactive"
-    @refresh-deactivate="handleDeactive"
+    @refresh-before-deactivate="handleBeforeDeactivate"
+    @refresh-deactivate="handleDeactivate"
     >
     </vue-scroll>
 ```
@@ -119,8 +119,8 @@ corresponding to each stage of pull-refresh. From start to end are `refresh-acti
     // ...
     {
         methods: {
-            handleActive(vm, refreshDom) {
-                console.log(vm, refreshDom, 'handleActive');
+            handleActivate(vm, refreshDom) {
+                console.log(vm, refreshDom, 'handleActivate');
             },
             handleStart(vm, refreshDom, done) {
                 console.log(vm, refreshDom, 'handleStart');
@@ -128,12 +128,12 @@ corresponding to each stage of pull-refresh. From start to end are `refresh-acti
                     done(); // load finished
                 }, 2000)
             },
-            handleBeforeDeactive(vm, refreshDom, done) {
-                console.log(vm, refreshDom, 'handleDeactive');
+            handleBeforeDeactivate(vm, refreshDom, done) {
+                console.log(vm, refreshDom, 'handleBeforeDeactivate');
                 done();
             },
-            handleDeactive(vm, refreshDom) {
-                console.log(vm, refreshDom, 'handleDeactive');
+            handleDeactivate(vm, refreshDom) {
+                console.log(vm, refreshDom, 'handleDeactivate');
             }
         }
     }

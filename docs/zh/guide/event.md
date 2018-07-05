@@ -81,7 +81,7 @@ Vuescroll 有一些事件可以在特定场合下触发。
 
 ### 介绍
 
-对应下拉刷新的每个阶段. 从开始到结束分别是 `refresh-activate`, `refresh-start`, `refresh-before-deactive`, `refresh-deactivate` .
+对应下拉刷新的每个阶段. 从开始到结束分别是 `refresh-activate`, `refresh-start`, `refresh-before-deactivate`, `refresh-deactivate` .
 
 ### 事件详情
 
@@ -97,7 +97,7 @@ Vuescroll 有一些事件可以在特定场合下触发。
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | `vm, refreshDom, done` | `vm` 是当前 vuescroll 实例, `refreshDom` 是提示的那个 dom。`done` 是完成函数, 这个阶段你适合去抓取数据, 然后调用 `done()` 并且进入下一个阶段。 |
 
-#### refresh-before-deactive
+#### refresh-before-deactivate
 
 | 参数                   | 描述                                                                                                                                                                               |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -109,8 +109,8 @@ Vuescroll 有一些事件可以在特定场合下触发。
     <vue-scroll
     @refresh-activate="handleActivate"
     @refresh-start="handleStart"
-    @refresh-before-deactivate="handleBeforeDeactive"
-    @refresh-deactivate="handleDeactive"
+    @refresh-before-deactivate="handleBeforeDeactivate"
+    @refresh-deactivate="handleDeactivate"
     >
     </vue-scroll>
 ```
@@ -119,8 +119,8 @@ Vuescroll 有一些事件可以在特定场合下触发。
     // ...
     {
         methods: {
-            handleActive(vm, refreshDom) {
-                console.log(vm, refreshDom, 'handleActive');
+            handleActivate(vm, refreshDom) {
+                console.log(vm, refreshDom, 'handleActivate');
             },
             handleStart(vm, refreshDom, done) {
                 console.log(vm, refreshDom, 'handleStart');
@@ -128,12 +128,12 @@ Vuescroll 有一些事件可以在特定场合下触发。
                     done(); // load finished
                 }, 2000)
             },
-            handleBeforeDeactive(vm, refreshDom, done) {
-                console.log(vm, refreshDom, 'handleDeactive');
+            handleBeforeDeactivate(vm, refreshDom, done) {
+                console.log(vm, refreshDom, 'handleBeforeDeactivate');
                 done();
             },
-            handleDeactive(vm, refreshDom) {
-                console.log(vm, refreshDom, 'handleDeactive');
+            handleDeactivate(vm, refreshDom) {
+                console.log(vm, refreshDom, 'handleDeactivate');
             }
         }
     }
