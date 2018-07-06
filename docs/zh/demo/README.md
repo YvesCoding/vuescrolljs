@@ -51,7 +51,7 @@
 
 ### 5.Paging.
 
-#### Vuescroll 支持分页模式， 当你想要展示一个像[这样](http://element-cn.eleme.io/#/zh-CN/component/carousel)一个轮播图的时候游泳。
+#### Vuescroll 支持分页模式， 当你想要展示一个像[这样](http://element-cn.eleme.io/#/zh-CN/component/carousel)一个轮播图的时候有用。
 
 <ClientOnly>
 <Demo-Basic-Paging />
