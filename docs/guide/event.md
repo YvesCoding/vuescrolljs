@@ -141,7 +141,7 @@ corresponding to each stage of pull-refresh. From start to end are `refresh-acti
 
 **Load is the same as reresh, please view it in demo**
 
-[Try refresh and load event on Codepen](https://codepen.io/wangyi7099/pen/pLXyOQ)
+[A small demo you can checkout here](http://vs-issue-list-demo.yvescoding.org/)
 
 ## handle-scroll-complete
 
