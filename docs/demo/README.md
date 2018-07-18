@@ -8,7 +8,9 @@ sidebarDepth: 3
 
 #### Vuescroll and native both support basic scroll behaviors. But vuescroll scrolls more smoothly and have a pretty surface.
 
+<ClientOnly>
  <Demo-Basic-OrdinaryScroll />
+</ClientOnly>
 
 [source code](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/OrdinaryScroll.vue)
 
@@ -16,7 +18,9 @@ sidebarDepth: 3
 
 #### Vuescroll supports setting the positions of the scrollbar and rail or keep show while native doesn't.
 
+<ClientOnly>
 <Demo-Basic-SetPositionAndKeepShow />
+</ClientOnly>
 
 [source code](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/SetPositionAndKeepShow.vue)
 
@@ -28,7 +32,9 @@ sidebarDepth: 3
 You can open browser's dev-tool to adjust content's size and see the effect.
 :::
 
+<ClientOnly>
 <Demo-Basic-DetectSizeChange />
+</ClientOnly>
 
 [source code](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/DetectSizeChange.vue)
 
@@ -36,7 +42,9 @@ You can open browser's dev-tool to adjust content's size and see the effect.
 
 #### Vuescroll supports pull-refresh and push-load. It's uesful when you want to display a list of datas.
 
+<ClientOnly>
 <Demo-Basic-PullRefreshOrPushLoad />
+</ClientOnly>
 
 [source code](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/PullRefreshOrPushLoad.vue)
 
@@ -44,7 +52,9 @@ You can open browser's dev-tool to adjust content's size and see the effect.
 
 #### Vuescroll supports paging-mode. Well, It's userful when you want to show a carousel like [this](http://element-cn.eleme.io/#/zh-CN/component/carousel).
 
+<ClientOnly>
 <Demo-Basic-Paging />
+</ClientOnly>
 
 [source code](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/Paging.vue)
 
@@ -76,7 +86,9 @@ Vuescroll supports snapping while native doesn't. Snapping is similar to `Paging
 
 #### You can even changes modes in runtime, and the postions won't be changed.
 
+<ClientOnly>
 <Demo-Basic-SwitchMode />
+</ClientOnly>
 
 [source code](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/SwitchMode.vue)
 
@@ -90,7 +102,9 @@ Perhaps not works well in mobile, becase slide and native are the same in mobile
 
 #### You can make a carousel by using `paging` option. Each page size should be equal to parent dom's height or width.
 
+<ClientOnly>
 <Demo-Advance-MakeACarousel />
+</ClientOnly>
 
 [source code](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue)
 
@@ -98,6 +112,8 @@ Perhaps not works well in mobile, becase slide and native are the same in mobile
 
 #### You can make a time-picker by setting `snapping` to true and `bouncing` to `false`, `scrollingX` to false.
 
+<ClientOnly>
 <Demo-Advance-MakeATimePicker />
+</ClientOnly>
 
 [source code](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeATimePicker.vue)
