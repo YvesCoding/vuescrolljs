@@ -8,8 +8,8 @@
       "type": "node",
       "request": "launch",
       "name": "启动程序",
-      "program": "${workspaceFolder}\\node_modules\\vuepress\\bin\\vuepress.js",
-      "args": ["dev", "docs"]
+      "program": "${file}",
+      "args": ["build", "docs"]
     }
   ]
 }

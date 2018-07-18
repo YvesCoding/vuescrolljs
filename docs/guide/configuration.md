@@ -21,6 +21,8 @@ Vuescroll here is just an **option** here, not vuescroll component itself. Set t
     // or be a number that is equal to its parentNode's width or
     // height ?
     sizeStrategy: 'percent',
+    /** Whether to detect dom resize or not */
+    detectResize: true,
     // pullRefresh or pushLoad is only for the slide mode...
     pullRefresh: {
       enable: false,
@@ -47,7 +49,7 @@ Vuescroll here is just an **option** here, not vuescroll component itself. Set t
       width: 100,
       height: 100
     },
-    // some scroller options
+    /* shipped scroll options */
     scroller: {
       /** Enable bouncing (content can be slowly moved outside and jumps back after releasing) */
       bouncing: true,
@@ -75,8 +77,8 @@ Vuescroll here is just an **option** here, not vuescroll component itself. Set t
 | ------------ | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | mode         | `native`  | Choose a mode of vuescroll, **native** or **slide** or **pure-native**(new in 4.5.0). See more, please checkout [Features](http://vuescrolljs.yvescoding.org/guide/#features)                                                                                                                                                                                                                                                                                                                      |
 | sizeStrategy | `percent` | Set the type of the size of `vuescroll`. The optional configs are `percent`, `number`.When set to `percent`, vuescroll's height will be `100%` and width will be `100%`, and set to `number`, vuescroll will calculate its parent dom's size automatically, and set `height` and `width` to the corresponding values. A small tip: If parent dom's size is a percent value, I suggest you to set to `number`， and if parent dom's size is a fixed `px` value， I suggest you to set to `percent`. |
-| scroller     | `{}`      | Some options that only belong to scroller.                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| pullRefresh  | `{}`      | Set the options about the refresh.                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| scroller     | `{}`      | Some options that only belong to scroller.                                                                                                                                                                                                                                                                                                                                                                                                                                                         | pullRefresh | `{}` | Set the options about the refresh. |
+| detectResize | `true`    | Whether to detect dom resize or not                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | pushLoad     | `{}`      | Set the options about the load.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | paging       | `false`   | Enable Paging or not.                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | snapping     | `{}`      | Set the options about the snapping.                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -183,33 +185,22 @@ The place where srollbar moves.
 ### Detailed Options
 
 ```javascript
-  rail: {
-    vRail: {
-      width: "5px",
-      pos: "right",
-      background: "#a5d6a7",
-      opacity: 0 //'0.5'
-    },
-    //
-    hRail: {
-      height: "5px",
-      pos: "bottom",
-      background: "#a5d6a7",
-      opacity: 0 //'0.5'
-    }
+  rail: {  
+    background: '#01a99a',
+    opacity: 0,
+    /** Rail's size(Height/Width) , default -> 6px */
+    size: '6px'
   }
 ```
 
 ### Explanation
 
-| vRail/hRail  | defaultValue                             | description                            |
-| ------------ | ---------------------------------------- | -------------------------------------- |
-| background   | `#a5d6a7`                                | Set the rail's background              |
-| width/height | `5px`                                    | Set the scrollbar and the rail's width |
-| pos          | `right(vBar,vRail)/bottom/(hBar, hRail)` | Set the position of rail and           |
+| rail       | defaultValue | description                            |
+| ---------- | ------------ | -------------------------------------- |
+| background | `#a5d6a7`    | Set the rail's background              |
+| size       | `6px`        | Set the scrollbar and the rail's width |
+| opacity    | 0            | Set the rail's opacity                 |
 
-bar.
-opacity|0|Set the rail's opacity
 [Try rail option on Codepen](https://codepen.io/wangyi7099/pen/BrwBGp)
 
 ## bar
@@ -219,29 +210,25 @@ Scrollbar, like native scrollbar.
 :::
 
 ::: warning
-You can't set the `pos` or `width` in `bar` option. All these should be set in `rail` option.
+vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set rail，bar will work for both vertical and horizontal.
 :::
 
 ### Detailed Options
 
 ```javascript
   bar: {
-    delayTime: 500,
+     /** How long to hide bar after mouseleave, default -> 500 */
+    showDelay: 500,
+    /** Whether to show bar on scrolling, default -> true */
     onlyShowBarOnScroll: true,
-    //
-    vBar: {
-      background: "#4caf50",
-      keepShow: false,
-      opacity: 1,
-      hover: false
-    },
-    //
-    hBar: {
-      background: "#4caf50",
-      keepShow: false,
-      opacity: 1,
-      hover: false
-    }
+    /** Whether to keep show or not, default -> false */
+    keepShow: false,
+    /** Bar's background , default -> #00a650 */
+    background: '#c1c1c1',
+    /** Bar's opacity, default -> 1  */
+    opacity: 1,
+    /** Styles when you hover scrollbar, it will merge into the current style */
+    hoverStyle: false
   }
 ```
 
@@ -249,16 +236,12 @@ You can't set the `pos` or `width` in `bar` option. All these should be set in `
 
 | bar                 | defaultValue | description                                                                               |
 | ------------------- | ------------ | ----------------------------------------------------------------------------------------- |
-| delayTime           | 500          | Control how long the scroll bar is displayed every time and then disappear automatically. |
+| showDelay           | 500          | Control how long the scroll bar is displayed every time and then disappear automatically. |
 | onlyShowBarOnScroll | true         | Only show bar when scrolling                                                              |
-| vBar/hBar           | See below    |
-
-| vBar/hBar  | defaultValue | description                                                  |
-| ---------- | ------------ | ------------------------------------------------------------ |
-| background | `#4caf50`    | Set the scrollbar's background                               |
-| keepShow   | false        | Set whether the scrollbars will keep showing or not.         |
-| opacity    | 1            | Set the opacity of scrollbar.                                |
-| hover      | false        | Only for PC, the background color when mouse pointer hovers. |
+| background          | `#4caf50`    | Set the scrollbar's background                                                            |
+| keepShow            | false        | Set whether the scrollbars will keep showing or not.                                      |
+| opacity             | 1            | Set the opacity of scrollbar.                                                             |
+| hoverStyle          | false        | Styles when you hover scrollbar, it will merge into the current style                     |
 
 [Try bar option on Codepen](https://codepen.io/wangyi7099/pen/GxMLjd)
 
@@ -273,9 +256,7 @@ import vuescroll from 'vuescroll';
 Vue.use(vuescroll); // install the vuescroll first
 Vue.prototype.$vuescrollConfig = {
   bar: {
-    vBar: {
-      background: '#000'
-    }
+    background: '#000'
   }
 };
 ```
@@ -291,6 +272,8 @@ export default {
     // or be a number that is equal to its parentNode's width or
     // height ?
     sizeStrategy: 'percent',
+    /** Whether to detect dom resize or not */
+    detectResize: true,
     // pullRefresh or pushLoad is only for the slide mode...
     pullRefresh: {
       enable: false,
@@ -317,7 +300,7 @@ export default {
       width: 100,
       height: 100
     },
-    // some scroller options
+    /* shipped scroll options */
     scroller: {
       /** Enable bouncing (content can be slowly moved outside and jumps back after releasing) */
       bouncing: true,
@@ -353,35 +336,24 @@ export default {
   },
   //
   rail: {
-    vRail: {
-      width: '6px',
-      pos: 'right',
-      background: '#01a99a',
-      opacity: 0
-    },
-    //
-    hRail: {
-      height: '6px',
-      pos: 'bottom',
-      background: '#01a99a',
-      opacity: 0
-    }
+    background: '#01a99a',
+    opacity: 0,
+    /** Rail's size(Height/Width) , default -> 6px */
+    size: '6px'
   },
   bar: {
+    /** How long to hide bar after mouseleave, default -> 500 */
     showDelay: 500,
-    vBar: {
-      background: '#00a650',
-      keepShow: false,
-      opacity: 1,
-      hover: false
-    },
-    //
-    hBar: {
-      background: '#00a650',
-      keepShow: false,
-      opacity: 1,
-      hover: false
-    }
+    /** Whether to show bar on scrolling, default -> true */
+    onlyShowBarOnScroll: true,
+    /** Whether to keep show or not, default -> false */
+    keepShow: false,
+    /** Bar's background , default -> #00a650 */
+    background: '#c1c1c1',
+    /** Bar's opacity, default -> 1  */
+    opacity: 1,
+    /** Styles when you hover scrollbar, it will merge into the current style */
+    hoverStyle: false
   }
 };
 ```

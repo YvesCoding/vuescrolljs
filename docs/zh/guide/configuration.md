@@ -21,6 +21,8 @@ Vuescroll 的配置项是由 5 部分组成的, 它们是 `vuescroll`, `scrollPa
     // or be a number that is equal to its parentNode's width or
     // height ?
     sizeStrategy: 'percent',
+    /** Whether to detect dom resize or not */
+    detectResize: true,
     // pullRefresh or pushLoad is only for the slide mode...
     pullRefresh: {
       enable: false,
@@ -47,7 +49,7 @@ Vuescroll 的配置项是由 5 部分组成的, 它们是 `vuescroll`, `scrollPa
       width: 100,
       height: 100
     },
-    // some scroller options
+    /* shipped scroll options */
     scroller: {
       /** Enable bouncing (content can be slowly moved outside and jumps back after releasing) */
       bouncing: true,
@@ -80,6 +82,7 @@ Vuescroll 的配置项是由 5 部分组成的, 它们是 `vuescroll`, `scrollPa
 | pushLoad     | `{}`      | 设置加载相关的配置项.                                                                                                                                                                                                                                                                                                                             |
 | paging       | `false`   | 是否启用 paging.                                                                                                                                                                                                                                                                                                                                  |
 | snapping     | `{}`      | 设置快照相关的配置项.                                                                                                                                                                                                                                                                                                                             |
+| detectResize | `true`    | 是否开启监听 dom resize                                                                                                                                                                                                                                                                                                                           |
 
 #### pullRefresh
 
@@ -185,30 +188,22 @@ scrollContent: {
 
 ```javascript
   rail: {
-    vRail: {
-      width: "5px",
-      pos: "right",
-      background: "#a5d6a7",
-      opacity: 0 //'0.5'
-    },
-    //
-    hRail: {
-      height: "5px",
-      pos: "bottom",
-      background: "#a5d6a7",
-      opacity: 0 //'0.5'
+    rail: {
+      background: '#01a99a',
+      opacity: 0,
+      /** Rail's size(Height/Width) , default -> 6px */
+      size: '6px'
     }
   }
 ```
 
 ### 解释
 
-| vRail/hRail  | 默认                                     | 描述                              |
-| ------------ | ---------------------------------------- | --------------------------------- |
-| background   | `#a5d6a7`                                | 设置滚动轨道背景色。              |
-| width/height | `5px`                                    | 设置滚动条和轨道的宽度/高度和大小 |
-| pos          | `right(vBar,vRail)/bottom/(hBar, hRail)` | 设置滚动条和轨道的位置            |
-| opacity      | 0                                        | s 设置轨道的透明度。              |
+| rail       | 默认      | 描述                 |
+| ---------- | --------- | -------------------- |
+| background | `#01a99a` | 设置滚动轨道背景色。 |
+| size       | `5px`     | 设置轨道的尺寸       |
+| opacity    | 0         | s 设置轨道的透明度。 |
 
 [在 Codepen 上尝试](https://codepen.io/wangyi7099/pen/BrwBGp)
 
@@ -219,46 +214,38 @@ scrollContent: {
 :::
 
 ::: warning 警告
-你不能设置`pos` 或 `width` 在`bar`配置项中. 所有这些应该在 `rail` 配置项里设置.
+vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替。 设置 rail，bar 将会对垂直，水平滚动条同时生效。
 :::
 
 ### 详细配置
 
 ```javascript
   bar: {
-    delayTime: 500,
+   /** 当不做任何操作时滚动条自动消失的时间 */
+    showDelay: 500,
+    /** 是否只在滚动的时候现实滚动条 */
     onlyShowBarOnScroll: true,
-    //
-    vBar: {
-      background: "#4caf50",
-      keepShow: false,
-      opacity: 1,
-      hover: false
-    },
-    //
-    hBar: {
-      background: "#4caf50",
-      keepShow: false,
-      opacity: 1,
-      hover: false
-    }
+    /** 是否保持现实*/
+    keepShow: false,
+    /** 背景色*/
+    background: '#c1c1c1',
+    /**  透明度  */
+    opacity: 1,
+    /** 当你鼠标移动到滚动条的时候滚动条的样式， 返回一个style对象， 和现在的对象融合*/
+    hoverStyle: false
   }
 ```
 
 ### 解释
 
-| bar                 | 默认值 | 描述                                   |
-| ------------------- | ------ | -------------------------------------- |
-| onlyShowBarOnScroll | true   | 是否只在滚动下显示滚动条               |
-| delayTime           | 500    | 控制滚动条每次显示多长时间然后自动消失 |
-| vBar/hBar           | 见下面 |
-
-| vBar/hBar  | 默认值    | 描述                                               |
-| ---------- | --------- | -------------------------------------------------- |
-| background | `#4caf50` | 设置滚动条背景色                                   |
-| keepShow   | false     | 设置滚动条是否保持显示                             |
-| opacity    | 1         | 设置滚动条透明度                                   |
-| hover      | false     | 只在 PC 上有效，当鼠标指针移上去的时候显示的颜色。 |
+| bar                 | 默认值    | 描述                                               |
+| ------------------- | --------- | -------------------------------------------------- |
+| onlyShowBarOnScroll | true      | 是否只在滚动下显示滚动条                           |
+| showDelay           | 500       | 控制滚动条每次显示多长时间然后自动消失             |
+| background          | `#4caf50` | 设置滚动条背景色                                   |
+| keepShow            | false     | 设置滚动条是否保持显示                             |
+| opacity             | 1         | 设置滚动条透明度                                   |
+| hoverStyle          | false     | 只在 PC 上有效，当鼠标指针移上去的时候显示的颜色。 |
 
 [在 Codepen 上尝试](https://codepen.io/wangyi7099/pen/GxMLjd)
 
@@ -273,14 +260,12 @@ import vuescroll from 'vuescroll';
 Vue.use(vuescroll); // install the vuescroll first
 Vue.prototype.$vuescrollConfig = {
   bar: {
-    vBar: {
-      background: '#000'
-    }
+    background: '#000'
   }
 };
 ```
 
-并且完整的全局配置在这：
+完整的全局配置：
 
 ```javascript
 export default {
@@ -291,6 +276,8 @@ export default {
     // or be a number that is equal to its parentNode's width or
     // height ?
     sizeStrategy: 'percent',
+    /** Whether to detect dom resize or not */
+    detectResize: true,
     // pullRefresh or pushLoad is only for the slide mode...
     pullRefresh: {
       enable: false,
@@ -317,7 +304,7 @@ export default {
       width: 100,
       height: 100
     },
-    // some scroller options
+    /* shipped scroll options */
     scroller: {
       /** Enable bouncing (content can be slowly moved outside and jumps back after releasing) */
       bouncing: true,
@@ -353,36 +340,24 @@ export default {
   },
   //
   rail: {
-    vRail: {
-      width: '6px',
-      pos: 'right',
-      background: '#01a99a',
-      opacity: 0
-    },
-    //
-    hRail: {
-      height: '6px',
-      pos: 'bottom',
-      background: '#01a99a',
-      opacity: 0
-    }
+    background: '#01a99a',
+    opacity: 0,
+    /** Rail's size(Height/Width) , default -> 6px */
+    size: '6px'
   },
   bar: {
+    /** How long to hide bar after mouseleave, default -> 500 */
     showDelay: 500,
+    /** Whether to show bar on scrolling, default -> true */
     onlyShowBarOnScroll: true,
-    vBar: {
-      background: '#00a650',
-      keepShow: false,
-      opacity: 1,
-      hover: false
-    },
-    //
-    hBar: {
-      background: '#00a650',
-      keepShow: false,
-      opacity: 1,
-      hover: false
-    }
+    /** Whether to keep show or not, default -> false */
+    keepShow: false,
+    /** Bar's background , default -> #00a650 */
+    background: '#c1c1c1',
+    /** Bar's opacity, default -> 1  */
+    opacity: 1,
+    /** Styles when you hover scrollbar, it will merge into the current style */
+    hoverStyle: false
   }
 };
 ```
