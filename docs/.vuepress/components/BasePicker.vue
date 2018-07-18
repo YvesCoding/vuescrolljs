@@ -53,8 +53,7 @@ export default {
           scrollingX: false
         },
         bar: {
-          vBar: { opacity: 0 },
-          hBar: { opacity: 0 }
+          opacity: 0
         }
       },
       currentIndex: 0

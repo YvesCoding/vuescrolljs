@@ -47,8 +47,7 @@ export default {
       width: '',
       ops: {
         bar: {
-          vBar: { opacity: 0 },
-          hBar: { opacity: 0 }
+          opacity: 0
         },
         vuescroll: {
           mode: 'slide',
