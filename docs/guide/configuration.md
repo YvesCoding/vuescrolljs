@@ -115,7 +115,7 @@ Vuescroll here is just an **option** here, not vuescroll component itself. Set t
 | beforeDeactive | `Load Successfully!` | Tips in `beforeDeactive` stage. |
 | deactive       | `Push to Load`       | Tips in `deactive` stage.       |
 
-[A small example](https://github.com/YvesCoding/vuescroll-issue-list-demo)
+[A small example](http://vs-issue-list-demo.yvescoding.org/)
 
 ## scrollPanel
 
