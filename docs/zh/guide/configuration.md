@@ -116,7 +116,7 @@ Vuescroll 的配置项是由 5 部分组成的, 它们是 `vuescroll`, `scrollPa
 | beforeDeactive | `Load Successfully!` | 在 `beforeDeactive` 阶段的提示. |
 | deactive       | `Push to Load`       | 在 `deactive` 阶段的提示.       |
 
-[一个小例子](http://vs-issue-list-demo.yvescoding.org/)
+[一个小例子](http://vuescroll-demo.yvescoding.org:8080/)
 
 ## scrollPanel
 
