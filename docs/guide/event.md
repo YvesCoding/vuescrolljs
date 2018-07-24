@@ -141,7 +141,7 @@ corresponding to each stage of pull-refresh. From start to end are `refresh-acti
 
 **Load is the same as reresh, please view it in demo**
 
-[A small demo you can checkout here](http://vuescroll-demo.yvescoding.org:8080/)
+[A small demo you can checkout here](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh/)
 
 ## handle-scroll-complete
 
