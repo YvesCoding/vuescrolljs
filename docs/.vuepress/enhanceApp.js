@@ -6,7 +6,9 @@ export default ({ Vue }) => {
   Vue.prototype.$vuescrollConfig = {
     bar: {
       background: 'rgba(0,0,0,.3)',
-      hover: 'rgba(0,0,0,.5)'
+      hoverStyle: {
+        background: 'rgba(0,0,0,.5)'
+      }
     }
   };
   Vue.prototype.getRandomColor = function() {
