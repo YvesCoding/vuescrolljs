@@ -1,27 +1,15 @@
 <template>
   <div class="parent time-pick-wrap" ref="parentElm">
-      <vue-scroll :ops="ops" ref="vs" 
-      @handle-scroll="handleScroll" 
-      >
+    <vue-scroll :ops="ops" ref="vs" @handle-scroll="handleScroll">
       <ul class="picker-ui" ref="picker">
-        <template
-        v-for="(item, index) in items"
-        >
-        <li
-        :key="index"
-        :index="index"
-        :class="{active: currentIndex == index}"
-        :data-index="index"
-        @touchstart="goToTarget($event.target)"
-        @click="goToTarget($event.target, true)"
-        class="picker-li"
-        >
-        {{ item }}
-        </li>
+        <template v-for="(item, index) in items">
+          <li :key="index" :index="index" :class="{active: currentIndex == index}" :data-index="index" @touchstart="goToTarget($event.target)" @click="goToTarget($event.target, true)" class="picker-li">
+            {{ item }}
+          </li>
         </template>
       </ul>
-      </vue-scroll>
-  </div>  
+    </vue-scroll>
+  </div>
 </template>
 
 <script>
@@ -53,7 +41,7 @@ export default {
           scrollingX: false
         },
         bar: {
-          opacity: 0
+          keepShow: true
         }
       },
       currentIndex: 0
