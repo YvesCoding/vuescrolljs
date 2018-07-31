@@ -4,6 +4,8 @@ heroImage: /logo.png
 actionText: 开始上手 →
 actionLink: /zh/guide/
 features:
+- title: 基于配置的
+  details: 只需要简单改改配置就能产生很多效果
 - title: 简单
   details: 非常简单就能上手
 - title: 全面的配置

@@ -1,66 +1,80 @@
 # Getting Started
 
-## Installation & Usage
+## Quick Start
 
-#### You can directly download or use CDN in browser environment.
+### Import(Module System)
 
-```html
-<script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/vuescroll"></script>
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/vuescroll/dist/vuescroll.css" />
-```
-
-#### Or use npm or yarn to install in the module system.
-
-```bash
-npm install vuescroll -S
-# yarn add vuescroll
-```
-
-#### In the module system, you need to install the plugin. (You can skip this step in browser environment.)
+In your entry file:
 
 ```javascript
 import Vue from 'vue';
 import vuescroll from 'vuescroll';
-// Note: from 4.6.6, you need to import the .css file
 import 'vuescroll/dist/vuescroll.css';
+
 Vue.use(vuescroll);
 ```
 
-#### And in the html or template, wrap the content by vuescroll.
+### Import vuescroll separately
 
-```html
-<div id="app" >
-    <!-- bind your own options in data -->
-    <vue-scroll :ops="ops">
-        <!-- the content you want to scroll -->
-        <div
-        class="content"
-        v-for= "item in 100"
-        :key="item"
-        >
-        <span>{{item}}</span>
-        </div>
-    </vue-scroll>
-</div>
-```
-
-#### Write your own options and that's all!
+#### If you only want slide mode, and you don't want native mode, you can import this way (You don't need to set mode in option, your option should only work in slide mode):
 
 ```javascript
-var vm = new Vue({
-  el: '#app',
-  data: {
-    ops: {
-      // write your own options
-      vuescroll: {
-        mode: 'native'
-      },
-      scrollPanel: {},
-      scrollContent: {},
-      vRail: {}
-      // ...
+import Vue from 'vue';
+import vuescroll from 'vuescroll/dist/vuescroll-slide';
+import 'vuescroll/dist/vuescroll.css';
+
+Vue.use(vuescroll);
+```
+
+#### If you only want native mode, and you don't want slide mode, you can import this way (You don't need to set mode in option, your option should only work in native mode):
+
+```javascript
+import Vue from 'vue';
+import vuescroll from 'vuescroll/dist/vuescroll-native';
+import 'vuescroll/dist/vuescroll.css';
+
+Vue.use(vuescroll);
+```
+
+### Import(Browser Environment)
+
+```html
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vuescroll"></script>
+<!-- import vuescroll-slide -->
+<script src="https://unpkg.com/vuescroll/dist/vuescroll-slide.js"></script>
+<!-- import vuescroll-native -->
+<script src="https://unpkg.com/vuescroll/dist/vuescroll-native.js"></script>
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/vuescroll/dist/vuescroll.css" />
+```
+
+### Usage
+
+Wrap the content you need to scroll by `vuescroll`
+
+```html
+  <template>
+    <div class='your-container'>
+        <!-- bind your configurations -->
+        <vue-scroll :ops="ops">
+            <div class='your-content'>
+            </div>
+        </vue-scroll>
+    </div>
+  </template>
+  <script>
+    export default {
+      data() {
+        return {
+          ops: {
+            vuescroll: {},
+            scrollPanel: {},
+            scrollContent: {}, // only for native-mode
+            rail: {}
+            bar: {}
+          }
+        }
+      }
     }
-  }
-});
+  </script>
 ```

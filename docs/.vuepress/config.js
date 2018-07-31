@@ -12,12 +12,13 @@ module.exports = {
     '/': {
       lang: 'en-US',
       title: 'Vuescroll.js',
-      description: 'A powerful, customizable scrollbar plugin based on Vue.js'
+      description:
+        'A powerful, customizable scrollbar plugin specially designed for Vue.js'
     },
     '/zh/': {
       lang: 'zh-CN',
       title: 'Vuescroll.js',
-      description: '一个可定制的， 功能强大的基于 Vue.js 的滚动条插件'
+      description: '一个可定制的， 功能强大专为 Vue.js 设计的滚动条插件'
     }
   },
   head: [['link', { rel: 'icon', href: `/logo.png` }]],
