@@ -17,7 +17,7 @@ footer: MIT Licensed | Copyright © 2018-present Yi(Yves) Wang
 
 ```javascript
 import Vue from 'vue';
-import vuescroll from 'vuescroll';
+import vuescroll from 'vuescroll/dist/vuescroll-native';
 // import the css file
 import 'vuescroll/dist/vuescroll.css';
 

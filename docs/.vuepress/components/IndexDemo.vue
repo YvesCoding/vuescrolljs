@@ -1,4 +1,5 @@
 <template>
+  <!-- Home page demo -->
   <div class="demo-container">
     <vue-scroll :ops="ops">
       <div class="demo-content">
