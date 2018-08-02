@@ -78,9 +78,6 @@ module.exports = {
         }
       }
     };
-    if (!isServer) {
-      base.devtool = '#source-map';
-    }
     return base;
   }
 };
