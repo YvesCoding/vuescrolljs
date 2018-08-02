@@ -72,13 +72,15 @@ module.exports = {
   },
   configureWebpack: (config, isServer) => {
     let base = {
-      devtool: '#source-map',
       resolve: {
         alias: {
           assets: resolve('./assets')
         }
       }
     };
+    if (!isServer) {
+      config.devtool = '#source-map';
+    }
     return base;
   }
 };
