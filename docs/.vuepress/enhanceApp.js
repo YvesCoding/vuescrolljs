@@ -17,6 +17,7 @@ export default ({ Vue }) => {
     while (i--) {
       str += Math.floor(Math.random() * 16).toString(16);
     }
+
     return str;
   };
 };
