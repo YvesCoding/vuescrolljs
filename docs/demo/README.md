@@ -14,9 +14,9 @@ sidebarDepth: 3
 
 [source code](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/OrdinaryScroll.vue)
 
-### 2.Customize position
+### 2.Customize Scrollbar
 
-#### Vuescroll supports setting the positions of the scrollbar and rail or keep show while native doesn't.
+#### Vuescroll supports setting keep show or not and background.
 
 <ClientOnly>
 <Demo-Basic-SetPositionAndKeepShow />

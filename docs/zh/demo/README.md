@@ -16,9 +16,9 @@
 
 [源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/OrdinaryScroll.vue)
 
-### 2.自定义滚动条位置.
+### 2.自定义滚动条.
 
-#### vuescroll 可以设置滚动条的位置， 是否保持显示， 而原生的不能。
+#### vuescroll 可以设置滚动条是否保持显示,颜色等。
 
 <ClientOnly>
 <Demo-Basic-SetPositionAndKeepShow />
