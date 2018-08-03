@@ -3,7 +3,7 @@
         <div class="wrap-part">
             <span class="demo-title">Vuescroll</span>
             <div class="parent" ref="parentElm">
-                <vue-scroll :ops="ops">
+                <vue-scroll :ops="ops" ref="vs">
                     <template v-for="item in 64">
                         <BaseChild :key="item" :width="width" :index="item" />
                         <br v-if="item % 8 == 0" />
@@ -14,7 +14,7 @@
         <div class="wrap-part">
             <span class="demo-title">Operation</span>
             <div class="parent">
-                <vue-scroll>
+                <vue-scroll :ops="{bar: {onlyShowBarOnScroll: false}}">
                     <table class="customize-table">
                         <thead>
                             <tr>
@@ -48,6 +48,17 @@
                                     <input type="range" :min="0" :max="1" :step="0.1" v-model="ops.rail.opacity">{{ops.rail.opacity}}
                                 </td>
                             </tr>
+                            <tr>
+                                <td>Animation</td>
+                                <td>
+                                    <select v-model="ops.scrollPanel.easing">
+                                        <option v-for="easing in easings" :value="easing">
+                                            {{easing}}
+                                        </option>
+                                    </select> <br/>
+                                    <button @click="randomScroll">Scroll to a random position</button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </vue-scroll>
@@ -57,6 +68,21 @@
 </template>
 
 <script>
+const easings = [
+  'easeInQuad',
+  'easeOutQuad',
+  'easeInOutQuad',
+  'easeInCubic',
+  'easeOutCubic',
+  'easeInOutCubic',
+  'easeInQuart',
+  'easeOutQuart',
+  'easeInOutQuart',
+  'easeInQuint',
+  'easeOutQuint',
+  'easeInOutQuint'
+];
+
 export default {
   data() {
     return {
@@ -68,13 +94,28 @@ export default {
         bar: {
           background: undefined,
           keepShow: false
+        },
+        scrollPanel: {
+          easing: 'easeInQuad',
+          speed: 800
         }
       },
-      width: ''
+      width: '',
+      easings
     };
   },
   mounted() {
     this.width = this.$refs['parentElm'].clientWidth / 16 + 'rem';
+  },
+  methods: {
+    randomScroll() {
+      const x = Math.random() * 2300;
+      const y = Math.random() * 2300;
+      this.$refs['vs'].scrollTo({
+        x,
+        y
+      });
+    }
   }
 };
 </script>

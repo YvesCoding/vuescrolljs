@@ -1,3 +1,7 @@
+---
+sidebarDepth: 1
+---
+
 # Getting Started
 
 ## Quick Start
@@ -14,9 +18,9 @@ import 'vuescroll/dist/vuescroll.css';
 Vue.use(vuescroll);
 ```
 
-### Import vuescroll separately
+### In order to remove parts that are not used, you can import vuescroll separately
 
-#### If you only want slide mode, and you don't want native mode, you can import this way (You don't need to set mode in option, your option should only work in slide mode):
+#### Only import the features of slide mode:
 
 ```javascript
 import Vue from 'vue';
@@ -26,7 +30,7 @@ import 'vuescroll/dist/vuescroll.css';
 Vue.use(vuescroll);
 ```
 
-#### If you only want native mode, and you don't want slide mode, you can import this way (You don't need to set mode in option, your option should only work in native mode):
+#### Only import the features of native mode:
 
 ```javascript
 import Vue from 'vue';

@@ -1,3 +1,7 @@
+---
+sidebarDepth: 1
+---
+
 # 开始上手
 
 ## 快速开始
@@ -14,9 +18,9 @@ import 'vuescroll/dist/vuescroll.css';
 Vue.use(vuescroll);
 ```
 
-### 分开地引入 vuescroll
+### 为了去掉不会用到的部分，可以分开地引入 vuescroll
 
-#### 如果你只想要 slide 模式，而不想要 native 模式，可以这么引用（不用在配置里面设置 mode，你的配置应该只在 slide 模式下工作）：
+#### 只引入 slide 模式的特性：
 
 ```javascript
 import Vue from 'vue';
@@ -26,7 +30,7 @@ import 'vuescroll/dist/vuescroll.css';
 Vue.use(vuescroll);
 ```
 
-#### 如果你只想要 native 模式，而不想要 slide 模式，可以这么引用（不用在配置里面设置 mode，你的配置应该只在 native 模式下工作）：
+#### 只引入 native 模式的特性：
 
 ```javascript
 import Vue from 'vue';
