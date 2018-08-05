@@ -6,19 +6,21 @@ sidebarDepth: 2
 
 Vuescroll has some events that will trigger in the specific circumstances.
 
-## handle-resize
+## Basic events
 
-### Introduction
+### handle-resize
+
+#### Introduction
 
 Trigger when content's size changed.
 
-### Event Detail
+#### Event Detail
 
 | params                              | description                                                                                                                                            |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `vertical, horizontal, nativeEvent` | Pass 3 params to you, `vertical` and `horizontal` tell you the information about vertical bar and horizontal bar, the thrid param is the native event. |
 
-### Usage
+#### Usage
 
 ```html
     <vue-scroll
@@ -43,19 +45,19 @@ You can try to adjust the size of content in the **browser dev-tool** and see th
 :::
 [Try handle-resize on Codepen](https://codepen.io/wangyi7099/pen/JLrVON)
 
-## handle-scroll
+### handle-scroll
 
-### Introduction
+#### Introduction
 
 Trigger when content is scrolling.
 
-### Event Detail
+#### Event Detail
 
 | params                              | description                                                                                                                                            |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `vertical, horizontal, nativeEvent` | Pass 3 params to you, `vertical` and `horizontal` tell you the information about vertical bar and horizontal bar, the thrid param is the native event. |
 
-### Usage
+#### Usage
 
 ```html
     <vue-scroll
@@ -77,33 +79,72 @@ Trigger when content is scrolling.
 
 [Try handle-scroll on Codepen](https://codepen.io/wangyi7099/pen/geGydZ)
 
-## refresh/load
+### handle-scroll-complete
 
-### Introduction
+#### Introduction
+
+Trigger when scroll complete
+
+#### Event Detail
+
+| params                 | description                                                                                                       |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `vertical, horizontal` | Pass 2 params to you, `vertical` and `horizontal` tell you the information about vertical bar and horizontal bar. |
+
+#### Usage
+
+```html
+    <vue-scroll
+    @handle-scroll-complete="handleComplete"
+    >
+    </vue-scroll>
+```
+
+```javascript
+    // ...
+    {
+        methods: {
+            handleComplete() {
+                console.log('scroll complete！')
+            }
+        }
+    }
+```
+
+::: tip
+Need to open dev-tool to see the result
+:::
+[Try handle-scroll-complete on codepen](https://codepen.io/wangyi7099/pen/YLVBNe)
+
+## Events are only for slide
+
+### refresh/load
+
+#### Introduction
 
 corresponding to each stage of pull-refresh. From start to end are `refresh-activate`, `refresh-start`, `refresh-before-deactivate`, `refresh-deactivate` .
 
-### Events Detail
+#### Events Detail
 
-#### refresh-activate, refresh-deactivate
+##### refresh-activate, refresh-deactivate
 
 | params           | description                                                                            |
 | ---------------- | -------------------------------------------------------------------------------------- |
 | `vm, refreshDom` | `vm` is the current vuescroll instance, `refreshDom` is a dom that will show as a tip. |
 
-#### refresh-start
+##### refresh-start
 
 | params                 | description                                                                                                                                                                                               |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `vm, refreshDom, done` | `vm` is the current vuescroll instance, `refreshDom` is a dom that will show as a tip.`done` is the finish-function, it is a proper stage that you fetch data, and call the `done()` to go to next stage. |
 
-#### refresh-before-deactive
+##### refresh-before-deactive
 
 | params                 | description                                                                                                                                                                                                                                                                |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `vm, refreshDom, done` | `vm` is the current vuescroll instance, `refreshDom` is a dom that will show as a tip.`done` is the finish-function, it is a proper stage that you show the tip to user(such as `load successfully` or `load error` and so on), and call the `done()` to go to next stage. |
 
-### Usage
+#### Usage
 
 ```html
     <vue-scroll
@@ -142,40 +183,3 @@ corresponding to each stage of pull-refresh. From start to end are `refresh-acti
 **Load is the same as reresh, please view it in demo**
 
 [A small demo you can checkout here](https://vuescroll-issue-list-demo-zdizhghthq.now.sh/)
-
-## handle-scroll-complete
-
-### Introduction
-
-Trigger when scroll complete
-
-### Event Detail
-
-| params                 | description                                                                                                       |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `vertical, horizontal` | Pass 2 params to you, `vertical` and `horizontal` tell you the information about vertical bar and horizontal bar. |
-
-### Usage
-
-```html
-    <vue-scroll
-    @handle-scroll-complete="handleComplete"
-    >
-    </vue-scroll>
-```
-
-```javascript
-    // ...
-    {
-        methods: {
-            handleComplete() {
-                console.log('scroll complete！')
-            }
-        }
-    }
-```
-
-::: tip
-Need to open dev-tool to see the result
-:::
-[Try handle-scroll-complete on codepen](https://codepen.io/wangyi7099/pen/YLVBNe)

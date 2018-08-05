@@ -4,19 +4,21 @@ sidebarDepth: 2
 
 # Api
 
-## scrollTo
+## Basic apis
 
-### Introduction
+### scrollTo
+
+#### Introduction
 
 Scroll to a place, like native `scrollTo`
 
-### Detailed params
+#### Detailed params
 
 | params                     | description                                                                                                                                                                                                                                    |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `{x: 10, y: '10%' }, true` | First param is a coordinate, can be a number or a percent number. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](configuration.md#scrollpanel) options `speed` and `easing` to have a better experience. |
 
-### Usage
+#### Usage
 
 ```html
     <vue-scroll
@@ -41,19 +43,19 @@ Scroll to a place, like native `scrollTo`
 
 [Try scrollTo api on Codepen](https://codepen.io/wangyi7099/pen/MVEdWb)
 
-## scrollBy
+### scrollBy
 
-### Introduction
+#### Introduction
 
 Scroll a delta each time, like native `scrollBy`
 
-### Detailed params
+#### Detailed params
 
 | params                       | description                                                                                                                                                                                                                               |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `{dx: 10, dy: '10%' }, true` | First param is a delta, can be a number or a percent number. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](configuration.md#scrollpanel) options `speed` and `easing` to have a better experience. |
 
-### Usage
+#### Usage
 
 ```html
     <vue-scroll
@@ -78,101 +80,19 @@ Scroll a delta each time, like native `scrollBy`
 
 [Try scrollBy api on Codepen](https://codepen.io/wangyi7099/pen/yjaPYG)
 
-## goToPage
+### getCurrentviewDom
 
-### Introduction
-
-Go to a given page number. Only work in `slide mode` and `paging` is enabled.
-
-### Detailed params
-
-| params                | description                                                                                                                                                                                                                      |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{x: 1, y: 1 }, true` | First param is page index `x, y` you want to go to. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](configuration.md#scrollpanel) options `speed` and `easing` to have a better experience. |
-
-### Usage
-
-```html
-    <vue-scroll
-    ref="vs"
-    >
-    <!-- Your content -->
-    </vue-scroll>
-```
-
-```javascript
-    // ...
-    {
-        data: {
-            ops: {
-                mode: 'slide',
-                paging: true
-            }
-        },
-        methods: {
-            goToPage() {
-                this.$refs['vs'].goToPage({
-                    x: 1,
-                    y: 2
-                }, true)
-            }
-        }
-    }
-```
-
-## getCurrentPage
-
-### Introduction
-
-Get the current page. Only work in `slide mode` and `paging` is enabled.
-
-### Detailed params
-
-| params | description                                       |
-| ------ | ------------------------------------------------- |
-| None   | Return a object that contains x and y pages info. |
-
-### Usage
-
-```html
-    <vue-scroll
-    ref="vs"
-    >
-    <!-- Your content -->
-    </vue-scroll>
-```
-
-```javascript
-    // ...
-    {
-        data: {
-            ops: {
-                mode: 'slide',
-                paging: true
-            }
-        },
-        methods: {
-            getCurrentPage() {
-                const pageInfo = this.$refs['vs'].getCurrentPage();
-                // pageinfo => {x: 1, y: 1}
-            }
-        }
-    }
-```
-
-## getCurrentviewDom
-
-### Introduction
+#### Introduction
 
 Get the doms you can currently see in the vuescroll.
 
-### Detailed params
+#### Detailed params
 
 | params | description                                         |
 | ------ | --------------------------------------------------- |
 | None   | Return an array that contains the currentview doms. |
 
-### Usage
+#### Usage
 
 ```html
     <vue-scroll
@@ -202,19 +122,19 @@ Get the doms you can currently see in the vuescroll.
 
 [Try getCurrentviewDom api on Codepen](https://codepen.io/wangyi7099/pen/LmzJrv)
 
-## scrollIntoView(4.5.17)
+### scrollIntoView(4.5.17)
 
-### Introduction
+#### Introduction
 
 Scroll the child elements in the Vuescroll to the current view.
 
-### Detailed params
+#### Detailed params
 
 | params               | description                |
 | -------------------- | -------------------------- |
 | `String|HTMLElement` | A string or a dom element. |
 
-### Usage
+#### Usage
 
 ```html
     <vue-scroll
@@ -242,58 +162,9 @@ Scroll the child elements in the Vuescroll to the current view.
 
 [Try crollIntoView on Codepen](https://codepen.io/wangyi7099/pen/dewQbM)
 
-## triggerRefreshOrLoad(4.5.32)
+### refresh/refreshAll(4.6.4)
 
-### Introduction
-
-Activate pull to refresh or push to load directly,
-
-### Detailed params
-
-| params         | description     |
-| -------------- | --------------- |
-| `refresh|load` | load or refresh |
-
-### Usage
-
-```html
-    <vue-scroll
-    ref="vs"
-    :ops="ops"
-    >
-    <div
-    v-for="i in 3"
-    :key="i"
-    :id="'d' + i"
-    >
-    </div>
-    </vue-scroll>
-```
-
-```javascript
-    // ...
-    {
-        ops: {
-            vuescroll: {
-                mode: 'slide',
-                pullRefresh: {
-                    enable: true
-                }
-            }
-        },
-        methods: {
-            triggerRefreshOrLoad() {
-                this.$refs['vs'].triggerRefreshOrLoad('load')
-            }
-        }
-    }
-```
-
-[Try triggerRefreshOrLoad on codePen](https://codepen.io/wangyi7099/pen/VdLPgz)
-
-## refresh/refreshAll(4.6.4)
-
-### Introduction
+#### Introduction
 
 Refresh the state of vuescroll or the state of all vuescroll instances.
 
@@ -301,7 +172,7 @@ Refresh the state of vuescroll or the state of all vuescroll instances.
 You can use it when your vuescroll scrollbar does not appear.
 :::
 
-### Usage
+#### Usage
 
 ```html
     <vue-scroll
@@ -354,3 +225,136 @@ You can use it when your vuescroll scrollbar does not appear.
 ```
 
 [Try refresh/refreshAll on codePen](https://codepen.io/wangyi7099/pen/OEXdQa)
+
+## Apis are only for slide
+
+### goToPage
+
+#### Introduction
+
+Go to a given page number. Only work in `slide mode` and `paging` is enabled.
+
+#### Detailed params
+
+| params                | description                                                                                                                                                                                                                      |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{x: 1, y: 1 }, true` | First param is page index `x, y` you want to go to. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](configuration.md#scrollpanel) options `speed` and `easing` to have a better experience. |
+
+#### Usage
+
+```html
+    <vue-scroll
+    ref="vs"
+    >
+    <!-- Your content -->
+    </vue-scroll>
+```
+
+```javascript
+    // ...
+    {
+        data: {
+            ops: {
+                mode: 'slide',
+                paging: true
+            }
+        },
+        methods: {
+            goToPage() {
+                this.$refs['vs'].goToPage({
+                    x: 1,
+                    y: 2
+                }, true)
+            }
+        }
+    }
+```
+
+### getCurrentPage
+
+#### Introduction
+
+Get the current page. Only work in `slide mode` and `paging` is enabled.
+
+#### Detailed params
+
+| params | description                                       |
+| ------ | ------------------------------------------------- |
+| None   | Return a object that contains x and y pages info. |
+
+#### Usage
+
+```html
+    <vue-scroll
+    ref="vs"
+    >
+    <!-- Your content -->
+    </vue-scroll>
+```
+
+```javascript
+    // ...
+    {
+        data: {
+            ops: {
+                mode: 'slide',
+                paging: true
+            }
+        },
+        methods: {
+            getCurrentPage() {
+                const pageInfo = this.$refs['vs'].getCurrentPage();
+                // pageinfo => {x: 1, y: 1}
+            }
+        }
+    }
+```
+
+### triggerRefreshOrLoad(4.5.32)
+
+#### Introduction
+
+Activate pull to refresh or push to load directly,
+
+#### Detailed params
+
+| params         | description     |
+| -------------- | --------------- |
+| `refresh|load` | load or refresh |
+
+#### Usage
+
+```html
+    <vue-scroll
+    ref="vs"
+    :ops="ops"
+    >
+    <div
+    v-for="i in 3"
+    :key="i"
+    :id="'d' + i"
+    >
+    </div>
+    </vue-scroll>
+```
+
+```javascript
+    // ...
+    {
+        ops: {
+            vuescroll: {
+                mode: 'slide',
+                pullRefresh: {
+                    enable: true
+                }
+            }
+        },
+        methods: {
+            triggerRefreshOrLoad() {
+                this.$refs['vs'].triggerRefreshOrLoad('load')
+            }
+        }
+    }
+```
+
+[Try triggerRefreshOrLoad on codePen](https://codepen.io/wangyi7099/pen/VdLPgz)
