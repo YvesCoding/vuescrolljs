@@ -16,7 +16,7 @@ sidebarDepth: 1
 
 English Version | [中文版](https://github.com/YvesCoding/vuescroll/blob/dev/README-ZH.md)
 
-A powerful, customizable scrollbar plugin specially designed for Vue.js - [vuescrolljs.yvescoding.org](http://vuescrolljs.yvescoding.org/)
+A powerful, customizable, multi-mode scrollbar plugin baed on Vue.js - [vuescrolljs.yvescoding.org](http://vuescrolljs.yvescoding.org/)
 
 ## Demo
 

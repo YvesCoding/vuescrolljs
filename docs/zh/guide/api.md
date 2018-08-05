@@ -226,7 +226,7 @@ sidebarDepth: 3
 
 [在 codePen 上尝试 refresh/refreshAll](https://codepen.io/wangyi7099/pen/OEXdQa)
 
-## Slide 定制的 Api
+## Slide 模式定制的 Api
 
 ### goToPage
 

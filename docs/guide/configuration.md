@@ -164,7 +164,7 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
 
 [Try bar option on Codepen](https://codepen.io/wangyi7099/pen/GxMLjd)
 
-## Configurations are only for slide
+## Configurations are only for slide mode
 
 ### vuescroll
 

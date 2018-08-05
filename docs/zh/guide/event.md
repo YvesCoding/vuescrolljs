@@ -116,7 +116,7 @@ Vuescroll 有一些事件可以在特定场合下触发。
 :::
 [在 Codepen 上尝试 handle-scroll-complete](https://codepen.io/wangyi7099/pen/YLVBNe)
 
-## slide 定制的事件
+## slide 模式定制的事件
 
 ### refresh/load
 

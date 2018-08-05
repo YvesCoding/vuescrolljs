@@ -226,7 +226,7 @@ You can use it when your vuescroll scrollbar does not appear.
 
 [Try refresh/refreshAll on codePen](https://codepen.io/wangyi7099/pen/OEXdQa)
 
-## Apis are only for slide
+## Apis are only for slide mode
 
 ### goToPage
 

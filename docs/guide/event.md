@@ -116,7 +116,7 @@ Need to open dev-tool to see the result
 :::
 [Try handle-scroll-complete on codepen](https://codepen.io/wangyi7099/pen/YLVBNe)
 
-## Events are only for slide
+## Events are only for slide mode
 
 ### refresh/load
 

@@ -167,7 +167,7 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
 
 [在 Codepen 上尝试](https://codepen.io/wangyi7099/pen/GxMLjd)
 
-## slide 定制的配置
+## slide 模式定制的配置
 
 ### vuescroll
 
