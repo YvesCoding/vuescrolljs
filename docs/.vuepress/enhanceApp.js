@@ -3,14 +3,6 @@ import vuescroll from 'vuescroll';
 export default ({ Vue }) => {
   Vue.use(vuescroll);
 
-  Vue.prototype.$vuescrollConfig = {
-    bar: {
-      background: 'rgba(0,0,0,.3)',
-      hoverStyle: {
-        background: 'rgba(0,0,0,.5)'
-      }
-    }
-  };
   Vue.prototype.getRandomColor = function() {
     let str = '#';
     let i = 6;

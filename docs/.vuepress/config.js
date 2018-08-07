@@ -35,6 +35,7 @@ module.exports = {
         label: 'English',
         selectText: 'Languages',
         editLinkText: 'Edit this page on GitHub',
+        lastUpdated: 'Last Updated', // string | boolean
         nav: [
           {
             text: 'Guide',
@@ -54,6 +55,7 @@ module.exports = {
         label: '简体中文',
         selectText: '选择语言',
         editLinkText: '在 GitHub 上编辑此页',
+        lastUpdated: '上次更新', // string | boolean
         nav: [
           {
             text: '指南',
