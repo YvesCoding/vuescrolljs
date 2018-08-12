@@ -2,9 +2,24 @@
 sidebarDepth: 2
 ---
 
-# Configuration
+# Configuration & Analysis of various parts
 
-Vuescroll's options are composed of five parts, they are `vuescroll`, `scrollPanel`, `scrollContent`, `bar`, `rail` in turn, each of parts has its own options.
+Vuescroll's options are composed of five parts, they are `vuescroll`, `scrollPanel`, `scrollContent`, `bar`, `rail` in turn, each of parts has its own options.**All default configurations can be omitted.**
+
+One of Vuescroll's criteria for determining whether a scrollbar should appear is whether the content height is greater than the container height. The following are analyzed separately.
+
+Vuescroll: class name: `__vuescroll`. Vuescroll core configuration and outermost container configuration.
+
+- ScrollPanel: class name: `__panel`. Vuescroll includes scrolling related configurations, such as initialization scrolling, scroll animation, etc. In slide mode and native mode, they play different roles respectively.
+
+  - Slide mode: wrapping the contents that we want to scroll. Scroll the content by changing its `tansform:translate` attribute. The height of the content is also calculated by obtaining its `scrollHeight`.
+  - Naitve mode: the parent element of the wrapped `scrollContent`. By adding `overflow: scroll`to it to produce a native scroll, Vuescroll changes the position of the scrollbar by listening for the native scroll. The height of the content can be calculated by obtaining its `scrollHeight`.How to hide the native scrollbar? Simply put, get the size of the scrollbar first, and then hide the native scrollbar by adding a style.
+    1.  First, get the size of the native browser scrollbar. Each browser's scrollbar size is different, some are 0, some are 15, some are 17, we first add a `overflow: scroll`style to the dom, and then calculate the size of the native scrollbar by calculating the`offset Height - client Height' of the dom, see [Get the width of the native scrollbar](https://github.com/YvesCoding/vuescroll/blob/10190631490a726ec6dd5d505415b575ca6e8702/src/shared/util.js#L69).
+    2.  Then assume that both horizontal and vertical scroll bars appear, and the size of the scroll bar is `gutter`. The way we hide the horizontal scroll bar is to add a style `calc (100% plus gutterpx)`, Calc is compatible with [ie9](https://developer.mozilla.org/en-US/docs/Web/CSS/calc#Browser_compatibility). The way to hide horizontal scrollbar is to add a `margin-right: -gutterpx`to hide the native scrollbars.
+
+- scrollContent: class name: `_view`. **Will only appear in native mode.** It is used to wrap the contents to be scrolled to replace the role of scrollPanel under `slide` mode.
+- rail: class name: `__rail-is-`+ type. Custom scrollbar.
+- bar: class name: `__bar-is-` + type. Custom scroling track.
 
 ## Basic Configurations
 
@@ -104,7 +119,7 @@ The place where srollbar moves.
 #### Detailed Options
 
 ```javascript
-  rail: {  
+  rail: {
     background: '#01a99a',
     opacity: 0,
     /** Rail's size(Height/Width) , default -> 6px */
@@ -153,14 +168,14 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
 
 #### Explanation
 
-| bar                 | defaultValue | description                                                                               |
-| ------------------- | ------------ | ----------------------------------------------------------------------------------------- |
-| showDelay           | 500          | Control how long the scroll bar is displayed every time and then disappear automatically. |
-| onlyShowBarOnScroll | true         | Only show bar when scrolling                                                              |
-| background          | `#4caf50`    | Set the scrollbar's background                                                            |
-| keepShow            | false        | Set whether the scrollbars will keep showing or not.                                      |
-| opacity             | 1            | Set the opacity of scrollbar.                                                             |
-| hoverStyle          | false        | Styles when you hover scrollbar, it will merge into the current style                     |
+| bar                 | defaultValue | description                                                                              |
+| ------------------- | ------------ | ---------------------------------------------------------------------------------------- |
+| showDelay           | 500          | Control how long the scrollbar is displayed every time and then disappear automatically. |
+| onlyShowBarOnScroll | true         | Only show bar when scrolling                                                             |
+| background          | `#4caf50`    | Set the scrollbar's background                                                           |
+| keepShow            | false        | Set whether the scrollbars will keep showing or not.                                     |
+| opacity             | 1            | Set the opacity of scrollbar.                                                            |
+| hoverStyle          | false        | Styles when you hover scrollbar, it will merge into the current style                    |
 
 [Try bar option on Codepen](https://codepen.io/wangyi7099/pen/GxMLjd)
 

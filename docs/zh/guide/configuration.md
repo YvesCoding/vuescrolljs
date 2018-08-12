@@ -2,9 +2,21 @@
 sidebarDepth: 2
 ---
 
-# 配置项
+# 配置项 & 各部分解析
 
-Vuescroll 的配置项是由 5 部分组成的, 它们是 `vuescroll`, `scrollPanel`, `scrollContent`, `bar`, `rail` 每个部分都有相应的配置项。
+Vuescroll 的配置项是由 5 部分组成的, 它们是 `vuescroll`, `scrollPanel`, `scrollContent`, `bar`, `rail` 每个部分都有相应的配置项。**所有的默认配置都可以省略。**
+
+Vuescroll 判断是否出现滚动条的一个标准是： 内容高度是否大于容器高度。下面分别进行解析：
+
+- vuescroll: 类名： `__vuescroll`。 Vuescroll 核心配置和最外层容器配置。
+- scrollPanel: 类名：`__panel` 。Vuescroll 包含滚动相关的配置， 如`初始化滚动`，`滚动动画`等。 在 slide 模式和 native 模式下分别起着不同的作用：
+  - slide 模式： 包裹这要滚动的内容。通过改变它的`tansform:translate`属性来使内容滚动。也通过获取它的`scrollHeight`来计算内容的高度。
+  - naitve 模式： 包裹的内容的`scrollContent`的父元素。通过给它加上`overflow: scroll`来产生原生的滚动，Vuescroll 通过监听原生的滚动来改变滚动条的位置。可以通过获取它的`scrollHeight`来计算内容的高度。如何隐藏原声滚动条？ 简单的说就是先获取滚动条的尺寸，然后通过添加样式隐藏原生滚动条。
+    1.  首先要获取原声浏览器滚动条的尺寸。每个浏览器的滚动条尺寸是不一样的，有的是 0， 有的是 15， 有的是 17， 我们通过先给 dom 添加一个`overflow: scroll`的样式，然后通过计算 dom 的`offsetHeight - clientHeight` 来计算原生滚动条的尺寸，见[获取原声滚动条的宽度](https://github.com/YvesCoding/vuescroll/blob/10190631490a726ec6dd5d505415b575ca6e8702/src/shared/util.js#L69)。
+    2.  然后， 假设水平和垂直滚动条都出现了，滚动条的尺寸是`gutter`。我们隐藏水平滚动滚动条方法是加一个样式`calc(100% + gutterpx)`，calc 是兼容[ie9](https://developer.mozilla.org/en-US/docs/Web/CSS/calc#Browser_compatibility)的。隐藏水平滚动条的方法是添加一个`margin-right: -gutterpx`来隐藏原生滚动条。
+- scrollContent: 类名：`_view`。 **只会在 native 模式下出现**。用来包裹着要滚动的内容，代替`slide`模式下 scrollPanel 的作用。
+- rail: 类名：`__rail-is-`+ type。自定义的滚动条。
+- bar: 类名：`__bar-is-` + type。自定义的滚动轨道。
 
 ## 基础配置
 
