@@ -8,7 +8,7 @@ Vuescroll's options are composed of five parts, they are `vuescroll`, `scrollPan
 
 One of Vuescroll's criteria for determining whether a scrollbar should appear is whether the content height is greater than the container height. The following are analyzed separately.
 
-Vuescroll: class name: `__vuescroll`. Vuescroll core configuration and outermost container configuration.
+- Vuescroll: class name: `__vuescroll`. Vuescroll core configuration and outermost container configuration.
 
 - ScrollPanel: class name: `__panel`. Vuescroll includes scrolling related configurations, such as initialization scrolling, scroll animation, etc. In slide mode and native mode, they play different roles respectively.
 
