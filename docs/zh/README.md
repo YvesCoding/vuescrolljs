@@ -8,7 +8,7 @@ features:
     details: 有很多Api你可以用他们做很多事
   - title: 基于配置的系统
     details: 只是改改配置就能实现很多功能
-   - title: 完全可定制
+  - title: 完全可定制
     details: 你可以定制滚动容器、滚动面板、滚动内容、滚动条。。。
 footer: MIT Licensed | Copyright © 2018-present Yi(Yves) Wang
 ---
