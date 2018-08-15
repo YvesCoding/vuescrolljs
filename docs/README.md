@@ -4,12 +4,12 @@ heroImage: /logo.png
 actionText: Get Started →
 actionLink: /guide/
 features:
-- title: Options based
-  details: As long as we simply modify the configuration, we can produce a lot of results.
-- title: Simple and Easy
-  details: Very simple and easy to get started
-- title: Rich configuration
-  details: Has a rich configuration to meet your all needs
+  - title: Restful Api
+    details: There are many apis that you can use them to do a lot of work.
+  - title: Option-based system
+    details: Just changing the configuration can achieve many functions.
+   - title: Full customizable
+    details: You can customize scroll container, scroll panel, scroll content, scrollbar...
 footer: MIT Licensed | Copyright © 2018-present Yi(Yves) Wang
 ---
 

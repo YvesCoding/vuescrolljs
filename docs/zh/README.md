@@ -4,12 +4,12 @@ heroImage: /logo.png
 actionText: 开始上手 →
 actionLink: /zh/guide/
 features:
-- title: 基于配置的
-  details: 只需要简单改改配置就能产生很多效果
-- title: 简单
-  details: 非常简单就能上手
-- title: 全面的配置
-  details: 有很全面的配置能够满足你的各项需求
+  - title: 丰富的Api
+    details: 有很多Api你可以用他们做很多事
+  - title: 基于配置的系统
+    details: 只是改改配置就能实现很多功能
+   - title: 完全可定制
+    details: 你可以定制滚动容器、滚动面板、滚动内容、滚动条。。。
 footer: MIT Licensed | Copyright © 2018-present Yi(Yves) Wang
 ---
 
