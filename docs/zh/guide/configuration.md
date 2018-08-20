@@ -4,17 +4,18 @@ sidebarDepth: 2
 
 # 配置项 & 各部分解析
 
-Vuescroll 的配置项是由 5 部分组成的, 它们是 `vuescroll`, `scrollPanel`, `scrollContent`, `bar`, `rail` 每个部分都有相应的配置项。**所有的默认配置都可以省略。**
+Vuescroll 的配置项是由 4 部分组成的, 它们是 `vuescroll`, `scrollPanel`, `bar`, `rail` 每个部分都有相应的配置项。**所有的默认配置都可以省略。**
 
 Vuescroll 判断是否出现滚动条的一个标准是： 内容高度是否大于容器高度。下面分别进行解析：
 
 - vuescroll: 类名： `__vuescroll`。 Vuescroll 核心配置和最外层容器配置。
 - scrollPanel: 类名：`__panel` 。Vuescroll 包含滚动相关的配置， 如`初始化滚动`，`滚动动画`等。 在 slide 模式和 native 模式下分别起着不同的作用：
+
   - slide 模式： 包裹这要滚动的内容。通过改变它的`tansform:translate`属性来使内容滚动。也通过获取它的`scrollHeight`来计算内容的高度。
-  - naitve 模式： 包裹的内容的`scrollContent`的父元素。通过给它加上`overflow: scroll`来产生原生的滚动，Vuescroll 通过监听原生的滚动来改变滚动条的位置。可以通过获取它的`scrollHeight`来计算内容的高度。如何隐藏原声滚动条？ 简单的说就是先获取滚动条的尺寸，然后通过添加样式隐藏原生滚动条。
+  - naitve 模式： 包裹的内容的`__view`的父元素。通过给它加上`overflow: scroll`来产生原生的滚动，Vuescroll 通过监听原生的滚动来改变滚动条的位置。可以通过获取它的`scrollHeight`来计算内容的高度。如何隐藏原声滚动条？ 简单的说就是先获取滚动条的尺寸，然后通过添加样式隐藏原生滚动条。
     1.  首先要获取原声浏览器滚动条的尺寸。每个浏览器的滚动条尺寸是不一样的，有的是 0， 有的是 15， 有的是 17， 我们通过先给 dom 添加一个`overflow: scroll`的样式，然后通过计算 dom 的`offsetHeight - clientHeight` 来计算原生滚动条的尺寸，见[获取原声滚动条的宽度](https://github.com/YvesCoding/vuescroll/blob/10190631490a726ec6dd5d505415b575ca6e8702/src/shared/util.js#L69)。
     2.  然后， 假设水平和垂直滚动条都出现了，滚动条的尺寸是`gutter`。我们隐藏水平滚动滚动条方法是加一个样式`calc(100% + gutterpx)`，calc 是兼容[ie9](https://developer.mozilla.org/en-US/docs/Web/CSS/calc#Browser_compatibility)的。隐藏水平滚动条的方法是添加一个`margin-right: -gutterpx`来隐藏原生滚动条。
-- scrollContent: 类名：`_view`。 **只会在 native 模式下出现**。用来包裹着要滚动的内容，代替`slide`模式下 scrollPanel 的作用。
+
 - rail: 类名：`__rail-is-`+ type。自定义的滚动条。
 - bar: 类名：`__bar-is-` + type。自定义的滚动轨道。
 
@@ -68,7 +69,9 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
     // 起作用。
     speed: 300,
     // 滚动动画
-    easing: undefined
+    easing: undefined,
+    //
+    padding: true
   }
 ```
 
@@ -78,35 +81,11 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
 | -------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | initialScrollY | `false` | 垂直方向上的滚动距离在组件加载完以后.比如.**100** 或 **10%**                                                                                                   |
 | initialScrollX | `false` | 水平方向上的滚动距离在组件加载完以后.比如.**100** 或 **10%**                                                                                                   |
-| speed          | `300`   | 滚动的事件。                                                                                                                                                   |
+| speed          | `300`   | 滚动的完成所需的时间。                                                                                                                                         |
 | easing         | `null`  | 滚动的动画，你可以查看这个[demo](http://vuescrolljs.yvescoding.org/zh/demo/#_2-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%BB%9A%E5%8A%A8%E6%9D%A1)来浏览所有可得到的动画。 |
+| padding        | `true`  | 设置是否启用 padding。可以用来阻止内容被滚动条遮住一部分。                                                                                                     |
 
 [在 codePen 上尝试 scrollPanel](https://codepen.io/wangyi7099/pen/mxBdER)
-
-### scrollContent
-
-::: tip 介绍
-scrollContent 是滚动的内容的包装。vuescroll 通过 scrollContent 来计算滚动内容的大小。
-:::
-
-#### 详细配置
-
-```javascript
-scrollContent: {
-  // 自定义scrollContent的标签
-  padding: true;
-}
-```
-
-#### 解释
-
-| 配置项  | 默认值 | 描述                                                       |
-| ------- | ------ | ---------------------------------------------------------- |
-| padding | `true` | 设置是否启用 padding。可以用来阻止内容被滚动条遮住一部分。 |
-
-::: warning 警告
-`Tag` 和 `Props` 已经 **过期了**, 如果你想自定义 scrollContent, 请考虑 [slot](slot.md)
-:::
 
 ### rail
 
@@ -371,10 +350,8 @@ export default {
     scrollingX: true,
     scrollingY: true,
     speed: 300,
-    easing: undefined
-  },
-  //
-  scrollContent: {
+    easing: undefined,
+    // 是否有一个padding样式，样式的大小应该和rail/bar的大小是一样。
     padding: false
   },
   //

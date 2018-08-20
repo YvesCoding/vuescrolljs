@@ -73,7 +73,6 @@ Wrap the content you need to scroll by `vuescroll`
           ops: {
             vuescroll: {},
             scrollPanel: {},
-            scrollContent: {}, // only for native-mode
             rail: {}
             bar: {}
           }

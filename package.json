@@ -14,7 +14,7 @@
     "css-loader": "^0.28.11",
     "style-loader": "^0.21.0",
     "vuepress": "0.13.1",
-    "vuescroll": "4.7.2"
+    "vuescroll": "4.7.5"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

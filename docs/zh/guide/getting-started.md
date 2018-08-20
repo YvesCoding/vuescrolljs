@@ -73,7 +73,6 @@ Vue.use(vuescroll);
           ops: {
             vuescroll: {},
             scrollPanel: {},
-            scrollContent: {}, // only for native-mode
             rail: {}
             bar: {}
           }
