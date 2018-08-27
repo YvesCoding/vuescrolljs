@@ -182,4 +182,4 @@ corresponding to each stage of pull-refresh. From start to end are `refresh-acti
 
 **Load is the same as reresh, please view it in demo**
 
-[A small demo you can checkout here](https://vuescroll-issue-list-demo-zdizhghthq.now.sh/)
+[A small demo you can checkout here](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh//)

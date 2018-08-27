@@ -182,4 +182,4 @@ Vuescroll 有一些事件可以在特定场合下触发。
 
 **Load 是一样的，换汤不换药，请在 demo 里查看详情**
 
-[可以在这里查看一个小 demo](https://vuescroll-issue-list-demo-zdizhghthq.now.sh/)
+[可以在这里查看一个小 demo](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh//)

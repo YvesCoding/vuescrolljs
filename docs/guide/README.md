@@ -25,7 +25,7 @@ A powerful, customizable, multi-mode scrollbar plugin baed on Vue.js - [vuescrol
 </p>
 
 <p align="center">
-  <a href="https://vuescroll-issue-list-demo-zdizhghthq.now.sh">Online Demo(Recommend to use mobile)</a>
+  <a href="https://vuescroll-issue-list-demo-qlrlyskaji.now.sh/">Online Demo(Recommend to use mobile)</a>
 </p>
 
 ## Features
@@ -38,11 +38,11 @@ A powerful, customizable, multi-mode scrollbar plugin baed on Vue.js - [vuescrol
 
 ### Features only for slide mode
 
-- Support [pull to refresh and push to load](http://vuescrolljs.yvescoding.org/guide/configuration.html#pullrefresh), for detail, you can checkout this [demo](http://vuescrolljs.yvescoding.org/demo/#_4-pull-refresh-or-push-load-supported), and this [demo](https://vuescroll-issue-list-demo-zdizhghthq.now.sh/) of SSR version.
+- Support [pull to refresh and push to load](http://vuescrolljs.yvescoding.org/guide/configuration.html#pullrefresh), for detail, you can checkout this [demo](http://vuescrolljs.yvescoding.org/demo/#_4-pull-refresh-or-push-load-supported), and this [demo](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh//) of SSR version.
 - Support snap config, scroll same distance at each time, you can checkout this [demo](http://vuescrolljs.yvescoding.org/demo/#_2-timepicker)
 - Support paging. You can checkout this [demo](http://vuescrolljs.yvescoding.org/demo/#_1-carousel)
 
 ### Other features
 
 - Support [typescript](http://vuescrolljs.yvescoding.org/guide/typescript.html)
-- Support SSR, you can checkout this [demo](https://vuescroll-issue-list-demo-zdizhghthq.now.sh/)
+- Support SSR, you can checkout this [demo](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh//)

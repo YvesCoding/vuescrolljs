@@ -256,7 +256,7 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
 | beforeDeactive | `Load Successfully!` | 在 `beforeDeactive` 阶段的提示. |
 | deactive       | `Push to Load`       | 在 `deactive` 阶段的提示.       |
 
-[一个小例子](https://vuescroll-issue-list-demo-zdizhghthq.now.sh/)
+[一个小例子](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh//)
 
 ## 全局 & 完整的配置
 

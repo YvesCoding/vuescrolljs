@@ -252,7 +252,7 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
 | beforeDeactive | `Load Successfully!` | Tips in `beforeDeactive` stage. |
 | deactive       | `Push to Load`       | Tips in `deactive` stage.       |
 
-[A small example](https://vuescroll-issue-list-demo-zdizhghthq.now.sh/)
+[A small example](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh//)
 
 ## Global & full Config
 
