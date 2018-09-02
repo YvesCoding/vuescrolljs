@@ -1,8 +1,8 @@
 ---
-  sidebarDepth: 3
+sidebarDepth: 3
 ---
 
-# Demo
+# Demo 页面
 
 ## 基础 Demo
 
@@ -119,3 +119,10 @@ Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 
 </ClientOnly>
 
 [源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeATimePicker.vue)
+
+## SSR(服务端渲染) Demo
+
+这里有两个不同环境下的`vuescroll` `ssr` demo， 如果你 ssr 方面有什么问题，可以参考下：
+
+- Node 环境下的 [Demo](https://github.com/YvesCoding/vuescroll-ssr-node)
+- Php 环境下的 [Demo](https://github.com/YvesCoding/vuescroll-ssr-php)

@@ -2,7 +2,7 @@
 sidebarDepth: 3
 ---
 
-## Basic Demo
+## Demo Page
 
 ### 1.Basic scroll
 
@@ -117,3 +117,10 @@ Perhaps not works well in mobile, becase slide and native are the same in mobile
 </ClientOnly>
 
 [source code](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeATimePicker.vue)
+
+## SSR(Server-Side Rendering) Demo
+
+There are two different environments for `vuescroll` `ssr` demo. If you have any problems with ssr, you can refer to the following:
+
+- [Demo](https://github.com/YvesCoding/vuescroll-ssr-node) in Node environment
+- [Demo](https://github.com/YvesCoding/vuescroll-ssr-php) in Php environment

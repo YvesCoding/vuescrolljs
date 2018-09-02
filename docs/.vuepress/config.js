@@ -8,21 +8,24 @@ module.exports = {
   base: '/',
   host: '127.0.0.1',
   port: '8088',
+  serviceWorker: true,
   locales: {
     '/': {
       lang: 'en-US',
       title: 'Vuescroll.js',
       description:
-        'A powerful, customizable, multi-mode scrollbar plugin based on Vue.js'
+        'A scrollbar plugin allows you to customize scrollbars under Vue.js and scroll smoothly.'
     },
     '/zh/': {
       lang: 'zh-CN',
       title: 'Vuescroll.js',
-      description:
-        '一个可定制的， 功能强大， 多模式的基于Vue.js 设计的滚动条插件'
+      description: '一个滚动条插件， 可以让你在Vue.js下自定义滚动条，平滑地滚动'
     }
   },
-  head: [['link', { rel: 'icon', href: `/logo.png` }]],
+  head: [
+    ['link', { rel: 'icon', href: `/logo.png` }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }]
+  ],
   themeConfig: {
     repo: 'YvesCoding/vuescroll',
     docsRepo: 'YvesCoding/vuescrolljs',
@@ -49,6 +52,12 @@ module.exports = {
         sidebar: {
           '/guide/': genSidebarConfig('Guide'),
           '/demo/': genDemo('Demo')
+        },
+        serviceWorker: {
+          updatePopup: {
+            message: 'New content is available.',
+            buttonText: 'Refresh'
+          }
         }
       },
       '/zh/': {
@@ -69,6 +78,12 @@ module.exports = {
         sidebar: {
           '/zh/guide/': genSidebarConfig('指南'),
           '/zh/demo/': genDemo('Demo')
+        },
+        serviceWorker: {
+          updatePopup: {
+            message: '发现新内容可用',
+            buttonText: '刷新'
+          }
         }
       }
     }
