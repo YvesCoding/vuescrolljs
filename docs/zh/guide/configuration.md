@@ -101,18 +101,24 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
       background: '#01a99a',
       opacity: 0,
       /** Rail's size(Height/Width) , default -> 6px */
-      size: '6px'
+      size: '6px',
+      /** Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
+      specifyBorderRadius: false,
+      /** Rail the distance from the two ends of the X axis and Y axis. **/
+      gutter: '2px'
     }
   }
 ```
 
 #### 解释
 
-| rail       | 默认      | 描述                 |
-| ---------- | --------- | -------------------- |
-| background | `#01a99a` | 设置滚动轨道背景色。 |
-| size       | `5px`     | 设置轨道的尺寸       |
-| opacity    | 0         | s 设置轨道的透明度。 |
+| rail                                                  | 默认      | 描述                                                                     |
+| ----------------------------------------------------- | --------- | ------------------------------------------------------------------------ |
+| background                                            | `#01a99a` | 设置滚动轨道背景色。                                                     |
+| size                                                  | `5px`     | 设置轨道的尺寸                                                           |
+| opacity                                               | 0         | 设置轨道的透明度。                                                       |
+| specifyBorderRadius <Badge text="4.8.0+" type="tip"/> | `false`   | 制定 rail 和 bar 的`boder-radius`,默认为不指定，即自适应于 rail 的大小。 |
+| gutter <Badge text="4.8.0+" type="tip"/>              | `2px`     | 设置轨道距离 X 轴和 Y 轴的间距                                           |
 
 [在 Codepen 上尝试](https://codepen.io/wangyi7099/pen/BrwBGp)
 
@@ -265,6 +271,7 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
 ```javascript
 import Vue from 'vue';
 import vuescroll from 'vuescroll';
+import 'vuescroll/dist/vuescroll.css';
 
 Vue.use(vuescroll); // install the vuescroll first
 Vue.prototype.$vuescrollConfig = {
@@ -359,7 +366,11 @@ export default {
     background: '#01a99a',
     opacity: 0,
     /** Rail's size(Height/Width) , default -> 6px */
-    size: '6px'
+    size: '6px',
+    /** Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
+    specifyBorderRadius: false,
+    /** Rail the distance from the two ends of the X axis and Y axis. **/
+    gutter: '2px'
   },
   bar: {
     /** How long to hide bar after mouseleave, default -> 500 */

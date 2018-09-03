@@ -99,19 +99,23 @@ The place where srollbar moves.
     background: '#01a99a',
     opacity: 0,
     /** Rail's size(Height/Width) , default -> 6px */
-    size: '6px'
+    size: '6px',
+    /** Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
+    specifyBorderRadius: false,
+    /** Rail the distance from the two ends of the X axis and Y axis. **/
+    gutter: '2px'
   }
 ```
 
 #### Explanation
 
-| rail       | defaultValue | description                            |
-| ---------- | ------------ | -------------------------------------- |
-| background | `#a5d6a7`    | Set the rail's background              |
-| size       | `6px`        | Set the scrollbar and the rail's width |
-| opacity    | 0            | Set the rail's opacity                 |
-
-[Try rail option on Codepen](https://codepen.io/wangyi7099/pen/BrwBGp)
+| rail                                                  | defaultValue | description                                                                                                                   |
+| ----------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| background                                            | `#a5d6a7`    | Set the rail's background                                                                                                     |
+| size                                                  | `6px`        | Set the scrollbar and the rail's width                                                                                        |
+| opacity                                               | `false`      | Set the rail's opacity                                                                                                        |
+| specifyBorderRadius <Badge text="4.8.0+" type="tip"/> | `2px`        | Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false |
+| gutter <Badge text="4.8.0+" type="tip"/>              | `2px`        | Set the rail's opacity                                                                                                        |
 
 ### bar
 
@@ -261,6 +265,7 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
 ```javascript
 import Vue from 'vue';
 import vuescroll from 'vuescroll';
+import 'vuescroll/dist/vuescroll.css';
 
 Vue.use(vuescroll); // install the vuescroll first
 Vue.prototype.$vuescrollConfig = {
@@ -357,7 +362,11 @@ export default {
     background: '#01a99a',
     opacity: 0,
     /** Rail's size(Height/Width) , default -> 6px */
-    size: '6px'
+    size: '6px',
+    /** Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
+    specifyBorderRadius: false,
+    /** Rail the distance from the two ends of the X axis and Y axis. **/
+    gutter: '2px'
   },
   bar: {
     /** How long to hide bar after mouseleave, default -> 500 */
