@@ -2,7 +2,7 @@
 sidebarDepth: 2
 ---
 
-# 配置项 & 各部分解析
+# 配置项
 
 Vuescroll 的配置项是由 4 部分组成的, 它们是 `vuescroll`, `scrollPanel`, `bar`, `rail` 每个部分都有相应的配置项。**所有的默认配置都可以省略。**
 
@@ -105,7 +105,9 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
       /** Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
       specifyBorderRadius: false,
       /** Rail the distance from the two ends of the X axis and Y axis. **/
-      gutter: '2px'
+      gutterOfEnds: '2px',
+      /** Rail the distance from the side of container. **/
+      gutterOfSide: '2px'
     }
   }
 ```
@@ -118,7 +120,8 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
 | size                                                  | `5px`     | 设置轨道的尺寸                                                           |
 | opacity                                               | 0         | 设置轨道的透明度。                                                       |
 | specifyBorderRadius <Badge text="4.8.0+" type="tip"/> | `false`   | 制定 rail 和 bar 的`boder-radius`,默认为不指定，即自适应于 rail 的大小。 |
-| gutter <Badge text="4.8.0+" type="tip"/>              | `2px`     | 设置轨道距离 X 轴和 Y 轴的间距                                           |
+| gutterOfEnds <Badge text="4.8.1+" type="tip"/>        | `2px`     | 设置轨道距离 X 轴和 Y 轴的间距                                           |
+| gutterOfSide <Badge text="4.8.1+" type="tip"/>        | `2px`     | 设置轨道距离容器侧边的间距                                               |
 
 [在 Codepen 上尝试](https://codepen.io/wangyi7099/pen/BrwBGp)
 
@@ -367,10 +370,10 @@ export default {
     opacity: 0,
     /** Rail's size(Height/Width) , default -> 6px */
     size: '6px',
-    /** Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
-    specifyBorderRadius: false,
     /** Rail the distance from the two ends of the X axis and Y axis. **/
-    gutter: '2px'
+    gutterOfEnds: '2px',
+    /** Rail the distance from the side of container. **/
+    gutterOfSide: '2px'
   },
   bar: {
     /** How long to hide bar after mouseleave, default -> 500 */

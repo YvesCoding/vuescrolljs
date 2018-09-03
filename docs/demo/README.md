@@ -122,5 +122,10 @@ Perhaps not works well in mobile, becase slide and native are the same in mobile
 
 There are two different environments for `vuescroll` `ssr` demo. If you have any problems with ssr, you can refer to the following:
 
-- [Demo](https://github.com/YvesCoding/vuescroll-ssr-node) in Node environment
-- [Demo](https://github.com/YvesCoding/vuescroll-ssr-php) in Php environment
+### Node Env
+
+[Demo](https://github.com/YvesCoding/vuescroll-ssr-node) in Node environment
+
+### PHP Env
+
+[Demo](https://github.com/YvesCoding/vuescroll-ssr-php) in Php environment

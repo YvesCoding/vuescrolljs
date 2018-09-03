@@ -2,7 +2,7 @@
 sidebarDepth: 2
 ---
 
-# Configuration & Analysis of various parts
+# Configuration
 
 Vuescroll's options are composed of four parts, they are `vuescroll`, `scrollPanel`, `bar`, `rail` in turn, each of parts has its own options.**All default configurations can be omitted.**
 
@@ -103,7 +103,9 @@ The place where srollbar moves.
     /** Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
     specifyBorderRadius: false,
     /** Rail the distance from the two ends of the X axis and Y axis. **/
-    gutter: '2px'
+    gutterOfEnds: '2px',
+    /** Rail the distance from the side of container. **/
+    gutterOfSide: '2px'
   }
 ```
 
@@ -113,9 +115,10 @@ The place where srollbar moves.
 | ----------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
 | background                                            | `#a5d6a7`    | Set the rail's background                                                                                                     |
 | size                                                  | `6px`        | Set the scrollbar and the rail's width                                                                                        |
-| opacity                                               | `false`      | Set the rail's opacity                                                                                                        |
-| specifyBorderRadius <Badge text="4.8.0+" type="tip"/> | `2px`        | Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false |
-| gutter <Badge text="4.8.0+" type="tip"/>              | `2px`        | Set the rail's opacity                                                                                                        |
+| opacity                                               | `0`          | Set the rail's opacity                                                                                                        |
+| specifyBorderRadius <Badge text="4.8.0+" type="tip"/> | `false`      | Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false |
+| gutterOfEnds <Badge text="4.8.1+" type="tip"/>        | `2px`        | Rail the distance from the two ends of the X axis and Y axis.                                                                 |
+| gutterOfSide <Badge text="4.8.1+" type="tip"/>        | `2px`        | Rail the distance from the side of container.                                                                                 |
 
 ### bar
 
@@ -366,7 +369,9 @@ export default {
     /** Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
     specifyBorderRadius: false,
     /** Rail the distance from the two ends of the X axis and Y axis. **/
-    gutter: '2px'
+    gutterOfEnds: '2px',
+    /** Rail the distance from the side of container. **/
+    gutterOfSide: '2px'
   },
   bar: {
     /** How long to hide bar after mouseleave, default -> 500 */

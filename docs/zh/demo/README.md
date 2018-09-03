@@ -124,5 +124,10 @@ Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 
 
 这里有两个不同环境下的`vuescroll` `ssr` demo， 如果你 ssr 方面有什么问题，可以参考下：
 
-- Node 环境下的 [Demo](https://github.com/YvesCoding/vuescroll-ssr-node)
-- Php 环境下的 [Demo](https://github.com/YvesCoding/vuescroll-ssr-php)
+### Node 环境
+
+Node 环境下的 [Demo](https://github.com/YvesCoding/vuescroll-ssr-node)
+
+### PHP 环境
+
+Php 环境下的 [Demo](https://github.com/YvesCoding/vuescroll-ssr-php)
