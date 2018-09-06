@@ -70,19 +70,23 @@ scrollPanel is a wrap of content. We just change scrollPanel's scrollTop or scro
     easing: undefined,
     // Whether there is a padding or not, its size should be
     // equal to rail/bar's size.
-    padding: true
+    padding: true，
+    // Sometimes, the nativebar maybe on the left,
+    // See https://github.com/YvesCoding/vuescroll/issues/64
+    verticalNativeBarPos: 'right'
   }
 ```
 
 #### Explanation
 
-| option         | default | description                                                                                                                                                                            |
-| -------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| initialScrollY | `false` | The vertical distance that will scroll while component has mounted.e.g.**100** or **10%**                                                                                              |
-| initialScrollX | `false` | The horizontal distance that will scroll while component has mounted.e.g.**100** or **10%**                                                                                            |
-| speed          | `300`   | The time that scrollPanel scrolls completely.                                                                                                                                          |
-| easing         | `null`  | The scrolling animation,You can checkout this [demo](http://vuescrolljs.yvescoding.org/demo/#vuescroll-supports-setting-keep-show-or-not-and-background) for all available animations. |
-| padding        | `true`  | Set a padding of panel. Prevent the rail or bar from blocking a part of content.                                                                                                       |
+| option                                                 | default | description                                                                                                                                                                            |
+| ------------------------------------------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| initialScrollY                                         | `false` | The vertical distance that will scroll while component has mounted.e.g.**100** or **10%**                                                                                              |
+| initialScrollX                                         | `false` | The horizontal distance that will scroll while component has mounted.e.g.**100** or **10%**                                                                                            |
+| speed                                                  | `300`   | The time that scrollPanel scrolls completely.                                                                                                                                          |
+| easing                                                 | `null`  | The scrolling animation,You can checkout this [demo](http://vuescrolljs.yvescoding.org/demo/#vuescroll-supports-setting-keep-show-or-not-and-background) for all available animations. |
+| padding                                                | `true`  | Set a padding of panel. Prevent the rail or bar from blocking a part of content.                                                                                                       |
+| verticalNativeBarPos <Badge text="4.8.2+" type="tip"/> | `right` | Sometimes, the nativebar maybe on the left . `right` or `left`.                                                                                                                        |
 
 [Try scrollPanel options on Codepen](https://codepen.io/wangyi7099/pen/mxBdER)
 
@@ -105,7 +109,9 @@ The place where srollbar moves.
     /** Rail the distance from the two ends of the X axis and Y axis. **/
     gutterOfEnds: '2px',
     /** Rail the distance from the side of container. **/
-    gutterOfSide: '2px'
+    gutterOfSide: '2px',
+    /** Whether to keep rail show or not, default -> false, event content height is not enough */
+    keepShow: false
   }
 ```
 
@@ -119,6 +125,7 @@ The place where srollbar moves.
 | specifyBorderRadius <Badge text="4.8.0+" type="tip"/> | `false`      | Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false |
 | gutterOfEnds <Badge text="4.8.1+" type="tip"/>        | `2px`        | Rail the distance from the two ends of the X axis and Y axis.                                                                 |
 | gutterOfSide <Badge text="4.8.1+" type="tip"/>        | `2px`        | Rail the distance from the side of container.                                                                                 |
+| keepShow <Badge text="4.8.2+" type="tip"/>            | `false`      | Whether to keep rail show or not.                                                                                             |
 
 ### bar
 
@@ -162,7 +169,7 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
 
 [Try bar option on Codepen](https://codepen.io/wangyi7099/pen/GxMLjd)
 
-## Configurations are only for slide mode
+## Slide mode Configs
 
 ### vuescroll
 
@@ -261,7 +268,7 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
 
 [A small example](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh//)
 
-## Global & full Config
+## Global & detailed Config
 
 > To set styles for all vuescroll components in the page, you can set `Vue.prototype.$vuescrollConfig`, or via `Vue.use` to pass a **global default** config e.g.
 
@@ -358,7 +365,10 @@ export default {
     easing: undefined,
     // Setting padding to true can give a padding-right to panel which size is equal
     // to rail/bar's size.
-    padding: false
+    padding: false,
+    // Sometimes, the nativebar maybe on the left,
+    // See https://github.com/YvesCoding/vuescroll/issues/64
+    verticalNativeBarPos: 'right'
   },
   //
   rail: {
@@ -371,7 +381,9 @@ export default {
     /** Rail the distance from the two ends of the X axis and Y axis. **/
     gutterOfEnds: '2px',
     /** Rail the distance from the side of container. **/
-    gutterOfSide: '2px'
+    gutterOfSide: '2px',
+    /** Whether to keep rail show or not, default -> false, event content height is not enough */
+    keepShow: false
   },
   bar: {
     /** How long to hide bar after mouseleave, default -> 500 */

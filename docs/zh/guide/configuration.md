@@ -71,19 +71,23 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
     // 滚动动画
     easing: undefined,
     //
-    padding: true
+    padding: true，
+    // 有时候原声滚动条可能在左侧,
+    // 请查看 https://github.com/YvesCoding/vuescroll/issues/64
+    verticalNativeBarPos: 'right'
   }
 ```
 
 #### 解释
 
-| 配置项         | 默认    | 描述                                                                                                                                                           |
-| -------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| initialScrollY | `false` | 垂直方向上的滚动距离在组件加载完以后.比如.**100** 或 **10%**                                                                                                   |
-| initialScrollX | `false` | 水平方向上的滚动距离在组件加载完以后.比如.**100** 或 **10%**                                                                                                   |
-| speed          | `300`   | 滚动的完成所需的时间。                                                                                                                                         |
-| easing         | `null`  | 滚动的动画，你可以查看这个[demo](http://vuescrolljs.yvescoding.org/zh/demo/#_2-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%BB%9A%E5%8A%A8%E6%9D%A1)来浏览所有可得到的动画。 |
-| padding        | `true`  | 设置是否启用 padding。可以用来阻止内容被滚动条遮住一部分。                                                                                                     |
+| 配置项                                                 | 默认    | 描述                                                                                                                                                           |
+| ------------------------------------------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| initialScrollY                                         | `false` | 垂直方向上的滚动距离在组件加载完以后.比如.**100** 或 **10%**                                                                                                   |
+| initialScrollX                                         | `false` | 水平方向上的滚动距离在组件加载完以后.比如.**100** 或 **10%**                                                                                                   |
+| speed                                                  | `300`   | 滚动的完成所需的时间。                                                                                                                                         |
+| easing                                                 | `null`  | 滚动的动画，你可以查看这个[demo](http://vuescrolljs.yvescoding.org/zh/demo/#_2-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%BB%9A%E5%8A%A8%E6%9D%A1)来浏览所有可得到的动画。 |
+| padding                                                | `true`  | 设置是否启用 padding。可以用来阻止内容被滚动条遮住一部分。                                                                                                     |
+| verticalNativeBarPos <Badge text="4.8.2+" type="tip"/> | `right` | `right` 或者 `left`                                                                                                                                            |
 
 [在 codePen 上尝试 scrollPanel](https://codepen.io/wangyi7099/pen/mxBdER)
 
@@ -96,7 +100,6 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
 #### 详细配置
 
 ```javascript
-  rail: {
     rail: {
       background: '#01a99a',
       opacity: 0,
@@ -107,9 +110,10 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
       /** Rail the distance from the two ends of the X axis and Y axis. **/
       gutterOfEnds: '2px',
       /** Rail the distance from the side of container. **/
-      gutterOfSide: '2px'
+      gutterOfSide: '2px',
+      /** Whether to keep rail show or not, default -> false, event content height is not enough */
+      keepShow: false
     }
-  }
 ```
 
 #### 解释
@@ -122,6 +126,7 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
 | specifyBorderRadius <Badge text="4.8.0+" type="tip"/> | `false`   | 制定 rail 和 bar 的`boder-radius`,默认为不指定，即自适应于 rail 的大小。 |
 | gutterOfEnds <Badge text="4.8.1+" type="tip"/>        | `2px`     | 设置轨道距离 X 轴和 Y 轴的间距                                           |
 | gutterOfSide <Badge text="4.8.1+" type="tip"/>        | `2px`     | 设置轨道距离容器侧边的间距                                               |
+| keepShow <Badge text="4.8.2+" type="tip"/>            | `false`   | 设置是否即使在高度不够的情况下也显示 rail                                |
 
 [在 Codepen 上尝试](https://codepen.io/wangyi7099/pen/BrwBGp)
 
@@ -150,7 +155,9 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
     /**  透明度  */
     opacity: 1,
     /** 当你鼠标移动到滚动条的时候滚动条的样式， 返回一个style对象， 和现在的对象融合*/
-    hoverStyle: false
+    hoverStyle: false,
+    /** 是否保持rail显示即使内容高度不足的情况下。 */
+    keepShow: false
   }
 ```
 
@@ -267,7 +274,7 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
 
 [一个小例子](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh//)
 
-## 全局 & 完整的配置
+## 全局 & 详细的配置
 
 > 全局属性也是完整的配置项属性，想要设置统一的样式在 vuescroll 里面, 你可以修改`Vue.prototype.$vuescrollConfig`，或者通过`Vue.use`来传递默认的全局配置 例如：
 
@@ -362,7 +369,10 @@ export default {
     speed: 300,
     easing: undefined,
     // 是否有一个padding样式，样式的大小应该和rail/bar的大小是一样。
-    padding: false
+    padding: false，
+    // Sometimes, the nativebar maybe on the left,
+    // See https://github.com/YvesCoding/vuescroll/issues/64
+    verticalNativeBarPos: 'right'
   },
   //
   rail: {
@@ -370,10 +380,14 @@ export default {
     opacity: 0,
     /** Rail's size(Height/Width) , default -> 6px */
     size: '6px',
+    /** Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
+    specifyBorderRadius: false,
     /** Rail the distance from the two ends of the X axis and Y axis. **/
     gutterOfEnds: '2px',
     /** Rail the distance from the side of container. **/
-    gutterOfSide: '2px'
+    gutterOfSide: '2px',
+    /** Whether to keep rail show or not, default -> false, event content height is not enough */
+    keepShow: false
   },
   bar: {
     /** How long to hide bar after mouseleave, default -> 500 */
