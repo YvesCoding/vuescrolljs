@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "css-loader": "^0.28.11",
+    "lodash": "^4.17.10",
     "style-loader": "^0.21.0",
     "vuepress": "0.13.1",
     "vuescroll": "4.8.4"
