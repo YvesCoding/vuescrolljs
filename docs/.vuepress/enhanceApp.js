@@ -1,7 +1,11 @@
 import vuescroll from 'vuescroll';
+import vuescrollMix from './vuescroll-mix';
+import store from './store';
+
 //import 'vuescroll/dist/vuescroll.css'
-export default ({ Vue }) => {
+export default ({ Vue, router }) => {
   Vue.use(vuescroll);
+  Vue.mixin(vuescrollMix);
 
   Vue.prototype.getRandomColor = function() {
     let str = '#';
@@ -12,4 +16,22 @@ export default ({ Vue }) => {
 
     return str;
   };
+
+  router.afterEach((to, from) => {
+    console.log(111);
+    if (!Vue.prototype.$isServer) {
+      if (window.vs && !store.disableScrollBehavior) {
+        let y;
+        if (!to.hash) {
+          y = 0;
+        } else {
+          y = document.querySelector(to.hash).offsetTop;
+        }
+        window.vs.scrollTo({
+          y
+        });
+        store.specifyAuthor = to.hash;
+      }
+    }
+  });
 };

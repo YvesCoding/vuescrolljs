@@ -4,11 +4,13 @@ function resolve(dirname) {
   return path.resolve(__dirname, dirname);
 }
 
+const isPro = process.env.NODE_ENV == 'production';
+
 module.exports = {
   base: '/',
   host: '127.0.0.1',
   port: '8088',
-  serviceWorker: true,
+  serviceWorker: isPro,
   locales: {
     '/': {
       lang: 'en-US',

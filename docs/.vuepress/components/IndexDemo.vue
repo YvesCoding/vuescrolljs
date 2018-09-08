@@ -23,8 +23,6 @@ export default {
 </script>
 
 <style lang="stylus">
-@import url('~vuescroll/dist/vuescroll.css');
-
 .demo-container {
   width: 100%;
   height: 100px;
