@@ -65,7 +65,6 @@ export default {
     };
   },
   created() {
-    console.log(12);
     this.setItems();
   },
   beforeDestroy() {

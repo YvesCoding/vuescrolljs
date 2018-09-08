@@ -198,12 +198,11 @@ export default {
     setContainerSize() {
       this.windowSize = {
         height: window.innerHeight + 'px',
-        width: window.innerWidth + 'px'
+        width: '100%'
       };
     },
 
     handleScroll(vertical) {
-      console.log(333);
       this.handleVueScroll(vertical.scrollTop);
     },
     hSC() {

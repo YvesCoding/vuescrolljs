@@ -18,7 +18,6 @@ export default ({ Vue, router }) => {
   };
 
   router.afterEach((to, from) => {
-    console.log(111);
     if (!Vue.prototype.$isServer) {
       if (window.vs && !store.disableScrollBehavior) {
         let y;

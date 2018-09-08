@@ -9,7 +9,6 @@ export default {
     _setActiveHash(scrollTop) {
       if (store.specifyAuthor) {
         store.disableScrollBehavior = true;
-        console.log('qqq');
         this.$router.replace(
           decodeURIComponent(store.specifyAuthor),
           () => {
