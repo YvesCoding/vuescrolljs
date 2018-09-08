@@ -10,7 +10,9 @@ sidebarDepth: 3
 
 #### Vuescroll 和 native 都支持基础的滚动行为。 但是 vuescroll 滚动的更加平滑，并且外观更漂亮。
 
+<ClientOnly>
 <Demo-Basic-OrdinaryScroll />
+</ClientOnly>
 
 [源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/OrdinaryScroll.vue)
 
@@ -18,7 +20,9 @@ sidebarDepth: 3
 
 #### vuescroll 可以设置滚动条是否保持显示,颜色等。
 
+<ClientOnly>
 <Demo-Basic-SetPositionAndKeepShow />
+</ClientOnly>
 
 [源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/SetPositionAndKeepShow.vue)
 
@@ -30,7 +34,9 @@ sidebarDepth: 3
 你可以自己打开 dev-tool 然后调节元素的样式再查看效果。
 :::
 
+<ClientOnly>
 <Demo-Basic-DetectSizeChange />
+</ClientOnly>
 
 [源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/DetectSizeChange.vue)
 
@@ -38,7 +44,9 @@ sidebarDepth: 3
 
 #### Vuescroll 支持下来刷新和上推加载. 在你想展示一个列表的数据的时候很有用。
 
+<ClientOnly>
 <Demo-Basic-PullRefreshOrPushLoad />
+</ClientOnly>
 
 [源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/PullRefreshOrPushLoad.vue)
 
@@ -46,7 +54,9 @@ sidebarDepth: 3
 
 #### Vuescroll 支持分页模式， 当你想要展示一个像[这样](http://element-cn.eleme.io/#/zh-CN/component/carousel)一个轮播图的时候有用。
 
+<ClientOnly>
 <Demo-Basic-Paging />
+</ClientOnly>
 
 [源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/Paging.vue)
 
@@ -68,7 +78,9 @@ ops: {
 
 Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 但是也有一些不同指出: **Paging 每次滑动一整页, 但是 snapping 每次滑动一个用户指定的距离**.
 
+<ClientOnly>
 <Demo-Basic-Snapping />
+</ClientOnly>
 
 [源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/Snapping.vue)
 
@@ -76,7 +88,9 @@ Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 
 
 #### 你甚至能在运行期间改变模式， 并且滚动的位置不会变。
 
+<ClientOnly>
 <Demo-Basic-SwitchMode />
+</ClientOnly>
 
 [源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/SwitchMode.vue)
 
@@ -100,8 +114,10 @@ Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 
 
 #### 你可以通过设置 `snapping` 为 true 并且 `bouncing` 为 `false`, `scrollingX` 为 false 来做一个时间选择器。
 
- <Demo-Advance-MakeATimePicker />
- 
+<ClientOnly>
+<Demo-Advance-MakeATimePicker />
+</ClientOnly>
+
 [源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeATimePicker.vue)
 
 ## SSR(服务端渲染) Demo
