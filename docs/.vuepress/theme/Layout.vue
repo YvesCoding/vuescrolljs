@@ -82,6 +82,9 @@ export default {
         },
         rail: {
           gutterOfEnds: '60px'
+        },
+        scrollPanel: {
+          scrollingX: false
         }
       }
     };
