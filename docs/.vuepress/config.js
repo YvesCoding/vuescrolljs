@@ -11,6 +11,7 @@ module.exports = {
   host: '127.0.0.1',
   port: '8088',
   serviceWorker: isPro,
+  theme: 'vuescroll',
   locales: {
     '/': {
       lang: 'en-US',
