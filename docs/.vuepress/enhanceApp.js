@@ -21,6 +21,5 @@ export default ({ Vue, router }) => {
       scrollingX: false
     }
   };
-  console.log(1111);
   registry({ Vue, router }, ops);
 };
