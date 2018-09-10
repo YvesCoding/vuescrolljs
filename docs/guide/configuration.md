@@ -219,7 +219,9 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
       /** This configures the amount of change applied to acceleration when reaching boundaries  **/
       penetrationAcceleration: 0.08,
       /** Whether call e.preventDefault event when sliding the content or not */
-      preventDefault: true
+      preventDefault: true,
+      /** Whether call preventDefault when (mouse/touch)move*/
+      preventDefaultOnMove: true
     }
   }
 ```
@@ -351,7 +353,9 @@ export default {
       /** This configures the amount of change applied to acceleration when reaching boundaries  **/
       penetrationAcceleration: 0.08,
       /** Whether call e.preventDefault event when sliding the content or not */
-      preventDefault: true
+      preventDefault: true,
+      /** Whether call preventDefault when (mouse/touch)move*/
+      preventDefaultOnMove: true
     }
   },
   scrollPanel: {

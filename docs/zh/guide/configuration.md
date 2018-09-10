@@ -225,7 +225,9 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
       /** This configures the amount of change applied to acceleration when reaching boundaries  **/
       penetrationAcceleration: 0.08,
       /** Whether call e.preventDefault event when sliding the content or not */
-      preventDefault: true
+      preventDefault: true,
+      /** Whether call preventDefault when (mouse/touch)move*/
+      preventDefaultOnMove: true
     }
   }
 ```
@@ -356,7 +358,9 @@ export default {
       /** This configures the amount of change applied to acceleration when reaching boundaries  **/
       penetrationAcceleration: 0.08,
       /** Whether call e.preventDefault event when sliding the content or not */
-      preventDefault: true
+      preventDefault: true,
+      /** Whether call preventDefault when (mouse/touch)move*/
+      preventDefaultOnMove: true
     }
   },
   scrollPanel: {
