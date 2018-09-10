@@ -12,13 +12,15 @@ export default ({ Vue, router }) => {
   console.log('qqq');
   let ops = {
     bar: {
-      background: '#3eaf7c',
-      opacity: 0.8
+      background: '#1890ff',
+      opacity: 0.8,
+      keepShow: true
     },
     rail: {
       gutterOfEnds: '60px',
-      opacity: 0.5,
-      background: '#ffb3b3'
+      opacity: 1,
+      background: '#f5f5f5',
+      size: '8px'
     },
     scrollPanel: {
       scrollingX: false
