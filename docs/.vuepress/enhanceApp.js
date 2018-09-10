@@ -9,17 +9,20 @@ export default ({ Vue, router }) => {
     }
     return str;
   };
-
+  console.log('qqq');
   let ops = {
     bar: {
-      background: '#3eaf7c'
+      background: '#3eaf7c',
+      opacity: 0.8
     },
     rail: {
-      gutterOfEnds: '60px'
+      gutterOfEnds: '60px',
+      opacity: 0.5,
+      background: '#ffb3b3'
     },
     scrollPanel: {
       scrollingX: false
     }
   };
-  registry({ Vue, router }, ops);
+  registry(ops);
 };

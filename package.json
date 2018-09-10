@@ -15,7 +15,7 @@
     "lodash": "^4.17.10",
     "style-loader": "^0.21.0",
     "vuepress": "0.13.1",
-    "vuepress-theme-vuescroll": "^0.0.5",
+    "vuepress-theme-vuescroll": "^0.0.6",
     "vuescroll": "4.8.4"
   },
   "devDependencies": {
