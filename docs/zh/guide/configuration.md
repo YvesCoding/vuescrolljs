@@ -19,6 +19,142 @@ Vuescroll 判断是否出现滚动条的一个标准是： 内容高度是否大
 - rail: 类名：`__rail-is-`+ type。自定义的滚动条。
 - bar: 类名：`__bar-is-` + type。自定义的滚动轨道。
 
+## 全局 & 详细的配置
+
+> 全局属性也是完整的配置项属性，想要设置统一的样式在 vuescroll 里面, 你可以修改`Vue.prototype.$vuescrollConfig`，或者通过`Vue.use`来传递默认的全局配置 例如：
+
+```javascript
+import Vue from 'vue';
+import vuescroll from 'vuescroll';
+import 'vuescroll/dist/vuescroll.css';
+
+Vue.use(vuescroll, {
+  ops: {}, // 在这里设置全局默认配置
+  name: 'myScroll' // 在这里自定义组件名字，默认是vueScroll
+});
+
+/*
+ * 或者
+ */
+
+Vue.use(vuescroll); // install the vuescroll first
+Vue.prototype.$vuescrollConfig = {
+  bar: {
+    background: '#000'
+  }
+};
+```
+
+完整的全局配置：
+
+```javascript
+export default {
+  // vuescroll
+  vuescroll: {
+    mode: 'native',
+    // vuescroll's size(height/width) should be a percent(100%)
+    // or be a number that is equal to its parentNode's width or
+    // height ?
+    sizeStrategy: 'percent',
+    /** Whether to detect dom resize or not */
+    detectResize: true,
+    // pullRefresh or pushLoad is only for the slide mode...
+    pullRefresh: {
+      enable: false,
+      tips: {
+        deactive: 'Pull to Refresh',
+        active: 'Release to Refresh',
+        start: 'Refreshing...',
+        beforeDeactive: 'Refresh Successfully!'
+      }
+    },
+    pushLoad: {
+      enable: false,
+      tips: {
+        deactive: 'Push to Load',
+        active: 'Release to Load',
+        start: 'Loading...',
+        beforeDeactive: 'Load Successfully!'
+      }
+    },
+    paging: false,
+    zooming: true,
+    snapping: {
+      enable: false,
+      width: 100,
+      height: 100
+    },
+    /* shipped scroll options */
+    scroller: {
+      /** Enable bouncing (content can be slowly moved outside and jumps back after releasing) */
+      bouncing: true,
+      /** Enable locking to the main axis if user moves only slightly on one of them at start */
+      locking: true,
+      /** Minimum zoom level */
+      minZoom: 0.5,
+      /** Maximum zoom level */
+      maxZoom: 3,
+      /** Multiply or decrease scrolling speed **/
+      speedMultiplier: 1,
+      /** This configures the amount of change applied to deceleration when reaching boundaries  **/
+      penetrationDeceleration: 0.03,
+      /** This configures the amount of change applied to acceleration when reaching boundaries  **/
+      penetrationAcceleration: 0.08,
+      /** Whether call e.preventDefault event when sliding the content or not */
+      preventDefault: true,
+      /** Whether call preventDefault when (mouse/touch)move*/
+      preventDefaultOnMove: true
+    }
+  },
+  scrollPanel: {
+    // when component mounted.. it will automatically scrolls.
+    initialScrollY: false,
+    initialScrollX: false,
+    // feat: #11
+    scrollingX: true,
+    scrollingY: true,
+    speed: 300,
+    easing: undefined,
+    // 是否有一个padding样式，样式的大小应该和rail/bar的大小是一样。
+    padding: false，
+    // Sometimes, the nativebar maybe on the left,
+    // See https://github.com/YvesCoding/vuescroll/issues/64
+    verticalNativeBarPos: 'right'
+  },
+  //
+  rail: {
+    background: '#01a99a',
+    opacity: 0,
+    /** Rail's size(Height/Width) , default -> 6px */
+    size: '6px',
+    /** Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
+    specifyBorderRadius: false,
+    /** Rail the distance from the two ends of the X axis and Y axis. **/
+    gutterOfEnds: '2px',
+    /** Rail the distance from the side of container. **/
+    gutterOfSide: '2px',
+    /** Whether to keep rail show or not, default -> false, event content height is not enough */
+    keepShow: false
+  },
+  bar: {
+    /** How long to hide bar after mouseleave, default -> 500 */
+    showDelay: 500,
+    /** Whether to show bar on scrolling, default -> true */
+    onlyShowBarOnScroll: true,
+    /** Whether to keep show or not, default -> false */
+    keepShow: false,
+    /** Bar's background , default -> #00a650 */
+    background: '#c1c1c1',
+    /** Bar's opacity, default -> 1  */
+    opacity: 1,
+    /** Styles when you hover scrollbar, it will merge into the current style */
+    hoverStyle: false
+  }
+};
+```
+
+> 各个部分配置详解在下面展示：
+
 ## 基础配置
 
 ### vuescroll
@@ -275,137 +411,3 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
 | deactive       | `Push to Load`       | 在 `deactive` 阶段的提示.       |
 
 [一个小例子](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh//)
-
-## 全局 & 详细的配置
-
-> 全局属性也是完整的配置项属性，想要设置统一的样式在 vuescroll 里面, 你可以修改`Vue.prototype.$vuescrollConfig`，或者通过`Vue.use`来传递默认的全局配置 例如：
-
-```javascript
-import Vue from 'vue';
-import vuescroll from 'vuescroll';
-import 'vuescroll/dist/vuescroll.css';
-
-Vue.use(vuescroll); // install the vuescroll first
-Vue.prototype.$vuescrollConfig = {
-  bar: {
-    background: '#000'
-  }
-};
-
-/*
- * 或者
- */
-
-Vue.use(vuescroll, {
-  ops: {}, // 在这里设置全局默认配置
-  name: 'myScroll' // 在这里自定义组件名字，默认是vueScroll
-});
-```
-
-完整的全局配置：
-
-```javascript
-export default {
-  // vuescroll
-  vuescroll: {
-    mode: 'native',
-    // vuescroll's size(height/width) should be a percent(100%)
-    // or be a number that is equal to its parentNode's width or
-    // height ?
-    sizeStrategy: 'percent',
-    /** Whether to detect dom resize or not */
-    detectResize: true,
-    // pullRefresh or pushLoad is only for the slide mode...
-    pullRefresh: {
-      enable: false,
-      tips: {
-        deactive: 'Pull to Refresh',
-        active: 'Release to Refresh',
-        start: 'Refreshing...',
-        beforeDeactive: 'Refresh Successfully!'
-      }
-    },
-    pushLoad: {
-      enable: false,
-      tips: {
-        deactive: 'Push to Load',
-        active: 'Release to Load',
-        start: 'Loading...',
-        beforeDeactive: 'Load Successfully!'
-      }
-    },
-    paging: false,
-    zooming: true,
-    snapping: {
-      enable: false,
-      width: 100,
-      height: 100
-    },
-    /* shipped scroll options */
-    scroller: {
-      /** Enable bouncing (content can be slowly moved outside and jumps back after releasing) */
-      bouncing: true,
-      /** Enable locking to the main axis if user moves only slightly on one of them at start */
-      locking: true,
-      /** Minimum zoom level */
-      minZoom: 0.5,
-      /** Maximum zoom level */
-      maxZoom: 3,
-      /** Multiply or decrease scrolling speed **/
-      speedMultiplier: 1,
-      /** This configures the amount of change applied to deceleration when reaching boundaries  **/
-      penetrationDeceleration: 0.03,
-      /** This configures the amount of change applied to acceleration when reaching boundaries  **/
-      penetrationAcceleration: 0.08,
-      /** Whether call e.preventDefault event when sliding the content or not */
-      preventDefault: true,
-      /** Whether call preventDefault when (mouse/touch)move*/
-      preventDefaultOnMove: true
-    }
-  },
-  scrollPanel: {
-    // when component mounted.. it will automatically scrolls.
-    initialScrollY: false,
-    initialScrollX: false,
-    // feat: #11
-    scrollingX: true,
-    scrollingY: true,
-    speed: 300,
-    easing: undefined,
-    // 是否有一个padding样式，样式的大小应该和rail/bar的大小是一样。
-    padding: false，
-    // Sometimes, the nativebar maybe on the left,
-    // See https://github.com/YvesCoding/vuescroll/issues/64
-    verticalNativeBarPos: 'right'
-  },
-  //
-  rail: {
-    background: '#01a99a',
-    opacity: 0,
-    /** Rail's size(Height/Width) , default -> 6px */
-    size: '6px',
-    /** Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
-    specifyBorderRadius: false,
-    /** Rail the distance from the two ends of the X axis and Y axis. **/
-    gutterOfEnds: '2px',
-    /** Rail the distance from the side of container. **/
-    gutterOfSide: '2px',
-    /** Whether to keep rail show or not, default -> false, event content height is not enough */
-    keepShow: false
-  },
-  bar: {
-    /** How long to hide bar after mouseleave, default -> 500 */
-    showDelay: 500,
-    /** Whether to show bar on scrolling, default -> true */
-    onlyShowBarOnScroll: true,
-    /** Whether to keep show or not, default -> false */
-    keepShow: false,
-    /** Bar's background , default -> #00a650 */
-    background: '#c1c1c1',
-    /** Bar's opacity, default -> 1  */
-    opacity: 1,
-    /** Styles when you hover scrollbar, it will merge into the current style */
-    hoverStyle: false
-  }
-};
-```
