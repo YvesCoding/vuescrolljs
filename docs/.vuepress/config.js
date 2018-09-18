@@ -115,7 +115,8 @@ function genSidebarConfig(title) {
         'event',
         'api',
         'slot',
-        'typescript'
+        'typescript',
+        'optimizing-performance'
       ]
     }
   ];
