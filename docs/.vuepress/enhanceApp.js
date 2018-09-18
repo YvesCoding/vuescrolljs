@@ -26,5 +26,5 @@ export default ({ Vue, router }) => {
       scrollingX: false
     }
   };
-  registry(ops);
+  registry(ops, 'native');
 };
