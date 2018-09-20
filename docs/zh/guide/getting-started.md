@@ -6,7 +6,19 @@ sidebarDepth: 1
 
 ## 快速开始
 
-### 引入(模块系统)
+### 模块系统
+
+#### 安装
+
+```bash
+   npm i -S
+   # 或者通过yarn
+  yarn add vuescroll
+   # 或者通过cnpm
+      cnpm i -S
+```
+
+#### 引入
 
 在你的入口文件处：
 
@@ -18,9 +30,9 @@ import 'vuescroll/dist/vuescroll.css';
 Vue.use(vuescroll);
 ```
 
-### 为了去掉不会用到的部分，可以分开地引入 vuescroll
+#### 为了去掉不会用到的部分，可以分开地引入 vuescroll
 
-#### 只引入 slide 模式的特性：
+**只引入 slide 模式的特性：**
 
 ```javascript
 import Vue from 'vue';
@@ -30,7 +42,7 @@ import 'vuescroll/dist/vuescroll.css';
 Vue.use(vuescroll);
 ```
 
-#### 只引入 native 模式的特性：
+**只引入 native 模式的特性：**
 
 ```javascript
 import Vue from 'vue';
@@ -40,7 +52,9 @@ import 'vuescroll/dist/vuescroll.css';
 Vue.use(vuescroll);
 ```
 
-### 引入(浏览器环境)
+### 浏览器环境
+
+**直接通过 CDN 方式引入**
 
 ```html
 <script src="https://unpkg.com/vue"></script>
@@ -54,14 +68,18 @@ Vue.use(vuescroll);
 
 ### 用法
 
-把你需要滚动的内容用`vuescroll`包裹起来
+> 把 vuescroll 放在`parent-dom`里面，`child-dom`外面即可。 就是这么简单。
+
+::: warning 警告
+如果你看不到滚动条， 请打开`dev-tool`是否你的子元素尺寸超过了你的父元素尺寸。 出现滚动条的条件与原生滚动条的相同， 即： **子元素的尺寸超出了父元素**。
+:::
 
 ```html
   <template>
-    <div class='your-container'>
+    <div class='parent-dom'>
         <!-- bind your configurations -->
         <vue-scroll :ops="ops">
-            <div class='your-content'>
+            <div class='child-dom'>
             </div>
         </vue-scroll>
     </div>
@@ -81,3 +99,7 @@ Vue.use(vuescroll);
     }
   </script>
 ```
+
+::: tip 提示
+如果你有紧急情况， 可以调用 `refresh` 函数。
+:::

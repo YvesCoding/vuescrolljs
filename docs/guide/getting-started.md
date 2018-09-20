@@ -6,7 +6,17 @@ sidebarDepth: 1
 
 ## Quick Start
 
-### Import(Module System)
+### Module System
+
+#### Installation
+
+```bash
+ npm i vuescroll -S
+ # or use yarn
+ # yarn add vuescroll
+```
+
+#### Import
 
 In your entry file:
 
@@ -18,9 +28,9 @@ import 'vuescroll/dist/vuescroll.css';
 Vue.use(vuescroll);
 ```
 
-### In order to remove parts that are not used, you can import vuescroll separately
+#### In order to remove parts that are not used, you can import vuescroll separately
 
-#### Only import the features of slide mode:
+**Only import the features of slide mode:**
 
 ```javascript
 import Vue from 'vue';
@@ -30,7 +40,7 @@ import 'vuescroll/dist/vuescroll.css';
 Vue.use(vuescroll);
 ```
 
-#### Only import the features of native mode:
+**Only import the features of native mode:**
 
 ```javascript
 import Vue from 'vue';
@@ -40,7 +50,9 @@ import 'vuescroll/dist/vuescroll.css';
 Vue.use(vuescroll);
 ```
 
-### Import(Browser Environment)
+### Browser Environment
+
+#### Direct import via CDN
 
 ```html
 <script src="https://unpkg.com/vue"></script>
@@ -54,14 +66,19 @@ Vue.use(vuescroll);
 
 ### Usage
 
-Wrap the content you need to scroll by `vuescroll`
+> Put it outside the `child element`, inside the `parent element`. Just so easy.
+
+::: warning
+If you doesn't see scrollbar show, please open `dev-tool` to checkout whether your child's size is greater than parent's.The condition for the scrollbar to appear is the same as the native scrollbar, that is, **the size of the child element exceeds the parent element**.
+
+:::
 
 ```html
   <template>
-    <div class='your-container'>
+    <div class='parent-element'>
         <!-- bind your configurations -->
         <vue-scroll :ops="ops">
-            <div class='your-content'>
+            <div class='child-element'>
             </div>
         </vue-scroll>
     </div>
@@ -81,3 +98,7 @@ Wrap the content you need to scroll by `vuescroll`
     }
   </script>
 ```
+
+::: tip
+If you have an emergency, you can call the `refresh` function.
+:::
