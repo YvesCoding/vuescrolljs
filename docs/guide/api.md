@@ -358,3 +358,83 @@ Activate pull to refresh or push to load directly,
 ```
 
 [Try triggerRefreshOrLoad on codePen](https://codepen.io/wangyi7099/pen/VdLPgz)
+
+## Public API
+
+The public api is just like the `static method` in a class.
+
+### refreshAll
+
+#### Introduction
+
+Refresh all vuescroll components in the current page.
+
+#### Detailed Params
+
+| Param | Description                                           |
+| ----- | ----------------------------------------------------- |
+| None  | Refresh all vuescroll components in the current page. |
+
+#### Usage
+
+> In browser environment, just call `refrehAll` directly.
+
+```javascript
+vuescroll.refreshAll();
+```
+
+> In nodejs environment, import `vuescroll` first, and then you can call it.
+
+```javascript
+import vuescroll from 'vuescroll';
+
+vuescroll.refreshAll();
+```
+
+### scrollTo
+
+#### Introduction
+
+Scroll an element smoothly to a location. <Badge text="4.9.0-bate.1+" type="tip"/>
+
+#### Function definition
+
+```typescript
+  scrollTo(
+    elm: Document | Element,
+    x: string | number,
+    y: string | number,
+    speed?: number = 300,
+    easing?: easing,
+    animate? = true,
+    scrollingComplete?: (x, y) => void
+  ): void;
+```
+
+#### Detailed Params
+
+| Params            | Description                                                                                                        |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------ |
+| elm               | The elements you want to scroll                                                                                    |
+| x                 | A X axis digital coordinate or percentage                                                                          |
+| y                 | A Y axis digital coordinate or percentage                                                                          |
+| speed             | The time it takes to finish scrolling                                                                              |
+| easing            | Scroll animation, please refer to all easing[demo](http://vuescrolljs.yvescoding.org/demo/#_2-customize-scrollbar) |
+| animate           | Whether smooth scrolling, default to `true`                                                                        |
+| scrollingComplete | Callback function after scroll completion                                                                          |
+
+#### Usage
+
+> In browser environment, just call `refrehAll` directly.
+
+```javascript
+vuescroll.scrollTo(document, 100, 100, 300 /*...*/);
+```
+
+> In nodejs environment, import `vuescroll` first, and then you can call it.
+
+```javascript
+import vuescroll from 'vuescroll';
+
+vuescroll.scrollTo(document, 100, 100, 300 /*...*/);
+```
