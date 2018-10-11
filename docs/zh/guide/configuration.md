@@ -75,7 +75,9 @@ export default {
         active: 'Release to Load',
         start: 'Loading...',
         beforeDeactive: 'Load Successfully!'
-      }
+      },
+      auto: false,
+      autoLoadDistance: 0
     },
     paging: false,
     zooming: true,
@@ -335,7 +337,9 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
         active: 'Release to Load',
         start: 'Loading...',
         beforeDeactive: 'Load Successfully!'
-      }
+      },
+      auto: false,
+      autoLoadDistance: 0
     },
     paging: false,
     zooming: true,
@@ -396,10 +400,12 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
 
 ##### 上推加载
 
-| 配置项 | 默认    | 描述                        |
-| ------ | ------- | --------------------------- |
-| enable | `false` | 是否启动上推加载.           |
-| tips   | `{}`    | 设置每个上推加载阶段的提示. |
+| 配置项           | 默认    | 描述                        |
+| ---------------- | ------- | --------------------------- |
+| enable           | `false` | 是否启动上推加载.           |
+| tips             | `{}`    | 设置每个上推加载阶段的提示. |
+| auto             | `false` | 是否启动自动加载。          |
+| autoLoadDistance | `10`    | 最小能激活自动加载的距离。  |
 
 ###### 上推加载的提示
 

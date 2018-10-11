@@ -75,7 +75,9 @@ export default {
         active: 'Release to Load',
         start: 'Loading...',
         beforeDeactive: 'Load Successfully!'
-      }
+      },
+      auto: false,
+      autoLoadDistance: 0
     },
     paging: false,
     zooming: true,
@@ -332,7 +334,9 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
         active: 'Release to Load',
         start: 'Loading...',
         beforeDeactive: 'Load Successfully!'
-      }
+      },
+      auto: false,
+      autoLoadDistance: 0
     },
     paging: false,
     zooming: true,
@@ -393,10 +397,12 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
 
 ##### push-load
 
-| option | default | description                                     |
-| ------ | ------- | ----------------------------------------------- |
-| enable | `false` | If enable push-load.                            |
-| tips   | `{}`    | Set the tips about the push-load in each stage. |
+| option           | default | description                                     |
+| ---------------- | ------- | ----------------------------------------------- |
+| enable           | `false` | If enable push-load.                            |
+| tips             | `{}`    | Set the tips about the push-load in each stage. |
+| auto             | `false` | Whether enable auto-load or not.                |
+| autoLoadDistance | `10`    | The min distance of activating load.            |
 
 ###### push-load tips
 
