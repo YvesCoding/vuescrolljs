@@ -88,7 +88,12 @@ export default {
     },
     /* shipped scroll options */
     scroller: {
-      /** Enable bouncing (content can be slowly moved outside and jumps back after releasing) */
+      /*
+        Allow to scroll out of boundaries
+        true or false or an array specify which direction can be
+        bounced. The options can be:
+        ['top','bottom','left','right']
+      */
       bouncing: true,
       /** Enable locking to the main axis if user moves only slightly on one of them at start */
       locking: true,
@@ -347,7 +352,12 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
     },
     /* shipped scroll options */
     scroller: {
-      /** Enable bouncing (content can be slowly moved outside and jumps back after releasing) */
+      /*
+        Allow to scroll out of boundaries
+        true or false or an array specify which direction can be
+        bounced. The options can be:
+        ['top','bottom','left','right']
+      */
       bouncing: true,
       /** Enable locking to the main axis if user moves only slightly on one of them at start */
       locking: true,
