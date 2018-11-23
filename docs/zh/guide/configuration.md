@@ -128,15 +128,16 @@ export default {
     verticalNativeBarPos: 'right'
   },
   //
-  rail: {
+   rail: {
     background: '#01a99a',
     opacity: 0,
+    border: 'none',
     /** Rail's size(Height/Width) , default -> 6px */
     size: '6px',
-    /** Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
+    /** Specify rail's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
     specifyBorderRadius: false,
     /** Rail the distance from the two ends of the X axis and Y axis. **/
-    gutterOfEnds: '2px',
+    gutterOfEnds: null,
     /** Rail the distance from the side of container. **/
     gutterOfSide: '2px',
     /** Whether to keep rail show or not, default -> false, event content height is not enough */
@@ -145,16 +146,25 @@ export default {
   bar: {
     /** How long to hide bar after mouseleave, default -> 500 */
     showDelay: 500,
+    /** Specify bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
+    specifyBorderRadius: false,
     /** Whether to show bar on scrolling, default -> true */
     onlyShowBarOnScroll: true,
     /** Whether to keep show or not, default -> false */
     keepShow: false,
     /** Bar's background , default -> #00a650 */
-    background: '#c1c1c1',
+    background: 'rgb(3, 185, 118)',
     /** Bar's opacity, default -> 1  */
     opacity: 1,
     /** Styles when you hover scrollbar, it will merge into the current style */
     hoverStyle: false
+  },
+  scrollButton: {
+    enable: false,
+    background: 'rgb(3, 185, 118)',
+    opacity: 1,
+    step: 180,
+    mousedownStep: 30
   }
 };
 ```
@@ -254,7 +264,8 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
       /** Rail the distance from the side of container. **/
       gutterOfSide: '2px',
       /** Whether to keep rail show or not, default -> false, event content height is not enough */
-      keepShow: false
+      keepShow: false,
+      border: 'none',
     }
 ```
 
@@ -269,6 +280,7 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
 | gutterOfEnds <Badge text="4.8.1+" type="tip"/>        | `2px`     | 设置轨道距离 X 轴和 Y 轴的间距                                           |
 | gutterOfSide <Badge text="4.8.1+" type="tip"/>        | `2px`     | 设置轨道距离容器侧边的间距                                               |
 | keepShow <Badge text="4.8.2+" type="tip"/>            | `false`   | 设置是否即使在高度不够的情况下也显示 rail                                |
+| border <Badge text="4.9.0-beta.13+" type="tip"/>      | `none`    | Rail 的边框.                                                             |
 
 [在 Codepen 上尝试](https://codepen.io/wangyi7099/pen/BrwBGp)
 
@@ -299,22 +311,49 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
     /** 当你鼠标移动到滚动条的时候滚动条的样式， 返回一个style对象， 和现在的对象融合*/
     hoverStyle: false,
     /** 是否保持rail显示即使内容高度不足的情况下。 */
-    keepShow: false
+    keepShow: false，
+    /** Specify bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
+    specifyBorderRadius: false,
   }
 ```
 
 #### 解释
 
-| bar                 | 默认值    | 描述                                               |
-| ------------------- | --------- | -------------------------------------------------- |
-| onlyShowBarOnScroll | true      | 是否只在滚动下显示滚动条                           |
-| showDelay           | 500       | 控制滚动条每次显示多长时间然后自动消失             |
-| background          | `#4caf50` | 设置滚动条背景色                                   |
-| keepShow            | false     | 设置滚动条是否保持显示                             |
-| opacity             | 1         | 设置滚动条透明度                                   |
-| hoverStyle          | false     | 只在 PC 上有效，当鼠标指针移上去的时候显示的颜色。 |
+| bar                                                           | 默认值    | 描述                                               |
+| ------------------------------------------------------------- | --------- | -------------------------------------------------- |
+| onlyShowBarOnScroll                                           | true      | 是否只在滚动下显示滚动条                           |
+| showDelay                                                     | 500       | 控制滚动条每次显示多长时间然后自动消失             |
+| background                                                    | `#4caf50` | 设置滚动条背景色                                   |
+| keepShow                                                      | false     | 设置滚动条是否保持显示                             |
+| opacity                                                       | 1         | 设置滚动条透明度                                   |
+| hoverStyle                                                    | false     | 只在 PC 上有效，当鼠标指针移上去的时候显示的颜色。 |
+| specifyBorderRadius <Badge text="4.9.0-beta.13+" type="tip"/> | false     | 指定 bar 的 border-radius。                        |
 
 [在 Codepen 上尝试](https://codepen.io/wangyi7099/pen/GxMLjd)
+
+### scrollButton
+
+#### 详细配置
+
+```javascript
+  scrollButton: {
+    enable: false,
+    background: 'rgb(3, 185, 118)',
+    opacity: 1,
+    step: 180,
+    mousedownStep: 30
+  }
+```
+
+#### 解释
+
+| scrollButton  | 默认值             | 描述                             |
+| ------------- | ------------------ | -------------------------------- |
+| enable        | `false`            | 是否启用 scrollButton.           |
+| background    | `rgb(3, 185, 118)` | scrollButton 背景色              |
+| opacity       | `1`                | scrollButton 透明度              |
+| step          | `180`              | 每次点击 scrollButton 滚动的距离 |
+| mousedownStep | `30`               | 持续按 scrollButton 时滚动的距离 |
 
 ## slide 模式定制的配置
 

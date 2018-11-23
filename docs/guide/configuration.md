@@ -133,12 +133,13 @@ export default {
   rail: {
     background: '#01a99a',
     opacity: 0,
+    border: 'none',
     /** Rail's size(Height/Width) , default -> 6px */
     size: '6px',
-    /** Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
+    /** Specify rail's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
     specifyBorderRadius: false,
     /** Rail the distance from the two ends of the X axis and Y axis. **/
-    gutterOfEnds: '2px',
+    gutterOfEnds: null,
     /** Rail the distance from the side of container. **/
     gutterOfSide: '2px',
     /** Whether to keep rail show or not, default -> false, event content height is not enough */
@@ -147,16 +148,25 @@ export default {
   bar: {
     /** How long to hide bar after mouseleave, default -> 500 */
     showDelay: 500,
+    /** Specify bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
+    specifyBorderRadius: false,
     /** Whether to show bar on scrolling, default -> true */
     onlyShowBarOnScroll: true,
     /** Whether to keep show or not, default -> false */
     keepShow: false,
     /** Bar's background , default -> #00a650 */
-    background: '#c1c1c1',
+    background: 'rgb(3, 185, 118)',
     /** Bar's opacity, default -> 1  */
     opacity: 1,
     /** Styles when you hover scrollbar, it will merge into the current style */
     hoverStyle: false
+  },
+  scrollButton: {
+    enable: false,
+    background: 'rgb(3, 185, 118)',
+    opacity: 1,
+    step: 180,
+    mousedownStep: 30
   }
 };
 ```
@@ -248,12 +258,13 @@ The place where srollbar moves.
   rail: {
     background: '#01a99a',
     opacity: 0,
+    border: 'none',
     /** Rail's size(Height/Width) , default -> 6px */
     size: '6px',
-    /** Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
+    /** Specify rail's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
     specifyBorderRadius: false,
     /** Rail the distance from the two ends of the X axis and Y axis. **/
-    gutterOfEnds: '2px',
+    gutterOfEnds: null,
     /** Rail the distance from the side of container. **/
     gutterOfSide: '2px',
     /** Whether to keep rail show or not, default -> false, event content height is not enough */
@@ -272,6 +283,7 @@ The place where srollbar moves.
 | gutterOfEnds <Badge text="4.8.1+" type="tip"/>        | `2px`        | Rail the distance from the two ends of the X axis and Y axis.                                                                 |
 | gutterOfSide <Badge text="4.8.1+" type="tip"/>        | `2px`        | Rail the distance from the side of container.                                                                                 |
 | keepShow <Badge text="4.8.2+" type="tip"/>            | `false`      | Whether to keep rail show or not.                                                                                             |
+| border <Badge text="4.9.0-beta.13+" type="tip"/>      | `none`       | Rail's border.                                                                                                                |
 
 ### bar
 
@@ -298,22 +310,47 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
     /** Bar's opacity, default -> 1  */
     opacity: 1,
     /** Styles when you hover scrollbar, it will merge into the current style */
-    hoverStyle: false
+    hoverStyle: false，
+    /** Specify bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
+    specifyBorderRadius: false,
   }
 ```
 
 #### Explanation
 
-| bar                 | defaultValue | description                                                                              |
-| ------------------- | ------------ | ---------------------------------------------------------------------------------------- |
-| showDelay           | 500          | Control how long the scrollbar is displayed every time and then disappear automatically. |
-| onlyShowBarOnScroll | true         | Only show bar when scrolling                                                             |
-| background          | `#4caf50`    | Set the scrollbar's background                                                           |
-| keepShow            | false        | Set whether the scrollbars will keep showing or not.                                     |
-| opacity             | 1            | Set the opacity of scrollbar.                                                            |
-| hoverStyle          | false        | Styles when you hover scrollbar, it will merge into the current style                    |
+| bar                                                           | defaultValue | description                                                           |
+| ------------------------------------------------------------- | ------------ | --------------------------------------------------------------------- |
+| onlyShowBarOnScroll                                           | true         | Whether to show bar on scrolling, default -> true                     |
+| showDelay                                                     | 500          | How long to hide bar after mouseleave, default -> 500                 |
+| background                                                    | `#4caf50`    | Bar's background , default -> #00a650                                 |
+| keepShow                                                      | false        | Whether to keep show or not, default -> false                         |
+| opacity                                                       | 1            | Bar's opacity, default -> 1                                           |
+| hoverStyle                                                    | false        | Styles when you hover scrollbar, it will merge into the current style |
+| specifyBorderRadius <Badge text="4.9.0-beta.13+" type="tip"/> | false        | specify bar's border-radius。                                         |
 
-[Try bar option on Codepen](https://codepen.io/wangyi7099/pen/GxMLjd)
+### scrollButton
+
+#### Detailed Options
+
+```javascript
+  scrollButton: {
+    enable: false,
+    background: 'rgb(3, 185, 118)',
+    opacity: 1,
+    step: 180,
+    mousedownStep: 30
+  }
+```
+
+#### Explanation
+
+| scrollButton  | defaultValue       | description                                                     |
+| ------------- | ------------------ | --------------------------------------------------------------- |
+| enable        | `false`            | Whether to enable scrollButton.                                 |
+| background    | `rgb(3, 185, 118)` | scrollButton's background.                                      |
+| opacity       | `1`                | scrollButton's opacity.                                         |
+| step          | `180`              | The distance to scroll each time you click the scrollButton.    |
+| mousedownStep | `30`               | The distance to scroll when you hold pressing the scrollButton. |
 
 ## Slide mode Configs
 

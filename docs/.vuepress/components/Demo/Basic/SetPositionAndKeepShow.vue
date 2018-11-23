@@ -31,21 +31,46 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Background(Bar)</td>
+                                <td>Bar Background</td>
                                 <td>
                                     <input type="text" v-model="ops.bar.background">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Background(Rail)</td>
+                                <td>Rail Background</td>
                                 <td>
                                     <input type="text" v-model="ops.rail.background">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Opacity(Rail)</td>
+                                <td>Rail Opacity</td>
                                 <td>
                                     <input type="range" :min="0" :max="1" :step="0.1" v-model="ops.rail.opacity">{{ops.rail.opacity}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rail Border</td>
+                                <td>
+                                    <input type="text"  v-model="ops.rail.border">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rail Size</td>
+                                <td>
+                                    <input type="text"  v-model="ops.rail.size">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>scrollButton enable</td>
+                               <td>
+                                    True:<input type="radio" :value="true" v-model="ops.scrollButton.enable"> False:
+                                    <input type="radio" :value="false" v-model="ops.scrollButton.enable">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>scrollButton background</td>
+                                <td>
+                                    <input type="text"  v-model="ops.scrollButton.background">
                                 </td>
                             </tr>
                             <tr>
@@ -88,12 +113,18 @@ export default {
     return {
       ops: {
         rail: {
-          opacity: '0.5',
-          background: undefined
+          opacity: '0.2',
+          background: undefined,
+          border: '1px solid #cecece',
+          size: '15px'
         },
         bar: {
           background: undefined,
           keepShow: false
+        },
+        scrollButton: {
+          enable: true,
+          background: '#cecece'
         },
         scrollPanel: {
           easing: 'easeInQuad',
