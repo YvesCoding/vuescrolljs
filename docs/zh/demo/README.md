@@ -117,3 +117,7 @@ Node 环境下的 [Demo](https://github.com/YvesCoding/vuescroll-ssr-node)
 ### PHP 环境
 
 Php 环境下的 [Demo](https://github.com/YvesCoding/vuescroll-ssr-php)
+
+### Nuxt 环境
+
+Nuxt 环境下的 [Demo](https://github.com/YvesCoding/vuescroll-nuxt-demo)

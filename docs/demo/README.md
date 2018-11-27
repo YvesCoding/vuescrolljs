@@ -117,3 +117,7 @@ There are two different environments for `vuescroll` `ssr` demo. If you have any
 ### PHP Env
 
 [Demo](https://github.com/YvesCoding/vuescroll-ssr-php) in Php environment
+
+### Nuxt Ebv
+
+[Demo](https://github.com/YvesCoding/vuescroll-nuxt-demo) in Nuxt environment

@@ -3,11 +3,9 @@
 
 ## Introduction
 
-- This site is built with [Vuepress](https://github.com/vuejs/vuepress). Site content is written in Markdown format located in docs. Pull requests welcome!
+- This site is built with [Vuepress](https://github.com/vuejs/vuepress).
 
-- This project use custom vuepress theme - [vuescroll-theme-vuescroll](https://github.com/YvesCoding/vuepress-theme-vuescroll)
-
-- The website expose a global variable called `vs`, which you can use it to scroll page.You can type it out after pressing F12(Dev-tool)
+- This project use vuescroll-vuepress theme - [vuescroll-theme-vuescroll](https://github.com/YvesCoding/vuepress-theme-vuescroll)
 
 ## Install
 
