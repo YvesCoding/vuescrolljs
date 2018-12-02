@@ -17,13 +17,18 @@ export default ({ Vue, router }) => {
       keepShow: true
     },
     rail: {
-      gutterOfEnds: '60px',
       opacity: 1,
       background: '#f5f5f5',
-      size: '8px'
+      border: '1px solid #cecece',
+      size: '8px',
+      size: '20px'
     },
     scrollPanel: {
       scrollingX: false
+    },
+    scrollButton: {
+      enable: true,
+      background: '#cecece'
     }
   };
   registry(ops, 'native');

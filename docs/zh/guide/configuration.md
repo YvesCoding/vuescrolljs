@@ -122,13 +122,13 @@ export default {
     speed: 300,
     easing: undefined,
     // 是否有一个padding样式，样式的大小应该和rail/bar的大小是一样。
-    padding: false，
+    padding: false,
     // Sometimes, the nativebar maybe on the left,
     // See https://github.com/YvesCoding/vuescroll/issues/64
     verticalNativeBarPos: 'right'
   },
   //
-   rail: {
+  rail: {
     background: '#01a99a',
     opacity: 0,
     border: 'none',
@@ -157,7 +157,10 @@ export default {
     /** Bar's opacity, default -> 1  */
     opacity: 1,
     /** Styles when you hover scrollbar, it will merge into the current style */
-    hoverStyle: false
+    hoverStyle: false,
+    // Should be false or a number in a range of (0, 1),
+    // such as 0.5, means 50%. 0.3 means 30%.
+    minSize: false
   },
   scrollButton: {
     enable: false,
@@ -311,23 +314,27 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
     /** 当你鼠标移动到滚动条的时候滚动条的样式， 返回一个style对象， 和现在的对象融合*/
     hoverStyle: false,
     /** 是否保持rail显示即使内容高度不足的情况下。 */
-    keepShow: false，
+    keepShow: false,
     /** Specify bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
     specifyBorderRadius: false,
+    // Should be false or a number in a range of (0, 1),
+    // such as 0.5, means 50%. 0.3 means 30%.
+    minSize:  false
   }
 ```
 
 #### 解释
 
-| bar                                                           | 默认值    | 描述                                               |
-| ------------------------------------------------------------- | --------- | -------------------------------------------------- |
-| onlyShowBarOnScroll                                           | true      | 是否只在滚动下显示滚动条                           |
-| showDelay                                                     | 500       | 控制滚动条每次显示多长时间然后自动消失             |
-| background                                                    | `#4caf50` | 设置滚动条背景色                                   |
-| keepShow                                                      | false     | 设置滚动条是否保持显示                             |
-| opacity                                                       | 1         | 设置滚动条透明度                                   |
-| hoverStyle                                                    | false     | 只在 PC 上有效，当鼠标指针移上去的时候显示的颜色。 |
-| specifyBorderRadius <Badge text="4.9.0-beta.13+" type="tip"/> | false     | 指定 bar 的 border-radius。                        |
+| bar                                                           | 默认值    | 描述                                                                         |
+| ------------------------------------------------------------- | --------- | ---------------------------------------------------------------------------- |
+| onlyShowBarOnScroll                                           | true      | 是否只在滚动下显示滚动条                                                     |
+| showDelay                                                     | 500       | 控制滚动条每次显示多长时间然后自动消失                                       |
+| background                                                    | `#4caf50` | 设置滚动条背景色                                                             |
+| keepShow                                                      | false     | 设置滚动条是否保持显示                                                       |
+| opacity                                                       | 1         | 设置滚动条透明度                                                             |
+| hoverStyle                                                    | false     | 只在 PC 上有效，当鼠标指针移上去的时候显示的颜色。                           |
+| specifyBorderRadius <Badge text="4.9.0-beta.13+" type="tip"/> | false     | 指定 bar 的 border-radius。                                                  |
+| minSize <Badge text="4.9.0-beta.16+" type="tip"/>             | false     | 可以是 false 或一个在(0, 1)之间的一个数组，如 0.25 代表 25%， 0.5 代表 50%。 |
 
 [在 Codepen 上尝试](https://codepen.io/wangyi7099/pen/GxMLjd)
 

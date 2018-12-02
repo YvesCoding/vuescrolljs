@@ -4,13 +4,13 @@ function resolve(dirname) {
   return path.resolve(__dirname, dirname);
 }
 
-const isPro = process.env.NODE_ENV == 'production';
+// const isPro = process.env.NODE_ENV == 'production';
 
 module.exports = {
   base: '/',
   host: '127.0.0.1',
-  port: '8088',
-  serviceWorker: isPro,
+  port: '3000',
+  serviceWorker: false,
   theme: 'vuescroll',
   locales: {
     '/': {

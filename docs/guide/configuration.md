@@ -159,7 +159,10 @@ export default {
     /** Bar's opacity, default -> 1  */
     opacity: 1,
     /** Styles when you hover scrollbar, it will merge into the current style */
-    hoverStyle: false
+    hoverStyle: false,
+    // Should be false or a number in a range of (0, 1),
+    // such as 0.5, means 50%. 0.3 means 30%.
+    minSize: false
   },
   scrollButton: {
     enable: false,
@@ -313,20 +316,24 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
     hoverStyle: false，
     /** Specify bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
     specifyBorderRadius: false,
+    // Should be false or a number in a range of (0, 1),
+    // such as 0.5, means 50%. 0.3 means 30%.
+    minSize: false
   }
 ```
 
 #### Explanation
 
-| bar                                                           | defaultValue | description                                                           |
-| ------------------------------------------------------------- | ------------ | --------------------------------------------------------------------- |
-| onlyShowBarOnScroll                                           | true         | Whether to show bar on scrolling, default -> true                     |
-| showDelay                                                     | 500          | How long to hide bar after mouseleave, default -> 500                 |
-| background                                                    | `#4caf50`    | Bar's background , default -> #00a650                                 |
-| keepShow                                                      | false        | Whether to keep show or not, default -> false                         |
-| opacity                                                       | 1            | Bar's opacity, default -> 1                                           |
-| hoverStyle                                                    | false        | Styles when you hover scrollbar, it will merge into the current style |
-| specifyBorderRadius <Badge text="4.9.0-beta.13+" type="tip"/> | false        | specify bar's border-radius。                                         |
+| bar                                                           | defaultValue | description                                                                              |
+| ------------------------------------------------------------- | ------------ | ---------------------------------------------------------------------------------------- |
+| onlyShowBarOnScroll                                           | true         | Whether to show bar on scrolling, default -> true                                        |
+| showDelay                                                     | 500          | How long to hide bar after mouseleave, default -> 500                                    |
+| background                                                    | `#4caf50`    | Bar's background , default -> #00a650                                                    |
+| keepShow                                                      | false        | Whether to keep show or not, default -> false                                            |
+| opacity                                                       | 1            | Bar's opacity, default -> 1                                                              |
+| hoverStyle                                                    | false        | Styles when you hover scrollbar, it will merge into the current style                    |
+| specifyBorderRadius <Badge text="4.9.0-beta.13+" type="tip"/> | false        | specify bar's border-radius。                                                            |
+| minSize <Badge text="4.9.0-beta.16+" type="tip"/>             | false        | Should be false or a number in a range of (0, 1), such as 0.5, means 50%. 0.3 means 30%. |
 
 ### scrollButton
 
