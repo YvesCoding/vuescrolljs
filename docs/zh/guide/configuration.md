@@ -160,7 +160,9 @@ export default {
     hoverStyle: false,
     // Should be false or a number in a range of (0, 1),
     // such as 0.5, means 50%. 0.3 means 30%.
-    minSize: false
+    minSize: false,
+    /** bar's size(Height/Width) , default -> 6px */
+    size: '6px'
   },
   scrollButton: {
     enable: false,
@@ -319,7 +321,9 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
     specifyBorderRadius: false,
     // Should be false or a number in a range of (0, 1),
     // such as 0.5, means 50%. 0.3 means 30%.
-    minSize:  false
+    minSize:  false,
+     /** bar's size(Height/Width) , default -> 6px */
+    size: '6px'
   }
 ```
 
@@ -335,6 +339,7 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
 | hoverStyle                                                    | false     | 只在 PC 上有效，当鼠标指针移上去的时候显示的颜色。                           |
 | specifyBorderRadius <Badge text="4.9.0-beta.13+" type="tip"/> | false     | 指定 bar 的 border-radius。                                                  |
 | minSize <Badge text="4.9.0-beta.16+" type="tip"/>             | false     | 可以是 false 或一个在(0, 1)之间的一个数组，如 0.25 代表 25%， 0.5 代表 50%。 |
+| size <Badge text="4.9.0-beta.18+" type="tip"/>                | 6px       | bar 的尺寸，默认为 6px。                                                     |
 
 [在 Codepen 上尝试](https://codepen.io/wangyi7099/pen/GxMLjd)
 

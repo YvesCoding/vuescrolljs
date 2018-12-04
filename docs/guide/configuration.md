@@ -162,7 +162,10 @@ export default {
     hoverStyle: false,
     // Should be false or a number in a range of (0, 1),
     // such as 0.5, means 50%. 0.3 means 30%.
-    minSize: false
+    minSize: false,
+    /** bar's size(Height/Width) , default -> 6px */
+
+    size: '6px'
   },
   scrollButton: {
     enable: false,
@@ -318,7 +321,9 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
     specifyBorderRadius: false,
     // Should be false or a number in a range of (0, 1),
     // such as 0.5, means 50%. 0.3 means 30%.
-    minSize: false
+    minSize: false,
+    /** bar's size(Height/Width) , default -> 6px */
+    size: '6px'
   }
 ```
 
@@ -334,6 +339,7 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
 | hoverStyle                                                    | false        | Styles when you hover scrollbar, it will merge into the current style                    |
 | specifyBorderRadius <Badge text="4.9.0-beta.13+" type="tip"/> | false        | specify bar's border-radius。                                                            |
 | minSize <Badge text="4.9.0-beta.16+" type="tip"/>             | false        | Should be false or a number in a range of (0, 1), such as 0.5, means 50%. 0.3 means 30%. |
+| size <Badge text="4.9.0-beta.18+" type="tip"/>                | 6px          | Bar size, default to 6px.                                                                |
 
 ### scrollButton
 

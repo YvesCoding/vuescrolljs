@@ -14,7 +14,9 @@ export default ({ Vue, router }) => {
     bar: {
       background: '#1890ff',
       opacity: 0.8,
-      keepShow: true
+      keepShow: true,
+      size: '15px',
+      minSize: 0.1
     },
     rail: {
       opacity: 1,
