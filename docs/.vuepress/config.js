@@ -50,6 +50,10 @@ module.exports = {
           {
             text: 'Demo',
             link: '/demo/'
+          },
+          {
+            text: 'Suggestion',
+            link: 'https://github.com/YvesCoding/vuescroll/issues/90'
           }
         ],
         sidebar: {
@@ -76,6 +80,10 @@ module.exports = {
           {
             text: 'Demo',
             link: '/zh/demo/'
+          },
+          {
+            text: '建议',
+            link: 'https://github.com/YvesCoding/vuescroll/issues/90'
           }
         ],
         sidebar: {
