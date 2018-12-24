@@ -54,6 +54,19 @@ module.exports = {
           {
             text: 'Suggestion',
             link: 'https://github.com/YvesCoding/vuescroll/issues/90'
+          },
+          {
+            text: 'ecosystem',
+            items: [
+              {
+                text: 'vuepress-theme-vuescroll',
+                link: 'https://github.com/YvesCoding/vuepress-theme-vuescroll'
+              },
+              {
+                text: 'vuescroll-carousel',
+                link: 'https://github.com/YvesCoding/vuescroll-carousel'
+              }
+            ]
           }
         ],
         sidebar: {
@@ -84,6 +97,19 @@ module.exports = {
           {
             text: '建议',
             link: 'https://github.com/YvesCoding/vuescroll/issues/90'
+          },
+          {
+            text: '生态系统',
+            items: [
+              {
+                text: 'vuepress-theme-vuescroll',
+                link: 'https://github.com/YvesCoding/vuepress-theme-vuescroll'
+              },
+              {
+                text: 'vuescroll-carousel',
+                link: 'https://github.com/YvesCoding/vuescroll-carousel'
+              }
+            ]
           }
         ],
         sidebar: {

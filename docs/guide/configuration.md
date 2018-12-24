@@ -122,9 +122,6 @@ export default {
     scrollingY: true,
     speed: 300,
     easing: undefined,
-    // Setting padding to true can give a padding-right to panel which size is equal
-    // to rail/bar's size.
-    padding: false,
     // Sometimes, the nativebar maybe on the left,
     // See https://github.com/YvesCoding/vuescroll/issues/64
     verticalNativeBarPos: 'right'
@@ -209,6 +206,10 @@ Vuescroll here is just an **option** here, not vuescroll component itself. Set t
 | sizeStrategy | `percent` | Set the type of the size of `vuescroll`. The optional configs are `percent`, `number`.When set to `percent`, vuescroll's height will be `100%` and width will be `100%`, and set to `number`, vuescroll will calculate its parent dom's size automatically, and set `height` and `width` to the corresponding values. A small tip: If parent dom's size is a percent value, I suggest you to set to `number`， and if parent dom's size is a fixed `px` value， I suggest you to set to `percent`. |
 | detectResize | `true`    | Whether to detect dom resize or not                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
+#### Have a try !
+
+<Guide-BaseConfig />
+
 ### scrollPanel
 
 ::: tip Introduction
@@ -230,9 +231,6 @@ scrollPanel is a wrap of content. We just change scrollPanel's scrollTop or scro
     speed: 300,
     // scroll animation
     easing: undefined,
-    // Whether there is a padding or not, its size should be
-    // equal to rail/bar's size.
-    padding: true，
     // Sometimes, the nativebar maybe on the left,
     // See https://github.com/YvesCoding/vuescroll/issues/64
     verticalNativeBarPos: 'right'
@@ -247,10 +245,11 @@ scrollPanel is a wrap of content. We just change scrollPanel's scrollTop or scro
 | initialScrollX                                         | `false` | The horizontal distance that will scroll while component has mounted.e.g.**100** or **10%**                                                                                            |
 | speed                                                  | `300`   | The time that scrollPanel scrolls completely.                                                                                                                                          |
 | easing                                                 | `null`  | The scrolling animation,You can checkout this [demo](http://vuescrolljs.yvescoding.org/demo/#vuescroll-supports-setting-keep-show-or-not-and-background) for all available animations. |
-| padding                                                | `true`  | Set a padding of panel. Prevent the rail or bar from blocking a part of content.                                                                                                       |
 | verticalNativeBarPos <Badge text="4.8.2+" type="tip"/> | `right` | Sometimes, the nativebar maybe on the left . `right` or `left`.                                                                                                                        |
 
-[Try scrollPanel options on Codepen](https://codepen.io/wangyi7099/pen/mxBdER)
+#### Have a try !
+
+<Guide-ScrollPanel />
 
 ### rail
 
@@ -290,6 +289,10 @@ The place where srollbar moves.
 | gutterOfSide <Badge text="4.8.1+" type="tip"/>        | `2px`        | Rail the distance from the side of container.                                                                                 |
 | keepShow <Badge text="4.8.2+" type="tip"/>            | `false`      | Whether to keep rail show or not.                                                                                             |
 | border <Badge text="4.9.0-beta.13+" type="tip"/>      | `none`       | Rail's border.                                                                                                                |
+
+#### Have a try!
+
+<Guide-Rail />
 
 ### bar
 
@@ -341,6 +344,10 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
 | minSize <Badge text="4.9.0-beta.16+" type="tip"/>             | false        | Should be false or a number in a range of (0, 1), such as 0.5, means 50%. 0.3 means 30%. |
 | size <Badge text="4.9.0-beta.18+" type="tip"/>                | 6px          | Bar size, default to 6px.                                                                |
 
+#### Have a try!
+
+<Guide-Bar />
+
 ### scrollButton
 
 #### Detailed Options
@@ -364,6 +371,14 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
 | opacity       | `1`                | scrollButton's opacity.                                         |
 | step          | `180`              | The distance to scroll each time you click the scrollButton.    |
 | mousedownStep | `30`               | The distance to scroll when you hold pressing the scrollButton. |
+
+::: tip Note!
+The size of scrollButton depends on the size of rail!
+:::
+
+#### Have a try!
+
+<Guide-ScrollButton />
 
 ## Slide mode Configs
 

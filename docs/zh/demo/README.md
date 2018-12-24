@@ -88,11 +88,15 @@ Vuescroll 支持 snapping 但是原生的不支持. Snapping 有点像`Paging`, 
 
 ## 轮播图
 
-### 你可以通过使用 `paging` 选项来做一个轮播图。每个页面尺寸应该等于父元素的高或者宽。
+这两个轮播图是用官方的 vuescroll 插件 - [`vuescroll-carousel`](https://github.com/YvesCoding/vuescroll-carousel)制作成的。
 
-<ClientOnly>
-<Demo-Advance-MakeACarousel />
-</ClientOnly>
+ <Demo-Advance-MakeACarousel />
+
+<br><br>
+
+ <Demo-Advance-MakeACarousel type="v"/>
+ 
+<br>
 
 [源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue)
 

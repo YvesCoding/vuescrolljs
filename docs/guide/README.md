@@ -17,16 +17,6 @@ sidebarDepth: 1
  
 A powerful, customizable, multi-mode scrollbar plugin baed on Vue.js - [vuescrolljs.yvescoding.org](http://vuescrolljs.yvescoding.org/)
 
-## Demo
-
-<p align="center">
-  <a href="https://github.com/YvesCoding/vuescroll-issue-list-demo" target="_blank"><img src="https://github.com/wangyi7099/pictureCdn/blob/master/allPic/vuescroll/show1.gif?raw=true" width="400"  alt="Demo"/></a>
-</p>
-
-<p align="center">
-  <a href="https://vuescroll-issue-list-demo-qlrlyskaji.now.sh/">Online Demo(Recommend to use mobile)</a>
-</p>
-
 ## Features
 
 ### Basic features

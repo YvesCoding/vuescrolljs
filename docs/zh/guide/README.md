@@ -15,18 +15,7 @@ sidebarDepth: 1
 <a href="https://github.com/YvesCoding/vuescroll"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" alt="prettier"></a>
 </p>
 
-
 一个可定制的， 功能强大，多模式的基于 Vue.js 设计的滚动条插件 - [vuescrolljs.yvescoding.org](http://vuescrolljs.yvescoding.org/zh)
-
-## Demo
-
-<p align="center">
-   <a href="https://github.com/YvesCoding/vuescroll-issue-list-demo" target="_blank"><img src="https://github.com/wangyi7099/pictureCdn/blob/master/allPic/vuescroll/show1.gif?raw=true" width="400"  alt="Demo"/></a>
-</p>
-
-<p align="center">
-  <a href="https://vuescroll-issue-list-demo-qlrlyskaji.now.sh/">在线 Demo(建议使用移动端访问)</a>
-</p>
 
 ## 特点
 

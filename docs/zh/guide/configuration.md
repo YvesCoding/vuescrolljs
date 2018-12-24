@@ -121,8 +121,6 @@ export default {
     scrollingY: true,
     speed: 300,
     easing: undefined,
-    // 是否有一个padding样式，样式的大小应该和rail/bar的大小是一样。
-    padding: false,
     // Sometimes, the nativebar maybe on the left,
     // See https://github.com/YvesCoding/vuescroll/issues/64
     verticalNativeBarPos: 'right'
@@ -206,6 +204,10 @@ export default {
 | sizeStrategy | `percent` | 设置 `vuescroll`的大小类型， 可选的有`percent`, `number`. 设置为`percent`会把 vuescroll 的 height 和 width 设置成`100%`,设置成`number`的话 vuescroll 会自动计算父元素的大小，并将`height`和`width`设置成对应的数值。提示， 如果父元素的尺寸为百分比大小时建议设置成`number`， 如果父元素大小为一个固定的`px`的值， 那么设置为百分比比较合适一些。 |
 | detectResize | `true`    | 是否开启监听 dom resize                                                                                                                                                                                                                                                                                                                           |
 
+#### 尝试一下
+
+<Guide-BaseConfig lang="zh"/>
+
 ### scrollPanel
 
 ::: tip 介绍
@@ -227,8 +229,6 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
     speed: 300,
     // 滚动动画
     easing: undefined,
-    //
-    padding: true，
     // 有时候原声滚动条可能在左侧,
     // 请查看 https://github.com/YvesCoding/vuescroll/issues/64
     verticalNativeBarPos: 'right'
@@ -237,16 +237,18 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
 
 #### 解释
 
-| 配置项                                                 | 默认    | 描述                                                                                                                                                           |
-| ------------------------------------------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| initialScrollY                                         | `false` | 垂直方向上的滚动距离在组件加载完以后.比如.**100** 或 **10%**                                                                                                   |
-| initialScrollX                                         | `false` | 水平方向上的滚动距离在组件加载完以后.比如.**100** 或 **10%**                                                                                                   |
-| speed                                                  | `300`   | 滚动的完成所需的时间。                                                                                                                                         |
-| easing                                                 | `null`  | 滚动的动画，你可以查看这个[demo](http://vuescrolljs.yvescoding.org/zh/demo/#_2-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%BB%9A%E5%8A%A8%E6%9D%A1)来浏览所有可得到的动画。 |
-| padding                                                | `true`  | 设置是否启用 padding。可以用来阻止内容被滚动条遮住一部分。                                                                                                     |
-| verticalNativeBarPos <Badge text="4.8.2+" type="tip"/> | `right` | `right` 或者 `left`                                                                                                                                            |
+| 配置项         | 默认    | 描述                                                                                                                                                           |
+| -------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| initialScrollY | `false` | 垂直方向上的滚动距离在组件加载完以后.比如.**100** 或 **10%**                                                                                                   |
+| initialScrollX | `false` | 水平方向上的滚动距离在组件加载完以后.比如.**100** 或 **10%**                                                                                                   |
+| speed          | `300`   | 滚动的完成所需的时间。                                                                                                                                         |
+| easing         | `null`  | 滚动的动画，你可以查看这个[demo](http://vuescrolljs.yvescoding.org/zh/demo/#_2-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%BB%9A%E5%8A%A8%E6%9D%A1)来浏览所有可得到的动画。 |
 
-[在 codePen 上尝试 scrollPanel](https://codepen.io/wangyi7099/pen/mxBdER)
+| verticalNativeBarPos <Badge text="4.8.2+" type="tip"/> | `right` | `right` 或者 `left` |
+
+#### 尝试一下!
+
+<Guide-ScrollPanel lang="zh"/>
 
 ### rail
 
@@ -287,7 +289,9 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
 | keepShow <Badge text="4.8.2+" type="tip"/>            | `false`   | 设置是否即使在高度不够的情况下也显示 rail                                |
 | border <Badge text="4.9.0-beta.13+" type="tip"/>      | `none`    | Rail 的边框.                                                             |
 
-[在 Codepen 上尝试](https://codepen.io/wangyi7099/pen/BrwBGp)
+#### 尝试一下！
+
+<Guide-Rail lang="zh" />
 
 ### bar
 
@@ -341,7 +345,9 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
 | minSize <Badge text="4.9.0-beta.16+" type="tip"/>             | false     | 可以是 false 或一个在(0, 1)之间的一个数组，如 0.25 代表 25%， 0.5 代表 50%。 |
 | size <Badge text="4.9.0-beta.18+" type="tip"/>                | 6px       | bar 的尺寸，默认为 6px。                                                     |
 
-[在 Codepen 上尝试](https://codepen.io/wangyi7099/pen/GxMLjd)
+#### 尝试一下！
+
+<Guide-Bar lang="zh" />
 
 ### scrollButton
 
@@ -366,6 +372,14 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
 | opacity       | `1`                | scrollButton 透明度              |
 | step          | `180`              | 每次点击 scrollButton 滚动的距离 |
 | mousedownStep | `30`               | 持续按 scrollButton 时滚动的距离 |
+
+::: tip 注意！
+scrollButton 的大小和 rail 的大小有关！
+:::
+
+#### 尝试一下！
+
+<Guide-ScrollButton lang="zh" />
 
 ## slide 模式定制的配置
 

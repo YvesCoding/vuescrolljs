@@ -20,6 +20,8 @@ sidebarDepth: 1
 
 #### 引入
 
+1. 全局引入
+
 在你的入口文件处：
 
 ```javascript
@@ -30,7 +32,25 @@ import 'vuescroll/dist/vuescroll.css';
 Vue.use(vuescroll);
 ```
 
-#### 为了去掉不会用到的部分，可以分开地引入 vuescroll
+2. 局部引入
+
+```html
+<template>
+  <vue-scroll> <!-- 你的内容... --> </vue-scroll>
+</template>
+<script>
+  import vuescroll from 'vuescroll';
+  import 'vuescroll/dist/vuescroll.css';
+
+  export default {
+    components: {
+      vuescroll
+    }
+  };
+</script>
+```
+
+#### 只引入需要的模式
 
 **只引入 slide 模式的特性：**
 
@@ -63,7 +83,11 @@ Vue.use(vuescroll);
 <script src="https://unpkg.com/vuescroll/dist/vuescroll-slide.js"></script>
 <!-- 引入vuescroll-native -->
 <script src="https://unpkg.com/vuescroll/dist/vuescroll-native.js"></script>
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/vuescroll/dist/vuescroll.css" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://unpkg.com/vuescroll/dist/vuescroll.css"
+/>
 ```
 
 ### 用法
@@ -75,29 +99,26 @@ Vue.use(vuescroll);
 :::
 
 ```html
-  <template>
-    <div class='parent-dom'>
-        <!-- bind your configurations -->
-        <vue-scroll :ops="ops">
-            <div class='child-dom'>
-            </div>
-        </vue-scroll>
-    </div>
-  </template>
-  <script>
-    export default {
-      data() {
-        return {
-          ops: {
-            vuescroll: {},
-            scrollPanel: {},
-            rail: {}
-            bar: {}
-          }
+<template>
+  <div class="parent-dom">
+    <!-- bind your configurations -->
+    <vue-scroll :ops="ops"> <div class="child-dom"></div> </vue-scroll>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        ops: {
+          vuescroll: {},
+          scrollPanel: {},
+          rail: {}
+          bar: {}
         }
       }
     }
-  </script>
+  }
+</script>
 ```
 
 ::: tip 提示

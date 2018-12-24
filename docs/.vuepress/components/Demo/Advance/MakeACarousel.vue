@@ -1,33 +1,51 @@
 <template>
-    <div class="wrap">
-      <span class="demo-title">Carousel</span>
-       <BaseCarousel :items="items"/> 
-    </div>
+  <div class="wrap">
+    <span class="demo-title">Carousel ({{typeDesc}})</span>
+    <vuescroll-carousel :type="type">
+      <img v-for="item in items" :key="item.url" :src="item.url" alt="">
+    </vuescroll-carousel>
+  </div>
 </template>
 
 <script>
-import BaseCarousel from '../../BaseCarousel'
+import vuescrollCarousel from 'vuescroll-carousel';
 export default {
-    components: { BaseCarousel },
-    data() {
-        return {
-            items: [ {
-                url: "/images/c1.jpg"
-            },
-            {
-                url: "/images/c2.jpg"
-            },
-            {
-                url: "/images/c3.jpg"
-            },
-            {
-                url: "/images/c4.jpg"
-            }]
-        }
+  props: {
+    type: {
+      type: String,
+      default: 'h'
     }
-}
+  },
+  components: { vuescrollCarousel },
+  computed: {
+    typeDesc() {
+      return this.type != 'h' ? 'vertical' : 'horizontal';
+    }
+  },
+  data() {
+    return {
+      items: [
+        {
+          url: '/images/c1.jpg'
+        },
+        {
+          url: '/images/c2.jpg'
+        },
+        {
+          url: '/images/c3.jpg'
+        },
+        {
+          url: '/images/c4.jpg'
+        }
+      ]
+    };
+  }
+};
 </script>
 
-<style lang="stylus">
-@import '~assets/common.styl'
+<style lang="stylus" scoped>
+.wrap {
+  width: 100%;
+  height: 400px;
+}
 </style>

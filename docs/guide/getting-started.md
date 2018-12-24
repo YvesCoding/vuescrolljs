@@ -18,6 +18,8 @@ sidebarDepth: 1
 
 #### Import
 
+1. import globally
+
 In your entry file:
 
 ```javascript
@@ -28,7 +30,25 @@ import 'vuescroll/dist/vuescroll.css';
 Vue.use(vuescroll);
 ```
 
-#### In order to remove parts that are not used, you can import vuescroll separately
+2. import locally
+
+```html
+<template>
+  <vue-scroll> <!-- Your content... --> </vue-scroll>
+</template>
+<script>
+  import vuescroll from 'vuescroll';
+  import 'vuescroll/dist/vuescroll.css';
+
+  export default {
+    components: {
+      vuescroll
+    }
+  };
+</script>
+```
+
+#### Only import the mode you need.
 
 **Only import the features of slide mode:**
 
@@ -61,7 +81,11 @@ Vue.use(vuescroll);
 <script src="https://unpkg.com/vuescroll/dist/vuescroll-slide.js"></script>
 <!-- import vuescroll-native -->
 <script src="https://unpkg.com/vuescroll/dist/vuescroll-native.js"></script>
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/vuescroll/dist/vuescroll.css" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://unpkg.com/vuescroll/dist/vuescroll.css"
+/>
 ```
 
 ### Usage
@@ -74,29 +98,26 @@ If you doesn't see scrollbar show, please open `dev-tool` to checkout whether yo
 :::
 
 ```html
-  <template>
-    <div class='parent-element'>
-        <!-- bind your configurations -->
-        <vue-scroll :ops="ops">
-            <div class='child-element'>
-            </div>
-        </vue-scroll>
-    </div>
-  </template>
-  <script>
-    export default {
-      data() {
-        return {
-          ops: {
-            vuescroll: {},
-            scrollPanel: {},
-            rail: {}
-            bar: {}
-          }
+<template>
+  <div class="parent-element">
+    <!-- bind your configurations -->
+    <vue-scroll :ops="ops"> <div class="child-element"></div> </vue-scroll>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        ops: {
+          vuescroll: {},
+          scrollPanel: {},
+          rail: {}
+          bar: {}
         }
       }
     }
-  </script>
+  }
+</script>
 ```
 
 ::: tip

@@ -1,6 +1,10 @@
 import { registry } from 'vuepress-theme-vuescroll';
 
+import vuescrollCarousel from 'vuescroll-carousel';
+
 export default ({ Vue, router }) => {
+  Vue.use(vuescrollCarousel);
+
   Vue.prototype.getRandomColor = function() {
     let str = '#';
     let i = 6;
