@@ -3,7 +3,7 @@
         <div class="title"> {{config.title}}</div>
         <div class="demo-area">
             <div class="parent">
-                <vue-scroll :ops="ops" ref="vs" @refresh-start="rS">
+                <vue-scroll :ops="ops" ref="vs">
                     <div class="child"></div>
                     <component :is="current" slot="refresh-start" :tip="config.tip" />
                 </vue-scroll>
