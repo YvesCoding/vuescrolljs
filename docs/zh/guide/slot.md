@@ -16,7 +16,7 @@
 #### 用法
 
 ```vue
-    <div calss="parent">
+<div calss="parent">
      <vuescroll>
         <!-- Refresh-slot -->
         <div class="slot-refresh" slot="refresh-start"></div>
@@ -38,7 +38,7 @@
 #### 用法
 
 ```vue
-    <div calss="parent">
+<div calss="parent">
      <vuescroll>
         <!-- Load-slot -->
         <div class="slot-load" slot="load-start"></div>
@@ -48,31 +48,29 @@
     </div>
 ```
 
-[在 codePen 上尝试 slot refresh/load](https://codepen.io/wangyi7099/pen/vrYmVx)
+<Slot-PullRefresh lang="zh"></Slot-PullRefresh>
+
+[源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Slot/PullRefresh.vue).
 
 ## 自定义 Container/Panel/Content
 
 ### 用法
 
 ```vue
- <template>
-    <div calss="parent">
-     <vuescroll>
-         <!-- Customize container -->
-        <test-slot slot="scroll-container" name="container">
-        </test-slot>
-        <!-- Customize  panel-->
-        <test-slot slot="scroll-panel" name="container">
-        </test-slot>
-        <!-- Customize  content-->
-        <test-slot slot="scroll-content" name="container">
-        </test-slot>
-        <div class="child">
-        </div>
-     </vuescroll>
-    </div>
-    </template>
-    <script>
+<template>
+  <div calss="parent">
+    <vuescroll>
+      <!-- Customize container -->
+      <test-slot slot="scroll-container" name="container"> </test-slot>
+      <!-- Customize  panel-->
+      <test-slot slot="scroll-panel" name="container"> </test-slot>
+      <!-- Customize  content-->
+      <test-slot slot="scroll-content" name="container"> </test-slot>
+      <div class="child"></div>
+    </vuescroll>
+  </div>
+</template>
+<script>
 Vue.component('test-slot', {
   template: '<div :data-id="name"><slot></slot></div>',
   props: ['name']

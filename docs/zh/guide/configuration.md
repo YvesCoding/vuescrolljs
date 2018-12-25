@@ -490,3 +490,5 @@ scrollButton 的大小和 rail 的大小有关！
 | deactive       | `Push to Load`       | 在 `deactive` 阶段的提示.       |
 
 [一个小例子](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh//)
+
+你可以通过[slot](slot.html)来设置不同的加载/刷新动画。

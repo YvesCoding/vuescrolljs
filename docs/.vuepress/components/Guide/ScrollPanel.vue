@@ -8,31 +8,33 @@
         </vue-scroll>
       </div>
       <div class="operation">
-        <table class=" ">
-          <tr>
-            <td>Animation</td>
-            <td>
-              <select v-model="ops.scrollPanel.easing">
-                <option v-for="easing in easings" :value="easing">
-                  {{easing}}
-                </option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td>Speed</td>
-            <td>
+        <vue-scroll>
+          <table class=" ">
+            <tr>
+              <td>Animation</td>
+              <td>
+                <select v-model="ops.scrollPanel.easing">
+                  <option v-for="easing in easings" :value="easing">
+                    {{easing}}
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Speed</td>
+              <td>
 
-              <input type="range" :min="300" :max="2000" :step="50" v-model="ops.scrollPanel.speed">{{ops.scrollPanel.speed}}
+                <input type="range" :min="300" :max="2000" :step="50" v-model="ops.scrollPanel.speed">{{ops.scrollPanel.speed}}
 
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <button @click="randomScroll">Scroll to a random position</button>
-            </td>
-          </tr>
-        </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <button @click="randomScroll">Scroll to a random position</button>
+              </td>
+            </tr>
+          </table>
+        </vue-scroll>
       </div>
     </div>
 

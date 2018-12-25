@@ -56,7 +56,7 @@ module.exports = {
             link: 'https://github.com/YvesCoding/vuescroll/issues/90'
           },
           {
-            text: 'ecosystem',
+            text: 'Ecosystem',
             items: [
               {
                 text: 'vuepress-theme-vuescroll',

@@ -16,7 +16,7 @@ In the case of mode for `slide` and when pull-refresh/push-load is enabled, a di
 #### Usage
 
 ```vue
-    <div calss="parent">
+<div calss="parent">
      <vuescroll>
         <!-- Refresh-slot -->
         <div class="slot-refresh" slot="refresh-start"></div>
@@ -38,7 +38,7 @@ In the case of mode for `slide` and when pull-refresh/push-load is enabled, a di
 #### Usage
 
 ```vue
-    <div calss="parent">
+<div calss="parent">
      <vuescroll>
         <!-- Load-slot -->
         <div class="slot-load" slot="load-start"></div>
@@ -48,35 +48,32 @@ In the case of mode for `slide` and when pull-refresh/push-load is enabled, a di
     </div>
 ```
 
-[Try slot refresh/load on codepen](https://codepen.io/wangyi7099/pen/vrYmVx)
+<Slot-PullRefresh></Slot-PullRefresh>
+
+[source code](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Slot/PullRefresh.vue).
 
 ## Customize Container/Panel/Content
 
 ### Usage
 
 ```vue
- <template>
-    <div calss="parent">
-     <vuescroll>
+<template>
+  <div calss="parent">
+    <vuescroll>
+      <!-- Customize container -->
+      <test-slot slot="scroll-container" name="container"> </test-slot>
 
-         <!-- Customize container -->
-        <test-slot slot="scroll-container" name="container">
-        </test-slot>
+      <!-- Customize  panel-->
+      <test-slot slot="scroll-panel" name="container"> </test-slot>
 
-        <!-- Customize  panel-->
-        <test-slot slot="scroll-panel" name="container">
-        </test-slot>
+      <!-- Customize  content-->
+      <test-slot slot="scroll-content" name="container"> </test-slot>
 
-        <!-- Customize  content-->
-        <test-slot slot="scroll-content" name="container">
-        </test-slot>
-
-        <div class="child">
-        </div>
-     </vuescroll>
-    </div>
-    </template>
-    <script>
+      <div class="child"></div>
+    </vuescroll>
+  </div>
+</template>
+<script>
 Vue.component('test-slot', {
   template: '<div :data-id="name"><slot></slot></div>',
   props: ['name']

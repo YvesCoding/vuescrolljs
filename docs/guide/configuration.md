@@ -489,3 +489,5 @@ The size of scrollButton depends on the size of rail!
 | deactive       | `Push to Load`       | Tips in `deactive` stage.       |
 
 [A small example](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh//)
+
+You can set different refreh/load animations via [slot](slot.html).
