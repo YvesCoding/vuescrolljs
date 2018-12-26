@@ -1,25 +1,25 @@
 <template>
-    <div class="wrapper">
-        <div class="title"> {{config.title}}</div>
-        <div class="demo-area">
-            <div class="parent">
-                <vue-scroll :ops="ops" ref="vs">
-                    <div class="child"></div>
-                    <component :is="current" slot="refresh-start" :tip="config.tip" />
-                </vue-scroll>
-            </div>
-            <div class="title second">
-                {{config.secondTitle}}
-            </div>
-            <div class="svgs" @click.stop="current = null">
-                <svg1 @click.native.stop="current = 'svg1'" :active="current == 'svg1'" />
-                <svg2 @click.native.stop="current = 'svg2'" :active="current == 'svg2'" />
-                <svg3 @click.native.stop="current = 'svg3'" :active="current == 'svg3'" />
-                <svg4 @click.native.stop="current = 'svg4'" :active="current == 'svg4'" />
-                <svg5 @click.native.stop="current = 'svg5'" :active="current == 'svg5'" />
-            </div>
-        </div>
+  <div class="wrapper">
+    <div class="title"> {{config.title}}</div>
+    <div class="demo-area">
+      <div class="parent">
+        <vue-scroll :ops="ops" ref="vs" @refresh-start="rS">
+          <div class="child"></div>
+          <component :is="current" slot="refresh-start" :tip="config.tip" />
+        </vue-scroll>
+      </div>
+      <div class="title second">
+        {{config.secondTitle}}
+      </div>
+      <div class="svgs" @click.stop="current = null">
+        <svg1 @click.native.stop="current = 'svg1'" :active="current == 'svg1'" />
+        <svg2 @click.native.stop="current = 'svg2'" :active="current == 'svg2'" />
+        <svg3 @click.native.stop="current = 'svg3'" :active="current == 'svg3'" />
+        <svg4 @click.native.stop="current = 'svg4'" :active="current == 'svg4'" />
+        <svg5 @click.native.stop="current = 'svg5'" :active="current == 'svg5'" />
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -85,49 +85,60 @@ export default {
 
 <style lang="stylus" scoped>
 .wrapper {
-    margin-top: 20px;
+  margin-top: 20px;
+  width: 100%;
+  background-color: #e2e1dd;
+  padding: 10px;
+
+  .title {
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    font-size: 1rem;
+    background-color: #fbabbd;
+
+    &.second {
+      background-color: #cecece;
+    }
+  }
+
+  .demo-area {
     width: 100%;
-    background-color: #e2e1dd;
-    padding: 10px;
+    margin: auto;
+    margin-top: 1rem;
 
-    .title {
-        height: 4rem;
-        line-height: 4rem;
-        text-align: center;
-        font-size: 1rem;
-        background-color: #fbabbd;
+    .parent {
+      width: 100%;
+      height: 12rem;
+      border: 1px solid rgb(3, 185, 118);
 
-        &.second {
-            background-color: #cecece;
-        }
-    }
-
-    .demo-area {
+      /deep/ .child {
         width: 100%;
-        margin: auto;
-        margin-top: 1rem;
+        height: 1000px;
+        background: linear-gradient(45deg, rgb(0, 159, 255), rgb(236, 47, 75));
+      }
+    }
+  }
 
-        .parent {
-            width: 100%;
-            height: 12rem;
-            border: 1px solid rgb(3, 185, 118);
+  .svgs {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 5px;
 
-            /deep/ .child {
-                width: 100%;
-                height: 1000px;
-                background: linear-gradient(45deg, rgb(0, 159, 255), rgb(236, 47, 75));
-            }
-        }
+    & > * {
+      flex: 1;
     }
 
-    .svgs {
-        display: flex;
-        justify-content: space-around;
-        padding: 10px 5px;
+    /deep/ {
+      svg {
+        max-height: 100%;
+        max-width: 100%;
+      }
 
-        /deep/ svg {
-            max-height: 35px;
-        }
+      .svg-wrapper {
+        text-align: center;
+      }
     }
+  }
 }
 </style>
