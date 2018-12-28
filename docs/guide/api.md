@@ -21,10 +21,7 @@ Scroll to a place, like native `scrollTo`
 #### Usage
 
 ```html
-    <vue-scroll
-    ref="vs"
-    >
-    </vue-scroll>
+<vue-scroll ref="vs"> </vue-scroll>
 ```
 
 ```javascript
@@ -35,13 +32,15 @@ Scroll to a place, like native `scrollTo`
                 this.$refs['vs'].scrollTo({
                     x: 10,
                     y: '10%'
-                })
+                }, true)
             }
         }
     }
 ```
 
-[Try scrollTo api on Codepen](https://codepen.io/wangyi7099/pen/MVEdWb)
+##### Have a try
+
+<Api-ScrollTo />
 
 ### scrollBy
 
@@ -58,10 +57,7 @@ Scroll a delta each time, like native `scrollBy`
 #### Usage
 
 ```html
-    <vue-scroll
-    ref="vs"
-    >
-    </vue-scroll>
+<vue-scroll ref="vs"> </vue-scroll>
 ```
 
 ```javascript
@@ -78,7 +74,9 @@ Scroll a delta each time, like native `scrollBy`
     }
 ```
 
-[Try scrollBy api on Codepen](https://codepen.io/wangyi7099/pen/yjaPYG)
+#### Have a try
+
+<Api-ScrollBy />
 
 ### getCurrentviewDom
 
@@ -95,11 +93,7 @@ Get the doms you can currently see in the vuescroll.
 #### Usage
 
 ```html
-    <vue-scroll
-    ref="vs"
-    >
-    <!-- Your content -->
-    </vue-scroll>
+<vue-scroll ref="vs"> <!-- Your content --> </vue-scroll>
 ```
 
 ```javascript
@@ -120,7 +114,9 @@ Get the doms you can currently see in the vuescroll.
     }
 ```
 
-[Try getCurrentviewDom api on Codepen](https://codepen.io/wangyi7099/pen/LmzJrv)
+#### Have a try
+
+<Api-GetCurrentviewDom />
 
 ### scrollIntoView(4.5.17)
 
@@ -137,16 +133,9 @@ Scroll the child elements in the Vuescroll to the current view.
 #### Usage
 
 ```html
-    <vue-scroll
-    ref="vs"
-    >
-    <div
-    v-for="i in 3"
-    :key="i"
-    :id="'d' + i"
-    >
-    </div>
-    </vue-scroll>
+<vue-scroll ref="vs">
+  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
+</vue-scroll>
 ```
 
 ```javascript
@@ -160,7 +149,9 @@ Scroll the child elements in the Vuescroll to the current view.
     }
 ```
 
-[Try crollIntoView on Codepen](https://codepen.io/wangyi7099/pen/dewQbM)
+#### Have a try
+
+<Api-ScrollIntoView />
 
 ### refresh/refreshAll(4.6.4)
 
@@ -175,28 +166,12 @@ You can use it when your vuescroll scrollbar does not appear.
 #### Usage
 
 ```html
-    <vue-scroll
-    ref="vs"
-    :ops="ops"
-    >
-    <div
-    v-for="i in 3"
-    :key="i"
-    :id="'d' + i"
-    >
-    </div>
-    </vue-scroll>
-    <vue-scroll
-    ref="vs1"
-    :ops="ops"
-    >
-    <div
-    v-for="i in 3"
-    :key="i"
-    :id="'d' + i"
-    >
-    </div>
-    </vue-scroll>
+<vue-scroll ref="vs" :ops="ops">
+  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
+</vue-scroll>
+<vue-scroll ref="vs1" :ops="ops">
+  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
+</vue-scroll>
 ```
 
 ```javascript
@@ -224,8 +199,6 @@ You can use it when your vuescroll scrollbar does not appear.
     }
 ```
 
-[Try refresh/refreshAll on codePen](https://codepen.io/wangyi7099/pen/OEXdQa)
-
 ## Apis are only for slide mode
 
 ### goToPage
@@ -243,11 +216,7 @@ Go to a given page number. Only work in `slide mode` and `paging` is enabled.
 #### Usage
 
 ```html
-    <vue-scroll
-    ref="vs"
-    >
-    <!-- Your content -->
-    </vue-scroll>
+<vue-scroll ref="vs"> <!-- Your content --> </vue-scroll>
 ```
 
 ```javascript
@@ -285,11 +254,7 @@ Get the current page. Only work in `slide mode` and `paging` is enabled.
 #### Usage
 
 ```html
-    <vue-scroll
-    ref="vs"
-    >
-    <!-- Your content -->
-    </vue-scroll>
+<vue-scroll ref="vs"> <!-- Your content --> </vue-scroll>
 ```
 
 ```javascript
@@ -325,17 +290,9 @@ Activate pull to refresh or push to load directly,
 #### Usage
 
 ```html
-    <vue-scroll
-    ref="vs"
-    :ops="ops"
-    >
-    <div
-    v-for="i in 3"
-    :key="i"
-    :id="'d' + i"
-    >
-    </div>
-    </vue-scroll>
+<vue-scroll ref="vs" :ops="ops">
+  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
+</vue-scroll>
 ```
 
 ```javascript
@@ -356,8 +313,6 @@ Activate pull to refresh or push to load directly,
         }
     }
 ```
-
-[Try triggerRefreshOrLoad on codePen](https://codepen.io/wangyi7099/pen/VdLPgz)
 
 ## Public API
 

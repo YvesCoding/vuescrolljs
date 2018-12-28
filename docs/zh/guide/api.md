@@ -21,10 +21,7 @@ sidebarDepth: 3
 #### 用法
 
 ```html
-    <vue-scroll
-    ref="vs"
-    >
-    </vue-scroll>
+<vue-scroll ref="vs"> </vue-scroll>
 ```
 
 ```javascript
@@ -35,13 +32,15 @@ sidebarDepth: 3
                 this.$refs['vs'].scrollTo({
                     x: 10,
                     y: '10%'
-                })
+                }, true)
             }
         }
     }
 ```
 
-[在 Codepen 上尝试 scrollTo](https://codepen.io/wangyi7099/pen/MVEdWb)
+#### 尝试一下
+
+<Api-ScrollTo lang="zh"/>
 
 ### scrollBy
 
@@ -58,10 +57,7 @@ sidebarDepth: 3
 #### 用法
 
 ```html
-    <vue-scroll
-    ref="vs"
-    >
-    </vue-scroll>
+<vue-scroll ref="vs"> </vue-scroll>
 ```
 
 ```javascript
@@ -78,7 +74,9 @@ sidebarDepth: 3
     }
 ```
 
-[在 codePen 上尝试 scrollTo](https://codepen.io/wangyi7099/pen/yjaPYG)
+#### H 尝试一下
+
+<Api-ScrollBy lang="zh"/>
 
 ### getCurrentviewDom
 
@@ -95,11 +93,7 @@ sidebarDepth: 3
 #### 用法
 
 ```html
-    <vue-scroll
-    ref="vs"
-    >
-    <!-- Your content -->
-    </vue-scroll>
+<vue-scroll ref="vs"> <!-- Your content --> </vue-scroll>
 ```
 
 ```javascript
@@ -120,7 +114,9 @@ sidebarDepth: 3
     }
 ```
 
-[在 Codepen 上尝试 getCurrentviewDom](https://codepen.io/wangyi7099/pen/LmzJrv)
+#### H 尝试一下
+
+<Api-GetCurrentviewDom lang="zh"/>
 
 ### scrollIntoView(4.5.17)
 
@@ -137,16 +133,9 @@ sidebarDepth: 3
 #### 用法
 
 ```html
-    <vue-scroll
-    ref="vs"
-    >
-    <div
-    v-for="i in 3"
-    :key="i"
-    :id="'d' + i"
-    >
-    </div>
-    </vue-scroll>
+<vue-scroll ref="vs">
+  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
+</vue-scroll>
 ```
 
 ```javascript
@@ -160,7 +149,9 @@ sidebarDepth: 3
     }
 ```
 
-[在 codePen 上尝试 scrollIntoView](https://codepen.io/wangyi7099/pen/dewQbM)
+#### H 尝试一下
+
+<Api-ScrollIntoView lang="zh"/>
 
 ### refresh/refreshAll(4.6.4)
 
@@ -175,28 +166,12 @@ sidebarDepth: 3
 #### 用法
 
 ```html
-    <vue-scroll
-    ref="vs"
-    :ops="ops"
-    >
-    <div
-    v-for="i in 3"
-    :key="i"
-    :id="'d' + i"
-    >
-    </div>
-    </vue-scroll>
-    <vue-scroll
-    ref="vs1"
-    :ops="ops"
-    >
-    <div
-    v-for="i in 3"
-    :key="i"
-    :id="'d' + i"
-    >
-    </div>
-    </vue-scroll>
+<vue-scroll ref="vs" :ops="ops">
+  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
+</vue-scroll>
+<vue-scroll ref="vs1" :ops="ops">
+  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
+</vue-scroll>
 ```
 
 ```javascript
@@ -224,8 +199,6 @@ sidebarDepth: 3
     }
 ```
 
-[在 codePen 上尝试 refresh/refreshAll](https://codepen.io/wangyi7099/pen/OEXdQa)
-
 ## Slide 模式定制的 Api
 
 ### goToPage
@@ -243,11 +216,7 @@ sidebarDepth: 3
 #### 用法
 
 ```html
-    <vue-scroll
-    ref="vs"
-    >
-    <!-- Your content -->
-    </vue-scroll>
+<vue-scroll ref="vs"> <!-- Your content --> </vue-scroll>
 ```
 
 ```javascript
@@ -285,11 +254,7 @@ sidebarDepth: 3
 #### 用法
 
 ```html
-    <vue-scroll
-    ref="vs"
-    >
-    <!-- Your content -->
-    </vue-scroll>
+<vue-scroll ref="vs"> <!-- Your content --> </vue-scroll>
 ```
 
 ```javascript
@@ -325,17 +290,9 @@ sidebarDepth: 3
 #### 用法
 
 ```html
-    <vue-scroll
-    ref="vs"
-    :ops="ops"
-    >
-    <div
-    v-for="i in 3"
-    :key="i"
-    :id="'d' + i"
-    >
-    </div>
-    </vue-scroll>
+<vue-scroll ref="vs" :ops="ops">
+  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
+</vue-scroll>
 ```
 
 ```javascript
@@ -356,8 +313,6 @@ sidebarDepth: 3
         }
     }
 ```
-
-[在 codePen 上尝试 triggerRefreshOrLoad](https://codepen.io/wangyi7099/pen/VdLPgz)
 
 ## 公共 API
 

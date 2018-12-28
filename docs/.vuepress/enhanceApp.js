@@ -13,7 +13,7 @@ export default ({ Vue, router }) => {
     }
     return str;
   };
-  console.log('qqq');
+  // console.log('qqq');
   let ops = {
     bar: {
       background: '#1890ff',
