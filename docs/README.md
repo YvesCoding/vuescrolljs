@@ -4,12 +4,12 @@ heroImage: /logo.png
 actionText: Get Started →
 actionLink: /guide/
 features:
-  - title: Restful Api
-    details: There are many apis that you can use them to do a lot of work.
-  - title: Option-based system
-    details: Just changing the configuration can achieve many functions.
-  - title: Full customizable
-    details: You can customize scroll container, scroll panel, scroll content, scrollbar...
+  - title: Customizable
+    details: Full customizable, you can customizable scrollbar, rail, scroll button and so on
+  - title: Convenient
+    details: Just warp the content by <vue-scroll>, and you can have your own custom scrollbar
+  - title: Powerful
+    details: Not only customize scrollbar, you can also use it to implement push-to-refresh, push-to-load and so on
 footer: MIT Licensed | Copyright © 2018-present Yi(Yves) Wang
 ---
 
@@ -27,11 +27,11 @@ Vue.use(vuescroll);
 ```vue
 <template>
   <div class="demo-container">
-      <vue-scroll :ops="ops">
-        <div class="demo-content">
-          <span class="demo-content-text">Hello World</span>
-        </div>
-      </vue-scroll>
+    <vue-scroll :ops="ops">
+      <div class="demo-content">
+        <span class="demo-content-text">Hello World</span>
+      </div>
+    </vue-scroll>
   </div>
 </template>
 <script>

@@ -4,12 +4,12 @@ heroImage: /logo.png
 actionText: 开始上手 →
 actionLink: /zh/guide/
 features:
-  - title: 丰富的Api
-    details: 有很多Api你可以用他们做很多事
-  - title: 基于配置的系统
-    details: 只是改改配置就能实现很多功能
-  - title: 完全可定制
-    details: 你可以定制滚动容器、滚动面板、滚动内容、滚动条。。。
+  - title: 可定制的
+    details: 完全可定制化， 你可以自定义滚动条、滚动轨道、滚动按钮等
+  - title: 方便
+    details: 只要把你的内容用<vue-scroll>包裹起来，就能得到你自己的定制的滚动条
+  - title: 功能强大
+    details: 不仅仅可以自定义滚动条，你还可以用它实现上推-加载，下拉-刷新等
 footer: MIT Licensed | Copyright © 2018-present Yi(Yves) Wang
 ---
 
@@ -27,11 +27,11 @@ Vue.use(vuescroll);
 ```vue
 <template>
   <div class="demo-container">
-      <vue-scroll :ops="ops">
-        <div class="demo-content">
-          <span class="demo-content-text">你好 Vuescroll！</span>
-        </div>
-      </vue-scroll>
+    <vue-scroll :ops="ops">
+      <div class="demo-content">
+        <span class="demo-content-text">你好 Vuescroll！</span>
+      </div>
+    </vue-scroll>
   </div>
 </template>
 <script>

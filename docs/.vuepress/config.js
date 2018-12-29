@@ -17,12 +17,12 @@ module.exports = {
       lang: 'en-US',
       title: 'Vuescroll.js',
       description:
-        'A scrollbar plugin allows you to customize scrollbars under Vue.js and scroll smoothly.'
+        'Vuescroll - A customizable, convenient scrollbar plugin based on Vue.js.'
     },
     '/zh/': {
       lang: 'zh-CN',
       title: 'Vuescroll.js',
-      description: '一个滚动条插件， 可以让你在Vue.js下自定义滚动条，平滑地滚动'
+      description: 'Vuescroll - 基于 Vue.js 的一个可定制的、方便的滚动条插件。'
     }
   },
   head: [
