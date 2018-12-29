@@ -4,12 +4,12 @@ heroImage: /logo.png
 actionText: 开始上手 →
 actionLink: /zh/guide/
 features:
-  - title: 可定制的
+  - title: 可定制
     details: 完全可定制化， 你可以自定义滚动条、滚动轨道、滚动按钮等
   - title: 方便
-    details: 只要把你的内容用<vue-scroll>包裹起来，就能得到你自己的定制的滚动条
+    details: 只需要把你的内容用<vue-scroll>包裹起来，就能得到你自己定制的滚动条
   - title: 功能强大
-    details: 不仅仅可以自定义滚动条，你还可以用它实现上推-加载，下拉-刷新等
+    details: 不仅仅可以自定义滚动条，还可以用它实现上推-加载，下拉-刷新等
 footer: MIT Licensed | Copyright © 2018-present Yi(Yves) Wang
 ---
 
