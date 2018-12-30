@@ -17,7 +17,7 @@ One of Vuescroll's criteria for determining whether a scrollbar should appear is
     1.  First, get the size of the native browser scrollbar. Each browser's scrollbar size is different, some are 0, some are 15, some are 17, we first add a `overflow: scroll`style to the dom, and then calculate the size of the native scrollbar by calculating the`offset Height - client Height' of the dom, see [Get the width of the native scrollbar](https://github.com/YvesCoding/vuescroll/blob/10190631490a726ec6dd5d505415b575ca6e8702/src/shared/util.js#L69).
     2.  Then assume that both horizontal and vertical scroll bars appear, and the size of the scroll bar is `gutter`. The way we hide the horizontal scroll bar is to add a style `calc (100% plus gutterpx)`, Calc is compatible with [ie9](https://developer.mozilla.org/en-US/docs/Web/CSS/calc#Browser_compatibility). The way to hide horizontal scrollbar is to add a `margin-right: -gutterpx`to hide the native scrollbars.
 
-## Global & detailed Config
+## Full Config Preview
 
 > To set styles for all vuescroll components in the page, you can set `Vue.prototype.$vuescrollConfig`, or via `Vue.use` to pass a **global default** config e.g.
 
@@ -176,7 +176,7 @@ export default {
 
 > The detailed configuration of each part is shown below:
 
-## Basic Configurations
+## Basic Config
 
 ### vuescroll
 
@@ -380,7 +380,7 @@ The size of scrollButton depends on the size of rail!
 
 <Guide-ScrollButton />
 
-## Slide mode Configs
+## Config for slide mode
 
 ### vuescroll
 

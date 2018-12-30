@@ -19,7 +19,7 @@ Vuescroll 判断是否出现滚动条的一个标准是： 内容高度是否大
 - rail: 类名：`__rail-is-`+ type。自定义的滚动条。
 - bar: 类名：`__bar-is-` + type。自定义的滚动轨道。
 
-## 全局 & 详细的配置
+## 完整的配置预览
 
 > 全局属性也是完整的配置项属性，想要设置统一的样式在 vuescroll 里面, 你可以修改`Vue.prototype.$vuescrollConfig`，或者通过`Vue.use`来传递默认的全局配置 例如：
 
@@ -174,7 +174,7 @@ export default {
 
 > 各个部分配置详解在下面展示：
 
-## 基础配置
+## 基础的配置
 
 ### vuescroll
 
@@ -381,7 +381,7 @@ scrollButton 的大小和 rail 的大小有关！
 
 <Guide-ScrollButton lang="zh" />
 
-## slide 模式定制的配置
+## 适用于 slide 模式定制的配置
 
 ### vuescroll
 

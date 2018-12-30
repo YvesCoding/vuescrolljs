@@ -4,7 +4,7 @@ sidebarDepth: 1
 
 # Getting Started
 
-## Quick Start
+## Installation
 
 ### Module System
 
@@ -88,7 +88,7 @@ Vue.use(vuescroll);
 />
 ```
 
-### Usage
+## Usage
 
 > Put it outside the `child element`, inside the `parent element`. Just so easy.
 

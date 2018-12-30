@@ -23,10 +23,7 @@ Trigger when content's size changed.
 #### Usage
 
 ```html
-    <vue-scroll
-    @handle-resize="handleResize"
-    >
-    </vue-scroll>
+<vue-scroll @handle-resize="handleResize"> </vue-scroll>
 ```
 
 ```javascript
@@ -43,7 +40,6 @@ Trigger when content's size changed.
 ::: tip
 You can try to adjust the size of content in the **browser dev-tool** and see the result.
 :::
-[Try handle-resize on Codepen](https://codepen.io/wangyi7099/pen/JLrVON)
 
 ### handle-scroll
 
@@ -60,10 +56,7 @@ Trigger when content is scrolling.
 #### Usage
 
 ```html
-    <vue-scroll
-    @handle-scroll="handleScroll"
-    >
-    </vue-scroll>
+<vue-scroll @handle-scroll="handleScroll"> </vue-scroll>
 ```
 
 ```javascript
@@ -76,8 +69,6 @@ Trigger when content is scrolling.
         }
     }
 ```
-
-[Try handle-scroll on Codepen](https://codepen.io/wangyi7099/pen/geGydZ)
 
 ### handle-scroll-complete
 
@@ -94,10 +85,7 @@ Trigger when scroll complete
 #### Usage
 
 ```html
-    <vue-scroll
-    @handle-scroll-complete="handleComplete"
-    >
-    </vue-scroll>
+<vue-scroll @handle-scroll-complete="handleComplete"> </vue-scroll>
 ```
 
 ```javascript
@@ -114,9 +102,8 @@ Trigger when scroll complete
 ::: tip
 Need to open dev-tool to see the result
 :::
-[Try handle-scroll-complete on codepen](https://codepen.io/wangyi7099/pen/YLVBNe)
 
-## Events are only for slide mode
+## Event for slide mode
 
 ### refresh/load
 
@@ -147,13 +134,13 @@ corresponding to each stage of pull-refresh. From start to end are `refresh-acti
 #### Usage
 
 ```html
-    <vue-scroll
-    @refresh-activate="handleActivate"
-    @refresh-start="handleStart"
-    @refresh-before-deactivate="handleBeforeDeactivate"
-    @refresh-deactivate="handleDeactivate"
-    >
-    </vue-scroll>
+<vue-scroll
+  @refresh-activate="handleActivate"
+  @refresh-start="handleStart"
+  @refresh-before-deactivate="handleBeforeDeactivate"
+  @refresh-deactivate="handleDeactivate"
+>
+</vue-scroll>
 ```
 
 ```javascript

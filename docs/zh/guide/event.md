@@ -23,10 +23,7 @@ Vuescroll 有一些事件可以在特定场合下触发。
 #### Usage
 
 ```html
-    <vue-scroll
-    @handle-resize="handleResize"
-    >
-    </vue-scroll>
+<vue-scroll @handle-resize="handleResize"> </vue-scroll>
 ```
 
 ```javascript
@@ -60,10 +57,7 @@ Vuescroll 有一些事件可以在特定场合下触发。
 #### Usage
 
 ```html
-    <vue-scroll
-    @handle-scroll="handleScroll"
-    >
-    </vue-scroll>
+<vue-scroll @handle-scroll="handleScroll"> </vue-scroll>
 ```
 
 ```javascript
@@ -94,10 +88,7 @@ Vuescroll 有一些事件可以在特定场合下触发。
 #### 用法
 
 ```html
-    <vue-scroll
-    @handle-scroll-complete="handleComplete"
-    >
-    </vue-scroll>
+<vue-scroll @handle-scroll-complete="handleComplete"> </vue-scroll>
 ```
 
 ```javascript
@@ -116,7 +107,7 @@ Vuescroll 有一些事件可以在特定场合下触发。
 :::
 [在 Codepen 上尝试 handle-scroll-complete](https://codepen.io/wangyi7099/pen/YLVBNe)
 
-## slide 模式定制的事件
+## slide 模式的事件
 
 ### refresh/load
 
@@ -147,13 +138,13 @@ Vuescroll 有一些事件可以在特定场合下触发。
 #### Usage
 
 ```html
-    <vue-scroll
-    @refresh-activate="handleActivate"
-    @refresh-start="handleStart"
-    @refresh-before-deactivate="handleBeforeDeactivate"
-    @refresh-deactivate="handleDeactivate"
-    >
-    </vue-scroll>
+<vue-scroll
+  @refresh-activate="handleActivate"
+  @refresh-start="handleStart"
+  @refresh-before-deactivate="handleBeforeDeactivate"
+  @refresh-deactivate="handleDeactivate"
+>
+</vue-scroll>
 ```
 
 ```javascript

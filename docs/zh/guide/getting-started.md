@@ -4,7 +4,7 @@ sidebarDepth: 1
 
 # 开始上手
 
-## 快速开始
+## 安装
 
 ### 模块系统
 
@@ -90,7 +90,7 @@ Vue.use(vuescroll);
 />
 ```
 
-### 用法
+## 用法
 
 > 把 vuescroll 放在`parent-dom`里面，`child-dom`外面即可。 就是这么简单。
 

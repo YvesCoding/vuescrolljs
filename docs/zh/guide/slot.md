@@ -1,6 +1,6 @@
 # Slot
 
-## 下拉刷新/上推加载
+## 下拉刷新/上推加载动画
 
 在 mode 为`slide`的情况下并且 pull-refresh/push-load 启用的情况下，可以给 Vuescroll 传入不同的 slot 来当作 pull-refresh/push-load 的不同阶段的提示。**请确保你 slot 的 dom 的 position 是 absolute，所有可能会引起一些 bug。。。**
 

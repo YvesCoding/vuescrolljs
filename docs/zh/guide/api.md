@@ -199,7 +199,7 @@ sidebarDepth: 3
     }
 ```
 
-## Slide 模式定制的 Api
+## Slide 模式的 Api
 
 ### goToPage
 

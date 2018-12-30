@@ -199,7 +199,7 @@ You can use it when your vuescroll scrollbar does not appear.
     }
 ```
 
-## Apis are only for slide mode
+## Api for slide mode
 
 ### goToPage
 

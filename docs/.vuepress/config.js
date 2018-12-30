@@ -33,6 +33,7 @@ module.exports = {
     repo: 'YvesCoding/vuescroll',
     docsRepo: 'YvesCoding/vuescrolljs',
     editLinks: true,
+    displayAllHeaders: true,
     docsDir: 'docs',
     docsBranch: 'master',
     sidebarDepth: 3,
