@@ -1,7 +1,6 @@
 <template>
   <div class="wrap">
     <div class="wrap-part">
-      <span class="demo-title">Vuescroll</span>
       <div
         class="parent"
         ref="parentElm"
@@ -10,19 +9,23 @@
           :ops="ops"
           ref="vs"
         >
-          <template v-for="item in 64">
-            <BaseChild
-              :key="item"
-              :width="width"
-              :index="item"
-            />
-            <br v-if="item % 8 == 0" />
-          </template>
+          <div class="child-wrap">
+            <template v-for="item in 64">
+              <div
+                :key="item"
+                class="child"
+                :index="item"
+                :style="getBg()"
+              >
+                {{item}}
+              </div>
+            </template>
+          </div>
+
         </vue-scroll>
       </div>
     </div>
     <div class="wrap-part">
-      <span class="demo-title">Operation</span>
       <div class="parent">
         <vue-scroll :ops="{bar: {onlyShowBarOnScroll: false}}">
           <table class="customize-table">
@@ -212,6 +215,16 @@ export default {
     this.width = this.$refs['parentElm'].clientWidth / 16 + 'rem';
   },
   methods: {
+    getBg() {
+      let str = '#';
+      let i = 6;
+      while (i--) {
+        str += Math.floor(Math.random() * 16).toString(16);
+      }
+      return {
+        backgroundColor: str
+      };
+    },
     randomScroll() {
       const x = Math.random() * 2300;
       const y = Math.random() * 2300;
@@ -224,12 +237,35 @@ export default {
 };
 </script>
 
-<style lang="stylus">
-@import '~assets/common.styl';
-
+<style lang="stylus" scoped>
 .customize-table {
   input {
     max-width: 80px;
+  }
+}
+
+.parent {
+  height: 400px;
+
+  .child-wrap {
+    width: 3200px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .child {
+      flex-basis: 12.5%;
+      height: 400px;
+      text-align: center;
+      line-height: 400px;
+      text-shadow: 0px 3px 3px #975a00;
+      -webkit-text-shadow: 0px 3px 3px #975a00;
+      -moz-text-shadow: 0px 3px 3px #975a00;
+      font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑';
+      font-weight: 700;
+      font-style: normal;
+      font-size: 48px;
+      color: #ff9900;
+    }
   }
 }
 </style>
