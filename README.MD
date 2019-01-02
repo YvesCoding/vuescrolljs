@@ -28,4 +28,4 @@ yarn install
 
 ## Deploy address
 
-`localhost:8088`
+`localhost:3000`
