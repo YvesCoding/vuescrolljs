@@ -17,7 +17,7 @@ module.exports = {
       lang: 'en-US',
       title: 'Vuescroll.js',
       description:
-        'Vuescroll - A scrollbar plugin based on Vue.js that you can customize scrollbar, push-to-refresh, push-to-load and male a carousel.'
+        'Vuescroll - A scrollbar plugin based on Vue.js that you can customize scrollbar, push-to-refresh, push-to-load and make a carousel.'
     },
     '/zh/': {
       lang: 'zh-CN',
