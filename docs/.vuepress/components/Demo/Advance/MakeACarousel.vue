@@ -2,7 +2,13 @@
   <div class="wrap">
     <span class="demo-title">Carousel ({{typeDesc}})</span>
     <vuescroll-carousel :type="type">
-      <img v-for="item in items" :key="item.url" :src="item.url" alt="">
+      <div
+        class="child"
+        v-for="i in 5"
+        :key="i"
+      >
+        Slide{{i}}.
+      </div>
     </vuescroll-carousel>
   </div>
 </template>
@@ -23,22 +29,7 @@ export default {
     }
   },
   data() {
-    return {
-      items: [
-        {
-          url: '/images/c1.jpg'
-        },
-        {
-          url: '/images/c2.jpg'
-        },
-        {
-          url: '/images/c3.jpg'
-        },
-        {
-          url: '/images/c4.jpg'
-        }
-      ]
-    };
+    return {};
   }
 };
 </script>
@@ -47,5 +38,19 @@ export default {
 .wrap {
   width: 100%;
   height: 400px;
+  border: 1px solid rgba(91, 140, 255, 0.3);
+
+  .child {
+    line-height: 400px;
+    text-align: center;
+    text-shadow: 0px 3px 3px #975a00;
+    -webkit-text-shadow: 0px 3px 3px #975a00;
+    -moz-text-shadow: 0px 3px 3px #975a00;
+    font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 48px;
+    color: #ff9900;
+  }
 }
 </style>
