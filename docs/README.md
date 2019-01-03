@@ -47,6 +47,4 @@ export default {
 
 ## Preview
 
-<ClientOnly>
-<IndexDemo />
-</ClientOnly>
+ <IndexDemo />

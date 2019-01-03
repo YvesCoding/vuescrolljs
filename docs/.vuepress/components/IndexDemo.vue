@@ -3,20 +3,38 @@
   <div class="demo-container">
     <vue-scroll :ops="ops">
       <div class="demo-content">
-        <span class="demo-content-text">Hello Vuescroll!</span>
+        <span class="demo-content-text">{{config.title}}</span>
       </div>
     </vue-scroll>
   </div>
 </template>
 <script>
 export default {
+  props: {
+    lang: {
+      default: 'en'
+    }
+  },
+  computed: {
+    config() {
+      return this.i18n[this.lang];
+    }
+  },
   data() {
     return {
       ops: {
         scrollPanel: {
           scrollingX: false
         }
-      } // Your options
+      },
+      i18n: {
+        en: {
+          title: "Hello Vuescroll! You're at the bottom."
+        },
+        zh: {
+          title: '你好 Vuescroll! 你已经到达底部了。'
+        }
+      }
     };
   }
 };

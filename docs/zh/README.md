@@ -47,10 +47,8 @@ export default {
 
 ## 预览
 
-<ClientOnly>
-<IndexDemo />
-</ClientOnly>
-
+ <IndexDemo lang="zh"/>
+ 
 ## 微信交流群
 
 <p align="center">
