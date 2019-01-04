@@ -11,11 +11,11 @@ sidebarDepth: 1
 #### 安装
 
 ```bash
-   npm i -S
-   # 或者通过yarn
+  npm i -S
+  # 或者通过yarn
   yarn add vuescroll
-   # 或者通过cnpm
-      cnpm i -S
+  # 或者通过cnpm
+  cnpm i -S
 ```
 
 #### 引入
@@ -29,7 +29,22 @@ import Vue from 'vue';
 import vuescroll from 'vuescroll';
 import 'vuescroll/dist/vuescroll.css';
 
-Vue.use(vuescroll);
+// 你可以在这里设置全局配置
+Vue.use(vuescroll, {
+  ops: {}, // 在这里设置全局默认配置
+  name: 'myScroll' // 在这里自定义组件名字，默认是vueScroll
+});
+
+/*
+ * 或者
+ */
+
+Vue.use(vuescroll); // install the vuescroll first
+Vue.prototype.$vuescrollConfig = {
+  bar: {
+    background: '#000'
+  }
+};
 ```
 
 2. 局部引入

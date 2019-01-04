@@ -27,7 +27,22 @@ import Vue from 'vue';
 import vuescroll from 'vuescroll';
 import 'vuescroll/dist/vuescroll.css';
 
-Vue.use(vuescroll);
+// You can set global config here.
+Vue.use(vuescroll, {
+  ops: {
+    // The global config
+  },
+  name: 'myScroll' // customize component name, default -> vueScroll
+});
+
+/**
+ * or
+ */
+Vue.prototype.$vuescrollConfig = {
+  bar: {
+    background: '#000'
+  }
+};
 ```
 
 2. import locally

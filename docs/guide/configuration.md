@@ -4,48 +4,9 @@ sidebarDepth: 2
 
 # Configuration
 
-Vuescroll's options are composed of four parts, they are `vuescroll`, `scrollPanel`, `bar`, `rail` in turn, each of parts has its own options.**All default configurations can be omitted.**
-
-One of Vuescroll's criteria for determining whether a scrollbar should appear is whether the content height is greater than the container height. The following are analyzed separately.
-
-- Vuescroll: class name: `__vuescroll`. Vuescroll core configuration and outermost container configuration.
-
-- ScrollPanel: class name: `__panel`. Vuescroll includes scrolling related configurations, such as initialization scrolling, scroll animation, etc. In slide mode and native mode, they play different roles respectively.
-
-  - Slide mode: wrapping the contents that we want to scroll. Scroll the content by changing its `tansform:translate` attribute. The height of the content is also calculated by obtaining its `scrollHeight`.
-  - Naitve mode: the parent element of the `__view`. By adding `overflow: scroll`to it to produce a native scroll, Vuescroll changes the position of the scrollbar by listening for the native scroll. The height of the content can be calculated by obtaining its `scrollHeight`.How to hide the native scrollbar? Simply put, get the size of the scrollbar first, and then hide the native scrollbar by adding a style.
-    1.  First, get the size of the native browser scrollbar. Each browser's scrollbar size is different, some are 0, some are 15, some are 17, we first add a `overflow: scroll`style to the dom, and then calculate the size of the native scrollbar by calculating the`offset Height - client Height' of the dom, see [Get the width of the native scrollbar](https://github.com/YvesCoding/vuescroll/blob/10190631490a726ec6dd5d505415b575ca6e8702/src/shared/util.js#L69).
-    2.  Then assume that both horizontal and vertical scroll bars appear, and the size of the scroll bar is `gutter`. The way we hide the horizontal scroll bar is to add a style `calc (100% plus gutterpx)`, Calc is compatible with [ie9](https://developer.mozilla.org/en-US/docs/Web/CSS/calc#Browser_compatibility). The way to hide horizontal scrollbar is to add a `margin-right: -gutterpx`to hide the native scrollbars.
+Vuescroll's options are composed of five parts, they are `vuescroll`, `scrollPanel`, `bar`, `rail`, `scrollButton` respectively.
 
 ## Full Config Preview
-
-> To set styles for all vuescroll components in the page, you can set `Vue.prototype.$vuescrollConfig`, or via `Vue.use` to pass a **global default** config e.g.
-
-```javascript
-import Vue from 'vue';
-import vuescroll from 'vuescroll';
-import 'vuescroll/dist/vuescroll.css';
-
-Vue.use(vuescroll, {
-  ops: {
-    // The global config
-  },
-  name: 'myScroll' // customize component name, default -> vueScroll
-});
-
-/**
- * or
- */
-
-Vue.use(vuescroll); // install the vuescroll first
-Vue.prototype.$vuescrollConfig = {
-  bar: {
-    background: '#000'
-  }
-};
-```
-
-> And the complete global config is
 
 ```javascript
 export default {
@@ -173,8 +134,6 @@ export default {
   }
 };
 ```
-
-> The detailed configuration of each part is shown below:
 
 ## Basic Config
 
