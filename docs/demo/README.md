@@ -4,17 +4,13 @@ sidebarDepth: 1
 
 # Demo Page
 
-## Customize Scrollbar
-
-### Vuescroll supports setting keep show or not and background.
+## Full Customize
 
  <Demo-Basic-SetPositionAndKeepShow />
  
 [source code](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/SetPositionAndKeepShow.vue)
  
 ## Pull-refresh or push-load
-
-### Vuescroll supports pull-refresh and push-load. It's uesful when you want to display a list of datas.
 
  <Demo-Basic-PullRefreshOrPushLoad />
  

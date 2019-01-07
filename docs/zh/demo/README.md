@@ -4,24 +4,16 @@ sidebarDepth: 1
 
 # Demo 页面
 
-## 自定义滚动条.
+## 完全可定制
 
-### vuescroll 可以设置滚动条是否保持显示,颜色等。
-
-<ClientOnly>
-<Demo-Basic-SetPositionAndKeepShow />
-</ClientOnly>
-
+ <Demo-Basic-SetPositionAndKeepShow />
+ 
 [源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/SetPositionAndKeepShow.vue)
 
 ## 下拉刷新和上推加载
 
-### Vuescroll 支持下来刷新和上推加载. 在你想展示一个列表的数据的时候很有用。
-
-<ClientOnly>
-<Demo-Basic-PullRefreshOrPushLoad />
-</ClientOnly>
-
+ <Demo-Basic-PullRefreshOrPushLoad />
+ 
 [源码](https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/PullRefreshOrPushLoad.vue)
 
 ## 轮播图
