@@ -4,7 +4,7 @@ sidebarDepth: 2
 
 # Api
 
-## Basic apis
+## Common apis
 
 ### scrollTo
 

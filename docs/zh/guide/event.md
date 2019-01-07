@@ -6,7 +6,7 @@ sidebarDepth: 2
 
 Vuescroll 有一些事件可以在特定场合下触发。
 
-## 基本事件
+## 通用事件
 
 ### handle-resize
 

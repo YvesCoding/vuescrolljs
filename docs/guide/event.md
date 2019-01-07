@@ -6,7 +6,7 @@ sidebarDepth: 2
 
 Vuescroll has some events that will trigger in the specific circumstances.
 
-## Basic events
+## Common events
 
 ### handle-resize
 

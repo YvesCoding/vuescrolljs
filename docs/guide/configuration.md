@@ -135,7 +135,7 @@ export default {
 };
 ```
 
-## Basic Config
+## Common Config
 
 ### vuescroll
 

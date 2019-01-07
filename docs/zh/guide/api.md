@@ -4,7 +4,7 @@ sidebarDepth: 3
 
 # Api
 
-## 基本 Api
+## 通用 Api
 
 ### scrollTo
 

@@ -133,7 +133,7 @@ export default {
 };
 ```
 
-## 基础的配置
+## 通用的配置
 
 ### vuescroll
 

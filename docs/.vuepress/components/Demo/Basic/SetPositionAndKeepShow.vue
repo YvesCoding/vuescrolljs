@@ -1,12 +1,23 @@
 <template>
   <div class="wrap">
     <div class="wrap-part">
-      <div class="parent" ref="parentElm">
-        <vue-scroll :ops="ops" ref="vs">
+      <div
+        class="parent"
+        ref="parentElm"
+      >
+        <vue-scroll
+          :ops="ops"
+          ref="vs"
+        >
           <div class="child-wrap">
-            <template v-for="item in 64">
-              <div :key="item" class="child" :index="item" :style="getBg()">
-                {{item}}
+            <template v-for="item in items">
+              <div
+                :key="item"
+                class="child"
+                :index="item"
+                :style="item"
+              >
+                {{item.backgroundColor}}
               </div>
             </template>
           </div>
@@ -27,70 +38,111 @@
               <tr>
                 <td>KeepShow</td>
                 <td>
-                  True:<input type="radio" :value="true" v-model="ops.bar.keepShow"> False:
-                  <input type="radio" :value="false" v-model="ops.bar.keepShow">
+                  True:<input
+                    type="radio"
+                    :value="true"
+                    v-model="ops.bar.keepShow"
+                  > False:
+                  <input
+                    type="radio"
+                    :value="false"
+                    v-model="ops.bar.keepShow"
+                  >
                 </td>
               </tr>
               <tr>
                 <td>Bar Background</td>
                 <td>
-                  <input type="text" v-model="ops.bar.background">
+                  <input
+                    type="color"
+                    v-model="ops.bar.background"
+                  >{{ops.bar.background}}
                 </td>
               </tr>
               <tr>
                 <td>Rail Background</td>
                 <td>
-                  <input type="text" v-model="ops.rail.background">
+                  <input
+                    type="color"
+                    v-model="ops.rail.background"
+                  >
+                  {{ops.rail.background}}
                 </td>
               </tr>
               <tr>
                 <td>Rail Opacity</td>
                 <td>
-                  <input type="range" :min="0" :max="1" :step="0.1" v-model="ops.rail.opacity">{{ops.rail.opacity}}
-                </td>
-              </tr>
-              <tr>
-                <td>Rail Border</td>
-                <td>
-                  <input type="text" v-model="ops.rail.border">
+                  <input
+                    type="range"
+                    :min="0"
+                    :max="1"
+                    :step="0.1"
+                    v-model="ops.rail.opacity"
+                  >{{ops.rail.opacity}}
                 </td>
               </tr>
               <tr>
                 <td>Rail Size</td>
                 <td>
-                  <input type="text" v-model="ops.rail.size">
+                  <input
+                    type="text"
+                    v-model="ops.rail.size"
+                  >
                 </td>
               </tr>
               <tr>
                 <td>Bar Size</td>
                 <td>
-                  <input type="text" v-model="ops.bar.size">
+                  <input
+                    type="text"
+                    v-model="ops.bar.size"
+                  >
                 </td>
               </tr>
               <tr>
                 <td>Bar MinSize</td>
                 <td>
-                  <input type="range" :min="0" :max="1" :step="0.1" v-model="ops.bar.minSize">{{ops.bar.minSize}}
+                  <input
+                    type="range"
+                    :min="0"
+                    :max="1"
+                    :step="0.1"
+                    v-model="ops.bar.minSize"
+                  >{{ops.bar.minSize}}
                 </td>
               </tr>
               <tr>
                 <td>scrollButton enable</td>
                 <td>
-                  True:<input type="radio" :value="true" v-model="ops.scrollButton.enable"> False:
-                  <input type="radio" :value="false" v-model="ops.scrollButton.enable">
+                  True:<input
+                    type="radio"
+                    :value="true"
+                    v-model="ops.scrollButton.enable"
+                  > False:
+                  <input
+                    type="radio"
+                    :value="false"
+                    v-model="ops.scrollButton.enable"
+                  >
                 </td>
               </tr>
               <tr>
                 <td>scrollButton background</td>
                 <td>
-                  <input type="text" v-model="ops.scrollButton.background">
+                  <input
+                    type="color"
+                    v-model="ops.scrollButton.background"
+                  >{{ops.scrollButton.background}}
                 </td>
               </tr>
               <tr>
                 <td>Animation</td>
                 <td>
                   <select v-model="ops.scrollPanel.easing">
-                    <option v-for="easing in easings" :value="easing">
+                    <option
+                      v-for="easing in easings"
+                      :value="easing"
+                    >
                       {{easing}}
                     </option>
                   </select> <br />
@@ -132,7 +184,7 @@ export default {
           size: '15px'
         },
         bar: {
-          background: undefined,
+          background: '#00ff00',
           keepShow: false,
           size: '10px',
           minSize: 0.2
@@ -147,8 +199,14 @@ export default {
         }
       },
       width: '',
-      easings
+      easings,
+      items: []
     };
+  },
+  created() {
+    this.items = new Array(64).fill(null).map(() => {
+      return this.getBg();
+    });
   },
   mounted() {
     this.width = this.$refs['parentElm'].clientWidth / 16 + 'rem';
