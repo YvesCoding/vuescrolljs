@@ -49,7 +49,7 @@ Vue.prototype.$vuescrollConfig = {
 
 ```html
 <template>
-  <vue-scroll> <!-- Your content... --> </vue-scroll>
+  <vuescroll> <!-- Your content... --> </vuescroll>
 </template>
 <script>
   import vuescroll from 'vuescroll';

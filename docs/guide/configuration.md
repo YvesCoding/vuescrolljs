@@ -182,7 +182,7 @@ scrollPanel is a wrap of content. We just change scrollPanel's scrollTop or scro
     // when component mounted.It will automatically scroll to the given position.
     initialScrollY: false,
     initialScrollX: false,
-    // feat: #11. Whether enable scrollingX , scrollingY or not.
+    // whether allow   scrolling in x or y directions, true means allow, false means not allow, defaults to true
     scrollingX: true,
     scrollingY: true,
     // scroll speed, it works when you click the rail or use

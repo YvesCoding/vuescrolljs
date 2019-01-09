@@ -180,7 +180,7 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
     // 当组件mounted了以后，自动滚动到一个坐标
     initialScrollY: false,
     initialScrollX: false,
-    // 是否禁止x或y方向上的滚动
+    // 是否允许x或y方向上的滚动，true为允许，false为不允许，默认为true
     scrollingX: true,
     scrollingY: true,
     // 滚动的速度。在你点击滚动轨道或者调用scrollTo或者scrollBy的时候
