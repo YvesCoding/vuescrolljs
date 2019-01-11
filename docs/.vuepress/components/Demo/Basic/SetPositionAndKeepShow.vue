@@ -1,106 +1,51 @@
 <template>
-  <div class="wrap">
-    <div class="wrap-part">
-      <div
-        class="parent"
-        ref="parentElm"
-      >
-        <vue-scroll
-          :ops="ops"
-          ref="vs"
-        >
-          <div class="child-wrap">
-            <template v-for="item in items">
-              <div
-                :key="item"
-                class="child"
-                :index="item"
-                :style="item"
-              >
-                {{item.backgroundColor}}
-              </div>
-            </template>
-          </div>
-        </vue-scroll>
-      </div>
-    </div>
-    <div class="wrap-part">
-      <div class="parent">
-        <vue-scroll :ops="{bar: {onlyShowBarOnScroll: false}}">
+  <div class="container">
+    <div>
+      <div class="operation">
+        <vue-scroll :ops="operation">
           <table class="customize-table">
             <thead>
               <tr>
-                <th>Type</th>
-                <th>Operation</th>
+                <th>Data Num</th>
+                <th>Bar KeepShow</th>
+                <th>Bar Background</th>
+                <th>Bar Size</th>
+                <th>Bar MinSize</th>
+                <th>Rail Background</th>
+                <th>Rail Opacity</th>
+                <th>Rail Size</th>
+                <th>scrollButton enable</th>
+                <th>scrollButton background</th>
+                <th>Animation</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>KeepShow</td>
                 <td>
-                  True:<input
-                    type="radio"
-                    :value="true"
-                    v-model="ops.bar.keepShow"
-                  > False:
                   <input
-                    type="radio"
-                    :value="false"
-                    v-model="ops.bar.keepShow"
+                    type="number"
+                    v-model="dataCount"
                   >
                 </td>
-              </tr>
-              <tr>
-                <td>Bar Background</td>
+                <td>
+                  <input
+                    type="checkbox"
+                    v-model="ops.bar.keepShow"
+                  >
+                  {{ops.bar.keepShow}}
+                </td>
                 <td>
                   <input
                     type="color"
                     v-model="ops.bar.background"
                   >{{ops.bar.background}}
                 </td>
-              </tr>
-              <tr>
-                <td>Rail Background</td>
-                <td>
-                  <input
-                    type="color"
-                    v-model="ops.rail.background"
-                  >
-                  {{ops.rail.background}}
-                </td>
-              </tr>
-              <tr>
-                <td>Rail Opacity</td>
-                <td>
-                  <input
-                    type="range"
-                    :min="0"
-                    :max="1"
-                    :step="0.1"
-                    v-model="ops.rail.opacity"
-                  >{{ops.rail.opacity}}
-                </td>
-              </tr>
-              <tr>
-                <td>Rail Size</td>
-                <td>
-                  <input
-                    type="text"
-                    v-model="ops.rail.size"
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>Bar Size</td>
                 <td>
                   <input
                     type="text"
                     v-model="ops.bar.size"
                   >
                 </td>
-              </tr>
-              <tr>
-                <td>Bar MinSize</td>
                 <td>
                   <input
                     type="range"
@@ -110,33 +55,41 @@
                     v-model="ops.bar.minSize"
                   >{{ops.bar.minSize}}
                 </td>
-              </tr>
-              <tr>
-                <td>scrollButton enable</td>
                 <td>
-                  True:<input
-                    type="radio"
-                    :value="true"
-                    v-model="ops.scrollButton.enable"
-                  > False:
                   <input
-                    type="radio"
-                    :value="false"
-                    v-model="ops.scrollButton.enable"
+                    type="color"
+                    v-model="ops.rail.background"
+                  >
+                  {{ops.rail.background}}
+                </td>
+                <td>
+                  <input
+                    type="range"
+                    :min="0"
+                    :max="1"
+                    :step="0.1"
+                    v-model="ops.rail.opacity"
+                  >{{ops.rail.opacity}}
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    v-model="ops.rail.size"
                   >
                 </td>
-              </tr>
-              <tr>
-                <td>scrollButton background</td>
+                <td>
+                  <input
+                    type="checkbox"
+                    :value="true"
+                    v-model="ops.scrollButton.enable"
+                  > {{ops.scrollButton.enable}}
+                </td>
                 <td>
                   <input
                     type="color"
                     v-model="ops.scrollButton.background"
                   >{{ops.scrollButton.background}}
                 </td>
-              </tr>
-              <tr>
-                <td>Animation</td>
                 <td>
                   <select v-model="ops.scrollPanel.easing">
                     <option
@@ -154,6 +107,33 @@
         </vue-scroll>
       </div>
     </div>
+    <div
+      class=" "
+      style="margin-top:10px"
+    >
+      <div
+        class="parent"
+        ref="parentElm"
+      >
+        <vue-scroll
+          :ops="ops"
+          ref="vs"
+        >
+          <div class="child-wrap">
+            <template v-for="(item,index) in items">
+              <div
+                :key="index"
+                class="child"
+                :class="getClass(index)"
+              >
+                {{index + 1}}
+              </div>
+            </template>
+          </div>
+        </vue-scroll>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -176,6 +156,16 @@ const easings = [
 export default {
   data() {
     return {
+      operation: {
+        rail: {
+          size: '20px'
+        },
+        bar: {
+          size: '15px',
+          opacity: 0.5,
+          onlyShowBarOnScroll: false
+        }
+      },
       ops: {
         rail: {
           opacity: '0.2',
@@ -200,13 +190,17 @@ export default {
       },
       width: '',
       easings,
+      dataCount: 1024,
       items: []
     };
   },
-  created() {
-    this.items = new Array(64).fill(null).map(() => {
-      return this.getBg();
-    });
+  watch: {
+    dataCount: {
+      handler(newValue) {
+        this.items = new Array(+newValue).fill(null);
+      },
+      immediate: true
+    }
   },
   mounted() {
     this.width = this.$refs['parentElm'].clientWidth / 16 + 'rem';
@@ -223,12 +217,17 @@ export default {
       };
     },
     randomScroll() {
-      const x = Math.random() * 2300;
-      const y = Math.random() * 2300;
-      this.$refs['vs'].scrollTo({
+      const vs = this.$refs['vs'];
+      const panel = vs.scrollPanelElm;
+      const x = Math.random() * panel.scrollWidth;
+      const y = Math.random() * panel.scrollHeight;
+      vs.scrollTo({
         x,
         y
       });
+    },
+    getClass(index) {
+      return ['child' + ((index % 7) + 1)];
     }
   }
 };
@@ -241,8 +240,15 @@ export default {
   }
 }
 
+.container {
+}
+
+.operation {
+  height: 200px;
+}
+
 .parent {
-  height: 400px;
+  height: 300px;
 
   .child-wrap {
     width: 800%;
@@ -250,10 +256,10 @@ export default {
     flex-wrap: wrap;
 
     .child {
-      flex-basis: 12.5%;
-      height: 400px;
+      flex-basis: 5%;
+      height: 150px;
+      line-height: 150px;
       text-align: center;
-      line-height: 400px;
       text-shadow: 0px 3px 3px #975a00;
       -webkit-text-shadow: 0px 3px 3px #975a00;
       -moz-text-shadow: 0px 3px 3px #975a00;
@@ -264,5 +270,33 @@ export default {
       color: #ff9900;
     }
   }
+}
+
+.child1 {
+  background-color: #43d2c6;
+}
+
+.child2 {
+  background-color: #589be5;
+}
+
+.child3 {
+  background-color: #f3b500;
+}
+
+.child4 {
+  background-color: #ff705a;
+}
+
+.child5 {
+  background-color: #fe7a9c;
+}
+
+.child6 {
+  background-color: #7a85ee;
+}
+
+.child7 {
+  background-color: #57cc71;
 }
 </style>
