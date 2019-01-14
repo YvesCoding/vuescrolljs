@@ -26,7 +26,6 @@ export default ({ Vue, router }) => {
       opacity: 1,
       background: '#f5f5f5',
       border: '1px solid #cecece',
-      size: '8px',
       size: '20px'
     },
     scrollPanel: {

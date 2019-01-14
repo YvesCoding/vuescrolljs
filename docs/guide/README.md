@@ -4,34 +4,40 @@ sidebarDepth: 1
 
 # Introduction
 
- <p align="center"><a href="http://vuescrolljs.yvescoding.org/"><img width="100" src="http://vuescrolljs.yvescoding.org/logo.png" /></a></p>
-<h1 align="center">Vuescroll</h1>
-
-  <p align="center">
-  <a href="https://www.npmjs.com/package/vuescroll"><img src="https://img.shields.io/npm/v/vuescroll.svg" alt="Version"></a><a href="https://circleci.com/gh/YvesCoding/vuescroll/tree/dev"><img src="https://circleci.com/gh/YvesCoding/vuescroll/tree/dev.png?style=shield" alt="Build Status"></a>
-   <a href="https://codecov.io/github/YvesCoding/vuescroll?branch=dev"><img src="https://img.shields.io/codecov/c/github/YvesCoding/vuescroll/dev.svg" alt="Coverage"></a>
-  <a href="https://www.npmjs.com/package/vuescroll"><img src="https://img.shields.io/npm/l/vuescroll.svg" alt="License"></a>
-<a href="https://www.npmjs.com/package/vuescroll"><img src="https://img.shields.io/npm/dm/vuescroll.svg" alt="Download"></a>
-<a href="https://github.com/YvesCoding/vuescroll"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" alt="prettier"></a>
+<p align="center">
+  <img src="http://vuescrolljs.yvescoding.org/logo.png">
 </p>
- 
-A powerful, customizable, multi-mode scrollbar plugin baed on Vue.js - [vuescrolljs.yvescoding.org](http://vuescrolljs.yvescoding.org/)
 
-## Features
+## Why I created vuescroll
 
-### Basic features
+- Firstly, I think other scrollbar plugins' abilities are too simple, some others even don't support `horizontal scrolling`.
 
-- Support [customize scrollbar](http://vuescrolljs.yvescoding.org/guide/configuration.html#bar), including setting rail/bar's `backgroundColor` , `opacity`,and setting bar's `keepShow or not`.
-- Support smoothly scroll, you can set [easing](http://vuescrolljs.yvescoding.org/guide/configuration.html#detailed-options-2) to get different scroll animations.
-- Support detecting the size of scrolled content, you can checkout this [demo](http://vuescrolljs.yvescoding.org/demo/#_3-detect-size-changes).
+- Secondly, I think other scrollbar plugins's functions are too unitary, like `iscroll`, I want to make a more comprehensive scrollbar plugin. That is to say, a scrollbar plugin that not only supports customizing scrollbar, but also has abilities to push-to-load and pull-to-refresh, detect size changes of content, smooth-scroll etc.
 
-### Features only for slide mode
+## Feature
 
-- Support [pull to refresh and push to load](http://vuescrolljs.yvescoding.org/guide/configuration.html#pullrefresh), for detail, you can checkout this [demo](http://vuescrolljs.yvescoding.org/demo/#_4-pull-refresh-or-push-load-supported), and this [demo](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh//) of SSR version.
-- Support snap config, scroll same distance at each time, you can checkout this [demo](http://vuescrolljs.yvescoding.org/demo/#_2-timepicker)
-- Support paging. You can checkout this [demo](http://vuescrolljs.yvescoding.org/demo/#_1-carousel)
+### Base Features
 
-### Other features
+- Has abilities to [customize scrollbar](https://vuescrolljs.yvescoding.org/demo/#customize-scrollbar).
 
-- Support [typescript](http://vuescrolljs.yvescoding.org/guide/typescript.html)
-- Support SSR, you can checkout this [demo](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh//)
+- Has abilities to [pull to refresh, push to load](https://vuescrolljs.yvescoding.org/demo/#pull-refresh-or-push-load).
+
+- Support [carousel](https://vuescrolljs.yvescoding.org/demo/#carousel).
+
+### Other Features
+
+- Support [scrolling smoothly, and you can set different scrolling animations](https://vuescrolljs.yvescoding.org/guide/configuration.html#scrollpanel).
+
+- Support [detection size changes of content and react to the users](https://vuescrolljs.yvescoding.org/guide/configuration.html#vuescroll).
+
+- Support [typescript](https://vuescrolljs.yvescoding.org/guide/typescript.html#introduction), [SSR(Server-side-rendering)](https://vuescrolljs.yvescoding.org/demo/#ssr-server-side-rendering-demo).
+
+- Because it is a Vue plugin, it's more friendly to Vue users.
+
+- Restfull [Api](https://vuescrolljs.yvescoding.org/guide/api.html) and [events](https://vuescrolljs.yvescoding.org/guide/event.html) help you achieve all kinds of complex functions.
+
+- And more...
+
+## What else I am creating ?
+
+- `magic-scroll` has the similar functions with vuescroll, but it's a customize scrollbar based on `React`. Currently, I have finished the `native` part, and I'm writing some relevant tests.
