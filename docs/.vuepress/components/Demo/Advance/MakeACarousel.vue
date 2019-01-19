@@ -1,12 +1,7 @@
 <template>
-  <div class="wrap">
-    <span class="demo-title">Carousel ({{typeDesc}})</span>
+  <div class="carousel-wrap">
     <vuescroll-carousel :type="type">
-      <div
-        class="child"
-        v-for="i in 5"
-        :key="i"
-      >
+      <div class="child" v-for="i in 5" :key="i">
         Slide{{i}}.
       </div>
     </vuescroll-carousel>
@@ -35,7 +30,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.wrap {
+.carousel-wrap {
   width: 100%;
   height: 400px;
   border: 1px solid rgba(91, 140, 255, 0.3);

@@ -123,8 +123,6 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '~assets/common.styl';
-
 .time-pick-wrap {
   height: 250px !important;
 }
