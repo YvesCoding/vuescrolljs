@@ -4,7 +4,7 @@ pageClass: demo-page
 editLink: false
 ---
 
-<Demo />
+<Demo-Index />
 <!--
 ## Full Customize
 

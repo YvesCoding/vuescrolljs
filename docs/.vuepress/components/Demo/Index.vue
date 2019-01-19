@@ -3,10 +3,12 @@
     <div class="top">
       <!-- <div class="top-left-title">Demo</div> -->
       <div class="top-right-title">
-        <a target="_blank" href="https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo.vue">{{computedConf.source}}</a>
+        <a target="_blank" href="https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Index.vue">{{computedConf.source}}</a>
       </div>
       <div class="top-center-title">
-        <em>{{currentDemo}}</em>
+        <em>{{currentDemo.title}}
+          <a target="_blank" :href="currentDemo.url">{{computedConf.source}}</a>
+        </em>
       </div>
     </div>
     <div class="middle">
@@ -16,8 +18,8 @@
       <div class="center">
         <vuescroll-carousel ref="carousel" :auto-play="false" :currentIndex.sync="currentIndex" :indicator="false">
           <Demo-Basic-SetPositionAndKeepShow/>
-          <Demo-Basic-PullRefreshOrPushLoad/>
-          <Demo-Advance-MakeACarousel/>
+          <Demo-Basic-PullRefreshOrPushLoad :lang="lang" />
+          <Demo-Advance-MakeACarousel />
           <Demo-Advance-MakeACarousel type="vertical" />
           <!-- <Demo-Advance-MakeATimePicker/> -->
         </vuescroll-carousel>
@@ -28,7 +30,7 @@
 
     </div>
     <div class="bottom">
-      <DemoIdicator :num="4" :currenIndex="currentIndex" type="h" @dot-click="goToPage" />
+      <Demo-DemoIdicator :num="4" :currenIndex="currentIndex" type="h" @dot-click="goToPage" />
     </div>
   </div>
 </template>
@@ -58,19 +60,51 @@ export default {
       config: {
         zh: {
           demos: [
-            '自定义滚动条',
-            '上拉刷新和下啦加载',
-            '水平轮播图',
-            '垂直轮播图'
+            {
+              title: '自定义滚动条',
+              url:
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/SetPositionAndKeepShow.vue'
+            },
+            {
+              title: '上拉刷新和下啦加载',
+              url:
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/PullRefreshOrPushLoad.vue'
+            },
+            {
+              title: '水平轮播图',
+              url:
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue'
+            },
+            {
+              title: '垂直轮播图',
+              url:
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue'
+            }
           ],
           source: '源码'
         },
         en: {
           demos: [
-            'Customize Scrollbars',
-            'Pull-to-refresh and push-to-load',
-            'Horizontal Carousel',
-            'Vertical Carousel'
+            {
+              title: 'Customize Scrollbars',
+              url:
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/SetPositionAndKeepShow.vue'
+            },
+            {
+              title: 'Pull-to-refresh and push-to-load',
+              url:
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/PullRefreshOrPushLoad.vue'
+            },
+            {
+              title: 'Horizontal Carousel',
+              url:
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue'
+            },
+            {
+              title: 'Vertical Carousel',
+              url:
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue'
+            }
           ],
           source: 'source code'
         }

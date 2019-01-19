@@ -4,4 +4,4 @@ pageClass: demo-page
 editLink: false
 ---
 
-<Demo lang="zh"/>
+<Demo-Index lang="zh"/>
