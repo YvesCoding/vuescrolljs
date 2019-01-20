@@ -15,25 +15,28 @@
       </vue-scroll>
     </div>
     <div class="wrap-part second">
-      <table class="customize-table">
-        <tr>
-          <th>autoLoadEnable</th>
-          <td>True:<input type="radio" :value="true" v-model="ops.vuescroll.pushLoad.auto"> False:
-            <input type="radio" :value="false" v-model="ops.vuescroll.pushLoad.auto"></td>
-        </tr>
-        <tr>
-          <th>autoLoadDistance</th>
-          <td> <input type="number" min="0" v-model="ops.vuescroll.pushLoad.autoLoadDistance" :disabled="!ops.vuescroll.pushLoad.auto"></td>
-        </tr>
-        <tr>
-          <th>Trigger Refresh Or Load</th>
-          <td>
-            Load: <input type="radio" value="load" v-model="triggerType"> <br/><br/> Refresh: <input type="radio" value="refresh" v-model="triggerType"> <br/>
-            <br/>
-            <button @click="trigger">Trigger</button>
-          </td>
-        </tr>
-      </table>
+      <vue-scroll :ops="operationOps" ref="op">
+        <table class="customize-table">
+          <tr>
+            <th>autoLoadEnable</th>
+            <td>True:<input type="radio" :value="true" v-model="ops.vuescroll.pushLoad.auto"> False:
+              <input type="radio" :value="false" v-model="ops.vuescroll.pushLoad.auto"></td>
+          </tr>
+          <tr>
+            <th>autoLoadDistance</th>
+            <td> <input type="number" min="0" v-model="ops.vuescroll.pushLoad.autoLoadDistance" :disabled="!ops.vuescroll.pushLoad.auto"></td>
+          </tr>
+          <tr>
+            <th>Trigger Refresh Or Load</th>
+            <td>
+              Load: <input type="radio" value="load" v-model="triggerType"> <br/><br/> Refresh: <input type="radio" value="refresh" v-model="triggerType"> <br/>
+              <br/>
+              <button @click="trigger">Trigger</button>
+            </td>
+          </tr>
+        </table>
+      </vue-scroll>
+
     </div>
   </div>
 </template>
@@ -44,6 +47,9 @@ export default {
     lang: {
       default: 'en'
     }
+  },
+  mounted() {
+    console.log(this.$refs.op);
   },
   data() {
     const ops = {
@@ -78,6 +84,16 @@ export default {
     return {
       ops,
       width: '',
+      operationOps: {
+        rail: {
+          size: '20px'
+        },
+        bar: {
+          size: '15px',
+          opacity: 0.5,
+          onlyShowBarOnScroll: false
+        }
+      },
       itemAmount: 3,
       refresh: 1,
       noData: false,
@@ -156,6 +172,24 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@media (max-width: 719px) {
+  .pr-wrap {
+    flex-wrap: wrap;
+
+    .wrap-part {
+      width: 100% !important;
+
+      &.first {
+        height: 60%;
+      }
+
+      &.second {
+        height: 40%;
+      }
+    }
+  }
+}
+
 .pr-wrap {
   display: flex;
   height: 100%;
@@ -178,7 +212,7 @@ export default {
     }
 
     &.second {
-      width: 20%;
+      width: 30%;
     }
 
     .parent {

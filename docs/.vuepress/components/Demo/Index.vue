@@ -16,7 +16,7 @@
         <div class="to-left" @click="pre"></div>
       </div>
       <div class="center">
-        <vuescroll-carousel ref="carousel" :auto-play="false" :currentIndex.sync="currentIndex" :indicator="false">
+        <vuescroll-carousel class="carousel" ref="carousel" :auto-play="false" :currentIndex.sync="currentIndex" :indicator="false">
           <Demo-Basic-SetPositionAndKeepShow/>
           <Demo-Basic-PullRefreshOrPushLoad :lang="lang" />
           <Demo-Advance-MakeACarousel />
@@ -125,7 +125,7 @@ export default {
 };
 </script>
 
-<style   lang="stylus">
+<style   lang="stylus"  >
 @import '~assets/common.styl';
 
 .demo-wrapper {

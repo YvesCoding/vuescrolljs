@@ -189,6 +189,24 @@ export default {
   }
 }
 
+@media (max-width: 719px) {
+  .container {
+    flex-wrap: wrap;
+
+    .parent {
+      width: 100% !important;
+
+      &.first {
+        height: 60%;
+      }
+
+      &.second {
+        height: 40%;
+      }
+    }
+  }
+}
+
 .container {
   width: 100%;
   display: flex;
