@@ -6,254 +6,212 @@ sidebarDepth: 2
 
 Vuescroll's options are composed of five parts, they are `vuescroll`, `scrollPanel`, `bar`, `rail`, `scrollButton` respectively.
 
-## Full Config Preview
+## vuescroll
 
-```javascript
-export default {
-  // vuescroll
-  vuescroll: {
-    mode: 'native',
-    // vuescroll's size(height/width) should be a percent(100%)
-    // or be a number that is equal to its parentNode's width or
-    // height ?
-    sizeStrategy: 'percent',
-    /** Whether to detect dom resize or not */
-    detectResize: true,
-    // pullRefresh or pushLoad is only for the slide mode...
-    pullRefresh: {
-      enable: false,
-      tips: {
-        deactive: 'Pull to Refresh',
-        active: 'Release to Refresh',
-        start: 'Refreshing...',
-        beforeDeactive: 'Refresh Successfully!'
-      }
-    },
-    pushLoad: {
-      enable: false,
-      tips: {
-        deactive: 'Push to Load',
-        active: 'Release to Load',
-        start: 'Loading...',
-        beforeDeactive: 'Load Successfully!'
-      },
-      auto: false,
-      autoLoadDistance: 0
-    },
-    paging: false,
-    zooming: true,
-    snapping: {
-      enable: false,
-      width: 100,
-      height: 100
-    },
-    /* shipped scroll options */
-    scroller: {
-      /*
-        Allow to scroll out of boundaries
-        true or false or an array specify which direction can be
-        bounced. The options can be:
-        ['top','bottom','left','right']
-      */
-      bouncing: true,
-      /** Enable locking to the main axis if user moves only slightly on one of them at start */
-      locking: true,
-      /** Minimum zoom level */
-      minZoom: 0.5,
-      /** Maximum zoom level */
-      maxZoom: 3,
-      /** Multiply or decrease scrolling speed **/
-      speedMultiplier: 1,
-      /** This configures the amount of change applied to deceleration when reaching boundaries  **/
-      penetrationDeceleration: 0.03,
-      /** This configures the amount of change applied to acceleration when reaching boundaries  **/
-      penetrationAcceleration: 0.08,
-      /** Whether call e.preventDefault event when sliding the content or not */
-      preventDefault: true,
-      /** Whether call preventDefault when (mouse/touch)move*/
-      preventDefaultOnMove: true
-    }
-  },
-  scrollPanel: {
-    // when component mounted.. it will automatically scrolls.
-    initialScrollY: false,
-    initialScrollX: false,
-    // feat: #11
-    scrollingX: true,
-    scrollingY: true,
-    speed: 300,
-    easing: undefined,
-    // Sometimes, the nativebar maybe on the left,
-    // See https://github.com/YvesCoding/vuescroll/issues/64
-    verticalNativeBarPos: 'right'
-  },
-  //
-  rail: {
-    background: '#01a99a',
-    opacity: 0,
-    border: 'none',
-    /** Rail's size(Height/Width) , default -> 6px */
-    size: '6px',
-    /** Specify rail's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
-    specifyBorderRadius: false,
-    /** Rail the distance from the two ends of the X axis and Y axis. **/
-    gutterOfEnds: null,
-    /** Rail the distance from the side of container. **/
-    gutterOfSide: '2px',
-    /** Whether to keep rail show or not, default -> false, event content height is not enough */
-    keepShow: false
-  },
-  bar: {
-    /** How long to hide bar after mouseleave, default -> 500 */
-    showDelay: 500,
-    /** Specify bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
-    specifyBorderRadius: false,
-    /** Whether to show bar on scrolling, default -> true */
-    onlyShowBarOnScroll: true,
-    /** Whether to keep show or not, default -> false */
-    keepShow: false,
-    /** Bar's background , default -> #00a650 */
-    background: 'rgb(3, 185, 118)',
-    /** Bar's opacity, default -> 1  */
-    opacity: 1,
-    /** Styles when you hover scrollbar, it will merge into the current style */
-    hoverStyle: false,
-    // Should be false or a number in a range of (0, 1),
-    // such as 0.5, means 50%. 0.3 means 30%.
-    minSize: false,
-    /** bar's size(Height/Width) , default -> 6px */
-
-    size: '6px'
-  },
-  scrollButton: {
-    enable: false,
-    background: 'rgb(3, 185, 118)',
-    opacity: 1,
-    step: 180,
-    mousedownStep: 30
-  }
-};
-```
-
-## Common Config
-
-### vuescroll
-
-::: tip Introduction
-Vuescroll here is just an **option** here, not vuescroll component itself. Set the vuescroll option can result in a break change of vuescroll component.
-:::
-
-#### Detailed Options
+### Overview
 
 ```javascript
   vuescroll: {
     mode: 'native',
-    // vuescroll's size(height/width) should be a percent(100%)
-    // or be a number that is equal to its parentNode's width or
-    // height ?
     sizeStrategy: 'percent',
-    /** Whether to detect dom resize or not */
     detectResize: true
   }
 ```
 
-#### Explanation
+### mode
 
-| option       | default   | description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| ------------ | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| mode         | `native`  | Choose a mode of vuescroll, **native** or **slide** or **pure-native**(new in 4.5.0). See more, please checkout [Features](http://vuescrolljs.yvescoding.org/guide/#features)                                                                                                                                                                                                                                                                                                                      |
-| sizeStrategy | `percent` | Set the type of the size of `vuescroll`. The optional configs are `percent`, `number`.When set to `percent`, vuescroll's height will be `100%` and width will be `100%`, and set to `number`, vuescroll will calculate its parent dom's size automatically, and set `height` and `width` to the corresponding values. A small tip: If parent dom's size is a percent value, I suggest you to set to `number`， and if parent dom's size is a fixed `px` value， I suggest you to set to `percent`. |
-| detectResize | `true`    | Whether to detect dom resize or not                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+- Type: `native|slide`
 
-#### Have a try !
+* Default: `native`
+
+Choose a mode of vuescroll, **native** or **slide**。
+
+### sizeStrategy
+
+- Type: `number|percent`
+
+* Default: `percent`
+
+If the parent container is not at a fixed height, set it to `number`, or keep the default `percent`.
+
+### detectResize
+
+- Type: `boolean`
+
+* Default: `true`
+
+Whether to detect dom resize or not
+
+### Have a try
 
 <Guide-BaseConfig />
 
-### scrollPanel
+## scrollPanel
 
 ::: tip Introduction
 scrollPanel is a wrap of content. We just change scrollPanel's scrollTop or scrollLeft to make content moved.
 :::
 
-#### Detailed Options
+### Overview
 
 ```javascript
   scrollPanel: {
-    // when component mounted.It will automatically scroll to the given position.
     initialScrollY: false,
     initialScrollX: false,
-    // whether allow   scrolling in x or y directions, true means allow, false means not allow, defaults to true
     scrollingX: true,
     scrollingY: true,
-    // scroll speed, it works when you click the rail or use
-    // scrollTo api.
     speed: 300,
-    // scroll animation
     easing: undefined,
-    // Sometimes, the nativebar maybe on the left,
-    // See https://github.com/YvesCoding/vuescroll/issues/64
     verticalNativeBarPos: 'right'
   }
 ```
 
-#### Explanation
+### initialScrollY/initialScrollX
 
-| option                                                 | default | description                                                                                                                                                                            |
-| ------------------------------------------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| initialScrollY                                         | `false` | The vertical distance that will scroll while component has mounted.e.g.**100** or **10%**                                                                                              |
-| initialScrollX                                         | `false` | The horizontal distance that will scroll while component has mounted.e.g.**100** or **10%**                                                                                            |
-| speed                                                  | `300`   | The time that scrollPanel scrolls completely.                                                                                                                                          |
-| easing                                                 | `null`  | The scrolling animation,You can checkout this [demo](http://vuescrolljs.yvescoding.org/demo/#vuescroll-supports-setting-keep-show-or-not-and-background) for all available animations. |
-| verticalNativeBarPos <Badge text="4.8.2+" type="tip"/> | `right` | Sometimes, the nativebar maybe on the left . `right` or `left`.                                                                                                                        |
+- Type: `number|string||false`
 
-#### Have a try !
+- Default: `false`
+
+The distance that will scroll as soon as the component mounts .e.g.**100** or **10%**
+
+### scrollingX/scrollingY
+
+- Type: `blloeane`
+
+- Default: `true`
+
+Whether to enable scrolling in the X or Y direction
+
+### speed
+
+- Type: `number`
+
+- Default: `300`
+
+The time required to complete the scroll,the smaller the value, the faster the speed
+
+### easing
+
+- Type: `string|undefined`
+
+- Default: `undefined`
+
+Scrolling animations. All the animations are as follows:
+
+- `easeInQuad`
+- `easeOutQuad`
+- `easeInOutQuad`
+- `easeInCubic`
+- `easeOutCubic`
+- `easeInOutCubic`
+- `easeInQuart`
+- `easeOutQuart`
+- `easeInOutQuart`
+- `easeInQuint`
+- `easeOutQuint`
+- `easeInOutQuint`
+
+### verticalNativeBarPos
+
+- Type: `right|left`
+
+- Default: `right`
+
+The ntive vertical scrollbar position.
+
+### Have a try
 
 <Guide-ScrollPanel />
 
-### rail
+## rail
+
+### Overview
 
 ::: tip Introduction
 The place where srollbar moves.
 :::
 
-#### Detailed Options
-
 ```javascript
   rail: {
     background: '#01a99a',
     opacity: 0,
-    border: 'none',
-    /** Rail's size(Height/Width) , default -> 6px */
     size: '6px',
-    /** Specify rail's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
     specifyBorderRadius: false,
-    /** Rail the distance from the two ends of the X axis and Y axis. **/
     gutterOfEnds: null,
-    /** Rail the distance from the side of container. **/
-    gutterOfSide: '2px',
-    /** Whether to keep rail show or not, default -> false, event content height is not enough */
+     gutterOfSide: '2px',
     keepShow: false
   }
 ```
 
-#### Explanation
+### background
 
-| rail                                                  | defaultValue | description                                                                                                                   |
-| ----------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| background                                            | `#a5d6a7`    | Set the rail's background                                                                                                     |
-| size                                                  | `6px`        | Set the scrollbar and the rail's width                                                                                        |
-| opacity                                               | `0`          | Set the rail's opacity                                                                                                        |
-| specifyBorderRadius <Badge text="4.8.0+" type="tip"/> | `false`      | Specify rail and bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false |
-| gutterOfEnds <Badge text="4.8.1+" type="tip"/>        | `2px`        | Rail the distance from the two ends of the X axis and Y axis.                                                                 |
-| gutterOfSide <Badge text="4.8.1+" type="tip"/>        | `2px`        | Rail the distance from the side of container.                                                                                 |
-| keepShow <Badge text="4.8.2+" type="tip"/>            | `false`      | Whether to keep rail show or not.                                                                                             |
-| border <Badge text="4.9.0-beta.13+" type="tip"/>      | `none`       | Rail's border.                                                                                                                |
+- Type: `string`
 
-#### Have a try!
+- Default: `#a5d6a7`
+
+Rail's background
+
+### size
+
+- Type: `string`
+
+- Default: `6px`
+
+Rail's size.
+
+### opacity
+
+- Type: `number`
+
+- Default: `0`
+
+Rail's opacity
+
+### specifyBorderRadius
+
+- Type: `false|string`
+
+- Default: `false`
+
+Specify rail's border-radius, or the border-radius of rail will be set automatically.
+
+### gutterOfEnds
+
+- Type: `string`
+
+- Default: `2px`
+
+The distance from the two ends of the X axis and Y axis.
+
+### gutterOfSide
+
+- Type: `string`
+
+- Default: `2px`
+
+The distance from the side of container.
+
+### keepShow
+
+- Type: `boolean`
+
+- Default: `false`
+
+Whether to keep showing rail even there is no bar.
+
+### border
+
+- Type: `string`
+
+- Default: `none`
+
+Rail's border.
+
+### Have a try!
 
 <Guide-Rail />
 
-### bar
+## bar
 
 ::: tip Introduction
 Scrollbar, like native scrollbar.
@@ -263,53 +221,93 @@ Scrollbar, like native scrollbar.
 vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set rail，bar will work for both vertical and horizontal.
 :::
 
-#### Detailed Options
+### Overview
 
 ```javascript
   bar: {
-     /** How long to hide bar after mouseleave, default -> 500 */
     showDelay: 500,
-    /** Whether to show bar on scrolling, default -> true */
     onlyShowBarOnScroll: true,
-    /** Whether to keep show or not, default -> false */
     keepShow: false,
-    /** Bar's background , default -> #00a650 */
     background: '#c1c1c1',
-    /** Bar's opacity, default -> 1  */
     opacity: 1,
-    /** Styles when you hover scrollbar, it will merge into the current style */
     hoverStyle: false，
-    /** Specify bar's border-radius, or the border-radius of rail and bar will be equal to the rail's size. default -> false **/
     specifyBorderRadius: false,
-    // Should be false or a number in a range of (0, 1),
-    // such as 0.5, means 50%. 0.3 means 30%.
     minSize: false,
-    /** bar's size(Height/Width) , default -> 6px */
     size: '6px'
   }
 ```
 
-#### Explanation
+### onlyShowBarOnScroll
 
-| bar                                                           | defaultValue | description                                                                              |
-| ------------------------------------------------------------- | ------------ | ---------------------------------------------------------------------------------------- |
-| onlyShowBarOnScroll                                           | true         | Whether to show bar on scrolling, default -> true                                        |
-| showDelay                                                     | 500          | How long to hide bar after mouseleave, default -> 500                                    |
-| background                                                    | `#4caf50`    | Bar's background , default -> #00a650                                                    |
-| keepShow                                                      | false        | Whether to keep show or not, default -> false                                            |
-| opacity                                                       | 1            | Bar's opacity, default -> 1                                                              |
-| hoverStyle                                                    | false        | Styles when you hover scrollbar, it will merge into the current style                    |
-| specifyBorderRadius <Badge text="4.9.0-beta.13+" type="tip"/> | false        | specify bar's border-radius。                                                            |
-| minSize <Badge text="4.9.0-beta.16+" type="tip"/>             | false        | Should be false or a number in a range of (0, 1), such as 0.5, means 50%. 0.3 means 30%. |
-| size <Badge text="4.9.0-beta.18+" type="tip"/>                | 6px          | Bar size, default to 6px.                                                                |
+- Type: `boolean`
 
-#### Have a try!
+- Default: `true`
+
+Whether to only show bar while scrolling,
+
+### showDelay
+
+- Type: `number`
+
+- Default: `500`
+
+How long to hide bar after mouseleave,
+
+### background
+
+- Type: `string`
+
+- Default: `#4caf50`
+
+Bar's background.
+
+### keepShow
+
+- Type: `boolean`
+
+- Default: `false`
+
+Whether to keep showing or not,
+
+### opacity
+
+- Type: `number`
+
+- Default: `1`
+
+Bar's opacity,
+
+### specifyBorderRadius
+
+- Type: `false|string`
+
+- Default: `false`
+
+Specify bar's border radius, or it will be consistent with rail's.
+
+### minSize
+
+- Type: `false|string`
+
+- Default: `false`
+
+Set a min size for bar, from 0 to 1. Like 0.3, represents 30%.
+
+### size
+
+- Type: `string`
+
+- Default: `6px`
+
+Bar's width or size.
+
+### Have a try!
 
 <Guide-Bar />
 
-### scrollButton
+## scrollButton
 
-#### Detailed Options
+### Overview
 
 ```javascript
   scrollButton: {
@@ -321,29 +319,53 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
   }
 ```
 
-#### Explanation
+### enable
 
-| scrollButton  | defaultValue       | description                                                     |
-| ------------- | ------------------ | --------------------------------------------------------------- |
-| enable        | `false`            | Whether to enable scrollButton.                                 |
-| background    | `rgb(3, 185, 118)` | scrollButton's background.                                      |
-| opacity       | `1`                | scrollButton's opacity.                                         |
-| step          | `180`              | The distance to scroll each time you click the scrollButton.    |
-| mousedownStep | `30`               | The distance to scroll when you hold pressing the scrollButton. |
+- Type: `blloean`
 
-::: tip Note!
-The size of scrollButton depends on the size of rail!
-:::
+- Default: `false`
 
-#### Have a try!
+Whether to enable scrollButton.
+
+### background
+
+- Type: `string`
+
+- Default: `rgb(3, 185, 118)`
+
+scrollButton's background.
+
+### opacity
+
+- Type: `number`
+
+- Default: `1`
+
+scrollButton's opacity.
+
+### step
+
+- Type: `number`
+
+- Default: `180`
+
+The distance to scroll each time you click the scrollButton.
+
+### mousedownStep
+
+- Type: `number`
+
+- Default: `30`
+
+The distance to scroll when you hold pressing the scrollButton.
+
+### Have a try!
 
 <Guide-ScrollButton />
 
-## Config for slide mode
+## vuescroll(Slide mode)
 
-### vuescroll
-
-#### Detailed Options
+### OverView
 
 ```javascript
   vuescroll: {
@@ -374,8 +396,7 @@ The size of scrollButton depends on the size of rail!
       width: 100,
       height: 100
     },
-    /* shipped scroll options */
-    scroller: {
+     scroller: {
       /*
         Allow to scroll out of boundaries
         true or false or an array specify which direction can be
@@ -403,50 +424,60 @@ The size of scrollButton depends on the size of rail!
   }
 ```
 
-#### Explanation
+### pullRefresh
 
-| option       | default | description                                |
-| ------------ | ------- | ------------------------------------------ |
-| scroller     | `{}`    | Some options that only belong to scroller. | pullRefresh | `{}` | Set the options about the refresh. |
-| detectResize | `true`  | Whether to detect dom resize or not        |
-| pushLoad     | `{}`    | Set the options about the load.            |
-| paging       | `false` | Enable Paging or not.                      |
-| snapping     | `{}`    | Set the options about the snapping.        |
+- Type: `Object`
 
-##### pullRefresh
+- Default:
 
-| option | default | description                                        |
-| ------ | ------- | -------------------------------------------------- |
-| enable | `false` | Whether enable pull-refresh or not.                |
-| tips   | `{}`    | Set the tips about the pull-refresh in each stage. |
+```javascript
+{
+  enable: false,
+  tips: {
+    deactive: 'Pull to Refresh',
+    active: 'Release to Refresh',
+    start: 'Refreshing...',
+    beforeDeactive: 'Refresh Successfully!'
+  }
+},
+```
 
-###### pull-refresh Tips
+### pushLoad
 
-| option         | default                 | description              |
-| -------------- | ----------------------- | ------------------------ |
-| deactive       | `Pull to Refresh`       | In deactive stage.       |
-| active         | `Release to Refresh`    | In active stage.         |
-| start          | `Refreshing...`         | In start stage.          |
-| beforeDeactive | `Refresh Successfully!` | In beforeDeactive stage. |
+- Type: `Object`
 
-##### push-load
+- Default:
 
-| option           | default | description                                     |
-| ---------------- | ------- | ----------------------------------------------- |
-| enable           | `false` | If enable push-load.                            |
-| tips             | `{}`    | Set the tips about the push-load in each stage. |
-| auto             | `false` | Whether enable auto-load or not.                |
-| autoLoadDistance | `10`    | The min distance of activating load.            |
+```javascript
+{
+  enable: false,
+  tips: {
+    deactive: 'Push to Load',
+    active: 'Release to Load',
+    start: 'Loading...',
+    beforeDeactive: 'Load Successfully!'
+  },
+  auto: false,
+  autoLoadDistance: 0
+}
+```
 
-###### push-load tips
+### pushLoad.auto
 
-| option         | default              | description                     |
-| -------------- | -------------------- | ------------------------------- |
-| active         | `Release to Load`    | Tips in `active` stage.         |
-| start          | `Loading...`         | Tips in `start` stage.          |
-| beforeDeactive | `Load Successfully!` | Tips in `beforeDeactive` stage. |
-| deactive       | `Push to Load`       | Tips in `deactive` stage.       |
+- Type: `boolean`
+- Default: `false`
+
+Whether the load is triggered automatically.
+
+### pushLoad.autoLoadDistance
+
+- Type: `number`
+- Default: `0`
+
+The distance from the bottom to trigger the automatic loading.
+
+### Have a try
 
 [A small example](https://vuescroll-issue-list-demo-qlrlyskaji.now.sh//)
 
-You can set different refreh/load animations via [slot](slot.html).
+You can alse set different refreh/load animations via [slot](slot.html).
