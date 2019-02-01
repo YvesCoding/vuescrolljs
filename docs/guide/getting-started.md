@@ -4,6 +4,10 @@ sidebarDepth: 1
 
 # Getting Started
 
+:::warning  
+Since `4.10.1`, you don't need to import `vuescroll/dist/vuescroll.css` any more,
+:::
+
 ## Installation
 
 ### Module System
@@ -25,7 +29,6 @@ In your entry file:
 ```javascript
 import Vue from 'vue';
 import vuescroll from 'vuescroll';
-import 'vuescroll/dist/vuescroll.css';
 
 // You can set global config here.
 Vue.use(vuescroll, {
@@ -53,7 +56,6 @@ Vue.prototype.$vuescrollConfig = {
 </template>
 <script>
   import vuescroll from 'vuescroll';
-  import 'vuescroll/dist/vuescroll.css';
 
   export default {
     components: {
@@ -70,7 +72,6 @@ Vue.prototype.$vuescrollConfig = {
 ```javascript
 import Vue from 'vue';
 import vuescroll from 'vuescroll/dist/vuescroll-slide';
-import 'vuescroll/dist/vuescroll.css';
 
 Vue.use(vuescroll);
 ```
@@ -80,7 +81,6 @@ Vue.use(vuescroll);
 ```javascript
 import Vue from 'vue';
 import vuescroll from 'vuescroll/dist/vuescroll-native';
-import 'vuescroll/dist/vuescroll.css';
 
 Vue.use(vuescroll);
 ```
@@ -96,11 +96,6 @@ Vue.use(vuescroll);
 <script src="https://unpkg.com/vuescroll/dist/vuescroll-slide.js"></script>
 <!-- import vuescroll-native -->
 <script src="https://unpkg.com/vuescroll/dist/vuescroll-native.js"></script>
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="https://unpkg.com/vuescroll/dist/vuescroll.css"
-/>
 ```
 
 ## Usage

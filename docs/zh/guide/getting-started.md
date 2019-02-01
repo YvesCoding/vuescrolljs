@@ -4,6 +4,10 @@ sidebarDepth: 1
 
 # 开始上手
 
+:::warning 提示
+自从`4.10.1`版本以后， 你无需再引入 `vuescroll/dist/vuescroll.css` 文件了。
+:::
+
 ## 安装
 
 ### 模块系统
@@ -27,7 +31,6 @@ sidebarDepth: 1
 ```javascript
 import Vue from 'vue';
 import vuescroll from 'vuescroll';
-import 'vuescroll/dist/vuescroll.css';
 
 // 你可以在这里设置全局配置
 Vue.use(vuescroll, {
@@ -55,7 +58,6 @@ Vue.prototype.$vuescrollConfig = {
 </template>
 <script>
   import vuescroll from 'vuescroll';
-  import 'vuescroll/dist/vuescroll.css';
 
   export default {
     components: {
@@ -72,7 +74,6 @@ Vue.prototype.$vuescrollConfig = {
 ```javascript
 import Vue from 'vue';
 import vuescroll from 'vuescroll/dist/vuescroll-slide';
-import 'vuescroll/dist/vuescroll.css';
 
 Vue.use(vuescroll);
 ```
@@ -82,7 +83,6 @@ Vue.use(vuescroll);
 ```javascript
 import Vue from 'vue';
 import vuescroll from 'vuescroll/dist/vuescroll-native';
-import 'vuescroll/dist/vuescroll.css';
 
 Vue.use(vuescroll);
 ```
@@ -98,11 +98,6 @@ Vue.use(vuescroll);
 <script src="https://unpkg.com/vuescroll/dist/vuescroll-slide.js"></script>
 <!-- 引入vuescroll-native -->
 <script src="https://unpkg.com/vuescroll/dist/vuescroll-native.js"></script>
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="https://unpkg.com/vuescroll/dist/vuescroll.css"
-/>
 ```
 
 ## 用法

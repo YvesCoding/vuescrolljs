@@ -403,7 +403,12 @@ scrollButton 的透明度。
         bounced. The options can be:
         ['top','bottom','left','right']
       */
-      bouncing: true,
+      bouncing: {
+        top: 100,
+        bottom: 100,
+        left: 100,
+        right: 100
+      },
       /** Enable locking to the main axis if user moves only slightly on one of them at start */
       locking: true,
       /** Minimum zoom level */
