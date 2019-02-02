@@ -1,9 +1,6 @@
 <template>
   <div class="carousel-wrap">
-    <vuescroll-carousel
-      :type="type"
-      :auto-play="false"
-    >
+    <vuescroll-carousel :type="type">
       <div
         class="child"
         v-for="i in 5"
