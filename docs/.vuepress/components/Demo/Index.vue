@@ -26,10 +26,14 @@
           class="left-title"
           v-for="(demo, index) in computedConf.demos"
           :key="index"
-          :class="{active: index == currentIndex - 1}"
-          @click="goToPage(index + 1)"
         >
-          {{demo.title}}
+          <span
+            class="text"
+            :class="{active: index == currentIndex - 1}"
+            @click="goToPage(index + 1)"
+          >
+            {{demo.title}}
+          </span>
         </p>
       </div>
       <div class="center">
@@ -217,8 +221,25 @@ export default {
         font-weight: 400;
         color: #2c3e50;
 
-        &.active {
-          color: #3eaf7c;
+        & > span {
+          position: relative;
+
+          &.active:after {
+            left: 0;
+            right: 0;
+          }
+
+          &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            bottom: -3px;
+            left: 50%;
+            right: 50%;
+            height: 3px;
+            background-color: #3eaf7c;
+            transition: all 0.3s;
+          }
         }
       }
     }
