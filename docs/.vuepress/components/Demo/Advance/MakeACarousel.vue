@@ -1,6 +1,9 @@
 <template>
   <div class="carousel-wrap">
-    <vuescroll-carousel :type="type">
+    <vuescroll-carousel
+      :type="type"
+      :auto-play="false"
+    >
       <div
         class="child"
         v-for="i in 5"
@@ -41,6 +44,7 @@ export default {
   border: 1px solid rgba(91, 140, 255, 0.3);
 
   .child {
+    width: 100%;
     text-align: center;
     text-shadow: 0px 3px 3px #975a00;
     -webkit-text-shadow: 0px 3px 3px #975a00;
