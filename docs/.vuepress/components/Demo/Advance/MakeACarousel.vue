@@ -1,8 +1,14 @@
 <template>
   <div class="carousel-wrap">
     <vuescroll-carousel :type="type">
-      <div class="child" v-for="i in 5" :key="i">
-        Slide{{i}}.
+      <div
+        class="child"
+        v-for="i in 5"
+        :key="i"
+      >
+        <span class="carousel-text">
+          Slide{{i}}.
+        </span>
       </div>
     </vuescroll-carousel>
   </div>
@@ -32,11 +38,9 @@ export default {
 <style lang="stylus" scoped>
 .carousel-wrap {
   width: 100%;
-  height: 400px;
   border: 1px solid rgba(91, 140, 255, 0.3);
 
   .child {
-    line-height: 400px;
     text-align: center;
     text-shadow: 0px 3px 3px #975a00;
     -webkit-text-shadow: 0px 3px 3px #975a00;
@@ -46,6 +50,9 @@ export default {
     font-style: normal;
     font-size: 48px;
     color: #ff9900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>

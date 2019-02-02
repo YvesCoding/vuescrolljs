@@ -1,10 +1,20 @@
 <template>
   <div class="container">
-    <div class="parent first" ref="parentElm">
-      <vue-scroll :ops="ops" ref="vs">
+    <div
+      class="parent first"
+      ref="parentElm"
+    >
+      <vue-scroll
+        :ops="ops"
+        ref="vs"
+      >
         <div class="child-wrap">
           <template v-for="(item,index) in items">
-            <div :key="index" class="child" :class="getClass(index)">
+            <div
+              :key="index"
+              class="child"
+              :class="getClass(index)"
+            >
               {{index + 1}}
             </div>
           </template>
@@ -19,69 +29,111 @@
               <tr>
                 <th>Data Num</th>
                 <td>
-                  <input type="range" v-model="dataCount" :min="100" :max="9999">
+                  <input
+                    type="range"
+                    v-model="dataCount"
+                    :min="100"
+                    :max="9999"
+                  >
                   <br> {{dataCount}}
                 </td>
               </tr>
               <tr>
                 <th>Bar KeepShow</th>
                 <td>
-                  <input type="checkbox" v-model="ops.bar.keepShow"> {{ops.bar.keepShow}}
+                  <input
+                    type="checkbox"
+                    v-model="ops.bar.keepShow"
+                  > {{ops.bar.keepShow}}
                 </td>
               </tr>
               <tr>
                 <th>Bar Background</th>
                 <td>
-                  <input type="color" v-model="ops.bar.background">{{ops.bar.background}}
+                  <input
+                    type="color"
+                    v-model="ops.bar.background"
+                  >{{ops.bar.background}}
                 </td>
               </tr>
               <tr>
                 <th>Bar Size</th>
                 <td>
-                  <input type="text" v-model="ops.bar.size">
+                  <input
+                    type="text"
+                    v-model="ops.bar.size"
+                  >
                 </td>
               </tr>
               <tr>
                 <th>Bar MinSize</th>
                 <td>
-                  <input type="range" :min="0" :max="1" :step="0.1" v-model="ops.bar.minSize">{{ops.bar.minSize}}
+                  <input
+                    type="range"
+                    :min="0"
+                    :max="1"
+                    :step="0.1"
+                    v-model="ops.bar.minSize"
+                  >{{ops.bar.minSize}}
                 </td>
               </tr>
               <tr>
                 <th>Rail Background</th>
                 <td>
-                  <input type="color" v-model="ops.rail.background"> {{ops.rail.background}}
+                  <input
+                    type="color"
+                    v-model="ops.rail.background"
+                  > {{ops.rail.background}}
                 </td>
               </tr>
               <tr>
                 <th>Rail Opacity</th>
                 <td>
-                  <input type="range" :min="0" :max="1" :step="0.1" v-model="ops.rail.opacity">{{ops.rail.opacity}}
+                  <input
+                    type="range"
+                    :min="0"
+                    :max="1"
+                    :step="0.1"
+                    v-model="ops.rail.opacity"
+                  >{{ops.rail.opacity}}
                 </td>
               </tr>
               <tr>
                 <th>Rail Size</th>
                 <td>
-                  <input type="text" v-model="ops.rail.size">
+                  <input
+                    type="text"
+                    v-model="ops.rail.size"
+                  >
                 </td>
               </tr>
               <tr>
                 <th>scrollButton enable</th>
                 <td>
-                  <input type="checkbox" :value="true" v-model="ops.scrollButton.enable"> {{ops.scrollButton.enable}}
+                  <input
+                    type="checkbox"
+                    :value="true"
+                    v-model="ops.scrollButton.enable"
+                  > {{ops.scrollButton.enable}}
                 </td>
               </tr>
               <tr>
                 <th>scrollButton background</th>
                 <td>
-                  <input type="color" v-model="ops.scrollButton.background">{{ops.scrollButton.background}}
+                  <input
+                    type="color"
+                    v-model="ops.scrollButton.background"
+                  >{{ops.scrollButton.background}}
                 </td>
               </tr>
               <tr>
                 <th>Animation</th>
                 <td>
                   <select v-model="ops.scrollPanel.easing">
-                    <option v-for="easing in easings" :value="easing">
+                    <option
+                      v-for="easing in easings"
+                      :value="easing"
+                    >
                       {{easing}}
                     </option>
                   </select> <br />
@@ -176,7 +228,7 @@ export default {
       });
     },
     getClass(index) {
-      return ['child' + (index % 7 + 1)];
+      return ['child' + ((index % 7) + 1)];
     }
   }
 };
@@ -228,11 +280,11 @@ table {
   height: 100%;
 
   &.first {
-    width: 80%;
+    width: 75%;
   }
 
   &.second {
-    width: 20%;
+    width: 25%;
   }
 
   .child-wrap {

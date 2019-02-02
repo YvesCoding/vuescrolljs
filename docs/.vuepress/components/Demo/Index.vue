@@ -1,37 +1,60 @@
 <template>
-  <div class="demo-wrapper" :style="{height}">
+  <div
+    class="demo-wrapper"
+    :style="{height}"
+  >
     <div class="top">
       <!-- <div class="top-left-title">Demo</div> -->
       <div class="top-right-title">
-        <a target="_blank" href="https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Index.vue">{{computedConf.source}}</a>
+        <a
+          target="_blank"
+          href="https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Index.vue"
+        >{{computedConf.source}}</a>
       </div>
       <div class="top-center-title">
         <em>{{currentDemo.title}}
-          <a target="_blank" :href="currentDemo.url">{{computedConf.source}}</a>
+          <a
+            target="_blank"
+            :href="currentDemo.url"
+          >{{computedConf.source}}</a>
         </em>
       </div>
     </div>
     <div class="middle">
       <div class="left">
-        <div class="to-left" @click="pre"></div>
+        <p
+          class="left-title"
+          v-for="(demo, index) in computedConf.demos"
+          :key="index"
+          :class="{active: index == currentIndex - 1}"
+          @click="goToPage(index + 1)"
+        >
+          {{demo.title}}
+        </p>
       </div>
       <div class="center">
-        <vuescroll-carousel class="carousel" ref="carousel" :auto-play="false" :currentIndex.sync="currentIndex" :indicator="false">
-          <Demo-Basic-SetPositionAndKeepShow/>
+        <vuescroll-carousel
+          class="carousel"
+          ref="carousel"
+          :auto-play="false"
+          :currentIndex.sync="currentIndex"
+          :indicator="false"
+        >
+          <Demo-Basic-SetPositionAndKeepShow />
           <Demo-Basic-PullRefreshOrPushLoad :lang="lang" />
           <Demo-Advance-MakeACarousel />
           <Demo-Advance-MakeACarousel type="vertical" />
           <!-- <Demo-Advance-MakeATimePicker/> -->
         </vuescroll-carousel>
       </div>
-      <div class="right">
+      <!-- <div class="right">
         <div class="to-right" @click="next"></div>
-      </div>
+      </div> -->
 
     </div>
-    <div class="bottom">
+    <!-- <div class="bottom">
       <Demo-DemoIdicator :num="4" :currenIndex="currentIndex" type="h" @dot-click="goToPage" />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -66,7 +89,7 @@ export default {
                 'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/SetPositionAndKeepShow.vue'
             },
             {
-              title: '上拉刷新和下啦加载',
+              title: '刷新和加载',
               url:
                 'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/PullRefreshOrPushLoad.vue'
             },
@@ -91,7 +114,7 @@ export default {
                 'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/SetPositionAndKeepShow.vue'
             },
             {
-              title: 'Pull-to-refresh and push-to-load',
+              title: 'Refresh and load',
               url:
                 'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/PullRefreshOrPushLoad.vue'
             },
@@ -112,12 +135,6 @@ export default {
     };
   },
   methods: {
-    pre() {
-      this.$refs['carousel'].prev();
-    },
-    next() {
-      this.$refs['carousel'].next();
-    },
     goToPage(index) {
       this.$refs['carousel'].goToPage(index);
     }
@@ -161,11 +178,11 @@ export default {
   }
 
   .middle {
-    height: 80%;
+    height: 90%;
     display: flex;
 
     .right, .left {
-      width: 10%;
+      // width: 10%;
       position: relative;
     }
 
@@ -187,8 +204,27 @@ export default {
       cursor: pointer;
     }
 
+    .left {
+      width: 15%;
+      display: flex;
+      flex-direction: column;
+
+      // justify-content: center;
+      &-title {
+        text-align: center;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 400;
+        color: #2c3e50;
+
+        &.active {
+          color: #3eaf7c;
+        }
+      }
+    }
+
     .center {
-      width: 80%;
+      width: 85%;
     }
   }
 }
