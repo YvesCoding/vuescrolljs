@@ -1,11 +1,7 @@
 <template>
   <div class="carousel-wrap">
     <vuescroll-carousel :type="type">
-      <div
-        class="child"
-        v-for="i in 5"
-        :key="i"
-      >
+      <div class="child" v-for="i in 5" :key="i">
         <span class="carousel-text">
           Slide{{i}}.
         </span>

@@ -1,53 +1,30 @@
 <template>
-  <div
-    class="demo-wrapper"
-    :style="{height}"
-  >
+  <div class="demo-wrapper" :style="{height}">
     <div class="top">
       <!-- <div class="top-left-title">Demo</div> -->
       <div class="top-right-title">
-        <a
-          target="_blank"
-          href="https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Index.vue"
-        >{{computedConf.source}}</a>
+        <a target="_blank" href="https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Index.vue">{{computedConf.source}}</a>
       </div>
       <div class="top-center-title">
         <em>{{currentDemo.title}}
-          <a
-            target="_blank"
-            :href="currentDemo.url"
-          >{{computedConf.source}}</a>
+          <a target="_blank" :href="currentDemo.url">{{computedConf.source}}</a>
         </em>
       </div>
     </div>
     <div class="middle">
       <div class="left">
-        <p
-          class="left-title"
-          v-for="(demo, index) in computedConf.demos"
-          :key="index"
-        >
-          <span
-            class="text"
-            :class="{active: index == currentIndex - 1}"
-            @click="goToPage(index + 1)"
-          >
+        <p class="left-title" v-for="(demo, index) in computedConf.demos" :key="index">
+          <span class="text" :class="{active: index == currentIndex - 1}" @click="goToPage(index + 1)">
             {{demo.title}}
           </span>
         </p>
       </div>
       <div class="center">
-        <vuescroll-carousel
-          class="carousel"
-          ref="carousel"
-          :auto-play="false"
-          :currentIndex.sync="currentIndex"
-          :indicator="false"
-        >
-          <Demo-Basic-SetPositionAndKeepShow />
-          <Demo-Basic-PullRefreshOrPushLoad :lang="lang" />
-          <Demo-Advance-MakeACarousel />
-          <Demo-Advance-MakeACarousel type="vertical" />
+        <vuescroll-carousel class="carousel" ref="carousel" :auto-play="false" :currentIndex.sync="currentIndex" :indicator="false">
+          <Demo-CustomizeScrollbar />
+          <Demo-RefreshAndLoad :lang="lang" />
+          <Demo-Carousel />
+          <Demo-Carousel type="vertical" />
           <!-- <Demo-Advance-MakeATimePicker/> -->
         </vuescroll-carousel>
       </div>
@@ -80,6 +57,11 @@ export default {
       return this.config[this.lang];
     }
   },
+  watch: {
+    currentIndex(newValue) {
+      console.log(newValue);
+    }
+  },
   data() {
     return {
       height: '100%',
@@ -90,22 +72,22 @@ export default {
             {
               title: '自定义滚动条',
               url:
-                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/SetPositionAndKeepShow.vue'
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/CustomizeScrollbar.vue'
             },
             {
               title: '刷新和加载',
               url:
-                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/PullRefreshOrPushLoad.vue'
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/RefreshAndLoad.vue'
             },
             {
               title: '水平轮播图',
               url:
-                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue'
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Carousel.vue'
             },
             {
               title: '垂直轮播图',
               url:
-                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue'
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Carousel.vue'
             }
           ],
           source: '源码'
@@ -115,22 +97,22 @@ export default {
             {
               title: 'Customize Scrollbars',
               url:
-                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/SetPositionAndKeepShow.vue'
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/CustomizeScrollbar.vue'
             },
             {
               title: 'Refresh and load',
               url:
-                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Basic/PullRefreshOrPushLoad.vue'
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/RefreshAndLoad.vue'
             },
             {
               title: 'Horizontal Carousel',
               url:
-                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue'
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Carousel.vue'
             },
             {
               title: 'Vertical Carousel',
               url:
-                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Advance/MakeACarousel.vue'
+                'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Carousel.vue'
             }
           ],
           source: 'source code'
@@ -190,24 +172,6 @@ export default {
       position: relative;
     }
 
-    .to-left {
-      background: url('./left.svg');
-    }
-
-    .to-right {
-      background: url('./right.svg');
-    }
-
-    .to-left, .to-right {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 27px;
-      height: 44px;
-      cursor: pointer;
-    }
-
     .left {
       width: 15%;
       display: flex;
@@ -224,7 +188,7 @@ export default {
         & > span {
           position: relative;
 
-          &.active:after {
+          &.active:after, &:hover:after {
             left: 0;
             right: 0;
           }

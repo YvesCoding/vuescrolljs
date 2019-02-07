@@ -7,7 +7,7 @@
 </template>
 
 <script>
-// Wip...
+// WIP...
 // Is used to replace current operation menu.
 export default {};
 </script>

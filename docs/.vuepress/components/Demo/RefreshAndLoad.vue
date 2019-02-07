@@ -34,6 +34,11 @@
               <button @click="trigger">Trigger</button>
             </td>
           </tr>
+          <tr>
+            <td colspan="2" class="animate-tip">
+              <a :href="config.animateAddr" target="_blank"> {{config.animateTip}}</a>
+            </td>
+          </tr>
         </table>
       </vue-scroll>
 
@@ -52,6 +57,7 @@ export default {
     console.log(this.$refs.op);
   },
   data() {
+    const config = {};
     const ops = {
       vuescroll: {
         mode: 'slide',
@@ -79,10 +85,20 @@ export default {
         start: '加载中...',
         beforeDeactive: '加载成功!'
       };
+
+      config.animateTip = '您也可以通过slot来自定义不同的刷新/加载动画。';
+      config.animateAddr =
+        'https://vuescrolljs.yvescoding.org//zh/guide/slot.html#用法-2';
+    } else {
+      config.animateTip =
+        'You can also customize different refreh/load animations via slot.';
+      config.animateAddr =
+        'https://vuescrolljs.yvescoding.org//guide/slot.html#usage-2';
     }
 
     return {
       ops,
+      config,
       width: '',
       operationOps: {
         rail: {
@@ -253,5 +269,9 @@ export default {
 
 .child7 {
   background-color: #57cc71;
+}
+
+.animate-tip {
+  text-align: center;
 }
 </style>
