@@ -1,42 +1,99 @@
 <template>
   <div class="pr-wrap">
     <div class="wrap-part first">
-      <vue-scroll ref="vs" :ops="ops" @refresh-start="handleRS" @load-before-deactivate="handleLBD" @refresh-before-deactivate="handleRBD" @load-start="handleLoadStart">
+      <vue-scroll
+        ref="vs"
+        :ops="ops"
+        @refresh-start="handleRS"
+        @load-before-deactivate="handleLBD"
+        @refresh-before-deactivate="handleRBD"
+        @load-start="handleLoadStart"
+      >
         <template v-for="(item, index) in amount">
-          <div class="rl-child" :key="index" :class="getClass(index)" />
+          <div
+            class="rl-child"
+            :key="index"
+            :class="getClass(index)"
+          />
         </template>
-        <div slot="load-beforeDeactive" v-if="noData">
-          <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8056">
-            <path d="M469.333333 384h85.333334v213.333333h-85.333334z m0 298.666667h85.333334v85.333333h-85.333334z" fill="" p-id="8057"></path>
-            <path d="M549.717333 108.032c-14.762667-27.904-60.672-27.904-75.434666 0l-384 725.333333A42.624 42.624 0 0 0 128 896h768a42.581333 42.581333 0 0 0 37.674667-62.592L549.717333 108.032zM198.869333 810.666667L512 219.221333 825.130667 810.666667H198.869333z" fill="" p-id="8058"></path>
+        <div
+          slot="load-beforeDeactive"
+          v-if="noData"
+        >
+          <svg
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="8056"
+          >
+            <path
+              d="M469.333333 384h85.333334v213.333333h-85.333334z m0 298.666667h85.333334v85.333333h-85.333334z"
+              fill=""
+              p-id="8057"
+            ></path>
+            <path
+              d="M549.717333 108.032c-14.762667-27.904-60.672-27.904-75.434666 0l-384 725.333333A42.624 42.624 0 0 0 128 896h768a42.581333 42.581333 0 0 0 37.674667-62.592L549.717333 108.032zM198.869333 810.666667L512 219.221333 825.130667 810.666667H198.869333z"
+              fill=""
+              p-id="8058"
+            ></path>
           </svg>
           {{lang == 'zh' ? '暂无更多': 'No More Data'}}
         </div>
       </vue-scroll>
     </div>
     <div class="wrap-part second">
-      <vue-scroll :ops="operationOps" ref="op">
+      <vue-scroll
+        :ops="operationOps"
+        ref="op"
+      >
         <table class="customize-table">
           <tr>
             <th>autoLoadEnable</th>
-            <td>True:<input type="radio" :value="true" v-model="ops.vuescroll.pushLoad.auto"> False:
-              <input type="radio" :value="false" v-model="ops.vuescroll.pushLoad.auto"></td>
+            <td>True:<input
+                type="radio"
+                :value="true"
+                v-model="ops.vuescroll.pushLoad.auto"
+              > False:
+              <input
+                type="radio"
+                :value="false"
+                v-model="ops.vuescroll.pushLoad.auto"
+              ></td>
           </tr>
           <tr>
             <th>autoLoadDistance</th>
-            <td> <input type="number" min="0" v-model="ops.vuescroll.pushLoad.autoLoadDistance" :disabled="!ops.vuescroll.pushLoad.auto"></td>
+            <td> <input
+                type="number"
+                min="0"
+                v-model="ops.vuescroll.pushLoad.autoLoadDistance"
+                :disabled="!ops.vuescroll.pushLoad.auto"
+              ></td>
           </tr>
           <tr>
             <th>Trigger Refresh Or Load</th>
             <td>
-              Load: <input type="radio" value="load" v-model="triggerType"> <br/><br/> Refresh: <input type="radio" value="refresh" v-model="triggerType"> <br/>
-              <br/>
+              Load: <input
+                type="radio"
+                value="load"
+                v-model="triggerType"
+              > <br /><br /> Refresh: <input
+                type="radio"
+                value="refresh"
+                v-model="triggerType"
+              > <br />
+              <br />
               <button @click="trigger">Trigger</button>
             </td>
           </tr>
           <tr>
-            <td colspan="2" class="animate-tip">
-              <a :href="config.animateAddr" target="_blank"> {{config.animateTip}}</a>
+            <td
+              colspan="2"
+              class="animate-tip"
+            >
+              <a
+                :href="config.animateAddr"
+                target="_blank"
+              > {{config.animateTip}}</a>
             </td>
           </tr>
         </table>
@@ -76,7 +133,7 @@ export default {
       ops.vuescroll.pullRefresh.tips = {
         deactive: '下拉刷新',
         active: '释放刷新',
-        start: '刷新种...',
+        start: '刷新中...',
         beforeDeactive: '刷新成功!'
       };
       ops.vuescroll.pushLoad.tips = {
@@ -88,12 +145,12 @@ export default {
 
       config.animateTip = '您也可以通过slot来自定义不同的刷新/加载动画。';
       config.animateAddr =
-        'https://vuescrolljs.yvescoding.org//zh/guide/slot.html#用法-2';
+        'https://vuescrolljs.yvescoding.org/zh/guide/slot.html#用法-2';
     } else {
       config.animateTip =
         'You can also customize different refreh/load animations via slot.';
       config.animateAddr =
-        'https://vuescrolljs.yvescoding.org//guide/slot.html#usage-2';
+        'https://vuescrolljs.yvescoding.org/guide/slot.html#usage-2';
     }
 
     return {
@@ -129,7 +186,7 @@ export default {
         this.refresh &&
         Array.apply(null, {
           length: this.itemAmount
-        }).map((item) => {
+        }).map(item => {
           return getRandom();
         })
       );
@@ -137,7 +194,7 @@ export default {
   },
   methods: {
     getClass(index) {
-      return ['child' + (index % 7 + 1)];
+      return ['child' + ((index % 7) + 1)];
     },
     handleRS(vsInstance, refreshDom, done) {
       const vm = this;
