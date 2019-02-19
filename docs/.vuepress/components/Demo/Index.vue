@@ -1,26 +1,50 @@
 <template>
-  <div class="demo-wrapper" :style="{height}">
+  <div
+    class="demo-wrapper"
+    :style="{height}"
+  >
     <div class="top">
       <!-- <div class="top-left-title">Demo</div> -->
       <div class="top-right-title">
-        <a target="_blank" href="https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Index.vue">{{computedConf.source}}</a>
+        <a
+          target="_blank"
+          href="https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Index.vue"
+        >{{computedConf.source}}</a>
       </div>
       <div class="top-center-title">
         <em>{{currentDemo.title}}
-          <a target="_blank" :href="currentDemo.url">{{computedConf.source}}</a>
+          <a
+            target="_blank"
+            :href="currentDemo.url"
+          >{{computedConf.source}}</a>
         </em>
       </div>
     </div>
     <div class="middle">
       <div class="left">
-        <p class="left-title" v-for="(demo, index) in computedConf.demos" :key="index">
-          <span class="text" :class="{active: index == currentIndex - 1}" @click="goToPage(index + 1)">
+        <p
+          class="left-title"
+          v-for="(demo, index) in computedConf.demos"
+          :key="index"
+        >
+          <span
+            class="text"
+            :class="{active: index == currentIndex - 1}"
+            @click="goToPage(index + 1)"
+          >
             {{demo.title}}
           </span>
         </p>
       </div>
       <div class="center">
-        <vuescroll-carousel class="carousel" ref="carousel" :auto-play="false" :currentIndex.sync="currentIndex" :indicator="false">
+        <vuescroll-carousel
+          class="carousel"
+          ref="carousel"
+          :auto-play="false"
+          :currentIndex.sync="currentIndex"
+          :indicator="false"
+          type="v"
+        >
           <Demo-CustomizeScrollbar />
           <Demo-RefreshAndLoad :lang="lang" />
           <Demo-Carousel />
@@ -135,6 +159,10 @@ export default {
   width: 100%;
   position: relative;
   margin: 0 !important;
+
+  * {
+    box-sizing: border-box;
+  }
 
   .top, .bottom {
     height: 10%;

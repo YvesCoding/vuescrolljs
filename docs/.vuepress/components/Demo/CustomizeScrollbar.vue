@@ -262,6 +262,7 @@ export default {
 .container {
   width: 100%;
   display: flex;
+  padding-bottom: 5px;
 
   .item {
     height: 100%;
