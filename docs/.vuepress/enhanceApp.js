@@ -34,6 +34,9 @@ export default ({ Vue, router }) => {
     scrollButton: {
       enable: true,
       background: '#cecece'
+    },
+    vuescroll: {
+      wheelScrollDuration: 500
     }
   };
   registry(ops, 'native');

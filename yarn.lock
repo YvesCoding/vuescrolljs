@@ -6906,13 +6906,13 @@ vuepress-html-webpack-plugin@^3.2.0:
     toposort "^1.0.0"
     util.promisify "1.0.0"
 
-vuepress-theme-vuescroll@^0.0.26:
-  version "0.0.26"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-vuescroll/-/vuepress-theme-vuescroll-0.0.26.tgz#92f995a4eddbcf89648c5405a9a21951e8c2c65f"
+vuepress-theme-vuescroll@^0.0.34:
+  version "0.0.34"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-vuescroll/-/vuepress-theme-vuescroll-0.0.34.tgz#d77d3f04fd5749d3a49ddb8e8acad6a9e56569bd"
   dependencies:
     "@babel/preset-env" "^7.0.0"
     vuepress "^0.14.2"
-    vuescroll next
+    vuescroll "4.11.0"
 
 vuepress@0.13.1:
   version "0.13.1"
@@ -7036,13 +7036,15 @@ vuepress@^0.14.2:
     webpackbar "^2.6.1"
     workbox-build "^3.1.0"
 
-vuescroll-carousel@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/vuescroll-carousel/-/vuescroll-carousel-0.0.10.tgz#e0dd1333f3a57e4fb0e24e0e14a2b3b0cf64b206"
+vuescroll-carousel@^0.0.13:
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/vuescroll-carousel/-/vuescroll-carousel-0.0.13.tgz#f6897a887617716c8343f8eb8c389fb0c407078c"
 
-vuescroll@next:
-  version "4.9.7-rc.1"
-  resolved "https://registry.yarnpkg.com/vuescroll/-/vuescroll-4.9.7-rc.1.tgz#5b718b5990fc75368f9fdfab2f1d51ad21c84f40"
+vuescroll@4.11.0, vuescroll@^4.9.7-rc.2:
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/vuescroll/-/vuescroll-4.11.0.tgz#21aa090b767eda1ea3bb584d217f4836f8b8c8e4"
+  dependencies:
+    vuescroll "^4.9.7-rc.2"
 
 watchpack@^1.5.0:
   version "1.6.0"

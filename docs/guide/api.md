@@ -14,9 +14,9 @@ Scroll to a place, like native `scrollTo`
 
 #### Detailed params
 
-| params                     | description                                                                                                                                                                                                                                    |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{x: 10, y: '10%' }, true` | First param is a coordinate, can be a number or a percent number. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](configuration.md#scrollpanel) options `speed` and `easing` to have a better experience. |
+| params                              | description                                                                                                                                                                                                                                    |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{x: 10, y: '10%' }, speed, easing` | First param is a coordinate, can be a number or a percent number. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](configuration.md#scrollpanel) options `speed` and `easing` to have a better experience. |
 
 #### Usage
 
@@ -32,7 +32,7 @@ Scroll to a place, like native `scrollTo`
                 this.$refs['vs'].scrollTo({
                     x: 10,
                     y: '10%'
-                }, true)
+                }, 500)
             }
         }
     }
@@ -50,9 +50,9 @@ Scroll a delta each time, like native `scrollBy`
 
 #### Detailed params
 
-| params                       | description                                                                                                                                                                                                                               |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{dx: 10, dy: '10%' }, true` | First param is a delta, can be a number or a percent number. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](configuration.md#scrollpanel) options `speed` and `easing` to have a better experience. |
+| params                               | description                                                                                                                                                                                                                               |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{dx: 10, dy: '10%' }, speed,easing` | First param is a delta, can be a number or a percent number. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](configuration.md#scrollpanel) options `speed` and `easing` to have a better experience. |
 
 #### Usage
 
@@ -68,7 +68,7 @@ Scroll a delta each time, like native `scrollBy`
                 this.$refs['vs'].scrollBy({
                     dx: 10,
                     dy: '10%'
-                })
+                }, 500)
             }
         }
     }

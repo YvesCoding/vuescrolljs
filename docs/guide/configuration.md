@@ -232,8 +232,9 @@ vRail, hRail, vBar, hBar, pos have been deprecated, use rail, bar instead。 set
     opacity: 1,
     hoverStyle: false，
     specifyBorderRadius: false,
-    minSize: false,
-    size: '6px'
+    minSize: 0,
+    size: '6px',
+    disable: false
   }
 ```
 
@@ -287,11 +288,19 @@ Specify bar's border radius, or it will be consistent with rail's.
 
 ### minSize
 
-- Type: `false|string`
+- Type: `number`
+
+- Default: `0`
+
+Set a min size for bar, from 0 to 1. Like 0.3, represents 30%.
+
+### disable
+
+- Type: `boolean`
 
 - Default: `false`
 
-Set a min size for bar, from 0 to 1. Like 0.3, represents 30%.
+Whether to disable bar.
 
 ### size
 
@@ -363,6 +372,23 @@ The distance to scroll when you hold pressing the scrollButton.
 
 <Guide-ScrollButton />
 
+## vuescroll(native mode)
+
+### OverView
+
+```javascript
+vuescroll: {
+  wheelScrollDuration: 0;
+}
+```
+
+### wheelScrollDuration
+
+- Type: `number`
+- Default: `0`
+
+The time it takes for the mouse wheel to scroll for a certain distance.
+
 ## vuescroll(Slide mode)
 
 ### OverView
@@ -424,7 +450,9 @@ The distance to scroll when you hold pressing the scrollButton.
       /** Whether call e.preventDefault event when sliding the content or not */
       preventDefault: true,
       /** Whether call preventDefault when (mouse/touch)move*/
-      preventDefaultOnMove: true
+      preventDefaultOnMove: true,
+      // whether to  disable scroller or not.
+      disable: false
     }
   }
 ```

@@ -233,7 +233,8 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
     hoverStyle: false，
     specifyBorderRadius: false,
     minSize: false,
-    size: '6px'
+    size: '6px',
+    disable: false,
   }
 ```
 
@@ -287,9 +288,9 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
 
 ### minSize
 
-- 类型: `false|string`
+- 类型: `number`
 
-- 默认值: `false`
+- 默认值: `0`
 
 为 bar 设置一个最小尺寸, 从 0 到 1. 如 0.3, 代表 30%.
 
@@ -300,6 +301,14 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
 - 默认值: `6px`
 
 bar 的尺寸。
+
+### disable
+
+- 类型: `boolean`
+
+- 默认值: `false`
+
+是否禁用滚动条。
 
 ### 尝试一下!
 
@@ -363,6 +372,23 @@ scrollButton 的透明度。
 
 <Guide-ScrollButton />
 
+## vuescroll(native 模式)
+
+### 概览
+
+```javascript
+vuescroll: {
+  wheelScrollDuration: 0;
+}
+```
+
+### wheelScrollDuration
+
+- 类型: `number`
+- 默认值: `0`
+
+滚轮滚动一段距离所需时间。
+
 ## vuescroll(Slide 模式)
 
 ### 概览
@@ -424,7 +450,9 @@ scrollButton 的透明度。
       /** Whether call e.preventDefault event when sliding the content or not */
       preventDefault: true,
       /** Whether call preventDefault when (mouse/touch)move*/
-      preventDefaultOnMove: true
+      preventDefaultOnMove: true,
+      // whether to  disable scroller or not.
+      disable: false
     }
   }
 ```
