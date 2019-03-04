@@ -27,15 +27,15 @@
           <table class="customize-table">
             <tbody>
               <tr>
-                <th>Data Num</th>
+                <th>Wheel scroll duration</th>
                 <td>
                   <input
                     type="range"
-                    v-model="dataCount"
-                    :min="100"
-                    :max="9999"
+                    v-model="ops.vuescroll.wheelScrollDuration"
+                    :min="0"
+                    :max="1000"
                   >
-                  <br> {{dataCount}}
+                  <br> {{ops.vuescroll.wheelScrollDuration}}
                 </td>
               </tr>
               <tr>
@@ -197,6 +197,9 @@ export default {
         scrollPanel: {
           easing: 'easeInQuad',
           speed: 800
+        },
+        vuescroll: {
+          wheelScrollDuration: 0
         }
       },
       width: '',
