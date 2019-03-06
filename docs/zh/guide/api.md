@@ -6,154 +6,133 @@ sidebarDepth: 3
 
 ## 通用 Api
 
-### scrollTo
+<!-- ### scrollTo -->
+
+### scrollTo(position[,speed ][, easing])
+
+#### 参数
+
+- `position (Object)`
+
+  - `x (string | number)`
+  - `y (string | number)`
+
+- `speed (number)`
+- `easing (string)`
 
 #### 介绍
 
-滚动到一个地方, 类似于原生的`scrollTo`。
+滚动到某一个位置，可以只指定`x` 或 `y`。 `easing`参数可以参考[easing](configuration.html#easing)
 
-#### 详细参数
-
-| 参数                                | 描述                                                                                                                                                                                                            |
-| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{x: 10, y: '10%' }, speed, easing` | 第一个参数是一个坐标， 可以是一个数字， 也可以是个一个百分比坐标。 第二个参数参数决定是否用动画.默认是 true. 用 [scrollPanel](configuration.md#scrollpanel) 配置项 `speed` 和 `easing` 会有一个更好的滚动体验。 |
-
-#### 用法
-
-```html
-<vue-scroll ref="vs"> </vue-scroll>
-```
+#### 例子
 
 ```javascript
-    // ...
-    {
-        methods: {
-            scrollTo() {
-                this.$refs['vs'].scrollTo({
-                    x: 10,
-                    y: '10%'
-                }, 500)
-            }
-        }
-    }
+this.$refs['vs'].scrollTo(
+  {
+    x: '50%'
+  },
+  500
+);
+
+this.$refs['vs'].scrollTo(
+  {
+    y: 200
+  },
+  500,
+  'easeInQuad'
+);
 ```
 
 #### 尝试一下
 
 <Api-ScrollTo lang="zh"/>
 
-### scrollBy
+### scrollBy(position[,speed ][, easing])
+
+#### 参数
+
+- `position (Object)`
+
+  - `dx (string | number)`
+  - `dy (string | number)`
+
+- `speed (number)`
+- `easing (string)`
 
 #### 介绍
 
-每次滚动一段距离, 类似于原生的 `scrollBy`
+以当前位置为起点，滚动一段距离，`dx` 或 `dy`。 `easing`参数可以参考[easing](configuration.html#easing)
 
-#### 详细参数
-
-| 参数                                  | 描述                                                                                                                                                                                                          |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{dx: 10, dy: '10%' }, speed, easing` | 第一个参数是一个递增量， 可以是一个数字， 也可以是个一个百分比。 第二个参数参数决定是否用动画.默认是 true. 用 [scrollPanel](configuration.md#scrollpanel) 配置项 `speed` 和 `easing` 会有一个更好的滚动体验。 |
-
-#### 用法
-
-```html
-<vue-scroll ref="vs"> </vue-scroll>
-```
+#### 例子
 
 ```javascript
-    // ...
-    {
-        methods: {
-            scrollBy() {
-                this.$refs['vs'].scrollBy({
-                    dx: 10,
-                    dy: '10%'
-                }, 500)
-            }
-        }
-    }
+this.$refs['vs'].scrollBy(
+  {
+    dx: '50%'
+  },
+  500
+);
+
+this.$refs['vs'].scrollBy(
+  {
+    dy: -200
+  },
+  500,
+  'easeInQuad'
+);
 ```
 
-#### H 尝试一下
+#### 尝试一下
 
 <Api-ScrollBy lang="zh"/>
 
-### getCurrentviewDom
+### getCurrentviewDom()
 
 #### 介绍
 
-获取当前你能在 vuescroll 里面看到的 Dom 元素。
+获取你能看到的 vuescroll 的**直接子元素**.
 
-#### 详细参数
-
-| 参数 | 描述                               |
-| ---- | ---------------------------------- |
-| None | 返回一个数组包含当前视图下的元素。 |
-
-#### 用法
-
-```html
-<vue-scroll ref="vs"> <!-- Your content --> </vue-scroll>
-```
+#### 例子
 
 ```javascript
-    // ...
-    {
-        data: {
-            ops: {
-                mode: 'slide',
-                paging: true
-            }
-        },
-        methods: {
-            getCurrentviewDom() {
-                const doms = this.$refs['vs'].getCurrentviewDom();
-                console.log(doms); // log currentview doms.
-            }
-        }
-    }
+this.$refs['vs'].getCurrentviewDom();
 ```
 
 #### H 尝试一下
 
 <Api-GetCurrentviewDom lang="zh"/>
 
-### scrollIntoView(4.5.17)
+### scrollIntoView(selector[ , speed])
+
+#### 参数
+
+- `selector (string)`
+
+- `speed (number)`
 
 #### 介绍
 
-把 Vuescroll 内的子元素滚动到当前视图内。
+当前窗口滚动至`vuescroll`的一个**直接子元素**。
 
-#### 详细参数
-
-| 参数                 | 描述                            |
-| -------------------- | ------------------------------- |
-| `String|HTMLElement` | 一个 String 或者是一个 dom 元素 |
-
-#### 用法
+#### 例子
 
 ```html
 <vue-scroll ref="vs">
-  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
+  <div id="d1"></div>
+  <div id="d2"></div>
+  <div id="d3"></div>
 </vue-scroll>
 ```
 
 ```javascript
-    // ...
-    {
-        methods: {
-            scrollBy() {
-                this.$refs['vs'].scrollIntoView('#d3')
-            }
-        }
-    }
+this.$refs['vs'].scrollIntoView('#d3', 500);
 ```
 
 #### H 尝试一下
 
 <Api-ScrollIntoView lang="zh"/>
 
-### refresh/refreshAll(4.6.4)
+### refresh()/refreshAll()
 
 #### 介绍
 
@@ -175,28 +154,12 @@ sidebarDepth: 3
 ```
 
 ```javascript
-    // 如果你是模块系统的话，如果在浏览器直接使用vuescroll即可。
-    import vuescroll from 'vuescroll';
+// 如果你是模块系统的话，如果在浏览器直接使用vuescroll即可。
+import vuescroll from 'vuescroll';
 
-    // ...
-    {
-        ops: {
-            vuescroll: {
-                mode: 'slide',
-                pullRefresh: {
-                    enable: true
-                }
-            }
-        },
-        methods: {
-            refresh() {
-                this.$refs['vs'].refresh();
-            },
-            refreshAll(){
-                vuescroll.refreshAll();
-            }
-        }
-    }
+this.$refs['vs'].refresh();
+
+vuescroll.refreshAll();
 ```
 
 ## Slide 模式的 Api

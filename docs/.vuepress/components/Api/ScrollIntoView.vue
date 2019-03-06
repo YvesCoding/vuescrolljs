@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     scrollIntoView() {
-      this.$refs['vs'].scrollIntoView('#no' + this.select);
+      this.$refs['vs'].scrollIntoView('#no' + this.select, 500);
     },
     getStyle() {
       const height = Math.random() * 21 + 4 + 'rem';

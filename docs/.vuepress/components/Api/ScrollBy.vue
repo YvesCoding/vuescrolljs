@@ -11,12 +11,15 @@
                 <vue-scroll>
                     <table class=" ">
                         <tr>
-                            <td style="width: 30px;padding:0">Position</td>
+                            <td style="width: 30px;padding:0"></td>
                             <td>
-                                dx: <input type="text" :placeholder="config.ph" v-model="dx">
-                                <br /> dy: <input type="text" :placeholder="config.ph" v-model="dy">
-                                <br /> <br />{{config.animate}}: true:<input v-model="animate" type="radio" :value="true"> false:<input v-model="animate" type="radio" :value="false">
-                                <br /><br />
+                                dX: <input type="text" :placeholder="config.ph" v-model="dx">
+                                <br /> dY: <input type="text" :placeholder="config.ph" v-model="dy">
+                                <br /> <br />{{config.animate}}
+                                <br />
+                                <input v-model="speed" type="range" :min="0" :max="1000">
+                                <br /> {{speed}}
+                                <br />
                                 <button @click="gogogo">GOGOGO!</button>
                             </td>
                         </tr>
@@ -46,31 +49,31 @@ export default {
       ops: {},
       dx: 0,
       dy: 0,
-      animate: true,
+      speed: 200,
       i18n: {
         zh: {
-          title: 'scrollBy',
-          animate: '动画',
+          title: 'ScrollTo',
+          animate: '速度',
           ph: '一个数字或者百分比'
         },
         en: {
-          title: 'scrollBy',
+          title: 'ScrollTo',
           ph: 'A number or a percent',
-          animate: 'animate'
+          animate: 'speed'
         }
       }
     };
   },
   methods: {
     gogogo() {
-      const { dx, dy, animate } = this;
+      const { dx, dy, speed } = this;
 
       this.$refs['vs'].scrollBy(
         {
           dx,
           dy
         },
-        animate
+        speed
       );
     }
   }
@@ -107,7 +110,6 @@ export default {
             /deep/ .child {
                 width: 1000px;
                 height: 1000px;
-                background: linear-gradient(45deg, rgb(0, 159, 255), rgb(236, 47, 75));
             }
         }
 

@@ -6,161 +6,138 @@ sidebarDepth: 2
 
 ## Common apis
 
-### scrollTo
+### scrollTo(position[,speed ][, easing])
+
+#### Arguments
+
+- `position (Object)`
+
+  - `x (string | number)`
+  - `y (string | number)`
+
+- `speed (number)`
+- `easing (string)`
 
 #### Introduction
 
-Scroll to a place, like native `scrollTo`
+To scroll to a certain location, you can specify only `x` or`y`. `easing`parameter can be referred to [easing](configuration.html#easing)
 
-#### Detailed params
-
-| params                              | description                                                                                                                                                                                                                                    |
-| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{x: 10, y: '10%' }, speed, easing` | First param is a coordinate, can be a number or a percent number. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](configuration.md#scrollpanel) options `speed` and `easing` to have a better experience. |
-
-#### Usage
-
-```html
-<vue-scroll ref="vs"> </vue-scroll>
-```
+#### Example
 
 ```javascript
-    // ...
-    {
-        methods: {
-            scrollTo() {
-                this.$refs['vs'].scrollTo({
-                    x: 10,
-                    y: '10%'
-                }, 500)
-            }
-        }
-    }
+this.$refs['vs'].scrollTo(
+  {
+    x: '50%'
+  },
+  500
+);
+
+this.$refs['vs'].scrollTo(
+  {
+    y: 200
+  },
+  500,
+  'easeInQuad'
+);
 ```
 
 ##### Have a try
 
 <Api-ScrollTo />
 
-### scrollBy
+### scrollBy(position[,speed ][, easing])
+
+#### Arguments
+
+- `position (Object)`
+
+  - `dx (string | number)`
+  - `dy (string | number)`
+
+- `speed (number)`
+- `easing (string)`
 
 #### Introduction
 
-Scroll a delta each time, like native `scrollBy`
+Take the current position as the starting point, scroll for a distance, `dx` or `dy`. `easing`parameter can be referred to [easing](configuration.html#easing)
 
-#### Detailed params
-
-| params                               | description                                                                                                                                                                                                                               |
-| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{dx: 10, dy: '10%' }, speed,easing` | First param is a delta, can be a number or a percent number. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](configuration.md#scrollpanel) options `speed` and `easing` to have a better experience. |
-
-#### Usage
-
-```html
-<vue-scroll ref="vs"> </vue-scroll>
-```
+#### Example
 
 ```javascript
-    // ...
-    {
-        methods: {
-            scrollBy() {
-                this.$refs['vs'].scrollBy({
-                    dx: 10,
-                    dy: '10%'
-                }, 500)
-            }
-        }
-    }
+this.$refs['vs'].scrollBy(
+  {
+    dx: '50%'
+  },
+  500
+);
+
+this.$refs['vs'].scrollBy(
+  {
+    dy: -200
+  },
+  500,
+  'easeInQuad'
+);
 ```
 
 #### Have a try
 
 <Api-ScrollBy />
 
-### getCurrentviewDom
+### getCurrentviewDom()
 
 #### Introduction
 
-Get the doms you can currently see in the vuescroll.
+Get the **direct subelement** of vuescroll as you can see.
 
-#### Detailed params
-
-| params | description                                         |
-| ------ | --------------------------------------------------- |
-| None   | Return an array that contains the currentview doms. |
-
-#### Usage
-
-```html
-<vue-scroll ref="vs"> <!-- Your content --> </vue-scroll>
-```
+#### Example
 
 ```javascript
-    // ...
-    {
-        data: {
-            ops: {
-                mode: 'slide',
-                paging: true
-            }
-        },
-        methods: {
-            getCurrentviewDom() {
-                const doms = this.$refs['vs'].getCurrentviewDom();
-                console.log(doms); // log currentview doms.
-            }
-        }
-    }
+this.$refs['vs'].getCurrentviewDom();
 ```
 
 #### Have a try
 
-<Api-GetCurrentviewDom />
+<Api-GetCurrentviewDom lang="zh"/>
 
-### scrollIntoView(4.5.17)
+### scrollIntoView(selector[ , speed])
+
+#### Arguments
+
+- `selector (string)`
+
+- `speed (number)`
 
 #### Introduction
 
-Scroll the child elements in the Vuescroll to the current view.
+The current window scrolls to a **direct child element** of `vuescroll`.
 
-#### Detailed params
-
-| params               | description                |
-| -------------------- | -------------------------- |
-| `String|HTMLElement` | A string or a dom element. |
-
-#### Usage
+#### Example
 
 ```html
 <vue-scroll ref="vs">
-  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
+  <div id="d1"></div>
+  <div id="d2"></div>
+  <div id="d3"></div>
 </vue-scroll>
 ```
 
 ```javascript
-    // ...
-    {
-        methods: {
-            scrollBy() {
-                this.$refs['vs'].scrollIntoView('#d3')
-            }
-        }
-    }
+this.$refs['vs'].scrollIntoView('#d3', 500);
 ```
 
 #### Have a try
 
-<Api-ScrollIntoView />
+<Api-ScrollIntoView lang="zh"/>
 
-### refresh/refreshAll(4.6.4)
+### refresh()/refreshAll()
 
 #### Introduction
 
-Refresh the state of vuescroll or the state of all vuescroll instances.
+刷新制定 vuescroll 的状态或者所有 vuescroll 的状态。
 
-::: tip
-You can use it when your vuescroll scrollbar does not appear.
+::: tip 提示
+在你的 vuescroll 的滚动条不出现的时候可以用到。
 :::
 
 #### Usage
@@ -175,28 +152,13 @@ You can use it when your vuescroll scrollbar does not appear.
 ```
 
 ```javascript
-    // If you are in the module system, you should import it first and then use, and you can use `vuescroll` directly in the browser.
-    import vuescroll from 'vuescroll';
+// If you are a modular system, you can use vuescroll directly in the browser.
 
-    // ...
-    {
-        ops: {
-            vuescroll: {
-                mode: 'slide',
-                pullRefresh: {
-                    enable: true
-                }
-            }
-        },
-        methods: {
-            refresh() {
-                this.$refs['vs'].refresh();
-            },
-            refreshAll(){
-                vuescroll.refreshAll();
-            }
-        }
-    }
+import vuescroll from 'vuescroll';
+
+this.$refs['vs'].refresh();
+
+vuescroll.refreshAll();
 ```
 
 ## Api for slide mode
