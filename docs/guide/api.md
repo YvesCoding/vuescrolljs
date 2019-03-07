@@ -134,10 +134,10 @@ this.$refs['vs'].scrollIntoView('#d3', 500);
 
 #### Introduction
 
-刷新制定 vuescroll 的状态或者所有 vuescroll 的状态。
+Refresh the state of the specified vuescroll or all vuescrolls.
 
-::: tip 提示
-在你的 vuescroll 的滚动条不出现的时候可以用到。
+::: tip
+It can be used when the scroll bar of your vuescroll does not appear.
 :::
 
 #### Usage
@@ -163,195 +163,54 @@ vuescroll.refreshAll();
 
 ## Api for slide mode
 
-### goToPage
+### goToPage(page[, animate])
+
+#### Arguments
+
+- `page (Object)`
+
+  - `x (number)`
+  - `y (number)`
+
+- `animate (boolean)`
+
+#### Example
+
+```javascript
+this.$refs['vs'].goToPage(
+  {
+    x: 1,
+    y: 2
+  },
+  true
+);
+```
+
+### getCurrentPage（）
 
 #### Introduction
 
-Go to a given page number. Only work in `slide mode` and `paging` is enabled.
+Get the current page number. Work only under `slide mode`and `paging` boot.
 
-#### Detailed params
-
-| params                | description                                                                                                                                                                                                                      |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{x: 1, y: 1 }, true` | First param is page index `x, y` you want to go to. Second params decides use animation or not. Defaults to true. Use with [scrollPanel](configuration.md#scrollpanel) options `speed` and `easing` to have a better experience. |
-
-#### Usage
-
-```html
-<vue-scroll ref="vs"> <!-- Your content --> </vue-scroll>
-```
+#### Example
 
 ```javascript
-    // ...
-    {
-        data: {
-            ops: {
-                mode: 'slide',
-                paging: true
-            }
-        },
-        methods: {
-            goToPage() {
-                this.$refs['vs'].goToPage({
-                    x: 1,
-                    y: 2
-                }, true)
-            }
-        }
-    }
+const pageInfo = this.$refs['vs'].getCurrentPage();
+console.log(pageInfo);
 ```
 
-### getCurrentPage
+### triggerRefreshOrLoad(type)
+
+### Arguments
+
+- `type ('refresh' | 'load')`
 
 #### Introduction
 
-Get the current page. Only work in `slide mode` and `paging` is enabled.
+Directly trigger refresh or load.
 
-#### Detailed params
-
-| params | description                                       |
-| ------ | ------------------------------------------------- |
-| None   | Return a object that contains x and y pages info. |
-
-#### Usage
-
-```html
-<vue-scroll ref="vs"> <!-- Your content --> </vue-scroll>
-```
+#### Example
 
 ```javascript
-    // ...
-    {
-        data: {
-            ops: {
-                mode: 'slide',
-                paging: true
-            }
-        },
-        methods: {
-            getCurrentPage() {
-                const pageInfo = this.$refs['vs'].getCurrentPage();
-                // pageinfo => {x: 1, y: 1}
-            }
-        }
-    }
-```
-
-### triggerRefreshOrLoad(4.5.32)
-
-#### Introduction
-
-Activate pull to refresh or push to load directly,
-
-#### Detailed params
-
-| params         | description     |
-| -------------- | --------------- |
-| `refresh|load` | load or refresh |
-
-#### Usage
-
-```html
-<vue-scroll ref="vs" :ops="ops">
-  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
-</vue-scroll>
-```
-
-```javascript
-    // ...
-    {
-        ops: {
-            vuescroll: {
-                mode: 'slide',
-                pullRefresh: {
-                    enable: true
-                }
-            }
-        },
-        methods: {
-            triggerRefreshOrLoad() {
-                this.$refs['vs'].triggerRefreshOrLoad('load')
-            }
-        }
-    }
-```
-
-## Public API
-
-The public api is just like the `static method` in a class.
-
-### refreshAll
-
-#### Introduction
-
-Refresh all vuescroll components in the current page.
-
-#### Detailed Params
-
-| Param | Description                                           |
-| ----- | ----------------------------------------------------- |
-| None  | Refresh all vuescroll components in the current page. |
-
-#### Usage
-
-> In browser environment, just call `refrehAll` directly.
-
-```javascript
-vuescroll.refreshAll();
-```
-
-> In nodejs environment, import `vuescroll` first, and then you can call it.
-
-```javascript
-import vuescroll from 'vuescroll';
-
-vuescroll.refreshAll();
-```
-
-### scrollTo
-
-#### Introduction
-
-Scroll an element smoothly to a location. <Badge text="4.9.0-bate.1+" type="tip"/>
-
-#### Function definition
-
-```typescript
-  scrollTo(
-    elm: Document | Element,
-    x: string | number,
-    y: string | number,
-    speed?: number = 300,
-    easing?: easing,
-    animate? = true,
-    scrollingComplete?: (x, y) => void
-  ): void;
-```
-
-#### Detailed Params
-
-| Params            | Description                                                                                                        |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------ |
-| elm               | The elements you want to scroll                                                                                    |
-| x                 | A X axis digital coordinate or percentage                                                                          |
-| y                 | A Y axis digital coordinate or percentage                                                                          |
-| speed             | The time it takes to finish scrolling                                                                              |
-| easing            | Scroll animation, please refer to all easing[demo](http://vuescrolljs.yvescoding.org/demo/#_2-customize-scrollbar) |
-| animate           | Whether smooth scrolling, default to `true`                                                                        |
-| scrollingComplete | Callback function after scroll completion                                                                          |
-
-#### Usage
-
-> In browser environment, just call `refrehAll` directly.
-
-```javascript
-vuescroll.scrollTo(document, 100, 100, 300 /*...*/);
-```
-
-> In nodejs environment, import `vuescroll` first, and then you can call it.
-
-```javascript
-import vuescroll from 'vuescroll';
-
-vuescroll.scrollTo(document, 100, 100, 300 /*...*/);
+this.$refs['vs'].triggerRefreshOrLoad('load');
 ```
