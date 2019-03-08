@@ -18,12 +18,11 @@ export default ({ Vue, router }) => {
     bar: {
       background: 'rgba(120, 120, 120, 0.4)',
       opacity: 0.8,
-      keepShow: true,
-      size: '15px',
+      size: '6px',
       minSize: 0.1
     },
     rail: {
-      size: '20px'
+      size: '6px'
     },
     scrollPanel: {
       scrollingX: false

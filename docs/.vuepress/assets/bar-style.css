@@ -1,3 +1,6 @@
 .__vs-layout > .__rail-is-vertical .__bar-is-vertical:hover {
   background-color: rgba(120, 120, 120, 0.6) !important;
 }
+.__vs-layout > .__rail-is-vertical:hover .__bar-is-vertical {
+  opacity: 1 !important;
+}
