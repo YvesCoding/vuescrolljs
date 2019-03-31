@@ -151,6 +151,7 @@ function genSidebarConfig(title) {
         'event',
         'api',
         'slot',
+        'class-hook',
         'typescript',
         'optimizing-performance'
       ]
