@@ -17,13 +17,12 @@ module.exports = {
       lang: 'en-US',
       title: 'Vuescroll.js',
       description:
-        'Vuescroll - A scrollbar plugin based on Vue.js that you can customize scrollbar, push-to-refresh, push-to-load and or making a carousel'
+        'Vuescroll - A customizable scrollbar plugin based on vue.js for PC and mobile phone'
     },
     '/zh/': {
       lang: 'zh-CN',
       title: 'Vuescroll.js',
-      description:
-        'Vuescroll - 一个你可以自定义滚动条，上拉刷新， 下拉加载， 或者做一个轮播图的基于Vue.js的滚动条插件'
+      description: 'Vuescroll - 一个自定义滚动条的插件适用于PC和移动端'
     }
   },
   head: [

@@ -8,6 +8,16 @@ sidebarDepth: 1
   <img src="http://vuescrolljs.yvescoding.org/logo.png">
 </p>
 
+## What is vuescroll
+
+Vuescroll is a customizable scrollbar plugin based on Vue.js. It has two modes:
+
+- Native: For PC , it supports basic custom scrollbars.
+
+* Slide: Suitable for mobile terminal, supporting push-to-load, pull-to-refresh, carousel, etc.
+
+However, this doesn't mean that the slide mode can only be used on the mobile side, just because the mobile side is more compatible with the slide mode.
+
 ## Why I created vuescroll
 
 - Firstly, I think other scrollbar plugins' abilities are too simple, some others even don't support `horizontal scrolling`.

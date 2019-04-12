@@ -8,6 +8,16 @@ sidebarDepth: 1
   <img src="http://vuescrolljs.yvescoding.org/logo.png">
 </p>
 
+## 什么是 vuescroll
+
+vuescroll 是一款基于 Vue.js 自定义滚动条的插件，它有两种模式:
+
+- native: 适用于 PC 端， 支持基本的自定义滚动条。
+
+- slide: 适用于移动端， 支持下拉-加载，上拉刷新，轮播等。
+
+但是，这并不意味着 slide 模式只能用于移动端，只是因为移动端与 slide 模式更加契合而已。
+
 ## 为什么我创造了 vuescroll
 
 - 首先，我觉得其他自定义功能条功能插件功能太简陋了，有的甚至还没有`横向滚动条`。
