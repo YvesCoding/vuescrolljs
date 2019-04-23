@@ -122,7 +122,7 @@ Vue.use(vuescroll);
         ops: {
           vuescroll: {},
           scrollPanel: {},
-          rail: {}
+          rail: {},
           bar: {}
         }
       }
