@@ -230,7 +230,7 @@ vRail, hRail, vBar, hBar, pos 都已经失效了。 请用 rail, bar 来代替�
     keepShow: false,
     background: '#c1c1c1',
     opacity: 1,
-    hoverStyle: false，
+    hoverStyle: false,
     specifyBorderRadius: false,
     minSize: false,
     size: '6px',
