@@ -111,11 +111,22 @@ module.exports = {
                 link: 'https://github.com/YvesCoding/vuescroll-carousel'
               }
             ]
+          },
+          {
+            text: '捐赠',
+            link: '/zh/donate/'
           }
         ],
         sidebar: {
           '/zh/guide/': genSidebarConfig('指南'),
-          '/zh/demo/': genDemo('Demo')
+          '/zh/demo/': genDemo('Demo'),
+          '/zh/donate/': [
+            {
+              title: '捐赠',
+              collapsable: false,
+              children: ['']
+            }
+          ]
         },
         serviceWorker: {
           updatePopup: {
