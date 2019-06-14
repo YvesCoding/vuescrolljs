@@ -51,23 +51,6 @@ module.exports = {
           {
             text: 'Demo',
             link: '/demo/'
-          },
-          {
-            text: 'Suggestion',
-            link: 'https://github.com/YvesCoding/vuescroll/issues/90'
-          },
-          {
-            text: 'Ecosystem',
-            items: [
-              {
-                text: 'vuepress-theme-vuescroll',
-                link: 'https://github.com/YvesCoding/vuepress-theme-vuescroll'
-              },
-              {
-                text: 'vuescroll-carousel',
-                link: 'https://github.com/YvesCoding/vuescroll-carousel'
-              }
-            ]
           }
         ],
         sidebar: {
@@ -92,29 +75,12 @@ module.exports = {
             link: '/zh/guide/'
           },
           {
-            text: 'Demo',
-            link: '/zh/demo/'
-          },
-          {
-            text: '建议',
-            link: 'https://github.com/YvesCoding/vuescroll/issues/90'
-          },
-          {
-            text: '生态系统',
-            items: [
-              {
-                text: 'vuepress-theme-vuescroll',
-                link: 'https://github.com/YvesCoding/vuepress-theme-vuescroll'
-              },
-              {
-                text: 'vuescroll-carousel',
-                link: 'https://github.com/YvesCoding/vuescroll-carousel'
-              }
-            ]
-          },
-          {
             text: '捐赠',
             link: '/zh/donate/'
+          },
+          {
+            text: 'Demo',
+            link: '/zh/demo/'
           }
         ],
         sidebar: {
