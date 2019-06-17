@@ -75,7 +75,7 @@ module.exports = {
             link: '/zh/guide/'
           },
           {
-            text: '捐赠',
+            text: '我要捐赠！',
             link: '/zh/donate/'
           },
           {
