@@ -121,7 +121,7 @@ If you doesn't see scrollbar show, please open `dev-tool` to checkout whether yo
         ops: {
           vuescroll: {},
           scrollPanel: {},
-          rail: {}
+          rail: {},
           bar: {}
         }
       }
