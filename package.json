@@ -14,8 +14,9 @@
   "dependencies": {
     "css-loader": "^0.28.11",
     "style-loader": "^0.21.0",
+    "vue": "^2.3.0",
     "vuepress": "0.13.1",
-    "vuepress-theme-vuescroll": "^0.0.39",
+    "vuepress-theme-vuescroll": "^0.0.40",
     "vuescroll": "^4.13.0",
     "vuescroll-carousel": "^0.0.13"
   },
