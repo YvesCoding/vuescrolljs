@@ -26,9 +26,6 @@ export default ({ Vue, router }) => {
     },
     scrollPanel: {
       scrollingX: false
-    },
-    vuescroll: {
-      wheelScrollDuration: 500
     }
   };
   registry(ops, 'native');
