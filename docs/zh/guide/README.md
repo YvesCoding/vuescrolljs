@@ -50,4 +50,4 @@ vuescroll 是一款基于 Vue.js 自定义滚动条的插件，它有两种模�
 
 ## 我还会创造什么？
 
-- `magic-scroll` 跟 vuescroll 功能相仿，但是是基于`React`的自定义滚动条插件，目前已完成了`native`部分，正在写一些测试。
+- [magic-scroll](https://github.com/YvesCoding/magic-scroll) 跟 vuescroll 功能相仿，但是是基于`React`的自定义滚动条插件.

@@ -50,4 +50,4 @@ However, this doesn't mean that the slide mode can only be used on the mobile si
 
 ## What else am I creating ?
 
-- `magic-scroll` has the similar functions with vuescroll, but it's a customize scrollbar based on `React`. Currently, I have finished the `native` part, and I'm writing some relevant tests.
+- [magic-scroll](https://github.com/YvesCoding/magic-scroll) has the similar functions with vuescroll, but it's a customize scrollbar based on `React`.
