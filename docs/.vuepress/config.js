@@ -45,7 +45,7 @@ module.exports = {
         lastUpdated: 'Last Updated', // string | boolean
         nav: [
           {
-            text: 'antdsite',
+            text: 'Antdsite',
             link: 'https://antdsite.yvescoding.org/guide/'
           },
           {
@@ -75,7 +75,7 @@ module.exports = {
         lastUpdated: '上次更新', // string | boolean
         nav: [
           {
-            text: 'antdsite',
+            text: 'Antdsite',
             link: 'https://antdsite.yvescoding.org/guide/'
           },
           {
