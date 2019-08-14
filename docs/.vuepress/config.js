@@ -45,6 +45,10 @@ module.exports = {
         lastUpdated: 'Last Updated', // string | boolean
         nav: [
           {
+            text: 'antdsite',
+            link: 'https://antdsite.yvescoding.org/guide/'
+          },
+          {
             text: 'Guide',
             link: '/guide/'
           },
@@ -70,6 +74,10 @@ module.exports = {
         editLinkText: '在 GitHub 上编辑此页',
         lastUpdated: '上次更新', // string | boolean
         nav: [
+          {
+            text: 'antdsite',
+            link: 'https://antdsite.yvescoding.org/guide/'
+          },
           {
             text: '指南',
             link: '/zh/guide/'
