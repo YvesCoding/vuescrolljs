@@ -45,16 +45,25 @@ module.exports = {
         lastUpdated: 'Last Updated', // string | boolean
         nav: [
           {
-            text: 'Antdsite',
-            link: 'https://antdsite.yvescoding.org/guide/'
-          },
-          {
             text: 'Guide',
             link: '/guide/'
           },
           {
             text: 'Demo',
             link: '/demo/'
+          },
+          {
+            text: 'My opensources',
+            items: [
+              {
+                text: 'Antdsite',
+                link: 'https://github.com/YvesCoding/antdsite'
+              },
+              {
+                text: 'magic-scroll',
+                link: 'https://github.com/YvesCoding/magic-scroll'
+              }
+            ]
           }
         ],
         sidebar: {
@@ -75,16 +84,25 @@ module.exports = {
         lastUpdated: '上次更新', // string | boolean
         nav: [
           {
-            text: 'Antdsite',
-            link: 'https://antdsite.yvescoding.org/guide/'
-          },
-          {
             text: '指南',
             link: '/zh/guide/'
           },
           {
             text: 'Demo',
             link: '/zh/demo/'
+          },
+          {
+            text: '我的开源项目',
+            items: [
+              {
+                text: 'Antdsite',
+                link: 'https://github.com/YvesCoding/antdsite'
+              },
+              {
+                text: 'magic-scroll',
+                link: 'https://github.com/YvesCoding/magic-scroll'
+              }
+            ]
           }
         ],
         sidebar: {
