@@ -378,7 +378,8 @@ scrollButton 的透明度。
 
 ```javascript
 vuescroll: {
-  wheelScrollDuration: 0;
+  wheelScrollDuration: 0,
+  wheelDirectionReverse: false
 }
 ```
 
@@ -388,6 +389,13 @@ vuescroll: {
 - 默认值: `0`
 
 滚轮滚动一段距离所需时间。
+
+### wheelDirectionReverse
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否使滚轮方向相反
 
 ## vuescroll(Slide 模式)
 

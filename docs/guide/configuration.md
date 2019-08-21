@@ -378,7 +378,8 @@ The distance to scroll when you hold pressing the scrollButton.
 
 ```javascript
 vuescroll: {
-  wheelScrollDuration: 0;
+  wheelScrollDuration: 0,
+  wheelDirectionReverse: false
 }
 ```
 
@@ -388,6 +389,13 @@ vuescroll: {
 - Default: `0`
 
 The time it takes for the mouse wheel to scroll for a certain distance.
+
+### wheelDirectionReverse
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to make wheel scrolling's direction reverse.
 
 ## vuescroll(Slide mode)
 

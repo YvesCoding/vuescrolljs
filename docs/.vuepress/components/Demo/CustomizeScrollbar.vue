@@ -27,7 +27,7 @@
           <table class="customize-table">
             <tbody>
               <tr>
-                <th>Wheel scroll duration</th>
+                <th>Wheel <br> scroll duration</th>
                 <td>
                   <input
                     type="range"
@@ -36,6 +36,16 @@
                     :max="1000"
                   >
                   <br> {{ops.vuescroll.wheelScrollDuration}}
+                </td>
+              </tr>
+              <tr>
+                <th>Wheel direction reverse</th>
+                <td>
+                  <input
+                    type="checkbox"
+                    :value="true"
+                    v-model="ops.vuescroll.wheelDirectionReverse"
+                  > {{ops.vuescroll.wheelDirectionReverse}}
                 </td>
               </tr>
               <tr>
@@ -199,7 +209,8 @@ export default {
           speed: 800
         },
         vuescroll: {
-          wheelScrollDuration: 0
+          wheelScrollDuration: 0,
+          wheelDirectionReverse: false
         }
       },
       width: '',
