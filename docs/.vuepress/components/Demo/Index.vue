@@ -129,7 +129,7 @@ export default {
                 'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Carousel.vue'
             },
             {
-              title: 'star 支持一下',
+              title: '⭐star 支持下',
               url: 'https://github.com/YvesCoding/vuescroll/stargazers',
               external: true,
               hTitle: '如果觉得好用，请star支持一下作者！'
@@ -160,7 +160,7 @@ export default {
                 'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Carousel.vue'
             },
             {
-              title: 'Star support',
+              title: '⭐Star support',
               url: 'https://github.com/YvesCoding/vuescroll/stargazers',
               external: true,
               hTitle:
@@ -240,6 +240,7 @@ export default {
       width: 15%;
       display: flex;
       flex-direction: column;
+      border: 1px solid #dfe2e5;
 
       // justify-content: center;
       &-title {
@@ -275,6 +276,9 @@ export default {
     }
 
     .center {
+      border: 1px solid #d9d9d9;
+      border-left-width: 0;
+      border-right-width: 0;
       width: 85%;
     }
   }
