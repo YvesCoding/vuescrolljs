@@ -11,6 +11,7 @@
           href="https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Index.vue"
         >{{computedConf.source}}</a>
       </div>
+
       <div class="top-center-title">
         <em>{{currentDemo.title}}
           <a
@@ -18,6 +19,11 @@
             :href="currentDemo.url"
           >{{computedConf.source}}</a>
         </em>
+        <span
+          class="star-request"
+          v-html="computedConf.startRequire"
+        ></span>
+
       </div>
     </div>
     <div class="middle">
@@ -28,12 +34,21 @@
           :key="index"
         >
           <span
+            :title="demo.hTitle"
+            v-if="!demo.external"
             class="text"
             :class="{active: index == currentIndex - 1}"
             @click="goToPage(index + 1)"
           >
             {{demo.title}}
           </span>
+          <a
+            :title="demo.hTitle"
+            class="text"
+            v-else
+            :href="demo.url"
+            target="_blank"
+          >{{demo.title}}</a>
         </p>
       </div>
       <div class="center">
@@ -112,6 +127,12 @@ export default {
               title: '垂直轮播图',
               url:
                 'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Carousel.vue'
+            },
+            {
+              title: 'star 支持一下',
+              url: 'https://github.com/YvesCoding/vuescroll/stargazers',
+              external: true,
+              hTitle: '如果觉得好用，请star支持一下作者！'
             }
           ],
           source: '源码'
@@ -137,6 +158,13 @@ export default {
               title: 'Vertical Carousel',
               url:
                 'https://github.com/YvesCoding/vuescrolljs/blob/master/docs/.vuepress/components/Demo/Carousel.vue'
+            },
+            {
+              title: 'Star support',
+              url: 'https://github.com/YvesCoding/vuescroll/stargazers',
+              external: true,
+              hTitle:
+                'If you feel that it is easy to use, please support the author! '
             }
           ],
           source: 'source code'
@@ -188,6 +216,14 @@ export default {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+
+      .star-request {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(calc(100% + 65px));
+        white-space: nowrap;
+      }
     }
   }
 
@@ -213,8 +249,10 @@ export default {
         font-weight: 400;
         color: #2c3e50;
 
-        & > span {
+        & > .text {
           position: relative;
+          color: #2c3e50;
+          text-decoration: none;
 
           &.active:after, &:hover:after {
             left: 0;
