@@ -138,7 +138,8 @@ Refresh the state of the specified vuescroll or all vuescrolls.
 
 ::: tip
 It can be used when the scroll bar of your vuescroll does not appear.
-:::
+You had better call it in setTimeout after mutating the data.
+::: 
 
 #### Usage
 
@@ -159,6 +160,27 @@ import vuescroll from 'vuescroll';
 this.$refs['vs'].refresh();
 
 vuescroll.refreshAll();
+```
+
+### getScrollProcess
+
+#### Introduction
+
+Get the current scroll process under a range of [0, 1].
+
+
+#### Usage
+
+```html
+<vue-scroll ref="vs" :ops="ops">
+  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
+</vue-scroll> 
+```
+
+```javascript
+const {v, h} = this.$refs['vs'].getScrollProcess();
+
+console.loo(v,h)
 ```
 
 ## Api for slide mode

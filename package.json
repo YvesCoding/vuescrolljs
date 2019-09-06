@@ -16,11 +16,11 @@
     "style-loader": "^0.21.0",
     "vuepress": "0.13.1",
     "vuepress-theme-vuescroll": "^0.0.41",
+    "vuescroll": "^4.14.3",
     "vuescroll-carousel": "^0.0.13"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
-    "eslint-plugin-vue": "^4.4.0",
-    "vuescroll": "^4.14.1"
+    "eslint-plugin-vue": "^4.4.0"
   }
 }

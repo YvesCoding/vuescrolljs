@@ -162,6 +162,27 @@ this.$refs['vs'].refresh();
 vuescroll.refreshAll();
 ```
 
+
+### getScrollProcess
+
+#### 简介
+
+获取当前的滚动进程，范围是[0,1]
+
+#### 用法
+
+```html
+<vue-scroll ref="vs" :ops="ops">
+  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
+</vue-scroll> 
+```
+
+```javascript
+const {v, h} = this.$refs['vs'].getScrollProcess();
+
+console.loo(v,h)
+```
+
 ## Slide 模式的 Api
 
 ### goToPage(page[, animate])
