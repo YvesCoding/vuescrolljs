@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path");
 
 function resolve(dirname) {
   return path.resolve(__dirname, dirname);
@@ -7,119 +7,119 @@ function resolve(dirname) {
 // const isPro = process.env.NODE_ENV == 'production';
 
 module.exports = {
-  base: '/',
-  host: '127.0.0.1',
-  port: '3000',
-  serviceWorker: false,
-  theme: 'vuescroll',
+  base: "/",
+  host: "127.0.0.1",
+  port: "3000",
+  serviceWorker: true,
+  theme: "vuescroll",
   locales: {
-    '/': {
-      lang: 'en-US',
-      title: 'Vuescroll.js',
+    "/": {
+      lang: "en-US",
+      title: "Vuescroll.js",
       description:
-        'Vuescroll - A customizable scrollbar plugin based on vue.js for PC and mobile phone'
+        "Vuescroll - A customizable scrollbar plugin based on vue.js for PC and mobile phone"
     },
-    '/zh/': {
-      lang: 'zh-CN',
-      title: 'Vuescroll.js',
-      description: 'Vuescroll - 一个自定义滚动条的插件适用于PC和移动端'
+    "/zh/": {
+      lang: "zh-CN",
+      title: "Vuescroll.js",
+      description: "Vuescroll - 一个自定义滚动条的插件适用于PC和移动端"
     }
   },
   head: [
-    ['link', { rel: 'icon', href: `/logo.png` }],
-    ['link', { rel: 'manifest', href: '/manifest.json' }]
+    ["link", { rel: "icon", href: `/logo.png` }],
+    ["link", { rel: "manifest", href: "/manifest.json" }]
   ],
   themeConfig: {
-    repo: 'YvesCoding/vuescroll',
-    docsRepo: 'YvesCoding/vuescrolljs',
+    repo: "YvesCoding/vuescroll",
+    docsRepo: "YvesCoding/vuescrolljs",
     editLinks: true,
     displayAllHeaders: true,
-    docsDir: 'docs',
-    docsBranch: 'master',
+    docsDir: "docs",
+    docsBranch: "master",
     sidebarDepth: 3,
     locales: {
-      '/': {
-        label: 'English',
-        selectText: 'Languages',
-        editLinkText: 'Edit this page on GitHub',
-        lastUpdated: 'Last Updated', // string | boolean
+      "/": {
+        label: "English",
+        selectText: "Languages",
+        editLinkText: "Edit this page on GitHub",
+        lastUpdated: "Last Updated", // string | boolean
         nav: [
           {
-            text: 'Guide',
-            link: '/guide/'
+            text: "Guide",
+            link: "/guide/"
           },
           {
-            text: 'Demo',
-            link: '/demo/'
+            text: "Demo",
+            link: "/demo/"
           },
           {
-            text: 'My opensources',
+            text: "My opensources",
             items: [
               {
-                text: 'Antdsite',
-                link: 'https://github.com/YvesCoding/antdsite'
+                text: "Antdsite",
+                link: "https://github.com/YvesCoding/antdsite"
               },
               {
-                text: 'magic-scroll',
-                link: 'https://github.com/YvesCoding/magic-scroll'
+                text: "magic-scroll",
+                link: "https://github.com/YvesCoding/magic-scroll"
               }
             ]
           }
         ],
         sidebar: {
-          '/guide/': genSidebarConfig('Guide'),
-          '/demo/': genDemo('Demo')
+          "/guide/": genSidebarConfig("Guide"),
+          "/demo/": genDemo("Demo")
         },
         serviceWorker: {
           updatePopup: {
-            message: 'New content is available.',
-            buttonText: 'Refresh'
+            message: "New content is available.",
+            buttonText: "Refresh"
           }
         }
       },
-      '/zh/': {
-        label: '简体中文',
-        selectText: '选择语言',
-        editLinkText: '在 GitHub 上编辑此页',
-        lastUpdated: '上次更新', // string | boolean
+      "/zh/": {
+        label: "简体中文",
+        selectText: "选择语言",
+        editLinkText: "在 GitHub 上编辑此页",
+        lastUpdated: "上次更新", // string | boolean
         nav: [
           {
-            text: '指南',
-            link: '/zh/guide/'
+            text: "指南",
+            link: "/zh/guide/"
           },
           {
-            text: 'Demo',
-            link: '/zh/demo/'
+            text: "Demo",
+            link: "/zh/demo/"
           },
           {
-            text: '我的开源项目',
+            text: "我的开源项目",
             items: [
               {
-                text: 'Antdsite',
-                link: 'https://github.com/YvesCoding/antdsite'
+                text: "Antdsite",
+                link: "https://github.com/YvesCoding/antdsite"
               },
               {
-                text: 'magic-scroll',
-                link: 'https://github.com/YvesCoding/magic-scroll'
+                text: "magic-scroll",
+                link: "https://github.com/YvesCoding/magic-scroll"
               }
             ]
           }
         ],
         sidebar: {
-          '/zh/guide/': genSidebarConfig('指南'),
-          '/zh/demo/': genDemo('Demo'),
-          '/zh/donate/': [
+          "/zh/guide/": genSidebarConfig("指南"),
+          "/zh/demo/": genDemo("Demo"),
+          "/zh/donate/": [
             {
-              title: '捐赠',
+              title: "捐赠",
               collapsable: false,
-              children: ['']
+              children: [""]
             }
           ]
         },
         serviceWorker: {
           updatePopup: {
-            message: '发现新内容可用',
-            buttonText: '刷新'
+            message: "发现新内容可用",
+            buttonText: "刷新"
           }
         }
       }
@@ -129,7 +129,7 @@ module.exports = {
     let base = {
       resolve: {
         alias: {
-          assets: resolve('./assets')
+          assets: resolve("./assets")
         }
       }
     };
@@ -143,15 +143,15 @@ function genSidebarConfig(title) {
       title,
       collapsable: false,
       children: [
-        '',
-        'getting-started',
-        'configuration',
-        'event',
-        'api',
-        'slot',
-        'class-hook',
-        'typescript',
-        'optimizing-performance'
+        "",
+        "getting-started",
+        "configuration",
+        "event",
+        "api",
+        "slot",
+        "class-hook",
+        "typescript",
+        "optimizing-performance"
       ]
     }
   ];
@@ -162,7 +162,7 @@ function genDemo(title) {
     {
       title,
       collapsable: false,
-      children: ['']
+      children: [""]
     }
   ];
 }
