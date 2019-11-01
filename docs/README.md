@@ -19,10 +19,10 @@ footer: MIT Licensed | Copyright © 2018-present Yi(Yves) Wang
 ## A simple example
 
 ```javascript
-import Vue from 'vue';
-import vuescroll from 'vuescroll/dist/vuescroll-native';
-// import the css file
-import 'vuescroll/dist/vuescroll.css';
+import Vue from "vue";
+import vuescroll from "vuescroll/dist/vuescroll-native";
+// import the css file.
+import "vuescroll/dist/vuescroll.css";
 
 Vue.use(vuescroll);
 ```
