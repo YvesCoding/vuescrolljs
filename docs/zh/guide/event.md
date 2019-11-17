@@ -156,7 +156,7 @@ Vuescroll 有一些事件可以在特定场合下触发。
             },
             handleStart(vm, refreshDom, done) {
                 console.log(vm, refreshDom, 'handleStart');
-                seTimeout(() => {
+                setTimeout(() => {
                     done(); // load finished
                 }, 2000)
             },
