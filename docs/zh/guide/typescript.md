@@ -2,7 +2,7 @@
 
 ## 介绍
 
-Vuescrol 在 `4.6.11` 版本中新增了对`typescript`的支持， 你可以借助`typscript`的类型推导功能来快捷输入 Vuescroll 的 Api。
+Vuescroll 在 `4.6.11` 版本中新增了对`typescript`的支持， 你可以借助`typscript`的类型推导功能来快捷输入 Vuescroll 的 Api。
 
 ## 用法
 
