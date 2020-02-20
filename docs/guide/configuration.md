@@ -76,7 +76,7 @@ The distance that will scroll as soon as the component mounts .e.g.**100** or **
 
 ### scrollingX/scrollingY
 
-- Type: `blloeane`
+- Type: `boolean`
 
 - Default: `true`
 
@@ -330,7 +330,7 @@ Bar's width or size.
 
 ### enable
 
-- Type: `blloean`
+- Type: `boolean`
 
 - Default: `false`
 

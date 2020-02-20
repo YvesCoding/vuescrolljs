@@ -76,7 +76,7 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
 
 ### scrollingX/scrollingY
 
-- 类型: `blloeane`
+- 类型: `boolean`
 
 - 默认值: `true`
 
@@ -330,7 +330,7 @@ bar 的尺寸。
 
 ### enable
 
-- 类型: `blloean`
+- 类型: `boolean`
 
 - 默认值: `false`
 
