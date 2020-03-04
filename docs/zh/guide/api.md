@@ -27,19 +27,19 @@ sidebarDepth: 3
 #### 例子
 
 ```javascript
-this.$refs['vs'].scrollTo(
+this.$refs["vs"].scrollTo(
   {
-    x: '50%'
+    x: "50%"
   },
   500
 );
 
-this.$refs['vs'].scrollTo(
+this.$refs["vs"].scrollTo(
   {
     y: 200
   },
   500,
-  'easeInQuad'
+  "easeInQuad"
 );
 ```
 
@@ -66,19 +66,19 @@ this.$refs['vs'].scrollTo(
 #### 例子
 
 ```javascript
-this.$refs['vs'].scrollBy(
+this.$refs["vs"].scrollBy(
   {
-    dx: '50%'
+    dx: "50%"
   },
   500
 );
 
-this.$refs['vs'].scrollBy(
+this.$refs["vs"].scrollBy(
   {
     dy: -200
   },
   500,
-  'easeInQuad'
+  "easeInQuad"
 );
 ```
 
@@ -95,7 +95,7 @@ this.$refs['vs'].scrollBy(
 #### 例子
 
 ```javascript
-this.$refs['vs'].getCurrentviewDom();
+this.$refs["vs"].getCurrentviewDom();
 ```
 
 #### H 尝试一下
@@ -125,7 +125,7 @@ this.$refs['vs'].getCurrentviewDom();
 ```
 
 ```javascript
-this.$refs['vs'].scrollIntoView('#d3', 500);
+this.$refs["vs"].scrollIntoView("#d3", 500);
 ```
 
 #### H 尝试一下
@@ -155,13 +155,12 @@ this.$refs['vs'].scrollIntoView('#d3', 500);
 
 ```javascript
 // 如果你是模块系统的话，如果在浏览器直接使用vuescroll即可。
-import vuescroll from 'vuescroll';
+import vuescroll from "vuescroll";
 
-this.$refs['vs'].refresh();
+this.$refs["vs"].refresh();
 
 vuescroll.refreshAll();
 ```
-
 
 ### getScrollProcess
 
@@ -174,14 +173,54 @@ vuescroll.refreshAll();
 ```html
 <vue-scroll ref="vs" :ops="ops">
   <div v-for="i in 3" :key="i" :id="'d' + i"></div>
-</vue-scroll> 
+</vue-scroll>
 ```
 
 ```javascript
-const {v, h} = this.$refs['vs'].getScrollProcess();
+const { v, h } = this.$refs["vs"].getScrollProcess();
 
-console.loo(v,h)
+console.loo(v, h);
 ```
+
+### getPosition
+
+#### 简介
+
+获取当前的滚动条的 scrollTop.scrollLeft
+
+#### 用法
+
+```html
+<vue-scroll ref="vs" :ops="ops">
+  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
+</vue-scroll>
+```
+
+```javascript
+const { scrollTop, scrollLeft } = this.$refs["vs"].getPosition();
+
+console.loo(scrollTop, scrollLeft);
+```
+
+## Native 模式的 Api
+
+### stop()/pause()/continue()
+
+#### 介绍
+
+立刻停止/暂停/继续滚动
+
+#### 例子
+
+```javascript
+this.$refs["vs"].stop();
+this.$refs["vs"].pause();
+this.$refs["vs"].continue();
+```
+
+#### 尝试一下
+
+<Api-Stop lang="zh"/>
 
 ## Slide 模式的 Api
 
@@ -199,7 +238,7 @@ console.loo(v,h)
 #### 例子
 
 ```javascript
-this.$refs['vs'].goToPage(
+this.$refs["vs"].goToPage(
   {
     x: 1,
     y: 2
@@ -217,7 +256,7 @@ this.$refs['vs'].goToPage(
 #### 例子
 
 ```javascript
-const pageInfo = this.$refs['vs'].getCurrentPage();
+const pageInfo = this.$refs["vs"].getCurrentPage();
 console.log(pageInfo);
 ```
 
@@ -234,5 +273,5 @@ console.log(pageInfo);
 #### 用法
 
 ```javascript
-this.$refs['vs'].triggerRefreshOrLoad('load');
+this.$refs["vs"].triggerRefreshOrLoad("load");
 ```

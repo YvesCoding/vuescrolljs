@@ -62,7 +62,9 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
     scrollingY: true,
     speed: 300,
     easing: undefined,
-    verticalNativeBarPos: 'right'
+    verticalNativeBarPos: 'right',
+    maxHeight:undefined,
+    maxWidth:undefined,
   }
 ```
 
@@ -118,6 +120,14 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
 - 默认值: `right`
 
 原生滚动条的位置。
+
+## maxHeight
+
+- 类型: `number?`
+
+- 默认值: `undefined`
+
+这是滚动条最大高度,内容高度小于 maxHeight 时高度自适应，超出的话出现滚动条。
 
 ### 尝试一下
 

@@ -119,6 +119,14 @@ Scrolling animations. All the animations are as follows:
 
 The ntive vertical scrollbar position.
 
+## maxHeight
+
+- Type: `number?`
+
+- Default: `undefined`
+
+This is the maximum height of the scroll bar. When the content height is less than maxHeight, the height is adaptive. If it exceeds, the scroll bar appears.
+
 ### Have a try
 
 <Guide-ScrollPanel />

@@ -25,19 +25,19 @@ To scroll to a certain location, you can specify only `x` or`y`. `easing`paramet
 #### Example
 
 ```javascript
-this.$refs['vs'].scrollTo(
+this.$refs["vs"].scrollTo(
   {
-    x: '50%'
+    x: "50%"
   },
   500
 );
 
-this.$refs['vs'].scrollTo(
+this.$refs["vs"].scrollTo(
   {
     y: 200
   },
   500,
-  'easeInQuad'
+  "easeInQuad"
 );
 ```
 
@@ -64,19 +64,19 @@ Take the current position as the starting point, scroll for a distance, `dx` or 
 #### Example
 
 ```javascript
-this.$refs['vs'].scrollBy(
+this.$refs["vs"].scrollBy(
   {
-    dx: '50%'
+    dx: "50%"
   },
   500
 );
 
-this.$refs['vs'].scrollBy(
+this.$refs["vs"].scrollBy(
   {
     dy: -200
   },
   500,
-  'easeInQuad'
+  "easeInQuad"
 );
 ```
 
@@ -93,7 +93,7 @@ Get the **direct subelement** of vuescroll as you can see.
 #### Example
 
 ```javascript
-this.$refs['vs'].getCurrentviewDom();
+this.$refs["vs"].getCurrentviewDom();
 ```
 
 #### Have a try
@@ -123,7 +123,7 @@ The current window scrolls to a **direct child element** of `vuescroll`.
 ```
 
 ```javascript
-this.$refs['vs'].scrollIntoView('#d3', 500);
+this.$refs["vs"].scrollIntoView("#d3", 500);
 ```
 
 #### Have a try
@@ -139,7 +139,7 @@ Refresh the state of the specified vuescroll or all vuescrolls.
 ::: tip
 It can be used when the scroll bar of your vuescroll does not appear.
 You had better call it in setTimeout after mutating the data.
-::: 
+:::
 
 #### Usage
 
@@ -155,9 +155,9 @@ You had better call it in setTimeout after mutating the data.
 ```javascript
 // If you are a modular system, you can use vuescroll directly in the browser.
 
-import vuescroll from 'vuescroll';
+import vuescroll from "vuescroll";
 
-this.$refs['vs'].refresh();
+this.$refs["vs"].refresh();
 
 vuescroll.refreshAll();
 ```
@@ -168,20 +168,59 @@ vuescroll.refreshAll();
 
 Get the current scroll process under a range of [0, 1].
 
+#### Usage
+
+```html
+<vue-scroll ref="vs" :ops="ops">
+  <div v-for="i in 3" :key="i" :id="'d' + i"></div>
+</vue-scroll>
+```
+
+```javascript
+const { v, h } = this.$refs["vs"].getScrollProcess();
+
+console.loo(v, h);
+```
+
+### getPosition
+
+#### Introduction
+
+Get the `scrollTop.scrollLeft` of current scrolling.
 
 #### Usage
 
 ```html
 <vue-scroll ref="vs" :ops="ops">
   <div v-for="i in 3" :key="i" :id="'d' + i"></div>
-</vue-scroll> 
+</vue-scroll>
 ```
 
 ```javascript
-const {v, h} = this.$refs['vs'].getScrollProcess();
+const { scrollTop, scrollLeft } = this.$refs["vs"].getPosition();
 
-console.loo(v,h)
+console.loo(scrollTop, scrollLeft);
 ```
+
+## Api for native mode
+
+### stop()/pause()/continue()
+
+#### Introduction
+
+Stop / pause / continue scrolling at once.
+
+#### Example
+
+```javascript
+this.$refs["vs"].stop();
+this.$refs["vs"].pause();
+this.$refs["vs"].continue();
+```
+
+#### Have a try
+
+<Api-Stop/>
 
 ## Api for slide mode
 
@@ -199,7 +238,7 @@ console.loo(v,h)
 #### Example
 
 ```javascript
-this.$refs['vs'].goToPage(
+this.$refs["vs"].goToPage(
   {
     x: 1,
     y: 2
@@ -217,7 +256,7 @@ Get the current page number. Work only under `slide mode`and `paging` boot.
 #### Example
 
 ```javascript
-const pageInfo = this.$refs['vs'].getCurrentPage();
+const pageInfo = this.$refs["vs"].getCurrentPage();
 console.log(pageInfo);
 ```
 
@@ -234,5 +273,5 @@ Directly trigger refresh or load.
 #### Example
 
 ```javascript
-this.$refs['vs'].triggerRefreshOrLoad('load');
+this.$refs["vs"].triggerRefreshOrLoad("load");
 ```

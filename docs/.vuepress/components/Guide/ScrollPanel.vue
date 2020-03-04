@@ -1,10 +1,16 @@
 <template>
   <div class="wrapper">
-    <div class="title"> {{config.title}}</div>
+    <div class="title">{{ config.title }}</div>
     <div class="demo-area">
       <div class="parent">
         <vue-scroll :ops="ops" ref="vs">
-          <div class="child"></div>
+          <div
+            class="child"
+            :style="{
+              width: contentWidth + 'px',
+              height: contentheight + 'px'
+            }"
+          ></div>
         </vue-scroll>
       </div>
       <div class="operation">
@@ -15,7 +21,7 @@
               <td>
                 <select v-model="ops.scrollPanel.easing">
                   <option v-for="easing in easings" :value="easing">
-                    {{easing}}
+                    {{ easing }}
                   </option>
                 </select>
               </td>
@@ -23,45 +29,74 @@
             <tr>
               <td>Speed</td>
               <td>
-
-                <input type="range" :min="300" :max="2000" :step="50" v-model="ops.scrollPanel.speed">{{ops.scrollPanel.speed}}
-
+                <input
+                  type="range"
+                  :min="300"
+                  :max="2000"
+                  :step="50"
+                  v-model="ops.scrollPanel.speed"
+                />{{ ops.scrollPanel.speed }}
+              </td>
+            </tr>
+            <tr>
+              <td>{{ config.ch }}</td>
+              <td>
+                <input
+                  type="range"
+                  :min="200"
+                  :max="1000"
+                  :step="30"
+                  v-model="contentheight"
+                />{{ contentheight }}
+              </td>
+            </tr>
+            <tr>
+              <td>maxHeight</td>
+              <td>
+                <input
+                  type="range"
+                  :min="100"
+                  :max="500"
+                  :step="15"
+                  v-model="ops.scrollPanel.maxHeight"
+                />{{ ops.scrollPanel.maxHeight }}
               </td>
             </tr>
             <tr>
               <td colspan="2">
-                <button @click="randomScroll">Scroll to a random position</button>
+                <button @click="randomScroll">
+                  Scroll to a random position
+                </button>
               </td>
             </tr>
           </table>
         </vue-scroll>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
 const easings = [
-  'easeInQuad',
-  'easeOutQuad',
-  'easeInOutQuad',
-  'easeInCubic',
-  'easeOutCubic',
-  'easeInOutCubic',
-  'easeInQuart',
-  'easeOutQuart',
-  'easeInOutQuart',
-  'easeInQuint',
-  'easeOutQuint',
-  'easeInOutQuint'
+  "easeInQuad",
+  "easeOutQuad",
+  "easeInOutQuad",
+  "easeInCubic",
+  "easeOutCubic",
+  "easeInOutCubic",
+  "easeInQuart",
+  "easeOutQuart",
+  "easeInOutQuart",
+  "easeInQuint",
+  "easeOutQuint",
+  "easeInOutQuint"
 ];
 
 export default {
   props: {
     lang: {
       tyoe: String,
-      default: 'en'
+      default: "en"
     }
   },
   computed: {
@@ -71,19 +106,26 @@ export default {
   },
   data() {
     return {
+      contentWidth: 1000,
+      contentheight: 800,
       easings,
       ops: {
         scrollPanel: {
-          easing: 'easeInQuad',
-          speed: 800
+          easing: "easeInQuad",
+          speed: 800,
+          maxHeight: 300
         }
       },
       i18n: {
         zh: {
-          title: '调整速度和动画查看效果。'
+          cw: "内容宽度",
+          ch: "内容高度",
+          title: "调整速度和动画查看效果。"
         },
         en: {
-          title: 'Adjust speed and animation viewing effect.'
+          cw: "content width",
+          ch: "content height",
+          title: "Adjust speed and animation viewing effect."
         }
       }
     };
@@ -92,7 +134,7 @@ export default {
     randomScroll() {
       const x = Math.random() * 800;
       const y = Math.random() * 800;
-      this.$refs['vs'].scrollTo({
+      this.$refs["vs"].scrollTo({
         x,
         y
       });
@@ -123,10 +165,11 @@ export default {
     margin-top: 1rem;
     display: flex;
     background-color: #90d6f1;
+    justify-content space-between;
 
     .parent {
       width: 60%;
-      height: 12rem;
+
 
       /deep/ .child {
         width: 1000px;
@@ -136,11 +179,9 @@ export default {
     }
 
     .operation {
-      height: 12rem;
-      width: 40%;
-      background-color: #d5d5d7;
-
-      table {
+      height: 100%;
+       background-color: #d5d5d7;
+       table {
         display: table;
         width: 100%;
 

@@ -56,8 +56,8 @@ module.exports = {
             text: "My opensources",
             items: [
               {
-                text: "Antdsite",
-                link: "https://github.com/YvesCoding/antdsite"
+                text: "Rcpress",
+                link: "https://github.com/YvesCoding/rcpress"
               },
               {
                 text: "magic-scroll",
@@ -95,8 +95,8 @@ module.exports = {
             text: "我的开源项目",
             items: [
               {
-                text: "Antdsite",
-                link: "https://github.com/YvesCoding/antdsite"
+                text: "Rcpress",
+                link: "https://github.com/YvesCoding/rcpress"
               },
               {
                 text: "magic-scroll",
