@@ -179,7 +179,7 @@ vuescroll.refreshAll();
 ```javascript
 const { v, h } = this.$refs["vs"].getScrollProcess();
 
-console.loo(v, h);
+console.log(v, h);
 ```
 
 ### getPosition
@@ -199,7 +199,7 @@ console.loo(v, h);
 ```javascript
 const { scrollTop, scrollLeft } = this.$refs["vs"].getPosition();
 
-console.loo(scrollTop, scrollLeft);
+console.log(scrollTop, scrollLeft);
 ```
 
 ## Native 模式的 Api

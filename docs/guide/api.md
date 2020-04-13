@@ -179,7 +179,7 @@ Get the current scroll process under a range of [0, 1].
 ```javascript
 const { v, h } = this.$refs["vs"].getScrollProcess();
 
-console.loo(v, h);
+console.log(v, h);
 ```
 
 ### getPosition
@@ -199,7 +199,7 @@ Get the `scrollTop.scrollLeft` of current scrolling.
 ```javascript
 const { scrollTop, scrollLeft } = this.$refs["vs"].getPosition();
 
-console.loo(scrollTop, scrollLeft);
+console.log(scrollTop, scrollLeft);
 ```
 
 ## Api for native mode
