@@ -103,7 +103,7 @@ Vue.use(vuescroll);
 > Put it outside the `child element`, inside the `parent element`. Just so easy.
 
 ::: warning
-If you doesn't see scrollbar show, please open `dev-tool` to checkout whether your child's size is greater than parent's.The condition for the scrollbar to appear is the same as the native scrollbar, that is, **the size of the child element exceeds the parent element**.
+If you don't see scrollbar showing up, please open `dev-tool` to checkout whether your child's size is greater than parent's. The condition for the scrollbar to appear is the same as the native scrollbar, that is, **the size of the child element exceeds the parent element**.
 
 :::
 
