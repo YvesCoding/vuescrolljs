@@ -2,16 +2,16 @@
 
 可以做下列几点来优化滚动的性能，流畅度。
 
-## 根据你的需求倒入不同模式的文件
+## 根据你的需求导入不同模式的文件
 
-如果你只想要**自定义滚动条**, 而不需要`pull-refreh`, `push-load`等`slide`模式的特性, 你可以像这样只引入包含`native`模式特性的文件, 例如：
+如果你只想要**自定义滚动条**, 而不需要`pull-refresh`, `push-load`等`slide`模式的特性, 你可以像这样只引入包含`native`模式特性的文件, 例如：
 
 ```javascript
 import vuescroll from 'vuescroll/dist/vuescroll-native';
 // .... css file
 ```
 
-或者说你只想要`slide`模式的特性, 如 `pull-refreh`, `push-load` 而不想要`native`模式的特性， 你可以只因乳包含`slide`模式的特性的文件。例如：
+或者说你只想要`slide`模式的特性, 如 `pull-refresh`, `push-load` 而不想要`native`模式的特性， 你可以只引入包含`slide`模式的特性的文件。例如：
 
 ```javascript
 import vuescroll from 'vuescroll/dist/vuescroll-slide';
