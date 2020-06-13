@@ -33,7 +33,7 @@ Vue.use(vuescroll);
     <vue-scroll :ops="ops">
       <div class="demo-content">
         <span class="demo-content-text">Hello World</span>
-      </div>
+      </div> 
     </vue-scroll>
   </div>
 </template>
