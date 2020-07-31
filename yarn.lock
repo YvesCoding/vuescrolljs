@@ -1863,8 +1863,8 @@ bluebird@^3.1.1, bluebird@^3.5.1, bluebird@^3.5.5:
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
 
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
-  version "4.11.8"
-  resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
+  version "4.11.9"
+  resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.9.tgz#26d556829458f9d1e81fc48952493d0ba3507828"
 
 boolbase@~1.0.0:
   version "1.0.0"
@@ -2937,8 +2937,8 @@ electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.341, electron-to-chromium
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.348.tgz#61fa7d43f6c4fd8b046b0b69213cb55b7a4c76a5"
 
 elliptic@^6.0.0:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.2.tgz#05c5678d7173c049d8ca433552224a495d0e3762"
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.3.tgz#cb59eb2efdaf73a0bd78ccd7015a62ad6e0f93d6"
   dependencies:
     bn.js "^4.4.0"
     brorand "^1.0.1"
@@ -7107,9 +7107,9 @@ vuepress-html-webpack-plugin@^3.2.0:
     toposort "^1.0.0"
     util.promisify "1.0.0"
 
-vuepress-theme-vuescroll@0.0.42:
-  version "0.0.42"
-  resolved "https://registry.npm.taobao.org/vuepress-theme-vuescroll/download/vuepress-theme-vuescroll-0.0.42.tgz#fa4379192dc4c9a47627bdade9964eae8fba2f39"
+vuepress-theme-vuescroll@0.0.43:
+  version "0.0.43"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-vuescroll/-/vuepress-theme-vuescroll-0.0.43.tgz#48e1c2b5f528320003c9ff0204e6a1e59a1b5b0d"
   dependencies:
     "@babel/preset-env" "^7.0.0"
     vuepress "^0.14.2"
@@ -7240,9 +7240,9 @@ vuescroll-carousel@^0.0.13:
   version "0.0.13"
   resolved "https://registry.yarnpkg.com/vuescroll-carousel/-/vuescroll-carousel-0.0.13.tgz#f6897a887617716c8343f8eb8c389fb0c407078c"
 
-vuescroll@4.16.0:
-  version "4.16.0"
-  resolved "https://registry.npm.taobao.org/vuescroll/download/vuescroll-4.16.0.tgz#e0eca820f3757d298e9128c07916fcb9bc56b14b"
+vuescroll@4.16.1:
+  version "4.16.1"
+  resolved "https://registry.yarnpkg.com/vuescroll/-/vuescroll-4.16.1.tgz#498099fd0e0a47bf09e1d0cb91fc3533a6804e58"
 
 watchpack@^1.6.0:
   version "1.6.0"
