@@ -17,23 +17,22 @@ module.exports = {
       lang: "en-US",
       title: "Vuescroll.js",
       description:
-        "Vuescroll - A customizable scrollbar plugin based on vue.js for PC and mobile phone"
+        "Vuescroll - A customizable scrollbar plugin based on vue.js for PC and mobile phone",
     },
     "/zh/": {
       lang: "zh-CN",
       title: "Vuescroll.js",
-      description: "Vuescroll - 一个自定义滚动条的插件适用于PC和移动端"
-    }
+      description: "Vuescroll - 一个自定义滚动条的插件适用于PC和移动端",
+    },
   },
   head: [
     ["link", { rel: "icon", href: `/logo.png` }],
-    ["link", { rel: "manifest", href: "/manifest.json" }]
+    ["link", { rel: "manifest", href: "/manifest.json" }],
   ],
   themeConfig: {
     repo: "YvesCoding/vuescroll",
     docsRepo: "YvesCoding/vuescrolljs",
     editLinks: true,
-    displayAllHeaders: true,
     docsDir: "docs",
     docsBranch: "master",
     sidebarDepth: 3,
@@ -46,36 +45,36 @@ module.exports = {
         nav: [
           {
             text: "Guide",
-            link: "/guide/"
+            link: "/guide/",
           },
           {
             text: "Demo",
-            link: "/demo/"
+            link: "/demo/",
           },
           {
             text: "My opensources",
             items: [
               {
                 text: "Rcpress",
-                link: "https://github.com/YvesCoding/rcpress"
+                link: "https://github.com/YvesCoding/rcpress",
               },
               {
                 text: "magic-scroll",
-                link: "https://github.com/YvesCoding/magic-scroll"
-              }
-            ]
-          }
+                link: "https://github.com/YvesCoding/magic-scroll",
+              },
+            ],
+          },
         ],
         sidebar: {
           "/guide/": genSidebarConfig("Guide"),
-          "/demo/": genDemo("Demo")
+          "/demo/": genDemo("Demo"),
         },
         serviceWorker: {
           updatePopup: {
             message: "New content is available.",
-            buttonText: "Refresh"
-          }
-        }
+            buttonText: "Refresh",
+          },
+        },
       },
       "/zh/": {
         label: "简体中文",
@@ -85,25 +84,25 @@ module.exports = {
         nav: [
           {
             text: "指南",
-            link: "/zh/guide/"
+            link: "/zh/guide/",
           },
           {
             text: "Demo",
-            link: "/zh/demo/"
+            link: "/zh/demo/",
           },
           {
             text: "我的开源项目",
             items: [
               {
                 text: "Rcpress",
-                link: "https://github.com/YvesCoding/rcpress"
+                link: "https://github.com/YvesCoding/rcpress",
               },
               {
                 text: "magic-scroll",
-                link: "https://github.com/YvesCoding/magic-scroll"
-              }
-            ]
-          }
+                link: "https://github.com/YvesCoding/magic-scroll",
+              },
+            ],
+          },
         ],
         sidebar: {
           "/zh/guide/": genSidebarConfig("指南"),
@@ -112,29 +111,29 @@ module.exports = {
             {
               title: "捐赠",
               collapsable: false,
-              children: [""]
-            }
-          ]
+              children: [""],
+            },
+          ],
         },
         serviceWorker: {
           updatePopup: {
             message: "发现新内容可用",
-            buttonText: "刷新"
-          }
-        }
-      }
-    }
+            buttonText: "刷新",
+          },
+        },
+      },
+    },
   },
   configureWebpack: (config, isServer) => {
     let base = {
       resolve: {
         alias: {
-          assets: resolve("./assets")
-        }
-      }
+          assets: resolve("./assets"),
+        },
+      },
     };
     return base;
-  }
+  },
 };
 
 function genSidebarConfig(title) {
@@ -151,9 +150,10 @@ function genSidebarConfig(title) {
         "slot",
         "class-hook",
         "typescript",
-        "optimizing-performance"
-      ]
-    }
+        "optimizing-performance",
+        "faq",
+      ],
+    },
   ];
 }
 
@@ -162,7 +162,7 @@ function genDemo(title) {
     {
       title,
       collapsable: false,
-      children: [""]
-    }
+      children: [""],
+    },
   ];
 }
