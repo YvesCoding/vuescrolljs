@@ -387,7 +387,10 @@ The distance to scroll when you hold pressing the scrollButton.
 ```javascript
 vuescroll: {
   wheelScrollDuration: 0,
-  wheelDirectionReverse: false
+  wheelDirectionReverse: false,
+  /** Enable locking to the main axis if user moves only slightly on one of them at start */
+  locking: true,
+  checkShifKey: true
 }
 ```
 
@@ -404,6 +407,20 @@ The time it takes for the mouse wheel to scroll for a certain distance.
 - Default: `false`
 
 Whether to make wheel scrolling's direction reverse.
+
+### locking
+
+- Type: `boolean`
+- Default: `true`
+
+Enable locking to the main axis if user moves only slightly on one of them at start. See [issue #197](https://github.com/YvesCoding/vuescroll/issues/197)
+
+### checkShifKey
+
+- Type: `boolean`
+- Default: `true`
+
+Whether check shif key or not, see [pr #234](https://github.com/YvesCoding/vuescroll/pull/234)
 
 ## vuescroll(Slide mode)
 

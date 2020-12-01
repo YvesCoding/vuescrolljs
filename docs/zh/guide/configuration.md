@@ -389,7 +389,10 @@ scrollButton 的透明度。
 ```javascript
 vuescroll: {
   wheelScrollDuration: 0,
-  wheelDirectionReverse: false
+  wheelDirectionReverse: false,
+  /** 锁定一种滚动方向， 锁定的方向为水平或者垂直方向上滑动距离较大的那个方向 */
+  locking: true,
+  checkShifKey: true
 }
 ```
 
@@ -406,6 +409,20 @@ vuescroll: {
 - 默认值: `false`
 
 是否使滚轮方向相反
+
+### locking
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否锁定一种滚动方向， 锁定的方向为水平或者垂直方向上滑动距离较大的那个方向， 相关[issue #197](https://github.com/YvesCoding/vuescroll/issues/197)
+
+### checkShifKey
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否检测 shift 键位 具体请查看 [pr #234](https://github.com/YvesCoding/vuescroll/pull/234)
 
 ## vuescroll(Slide 模式)
 

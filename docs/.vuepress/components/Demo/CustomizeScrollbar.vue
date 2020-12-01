@@ -39,6 +39,24 @@
                 </td>
               </tr>
               <tr>
+                <th>locking</th>
+                <td>
+                   <input
+                    type="checkbox"
+                    v-model="ops.vuescroll.locking"
+                  > {{ops.vuescroll.locking}}
+                </td>
+              </tr>
+               <!-- <tr>
+                <th>checkShifKey</th>
+                <td>
+                   <input
+                    type="checkbox"
+                    v-model="ops.vuescroll.checkShifKey"
+                  > {{ops.vuescroll.checkShifKey}}
+                </td>
+              </tr> -->
+              <tr>
                 <th>Wheel direction reverse</th>
                 <td>
                   <input
@@ -210,7 +228,9 @@ export default {
         },
         vuescroll: {
           wheelScrollDuration: 0,
-          wheelDirectionReverse: false
+          wheelDirectionReverse: false,
+          locking: true,
+          checkShifKey: true
         }
       },
       width: '',

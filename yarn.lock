@@ -7107,9 +7107,9 @@ vuepress-html-webpack-plugin@^3.2.0:
     toposort "^1.0.0"
     util.promisify "1.0.0"
 
-vuepress-theme-vuescroll@0.0.42:
-  version "0.0.42"
-  resolved "https://registry.npm.taobao.org/vuepress-theme-vuescroll/download/vuepress-theme-vuescroll-0.0.42.tgz#fa4379192dc4c9a47627bdade9964eae8fba2f39"
+vuepress-theme-vuescroll@0.0.44:
+  version "0.0.44"
+  resolved "https://registry.npmjs.org/vuepress-theme-vuescroll/-/vuepress-theme-vuescroll-0.0.44.tgz#4a792d25b1684dd9ad2852be6cf2c7cb663bbd3b"
   dependencies:
     "@babel/preset-env" "^7.0.0"
     vuepress "^0.14.2"
@@ -7240,9 +7240,9 @@ vuescroll-carousel@^0.0.13:
   version "0.0.13"
   resolved "https://registry.yarnpkg.com/vuescroll-carousel/-/vuescroll-carousel-0.0.13.tgz#f6897a887617716c8343f8eb8c389fb0c407078c"
 
-vuescroll@4.16.0:
-  version "4.16.0"
-  resolved "https://registry.npm.taobao.org/vuescroll/download/vuescroll-4.16.0.tgz#e0eca820f3757d298e9128c07916fcb9bc56b14b"
+vuescroll@4.16.3:
+  version "4.16.3"
+  resolved "https://registry.npmjs.org/vuescroll/-/vuescroll-4.16.3.tgz#a8748518eae1f6c9434dacf74ca9a07a6e32415a"
 
 watchpack@^1.6.0:
   version "1.6.0"
