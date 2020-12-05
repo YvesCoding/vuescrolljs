@@ -14,7 +14,9 @@ Vuescroll 的配置项由 5 部分组成, 它们分别是`vuescroll`, `scrollPan
   vuescroll: {
     mode: 'native',
     sizeStrategy: 'percent',
-    detectResize: true
+    detectResize: true,
+    /** 锁定一种滚动方向， 锁定的方向为水平或者垂直方向上滑动距离较大的那个方向 */
+    locking: true,
   }
 ```
 
@@ -42,9 +44,16 @@ Vuescroll 的配置项由 5 部分组成, 它们分别是`vuescroll`, `scrollPan
 
 是否检测内容尺寸发生变化。
 
+### locking
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否锁定一种滚动方向， 锁定的方向为水平或者垂直方向上滑动距离较大的那个方向， 相关[issue #197](https://github.com/YvesCoding/vuescroll/issues/197)
+
 ### 尝试一下
 
-<Guide-BaseConfig />
+<Guide-BaseConfig lang="zh" />
 
 ## scrollPanel
 
@@ -131,7 +140,7 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
 
 ### 尝试一下
 
-<Guide-ScrollPanel />
+<Guide-ScrollPanel  lang="zh" />
 
 ## rail
 
@@ -219,7 +228,7 @@ scrollPanel 内容的包装. 我们通过改变 scrollPanel 的 scrollLeft 和 s
 
 ### 尝试一下!
 
-<Guide-Rail />
+<Guide-Rail  lang="zh" />
 
 ## bar
 
@@ -322,7 +331,7 @@ bar 的尺寸。
 
 ### 尝试一下!
 
-<Guide-Bar />
+<Guide-Bar  lang="zh" />
 
 ## scrollButton
 
@@ -380,7 +389,7 @@ scrollButton 的透明度。
 
 ### 尝试一下!
 
-<Guide-ScrollButton />
+<Guide-ScrollButton  lang="zh" />
 
 ## vuescroll(native 模式)
 
@@ -390,8 +399,6 @@ scrollButton 的透明度。
 vuescroll: {
   wheelScrollDuration: 0,
   wheelDirectionReverse: false,
-  /** 锁定一种滚动方向， 锁定的方向为水平或者垂直方向上滑动距离较大的那个方向 */
-  locking: true,
   checkShifKey: true
 }
 ```
@@ -409,13 +416,6 @@ vuescroll: {
 - 默认值: `false`
 
 是否使滚轮方向相反
-
-### locking
-
-- 类型: `boolean`
-- 默认值: `true`
-
-是否锁定一种滚动方向， 锁定的方向为水平或者垂直方向上滑动距离较大的那个方向， 相关[issue #197](https://github.com/YvesCoding/vuescroll/issues/197)
 
 ### checkShifKey
 

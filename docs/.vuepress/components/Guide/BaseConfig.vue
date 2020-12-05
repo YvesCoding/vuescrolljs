@@ -16,6 +16,15 @@
                                 slide <input v-model="ops.vuescroll.mode" type="radio" value="slide"><br> native <input v-model="ops.vuescroll.mode" type="radio" value="native">
                             </td>
                         </tr>
+                                 <tr>
+                <td>locking</td>
+                <td :title="config.lockingTip">
+                   <input
+                    type="checkbox"
+                    v-model="ops.vuescroll.locking"
+                  > {{ops.vuescroll.locking}}
+                </td>
+              </tr>
                         <tr>
                             <td>sizeStrategy</td>
                             <td>
@@ -28,6 +37,7 @@
                                 true <input v-model="ops.vuescroll.detectResize" type="radio" :value="true"><br> false <input v-model="ops.vuescroll.detectResize" type="radio" :value="false">
                             </td>
                         </tr>
+                 
                     </table>
                 </vue-scroll>
             </div>
@@ -56,15 +66,18 @@ export default {
         vuescroll: {
           mode: 'native',
           detectResize: true,
-          sizeStrategy: 'percent'
+          sizeStrategy: 'percent',
+          locking: false
         }
       },
       i18n: {
         zh: {
-          title: '打开dev-tool查看不同配置项之间的区别。'
+          title: '打开dev-tool查看不同配置项之间的区别。',
+          lockingTip: 'slide模式建议用鼠标， native模式用触摸板尝试这个配置项'
         },
         en: {
-          title: 'Open the dev-tool to see differences among different otions.'
+          title: 'Open the dev-tool to see differences among different otions.',
+          lockingTip: 'It is recommended to use mouse on slide mode and touch panel on native mode to try this option.'
         }
       }
     };

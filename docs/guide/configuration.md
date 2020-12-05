@@ -14,7 +14,9 @@ Vuescroll's options are composed of five parts, they are `vuescroll`, `scrollPan
   vuescroll: {
     mode: 'native',
     sizeStrategy: 'percent',
-    detectResize: true
+    detectResize: true,
+    /** Enable locking to the main axis if user moves only slightly on one of them at start */
+    locking: true,
   }
 ```
 
@@ -41,6 +43,13 @@ If the parent container is not at a fixed height, set it to `number`, or keep th
 * Default: `true`
 
 Whether to detect dom resize or not
+
+### locking
+
+- Type: `boolean`
+- Default: `true`
+
+Enable locking to the main axis if user moves only slightly on one of them at start. See [issue #197](https://github.com/YvesCoding/vuescroll/issues/197)
 
 ### Have a try
 
@@ -388,8 +397,6 @@ The distance to scroll when you hold pressing the scrollButton.
 vuescroll: {
   wheelScrollDuration: 0,
   wheelDirectionReverse: false,
-  /** Enable locking to the main axis if user moves only slightly on one of them at start */
-  locking: true,
   checkShifKey: true
 }
 ```
@@ -407,13 +414,6 @@ The time it takes for the mouse wheel to scroll for a certain distance.
 - Default: `false`
 
 Whether to make wheel scrolling's direction reverse.
-
-### locking
-
-- Type: `boolean`
-- Default: `true`
-
-Enable locking to the main axis if user moves only slightly on one of them at start. See [issue #197](https://github.com/YvesCoding/vuescroll/issues/197)
 
 ### checkShifKey
 
