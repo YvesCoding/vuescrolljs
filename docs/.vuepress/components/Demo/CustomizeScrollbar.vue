@@ -230,7 +230,7 @@ export default {
           wheelScrollDuration: 0,
           wheelDirectionReverse: false,
           locking: true,
-          checkShifKey: true
+          checkShifKey: false
         }
       },
       width: '',
