@@ -28,6 +28,7 @@ module.exports = {
   head: [
     ["link", { rel: "icon", href: `/logo.png` }],
     ["link", { rel: "manifest", href: "/manifest.json" }],
+    ["meta", { name: "baidu-site-verification", content: "code-E1gngvNSCZ" }],
   ],
   themeConfig: {
     repo: "YvesCoding/vuescroll",
