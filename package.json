@@ -16,7 +16,7 @@
     "style-loader": "^0.21.0",
     "vuepress": "0.13.1",
     "vuepress-theme-vuescroll": "0.0.44",
-    "vuescroll": "4.17.1",
+    "vuescroll": "4.17.4",
     "vuescroll-carousel": "^0.0.13"
   },
   "devDependencies": {
