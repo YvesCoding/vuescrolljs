@@ -24,18 +24,20 @@ Since `4.10.1`, you don't need to import `vuescroll/dist/vuescroll.css` any more
 
 1. import globally
 
+##### For vue 2.x
+
 In your entry file:
 
 ```javascript
-import Vue from 'vue';
-import vuescroll from 'vuescroll';
+import Vue from "vue";
+import vuescroll from "vuescroll";
 
 // You can set global config here.
 Vue.use(vuescroll, {
   ops: {
     // The global config
   },
-  name: 'myScroll' // customize component name, default -> vueScroll
+  name: "myScroll", // customize component name, default -> vueScroll
 });
 
 /**
@@ -43,9 +45,26 @@ Vue.use(vuescroll, {
  */
 Vue.prototype.$vuescrollConfig = {
   bar: {
-    background: '#000'
-  }
+    background: "#000",
+  },
 };
+```
+
+##### For vue 2.x
+
+In your entry file:
+
+```javascript
+import Vue from "vue";
+import vuescroll from "vuescroll";
+
+// You can set global config here.
+Vue.use(vuescroll, {
+  ops: {
+    // The global config
+  },
+  name: "myScroll", // customize component name, default -> vueScroll
+});
 ```
 
 2. import locally
@@ -55,12 +74,12 @@ Vue.prototype.$vuescrollConfig = {
   <vuescroll> <!-- Your content... --> </vuescroll>
 </template>
 <script>
-  import vuescroll from 'vuescroll';
+  import vuescroll from "vuescroll";
 
   export default {
     components: {
-      vuescroll
-    }
+      vuescroll,
+    },
   };
 </script>
 ```
@@ -70,8 +89,8 @@ Vue.prototype.$vuescrollConfig = {
 **Only import the features of slide mode:**
 
 ```javascript
-import Vue from 'vue';
-import vuescroll from 'vuescroll/dist/vuescroll-slide';
+import Vue from "vue";
+import vuescroll from "vuescroll/dist/vuescroll-slide";
 
 Vue.use(vuescroll);
 ```
@@ -79,8 +98,8 @@ Vue.use(vuescroll);
 **Only import the features of native mode:**
 
 ```javascript
-import Vue from 'vue';
-import vuescroll from 'vuescroll/dist/vuescroll-native';
+import Vue from "vue";
+import vuescroll from "vuescroll/dist/vuescroll-native";
 
 Vue.use(vuescroll);
 ```
@@ -122,11 +141,11 @@ If you don't see scrollbar showing up, please open `dev-tool` to checkout whethe
           vuescroll: {},
           scrollPanel: {},
           rail: {},
-          bar: {}
-        }
-      }
-    }
-  }
+          bar: {},
+        },
+      };
+    },
+  };
 </script>
 ```
 
