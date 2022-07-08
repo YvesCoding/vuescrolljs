@@ -10,6 +10,13 @@ sidebarDepth: 1
 
 ## 安装
 
+### Vue 兼容性表格
+
+| vue 版本 | vuescroll 版本 |
+| -------- | -------------- |
+| 2.x      | <=4.17.4       |
+| 3.x      | >=5.0.0        |
+
 ### 模块系统
 
 #### 安装
@@ -26,28 +33,49 @@ sidebarDepth: 1
 
 1. 全局引入
 
-在你的入口文件处：
+##### 对于 vue 2.x 版本
+
+在你的入口文件:
 
 ```javascript
-import Vue from 'vue';
-import vuescroll from 'vuescroll';
+import Vue from "vue";
+import vuescroll from "vuescroll";
 
-// 你可以在这里设置全局配置
+// 你可以在这里设置全局配置.
 Vue.use(vuescroll, {
-  ops: {}, // 在这里设置全局默认配置
-  name: 'myScroll' // 在这里自定义组件名字，默认是vueScroll
+  ops: {
+    // 设置默认的全局配置
+  },
+  name: "myScroll" // 自定义组件名称， 默认是vueScroll
 });
 
-/*
+/**
  * 或者
  */
-
-Vue.use(vuescroll); // install the vuescroll first
 Vue.prototype.$vuescrollConfig = {
   bar: {
-    background: '#000'
+    background: "#000"
   }
 };
+```
+
+##### 对于 vue 3.x 版本
+
+在你的入口文件:
+
+```javascript
+import { createApp } from "vue";
+import vuescroll from "vuescroll";
+
+const app = createApp(App);
+
+// 你可以在这里设置全局配置
+app.use(vuescroll, {
+  ops: {
+    // 设置默认的全局配置
+  },
+  name: "myScroll" // 自定义组件名称， 默认是vueScroll
+});
 ```
 
 2. 局部引入
@@ -57,7 +85,7 @@ Vue.prototype.$vuescrollConfig = {
   <vuescroll> <!-- 你的内容... --> </vuescroll>
 </template>
 <script>
-  import vuescroll from 'vuescroll';
+  import vuescroll from "vuescroll";
 
   export default {
     components: {
@@ -72,8 +100,8 @@ Vue.prototype.$vuescrollConfig = {
 **只引入 slide 模式的特性：**
 
 ```javascript
-import Vue from 'vue';
-import vuescroll from 'vuescroll/dist/vuescroll-slide';
+import Vue from "vue";
+import vuescroll from "vuescroll/dist/vuescroll-slide";
 
 Vue.use(vuescroll);
 ```
@@ -81,8 +109,8 @@ Vue.use(vuescroll);
 **只引入 native 模式的特性：**
 
 ```javascript
-import Vue from 'vue';
-import vuescroll from 'vuescroll/dist/vuescroll-native';
+import Vue from "vue";
+import vuescroll from "vuescroll/dist/vuescroll-native";
 
 Vue.use(vuescroll);
 ```
@@ -125,9 +153,9 @@ Vue.use(vuescroll);
           rail: {},
           bar: {}
         }
-      }
+      };
     }
-  }
+  };
 </script>
 ```
 

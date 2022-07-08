@@ -10,6 +10,13 @@ Since `4.10.1`, you don't need to import `vuescroll/dist/vuescroll.css` any more
 
 ## Installation
 
+### Vue Compatibility Table
+
+| vue version | vuescroll version |
+| ----------- | ----------------- |
+| 2.x         | <=4.17.4          |
+| 3.x         | >=5.0.0           |
+
 ### Module System
 
 #### Installation
@@ -37,7 +44,7 @@ Vue.use(vuescroll, {
   ops: {
     // The global config
   },
-  name: "myScroll", // customize component name, default -> vueScroll
+  name: "myScroll" // customize component name, default -> vueScroll
 });
 
 /**
@@ -45,25 +52,27 @@ Vue.use(vuescroll, {
  */
 Vue.prototype.$vuescrollConfig = {
   bar: {
-    background: "#000",
-  },
+    background: "#000"
+  }
 };
 ```
 
-##### For vue 2.x
+##### For vue 3.x
 
 In your entry file:
 
 ```javascript
-import Vue from "vue";
+import { createApp } from "vue";
 import vuescroll from "vuescroll";
 
+const app = createApp(App);
+
 // You can set global config here.
-Vue.use(vuescroll, {
+app.use(vuescroll, {
   ops: {
     // The global config
   },
-  name: "myScroll", // customize component name, default -> vueScroll
+  name: "myScroll" // customize component name, default -> vueScroll
 });
 ```
 
@@ -78,8 +87,8 @@ Vue.use(vuescroll, {
 
   export default {
     components: {
-      vuescroll,
-    },
+      vuescroll
+    }
   };
 </script>
 ```
@@ -141,10 +150,10 @@ If you don't see scrollbar showing up, please open `dev-tool` to checkout whethe
           vuescroll: {},
           scrollPanel: {},
           rail: {},
-          bar: {},
-        },
+          bar: {}
+        }
       };
-    },
+    }
   };
 </script>
 ```
